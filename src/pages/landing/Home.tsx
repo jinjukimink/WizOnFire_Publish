@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import backgroundImage from "../assets/images/landingBackground.png";
+import backgroundImage from "../../assets/images/landing/landingBackground.png"
 
 const StartImage = styled.div`
   height: 1300px;

@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
 import { useScroll, useMotionValueEvent, useAnimation,AnimatePresence } from "framer-motion";
-import ktwiz from "../../assets/images/ktwiz.png"
+import ktwiz from "../../assets/images/landing/ktwiz.png"
 import { UpNav, Logo, Category, BottomNav, SubCategoryColumn, SubCategory } from "./HeaderStyles"; // 스타일 불러오기
 
 const Header = () => {
@@ -32,7 +32,7 @@ const Header = () => {
   const { scrollY } = useScroll();
   const [hoveredCategory,setHoveredCategory]=useState("");//어떤 게 호버가 되는지를 기억해야 함.
   const isLandingPage=window.location.pathname==="/";
-  console.log(isLandingPage)
+  //console.log(isLandingPage)
 
   useEffect(() => {
       if (isLandingPage) {
@@ -45,13 +45,13 @@ const Header = () => {
 
   const handleMouseEnterCategory=(category:string)=>{
     setHoveredCategory(category);
-    console.log(hoveredCategory)
+    //console.log(hoveredCategory)
   }
 
-  const handleMouseLeaveCategory=(e:any)=>{//왜 호버가 떠나도 안먹
+  const handleMouseLeaveCategory=()=>{//왜 호버가 떠나도 안먹
     setHoveredCategory("");
-    console.log(e)
-    console.log(hoveredCategory)
+    // console.log(e)
+    // console.log(hoveredCategory)
   }
 
 
@@ -105,7 +105,7 @@ const Header = () => {
           hoveredCategory={category} 
           key={index} href={`/${category}`}
           onMouseEnter={()=>handleMouseEnterCategory(category)}
-          onMouseLeave={(e)=>handleMouseLeaveCategory(e)}
+          onMouseLeave={handleMouseLeaveCategory}
           isHovered={hoveredCategory!=="" && hoveredCategory === category}
           >
             {category}
