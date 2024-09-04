@@ -26,7 +26,6 @@ export const UpNav=styled(motion.nav)`
     a:last-child {
         color: red;
     }
-
     &::after {
         content: "";
         position: absolute;
