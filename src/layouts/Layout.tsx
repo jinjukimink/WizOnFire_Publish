@@ -1,14 +1,32 @@
+import styled from "styled-components";
+import { Outlet } from "react-router-dom";
+import Header from "../components/header/Header";
+import Footer from "../components/footer/Footer";
+
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 300vh;  // 전체 뷰포트 높이를 채우도록 설정
+`;
+
+const MainContent = styled.main`
+ // margin-top: 60px;
+  flex-grow: 1;  // 메인 컨텐츠 영역이 가능한 많은 공간을 차지하도록 설정
+  overflow-y: auto;
+  max-height: 300vh;
+`;
+
+
 const Layout = () => {
   return (
-    <>
-      {/* Header */}
-      <h1>Layout Components</h1>
-      <h2>Header</h2>
-      {/* Outlet 부분 */}
-      <h2>Outlet</h2>
-      {/* Footer */}
-      <h2>Footer</h2>
-    </>
+    <PageContainer>
+      <Header />
+      <MainContent>
+        <Outlet />  {/* 이곳에 컴포넌트를 넣기 */}
+      </MainContent>
+      <Footer />
+    </PageContainer>
   );
 };
+
 export default Layout;
