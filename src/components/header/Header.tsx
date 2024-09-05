@@ -2,6 +2,9 @@ import { useState,useEffect } from "react";
 import { useScroll, useMotionValueEvent, useAnimation,AnimatePresence } from "framer-motion";
 import ktwiz from "../../assets/images/landing/ktwiz.png"
 import { UpNav, Logo, Category, BottomNav, SubCategoryColumn, SubCategory } from "./HeaderStyles"; // 스타일 불러오기
+import PageLocation from "../common/pageLocation/PageLocation";
+import { useLocationStore } from "../../stores/useLocation.store";
+import { useLocation } from "../../hooks/useLocation";
 
 const Header = () => {
 
@@ -26,12 +29,49 @@ const Header = () => {
     [],
     ["티켓예매", "단체관람", "입장 및 좌석 정보"],
   ];
+
+    const sidebars = [
+      [
+        ["구단 소개","구단 연혁"],
+        ["심볼마크", "워드마크", "엠블럼", "마스코트", "유니폼"],
+      ],
+      [
+        ["구단 소개","구단 연혁"],
+        ["심볼마크","워드마크"],
+      ],
+      [
+        ["경기일정", "박스스코어", "순위기록", "관전포인트"]
+      ],
+      [
+        ["구단 소개","구단 연혁"],
+        ["심볼마크","워드마크"],
+      ],
+      [
+        ["구단 소개","구단 연혁"],
+        ["심볼마크","워드마크"],
+      ],
+      [
+        []
+      ],
+      [
+        ["구단 소개","구단 연혁"],
+        ["심볼마크","워드마크"],
+      ],
+      [
+        ["구단 소개","구단 연혁"],
+        ["심볼마크","워드마크"],
+      ],
+    ];
+  
+
   //const [isVisible, setIsVisible] = useState(false); // 컴포넌트가 보이는 상태를 관리
   const [isHovered, setIsHovered] = useState(true);
   const navAnimation = useAnimation();
   const { scrollY } = useScroll();
   const [hoveredCategory,setHoveredCategory]=useState("");//어떤 게 호버가 되는지를 기억해야 함.
   const isLandingPage=window.location.pathname==="/";
+  const { setSelectedCategory, setSelectedSubCategory,  setSelectedSidebar } = useLocationStore();
+
   //console.log(isLandingPage)
 
   useEffect(() => {
@@ -41,7 +81,6 @@ const Header = () => {
         navAnimation.start({ backgroundColor: "rgba(0,0,0,1)" });
       }
     }, [isLandingPage, navAnimation]);
-
 
   const handleMouseEnterCategory=(category:string)=>{
     setHoveredCategory(category);
@@ -84,7 +123,27 @@ const Header = () => {
     }
   };
 
+  const handleCategoryClick = (category: string) => {
+    console.log("Category Clicked:", 111111111111111111);
+    const firstSubCategory = subCategories[categories.indexOf(category)][0];
+    console.log("Category Clicked:", category);
+    console.log("First SubCategory:", firstSubCategory);
+    setSelectedCategory(category);
+    setSelectedSubCategory(firstSubCategory);
+    setSelectedSidebar(sidebars[categories.indexOf(category)][0][0] || null);
+  };
   
+  const handleSubCategoryClick = (subCategory: string) => {
+    console.log("Category Clicked:", 222222222222222);
+    console.log("SubCategory Clicked:", subCategory);
+    const categoryIndex = subCategories.findIndex(item => item.includes(subCategory));
+    const category = categories[categoryIndex];
+    console.log("Category Index:", categoryIndex);
+    console.log("Selected Category:", category);
+    setSelectedCategory(category);
+    setSelectedSubCategory(subCategory);
+    setSelectedSidebar(sidebars[categoryIndex][0][0] || null);
+  };
   return (
     <>
     <header>            
@@ -107,6 +166,7 @@ const Header = () => {
           onMouseEnter={()=>handleMouseEnterCategory(category)}
           onMouseLeave={handleMouseLeaveCategory}
           isHovered={hoveredCategory!=="" && hoveredCategory === category}
+          onClick={()=>handleCategoryClick(category)}
           >
             {category}
           </Category>
@@ -116,6 +176,7 @@ const Header = () => {
       {/* <Border/> */}
 
       <AnimatePresence>
+        
       {isHovered && (
         <BottomNav 
         initial={{opacity:0,height:0}} 
@@ -131,7 +192,13 @@ const Header = () => {
             >
               {subCategories[index].length > 0 ? (
                 subCategories[index].map((subCategory) => (
-                  <SubCategory key={subCategory} href={`/${subCategory}`}>
+                  /*
+                  <SubCategory key={subCategory} href={`/${subCategory}`}
+                  onClick={()=>handleSubCategoryClick(subCategory)}>
+                    {subCategory}
+                  </SubCategory>
+                  */
+                  <SubCategory onClick={() => handleSubCategoryClick(subCategory)}>
                     {subCategory}
                   </SubCategory>
                 ))
@@ -144,6 +211,15 @@ const Header = () => {
       )}    
       </AnimatePresence>
       
+      {/* {!(isLandingPage || category === "Shop") && (
+          <PageLocation
+            category={category}
+            subCategory={subCategory}
+            sidebar={sidebar}
+            sidebars={sidebars}
+          />
+        )} */}
+
     </header>
 
     </>
