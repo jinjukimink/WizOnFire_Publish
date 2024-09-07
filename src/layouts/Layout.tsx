@@ -1,13 +1,31 @@
+import { Outlet, useNavigate } from "react-router-dom";
+
 const Layout = () => {
+  const navigate = useNavigate();
+
+  const goToKtWiz = () => {
+    navigate('/ktwiz/about');
+  };
+  const goToWizPark = () => {
+    navigate('/wizpark/intro')
+  }
+  const goToGame = () => {
+    navigate('/game/regular/schedule')
+  }
   return (
     <>
       {/* Header */}
-      <h1>Layout Components</h1>
-      <h2>Header</h2>
+      <header>
+        <button onClick={goToKtWiz}>KT위즈는?</button>
+        <button onClick={goToWizPark}>수원 kt wiz park</button>
+        <button onClick={goToGame}>정규리그</button>
+
+      </header>
+      <main>
+        <Outlet/>
+      </main>
       {/* Outlet 부분 */}
-      <h2>Outlet</h2>
       {/* Footer */}
-      <h2>Footer</h2>
     </>
   );
 };
