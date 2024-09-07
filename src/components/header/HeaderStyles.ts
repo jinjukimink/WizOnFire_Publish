@@ -1,4 +1,3 @@
-
 import styled from 'styled-components';
 import {motion}from 'framer-motion';
 
@@ -30,10 +29,9 @@ export const UpNav = styled(motion.nav)<{isHovered:boolean}>`
     /* a:nth-last-child(4){
         margin-left:550px;
     }   */
-    /* a:nth-last-child(2) {
+    a:nth-last-child(2) {
         color: red;
-        margin-right:350px;
-    } */ 
+    } 
     /* a:last-child{
         margin-right: 100px;
     } */
