@@ -2,9 +2,7 @@ import { useState,useEffect } from "react";
 import { useScroll, useMotionValueEvent, useAnimation,AnimatePresence } from "framer-motion";
 import ktwiz from "../../assets/images/landing/ktwiz.png"
 import { UpNav, Logo, Category, BottomNav, SubCategoryColumn, SubCategory } from "./HeaderStyles"; // 스타일 불러오기
-import PageLocation from "../common/pageLocation/PageLocation";
 import { useLocationStore } from "../../stores/useLocation.store";
-import { useLocation } from "../../hooks/useLocation";
 
 const Header = () => {
 
@@ -198,7 +196,7 @@ const Header = () => {
                     {subCategory}
                   </SubCategory>
                   */
-                  <SubCategory onClick={() => handleSubCategoryClick(subCategory)}>
+                  <SubCategory key={subCategory} onClick={() => handleSubCategoryClick(subCategory)}>
                     {subCategory}
                   </SubCategory>
                 ))
@@ -210,18 +208,7 @@ const Header = () => {
         </BottomNav>
       )}    
       </AnimatePresence>
-      
-      {/* {!(isLandingPage || category === "Shop") && (
-          <PageLocation
-            category={category}
-            subCategory={subCategory}
-            sidebar={sidebar}
-            sidebars={sidebars}
-          />
-        )} */}
-
     </header>
-
     </>
   );
 };
