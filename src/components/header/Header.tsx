@@ -120,13 +120,16 @@ const Header = () => {
     }
   };
 
+  const handleCategoryClick = (category: string) => {
+    const firstSubCategory = subCategories[categories.indexOf(category)][0];
+    setSelectedCategory(category);
+    setSelectedSubCategory(firstSubCategory);
+    setSelectedSidebar(sidebars[categories.indexOf(category)][0][0] || null);
+  };
+
   const handleSubCategoryClick = (subCategory: string) => {
-    console.log("Category Clicked:", 222222222222222);
-    console.log("SubCategory Clicked:", subCategory);
     const categoryIndex = subCategories.findIndex(item => item.includes(subCategory));
     const category = categories[categoryIndex];
-    console.log("Category Index:", categoryIndex);
-    console.log("Selected Category:", category);
     setSelectedCategory(category);
     setSelectedSubCategory(subCategory);
     setSelectedSidebar(sidebars[categoryIndex][0][0] || null);
