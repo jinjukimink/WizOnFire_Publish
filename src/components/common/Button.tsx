@@ -28,6 +28,7 @@ const Btn = styled.button<TButton>`
     justify-content: center;
     align-items: center;
     text-align: center;
+    &:hover { cursor: pointer; }
 `
 
 

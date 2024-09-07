@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import SelectBar from "../common/SelectBar";
 
 const FooterWapper=styled.footer`
     width: 100%;
@@ -9,6 +10,7 @@ const Footer = () => {
   return (
     <>
       <FooterWapper/>
+
     </>
   );
 }
