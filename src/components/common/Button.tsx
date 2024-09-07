@@ -12,6 +12,7 @@ export type TButton ={
     marginLeft?:string;
     marginRight?:string;
     border?:string;
+    style?:React.CSSProperties
 };
 
 const Btn = styled.button<TButton>`
