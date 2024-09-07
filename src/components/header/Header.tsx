@@ -2,16 +2,18 @@ import { useState,useEffect } from "react";
 import { useScroll, useMotionValueEvent, useAnimation,AnimatePresence } from "framer-motion";
 import ktwiz from "../../assets/images/landing/ktwiz.png"
 import { UpNav, Logo, Category, BottomNav, SubCategoryColumn, SubCategory } from "./HeaderStyles"; // 스타일 불러오기
+import Button from "../common/Button";
+import ktwizBtn from "../../assets/images/landing/ktwizBtn.png"
+import ktwizBtnWhite from "../../assets/images/landing/ktwizBtnWhite.png"
 
 const Header = () => {
-
   const categories = [
     "kt wiz",
     "wiz park",
-    "game",
-    "player",
-    "media",
-    "shop",
+    "Game",
+    "Player",
+    "Media",
+    "Shop",
     "스폰서",
     "티켓구매",
   ];
@@ -27,11 +29,11 @@ const Header = () => {
     ["티켓예매", "단체관람", "입장 및 좌석 정보"],
   ];
   //const [isVisible, setIsVisible] = useState(false); // 컴포넌트가 보이는 상태를 관리
-  const [isHovered, setIsHovered] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
   const navAnimation = useAnimation();
   const { scrollY } = useScroll();
   const [hoveredCategory,setHoveredCategory]=useState("");//어떤 게 호버가 되는지를 기억해야 함.
-  const isLandingPage=window.location.pathname==="/";
+  const isLandingPage = window.location.pathname==="/";
   //console.log(isLandingPage)
 
   useEffect(() => {
@@ -74,7 +76,6 @@ const Header = () => {
   };
 
   const handleMouseLeave = () => {//호버가 끝나면 무조건 네비바는 검은색임
-
     setIsHovered(false);
     if(isLandingPage && scrollY.get()<80){
       navAnimation.start({ backgroundColor: "rgba(0,0,0,0)" });
@@ -84,10 +85,9 @@ const Header = () => {
     }
   };
 
-  
   return (
     <>
-    <header>            
+    <header>         
       <UpNav
         animate={navAnimation}
         initial={{ backgroundColor: isLandingPage ? "rgba(0,0,0,0)" : "rgba(0,0,0,1)" }}
@@ -111,10 +111,23 @@ const Header = () => {
             {category}
           </Category>
         ))}
-
+          <Button
+                fontColor="blue" fontSize="20px" 
+                width="102px" height="45px" 
+                borderRadius="10px" 
+                backgroundColor={isHovered? "#ECEEF2"  :"rgba(0,0,0,0)"}
+                onClick={()=>{}}
+                marginRight="-41px"
+                border={isHovered?"none":"0.5px solid #ECEEF2"}
+                style={{ position: "relative", left: "94px" }} /* 왼쪽으로 이동 */
+                >
+                 <img src={isHovered?ktwizBtn:ktwizBtnWhite} alt="button" style={{width:"65px", height:"auto"}}/>
+                
+              </Button>  
       </UpNav>
       {/* <Border/> */}
 
+{/* exit이면 바텀네브가 사라지는 걸 transition으로: AnimatePresence로 감싸야 함 */}
       <AnimatePresence>
       {isHovered && (
         <BottomNav 
@@ -136,14 +149,13 @@ const Header = () => {
                   </SubCategory>
                 ))
               ) : (
-                <div style={{ width: "50px" }} /> 
+                <div style={{ width: "53px" }} /> 
               )}
             </SubCategoryColumn>
           ))}
         </BottomNav>
       )}    
       </AnimatePresence>
-      
     </header>
 
     </>
