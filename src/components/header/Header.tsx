@@ -70,7 +70,7 @@ const Header = () => {
   const { scrollY } = useScroll();
   const [hoveredCategory,setHoveredCategory]=useState("");//어떤 게 호버가 되는지를 기억해야 함.
   const isLandingPage=window.location.pathname==="/";
-  //console.log(isLandingPage)
+  const { setSelectedCategory, setSelectedSubCategory,  setSelectedSidebar } = useLocationStore();
 
   useEffect(() => {
       if (isLandingPage) {
@@ -118,6 +118,18 @@ const Header = () => {
     else{
       navAnimation.start({ backgroundColor: "rgba(0,0,0,1)" })
     }
+  };
+
+  const handleSubCategoryClick = (subCategory: string) => {
+    console.log("Category Clicked:", 222222222222222);
+    console.log("SubCategory Clicked:", subCategory);
+    const categoryIndex = subCategories.findIndex(item => item.includes(subCategory));
+    const category = categories[categoryIndex];
+    console.log("Category Index:", categoryIndex);
+    console.log("Selected Category:", category);
+    setSelectedCategory(category);
+    setSelectedSubCategory(subCategory);
+    setSelectedSidebar(sidebars[categoryIndex][0][0] || null);
   };
 
   
