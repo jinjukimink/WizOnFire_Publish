@@ -61,7 +61,7 @@ export const ContentTitle = styled.h2`
 `;
 
 export const ContentText = styled.p`
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1;
   color: #333;
 `;
