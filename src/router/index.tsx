@@ -4,6 +4,7 @@ import Home from "../pages/landing/Home";
 import NotFound from "../components/NotFound";
 import BoxScore from "../pages/regular/BoxScore";
 import Ranking from "../pages/regular/Ranking";
+import News from "../pages/news/News";
 
 const router = createBrowserRouter([
   {
@@ -15,12 +16,21 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/game/regular/boxscore",
-        element: <BoxScore />,
+        path:"game/regular",
+        children: [
+          {
+            path:"boxscore",
+            element: <BoxScore />,
+          },
+          {
+            path:"ranking/team",
+            element: <Ranking />,
+          },
+        ],
       },
       {
-        path: "/game/regular/ranking/team",
-        element: <Ranking />,
+        path:"media/wiznews",
+        element: <News />
       },
     ],
   },

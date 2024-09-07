@@ -11,28 +11,30 @@ const PageLocation = () => {
   const subCategory = useLocationStore((state) => state.selectedSubCategory)
   const sidebar = useLocationStore((state) => state.selectedSidebar)
   */
-
+  const isLandingPage = window.location.pathname === "/";
   const { selectedCategory, selectedSubCategory, selectedSidebar} = useLocationStore();
-
-  return (
-    <PageLocationContainer>
-      <PageLocationBox>
-        <PageLocationInfo>
-          <span><AiFillHome /></span>
-          <span>Home</span>
-          <span><MdArrowForwardIos /></span>
-          <span>{selectedCategory}</span>
-          <span><MdArrowForwardIos /></span>
-          <span>{selectedSubCategory}</span>
-          {selectedSidebar !== null ? (
-              <>
-                <span><MdArrowForwardIos /></span>
-                <span>{selectedSidebar}</span>
-              </>
-            ) : null }
-        </PageLocationInfo>
-      </PageLocationBox>
-    </PageLocationContainer>
+  const isShopOrSponsor = ["shop","스폰서"].includes(selectedCategory);
+  return (   
+      !(isLandingPage || isShopOrSponsor) && (
+      <PageLocationContainer>
+        <PageLocationBox>
+          <PageLocationInfo>
+            <span><AiFillHome /></span>
+            <span>Home</span>
+            <span><MdArrowForwardIos /></span>
+            <span>{selectedCategory}</span>
+            <span><MdArrowForwardIos /></span>
+            <span>{selectedSubCategory}</span>
+            {selectedSidebar !== null ? (
+                <>
+                  <span><MdArrowForwardIos /></span>
+                  <span>{selectedSidebar}</span>
+                </>
+              ) : null }
+          </PageLocationInfo>
+        </PageLocationBox>
+      </PageLocationContainer>
+      )
   );
 }
 export default PageLocation;

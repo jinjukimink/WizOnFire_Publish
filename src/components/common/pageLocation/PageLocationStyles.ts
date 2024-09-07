@@ -11,7 +11,6 @@ export const PageLocationBox = styled.div`
     width: 100%;
     margin-top: 75px;
     height: 33px;
-  /* border: 1px solid #333; */
 ` 
 
 export const PageLocationInfo = styled.div`

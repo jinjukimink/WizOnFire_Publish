@@ -96,6 +96,11 @@ export const InfoNetwork = styled.div`
     padding: 0;
     display: flex;
     justify-content: space-evenly;
+
+    @supports not (justify-content: space-evenly) {
+      justify-content: space-around;
+    }
+
       li{
       list-style-type: none;
       width: 20px;
