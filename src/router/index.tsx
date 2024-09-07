@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layouts/Layout";
 // import Home from "../pages/Home";
 import NotFound from "../components/NotFound";
-import Intro from "../components/common/Wizpark";
 import Ktwiz from "../components/common/Ktwiz";
 import Wizpark from "../components/common/Wizpark";
 import Game from "../components/common/Game";
@@ -18,7 +17,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'ktwiz/history',  // 구단 연혁 경로 추가
-        element: <Ktwiz />,     // 같은 About 컴포넌트를 사용
+        element: <Ktwiz />,     // 같은 Ktwiz 컴포넌트를 사용
       },
       {
         path: 'wizpark/intro', // 이하 동문
