@@ -2,6 +2,7 @@ import { useState,useEffect } from "react";
 import { useScroll, useMotionValueEvent, useAnimation,AnimatePresence } from "framer-motion";
 import ktwiz from "../../assets/images/landing/ktwiz.png"
 import { UpNav, Logo, Category, BottomNav, SubCategoryColumn, SubCategory } from "./HeaderStyles"; // 스타일 불러오기
+import { useLocationStore } from "../../stores/useLocation.store";
 import Button from "../common/Button";
 import ktwizBtn from "../../assets/images/landing/ktwizBtn.png"
 import ktwizBtnWhite from "../../assets/images/landing/ktwizBtnWhite.png"
@@ -28,12 +29,47 @@ const Header = () => {
     [],
     ["티켓예매", "단체관람", "입장 및 좌석 정보"],
   ];
+
+    const sidebars = [
+      [
+        ["구단 소개","구단 연혁"],
+        ["심볼마크", "워드마크", "엠블럼", "마스코트", "유니폼"],
+      ],
+      [
+        ["구단 소개","구단 연혁"],
+        ["심볼마크","워드마크"],
+      ],
+      [
+        ["경기일정", "박스스코어", "순위기록", "관전포인트"]
+      ],
+      [
+        ["구단 소개","구단 연혁"],
+        ["심볼마크","워드마크"],
+      ],
+      [
+        ["구단 소개","구단 연혁"],
+        ["심볼마크","워드마크"],
+      ],
+      [
+        []
+      ],
+      [
+        ["구단 소개","구단 연혁"],
+        ["심볼마크","워드마크"],
+      ],
+      [
+        ["구단 소개","구단 연혁"],
+        ["심볼마크","워드마크"],
+      ],
+    ];
+  
+
   //const [isVisible, setIsVisible] = useState(false); // 컴포넌트가 보이는 상태를 관리
   const [isHovered, setIsHovered] = useState(false);
   const navAnimation = useAnimation();
   const { scrollY } = useScroll();
   const [hoveredCategory,setHoveredCategory]=useState("");//어떤 게 호버가 되는지를 기억해야 함.
-  const isLandingPage = window.location.pathname==="/";
+  const isLandingPage=window.location.pathname==="/";
   //console.log(isLandingPage)
 
   useEffect(() => {
@@ -43,7 +79,6 @@ const Header = () => {
         navAnimation.start({ backgroundColor: "rgba(0,0,0,1)" });
       }
     }, [isLandingPage, navAnimation]);
-
 
   const handleMouseEnterCategory=(category:string)=>{
     setHoveredCategory(category);
@@ -85,6 +120,7 @@ const Header = () => {
     }
   };
 
+  
   return (
     <>
     <header>         
@@ -107,6 +143,7 @@ const Header = () => {
           onMouseEnter={()=>handleMouseEnterCategory(category)}
           onMouseLeave={handleMouseLeaveCategory}
           isHovered={hoveredCategory!=="" && hoveredCategory === category}
+          onClick={()=>handleCategoryClick(category)}
           >
             {category}
           </Category>
@@ -129,6 +166,7 @@ const Header = () => {
 
 {/* exit이면 바텀네브가 사라지는 걸 transition으로: AnimatePresence로 감싸야 함 */}
       <AnimatePresence>
+        
       {isHovered && (
         <BottomNav 
         initial={{opacity:0,height:0}} 
@@ -144,7 +182,13 @@ const Header = () => {
             >
               {subCategories[index].length > 0 ? (
                 subCategories[index].map((subCategory) => (
-                  <SubCategory key={subCategory} href={`/${subCategory}`}>
+                  /*
+                  <SubCategory key={subCategory} href={`/${subCategory}`}
+                  onClick={()=>handleSubCategoryClick(subCategory)}>
+                    {subCategory}
+                  </SubCategory>
+                  */
+                  <SubCategory key={subCategory} onClick={() => handleSubCategoryClick(subCategory)}>
                     {subCategory}
                   </SubCategory>
                 ))
@@ -157,7 +201,6 @@ const Header = () => {
       )}    
       </AnimatePresence>
     </header>
-
     </>
   );
 };

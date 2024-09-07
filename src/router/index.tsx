@@ -2,7 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layouts/Layout";
 import Home from "../pages/landing/Home";
 import NotFound from "../components/NotFound";
-import Test from "../pages/Test"
+import BoxScore from "../pages/regular/BoxScore";
+import Ranking from "../pages/regular/Ranking";
+import News from "../pages/news/News";
 
 const router = createBrowserRouter([
   {
@@ -14,9 +16,22 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path:"test",
-        element:<Test/>
-      }
+        path:"game/regular",
+        children: [
+          {
+            path:"boxscore",
+            element: <BoxScore />,
+          },
+          {
+            path:"ranking/team",
+            element: <Ranking />,
+          },
+        ],
+      },
+      {
+        path:"media/wiznews",
+        element: <News />
+      },
     ],
   },
   {
