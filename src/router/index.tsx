@@ -3,14 +3,17 @@ import Layout from "../layouts/Layout";
 import Home from "../pages/Home";
 import NotFound from "../components/NotFound";
 import SideBar from "../components/common/Sidebar";
+// import BoxScore from "../pages/regular/BoxScore";
+// import Ranking from "../pages/regular/Ranking";
+// import News from "../pages/news/News";
 
 const router = createBrowserRouter([
   {
-    path: "",
+    path: "/",
     element: <Layout />,
     children: [
       {
-        path: "/",
+        path: "",
         element: <Home />,
       },
       {
@@ -98,6 +101,23 @@ const router = createBrowserRouter([
           },
         ]
       }
+      // {
+      //   path:"game/regular",
+      //   children: [
+      //     {
+      //       path:"boxscore",
+      //       element: <BoxScore />,
+      //     },
+      //     {
+      //       path:"ranking/team",
+      //       element: <Ranking />,
+      //     },
+      //   ],
+      // },
+      // {
+      //   path:"media/wiznews",
+      //   element: <News />
+      // },
     ],
   },
   {
