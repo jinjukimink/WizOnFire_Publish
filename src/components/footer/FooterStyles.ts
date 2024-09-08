@@ -90,6 +90,9 @@ export const InfoNetwork = styled.div`
   margin-top: 80px;
   display: flex;
   justify-content: center;
+  display: flex;//진주추가
+  flex-direction: column;//진주추가
+  gap:100px;//진주추가
   ul{
     width: 220px;
     margin: 0;

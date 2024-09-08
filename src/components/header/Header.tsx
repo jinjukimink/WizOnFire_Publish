@@ -6,6 +6,7 @@ import { useLocationStore } from "../../stores/useLocation.store";
 import Button from "../common/Button";
 import ktwizBtn from "../../assets/images/landing/ktwizBtn.png"
 import ktwizBtnWhite from "../../assets/images/landing/ktwizBtnWhite.png"
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const categories = [
@@ -19,16 +20,28 @@ const Header = () => {
     "티켓구매",
   ];
 
+  const categoriesForNav=[
+    "ktwiz","wizpark","game","player","media","shop","sponsor","ticket"
+  ]
+
   const subCategories: string[][] = [
     ["kt wiz는?", "구단 BI", "회원 정책", "스폰서", "월페이퍼"],
     ["수원 kt wiz park", "주차 예약", "찾아오기", "익산야구장"],
-    ["정규리그", "퓨처스리그"],
+    ["경기일정","박스스코어","순위기록","관전포인트"],
     ["코칭스텝", "투수", "타자", "응원단", "응원가", "응원가 저작권"],
     ["wiz 뉴스", "wiz 스토리", "시구자 정보", "wiz 포토", "Live 영상모음"],
     [],
     [],
     ["티켓예매", "단체관람", "입장 및 좌석 정보"],
   ];
+  const subCategoriesForNav:string[][]=[
+    ["about","bi","policy","sponsor","wallpaper"],
+    [ "intro","parking","location","iksan"],
+    ["schedule","boxscore","ranking","watchPoint"],
+    ["coach","pitcher","catcher","cheer","song","song-copyright"],
+    ["wiznews","wizstory","firstpitch","photos","highlight","live"],
+    [],[],
+    ["reservation","group","seatmap"]]
 
     const sidebars = [
       [
@@ -71,7 +84,7 @@ const Header = () => {
   const [hoveredCategory,setHoveredCategory]=useState("");//어떤 게 호버가 되는지를 기억해야 함.
   const isLandingPage=window.location.pathname==="/";
   const { setSelectedCategory, setSelectedSubCategory,  setSelectedSidebar } = useLocationStore();
-
+  const navigate=useNavigate();
   useEffect(() => {
       if (isLandingPage) {
         navAnimation.start({ backgroundColor: "rgba(0,0,0,0)" });
@@ -94,11 +107,12 @@ const Header = () => {
 
   useMotionValueEvent(scrollY, "change", () => {
     const currentScrollY = scrollY.get();
+    console.log(currentScrollY)
     if(isLandingPage){
-      if(currentScrollY<80){
+      if(currentScrollY<=1000){
         navAnimation.start({ backgroundColor: "rgba(0,0,0,0)" });
       }
-      else if(currentScrollY > 80 && !isHovered) {
+      else if(currentScrollY > 1000 && !isHovered) {
           navAnimation.start({ backgroundColor: "rgba(0,0,0,1)" });
       }
     }
@@ -112,7 +126,7 @@ const Header = () => {
 
   const handleMouseLeave = () => {//호버가 끝나면 무조건 네비바는 검은색임
     setIsHovered(false);
-    if(isLandingPage && scrollY.get()<80){
+    if(isLandingPage && scrollY.get()<=900){
       navAnimation.start({ backgroundColor: "rgba(0,0,0,0)" });
     }
     else{
@@ -127,12 +141,27 @@ const Header = () => {
     setSelectedSidebar(sidebars[categories.indexOf(category)][0][0] || null);
   };
 
-  const handleSubCategoryClick = (subCategory: string) => {
+  const handleSubCategoryClick = (subCategory: string,subIndex:number) => {
     const categoryIndex = subCategories.findIndex(item => item.includes(subCategory));
     const category = categories[categoryIndex];
+    const forNav = categoriesForNav[categoryIndex];
+
+    console.log("forNav: ",forNav)
+    console.log("subIndex: ",subIndex)
+    
     setSelectedCategory(category);
     setSelectedSubCategory(subCategory);
     setSelectedSidebar(sidebars[categoryIndex][0][0] || null);
+    if(forNav==="game"){
+      if(subCategoriesForNav[categoryIndex][subIndex]==="ranking"){
+        navigate(`/${forNav}/regular/${subCategoriesForNav[categoryIndex][subIndex]}/team`);
+      }
+      else{
+        navigate(`/${forNav}/regular/${subCategoriesForNav[categoryIndex][subIndex]}`);
+      }
+      return;
+    }
+    navigate(`/${forNav}/${subCategoriesForNav[categoryIndex][subIndex]}`); // 경로를 제대로 작성
   };
 
   
@@ -148,13 +177,14 @@ const Header = () => {
       >
       <Logo isHovered={isHovered}>
       <img 
+      onClick={()=>navigate("/")}
       src={isHovered? "https://www.ktwiz.co.kr/v2/imgs/img-logo-black.svg" :ktwiz}
        alt="logo"/>
       </Logo>
         {categories.map((category, index) => (
           <Category 
           hoveredCategory={category} 
-          key={index} href={`/${category}`}
+          key={index} href={`/${categoriesForNav[index]}/${subCategoriesForNav[index][0]}`}
           onMouseEnter={()=>handleMouseEnterCategory(category)}
           onMouseLeave={handleMouseLeaveCategory}
           isHovered={hoveredCategory!=="" && hoveredCategory === category}
@@ -196,14 +226,14 @@ const Header = () => {
             // onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
             >
               {subCategories[index].length > 0 ? (
-                subCategories[index].map((subCategory) => (
+                subCategories[index].map((subCategory,subIndex) => (
                   /*
                   <SubCategory key={subCategory} href={`/${subCategory}`}
                   onClick={()=>handleSubCategoryClick(subCategory)}>
                     {subCategory}
                   </SubCategory>
                   */
-                  <SubCategory key={subCategory} onClick={() => handleSubCategoryClick(subCategory)}>
+                  <SubCategory key={subCategory} onClick={() => handleSubCategoryClick(subCategory,subIndex)}>
                     {subCategory}
                   </SubCategory>
                 ))

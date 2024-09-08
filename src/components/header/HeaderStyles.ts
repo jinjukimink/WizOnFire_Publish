@@ -58,11 +58,15 @@ export const Logo = styled.div<{isHovered:boolean}>`
         width: 90px;
         transition: width 0.3s ease-in-out;
     }
+    &:hover{
+        cursor: pointer;
+    }
+
 
     `;
 
 export const Category=styled.a<{isHovered: boolean; hoveredCategory:string}>` 
-    font-size: 20px;
+    font-size: 18px;
     text-decoration: none;
     height: 80px;
     display: flex;
@@ -72,7 +76,8 @@ export const Category=styled.a<{isHovered: boolean; hoveredCategory:string}>`
     ${({isHovered})=>isHovered && ` border-bottom: 3px solid red;`}
     `;
 
-export const BottomNav=styled(motion.div)` padding-top: 30px;
+export const BottomNav=styled(motion.div)` 
+    padding-top: 30px;
     grid-template-columns: repeat(8, 1fr);
     position: fixed;
     top: 80px;
@@ -84,19 +89,23 @@ export const BottomNav=styled(motion.div)` padding-top: 30px;
     display: flex;
     justify-content: center;
     text-align: start;
-    gap: 23px;
+    gap: 16px;
     padding-left: 12x;
     a:hover{
     font-weight: 700;
   }
 `;
 
-export const SubCategoryColumn=styled.div` display: flex;
+export const SubCategoryColumn=styled.div` 
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 29px;
     position:relative;
-    left:-50.7px
+    left:-58.7px;
+    &:hover{
+        cursor: pointer;
+    }
 `;
 
 

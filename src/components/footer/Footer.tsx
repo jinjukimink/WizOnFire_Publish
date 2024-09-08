@@ -59,9 +59,13 @@ const Footer = () => {
         </Info>
         <InfoNetwork>
           {/* selectbox */}
-        {/* <SelectBar
-            searchList={options} width="200px" height="100px"
-      /> */}
+<SelectBar
+  searchList={options}
+  width="600px"
+  height="40px"
+  onClick={() => console.log("Option clicked!")}
+/>
+
           <ul>
             {
               snsIcons.map((icon, index)=>(
