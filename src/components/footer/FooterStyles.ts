@@ -87,15 +87,16 @@ export const InfoDetail = styled.div`
 
 export const InfoNetwork = styled.div`
   width: 300px;
-  margin-top: 80px;
+  margin-top: 40px;
   display: flex;
-  justify-content: center;
+  //justify-content: center;
   ul{
     width: 220px;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-evenly;
+    //justify-content: space-evenly;
+    justify-content: flex-start;
       li{
       list-style-type: none;
       width: 20px;
@@ -105,6 +106,9 @@ export const InfoNetwork = styled.div`
       border-radius: 8px;
       display: flex;
       justify-content: center;
+      &:not(:first-child) {
+        margin-left: 10px; /* 첫 번째 아이콘을 제외한 나머지 아이콘의 왼쪽에 간격 추가 */
+      }
         img{
           width: 18px;
           height: 18px;
