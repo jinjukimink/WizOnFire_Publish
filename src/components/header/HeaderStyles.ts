@@ -87,7 +87,7 @@ export const Category=styled.a<{isHovered: boolean; hoveredCategory:string;}>`
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 46px;
+    margin-top: 30px;
     ${({isHovered})=>isHovered && ` border-bottom: 3px solid red;`}
     `;
 
@@ -120,12 +120,12 @@ export const SubCategoryColumn=styled.div`
     position:relative;
     //left:-58.7px;
     //left:-30px;
-    left:-50px;//첫번째 열 시작 부분 조정
+    left:-51px;//첫번째 열 시작 부분 조정
     &:hover{
         cursor: pointer;
     }
     &:nth-child(5){
-        margin-left: 220px;
+        margin-left: 215px;//4-5열 간격 조정
     }
 `;
 
