@@ -138,6 +138,7 @@ const Header = () => {
     "투수": "/player/pitcher",
     "타자": "/player/catcher",
     "응원단": "/player/cheer",
+    "wiz 뉴스":"/media/wiznews"
 };
 
   const handleSubCategoryClick = (subCategory: string) => {
