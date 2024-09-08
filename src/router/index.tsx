@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layouts/Layout";
 import Home from "../pages/Home";
 import NotFound from "../components/NotFound";
-import SideBar from "../components/common/Sidebar";
 // import BoxScore from "../pages/regular/BoxScore";
 // import Ranking from "../pages/regular/Ranking";
 // import News from "../pages/news/News";
@@ -21,11 +20,11 @@ const router = createBrowserRouter([
         children: [
           {
             path: "about",
-            element: <SideBar />, 
+            element: <Layout />, 
           },
           {
             path: "history",
-            element: <SideBar />, 
+            element: <Layout />, 
           }
         ]
       },
@@ -34,15 +33,15 @@ const router = createBrowserRouter([
         children: [
           {
             path: "intro",
-            element: <SideBar />, 
+            element: <Layout />, 
           },
           {
             path: "guide",
-            element: <SideBar />, 
+            element: <Layout />, 
           },
           {
             path: "location",
-            element: <SideBar />, 
+            element: <Layout />, 
           }
         ]
       },
@@ -51,19 +50,19 @@ const router = createBrowserRouter([
         children: [
           {
             path: "schedule",
-            element: <SideBar />, 
+            element: <Layout />, 
           },
           {
             path: "boxscore",
-            element: <SideBar />, 
+            element: <Layout />, 
           },
           {
             path: "ranking",
-            element: <SideBar />, 
+            element: <Layout />, 
           },
           {
             path: "watchPoint",
-            element: <SideBar />, 
+            element: <Layout />, 
           },
         ]
       },
@@ -72,19 +71,19 @@ const router = createBrowserRouter([
         children: [
           {
             path: "coach",
-            element: <SideBar />,
+            element: <Layout />,
           },
           {
             path: "pitcher",
-            element: <SideBar />,
+            element: <Layout />,
           },
           {
             path: "catcher",
-            element: <SideBar />,
+            element: <Layout />,
           },
           {
             path: "cheer",
-            element: <SideBar />,
+            element: <Layout />,
           },
         ]
       },
@@ -93,11 +92,11 @@ const router = createBrowserRouter([
         children: [
           {
             path: "wiznews",
-            element: <SideBar />,
+            element: <Layout />,
           },
           {
             path: "wizpress",
-            element: <SideBar />,
+            element: <Layout />,
           },
         ]
       }
