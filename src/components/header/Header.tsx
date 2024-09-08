@@ -1,11 +1,11 @@
 import { useState,useEffect } from "react";
 import { useScroll, useMotionValueEvent, useAnimation,AnimatePresence } from "framer-motion";
-import ktwiz from "../../assets/images/landing/ktwiz.png"
+//import ktwiz from "../../assets/images/landing/ktwiz.png"
 import { UpNav, Logo, Category, BottomNav, SubCategoryColumn, SubCategory } from "./HeaderStyles"; // 스타일 불러오기
 import { useLocationStore } from "../../stores/useLocation.store";
 import Button from "../common/Button";
 import ktwizBtn from "../../assets/images/landing/ktwizBtn.png"
-import ktwizBtnWhite from "../../assets/images/landing/ktwizBtnWhite.png"
+//import ktwizBtnWhite from "../../assets/images/landing/ktwizBtnWhite.png"
 import { useNavigate } from "react-router-dom";
 import React from "react";
 import newLogo from "../../assets/images/common/newLogo.png"
@@ -241,7 +241,7 @@ const Header = () => {
                   </SubCategory>
                 ))
               ) : (
-                <div style={{ width: "53px" }} /> 
+                <div style={{ width: "50px" }} /> 
               )}
             </SubCategoryColumn>
           ))}
