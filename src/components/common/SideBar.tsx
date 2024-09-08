@@ -74,15 +74,29 @@ export const ContentText = styled.p`
 `;
 
 // 데이터 정의
+// const categories = [
+//   "kt wiz는?",
+//   "수원 kt wiz park",
+//   "찾아오기",
+//   "정규 리그",
+//   "코칭스텝",
+//   "투수",
+//   "타자",
+//   "응원단",
+// ];
+
 const categories = [
-  "kt wiz는?",
-  "수원 kt wiz park",
-  "찾아오기",
-  "정규 리그",
-  "코칭스텝",
-  "투수",
-  "타자",
-  "응원단",
+  { title: "kt wiz는?" },
+  { title: "수원 kt wiz park" },
+  { title: "찾아오기" },
+  {
+    title: "정규 리그",
+    subtitles: ["박스스코어", "순위기록", "관전포인트"]
+  },
+  {
+    title: "코칭스텝",
+    subtitles:["투수","타자","응원단"]
+  },
 ];
 
 const sidebars = [
@@ -140,7 +154,9 @@ const SideBar = () => {
   // 경로가 바뀔 때마다 실행하여 활성 탭을 설정
   useEffect(() => {
     const currentPath = location.pathname;
-    const activeCategoryIndex = sidebars.findIndex((sidebar) => sidebar.some((item) => currentPath.includes(item.route)));
+    const activeCategoryIndex = sidebars.findIndex((sidebar) =>
+      sidebar.some((item) => currentPath.includes(item.route))
+    );
     if (activeCategoryIndex !== -1) {
       const activeTabData = sidebars[activeCategoryIndex].find((item) => currentPath.includes(item.route));
       setCategoryIndex(activeCategoryIndex);
@@ -160,10 +176,22 @@ const SideBar = () => {
     return <div>404 not found</div>;
   };
 
+  const getTitle = () => {
+    const category = categories[categoryIndex];
+    if (typeof category === 'object') {
+      return activeTab && category.subtitles?.includes(activeTab)
+        ? activeTab
+        : category.title;
+    }
+    return category;
+  };
+
   return (
     <SidebarContainer>
       <SectionContainer>
-        <h1>{categories[categoryIndex]}</h1>
+        {/* 제목 처리 */}
+        <h1>{getTitle()}</h1>
+
         <ButtonContainer>
           {sidebars[categoryIndex]?.map((subCategory, index) => (
             <Button
