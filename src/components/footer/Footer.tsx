@@ -1,6 +1,9 @@
 import { logo_ko, facebook, instagram, naver, youtube } from "../../assets/assets"
-import { FooterContainer, FooterBox, Logo, Info, InfoDetail, InfoNetwork, StyledLi} from "./FooterStyles"
+import { FooterContainer, FooterBox, Logo, Info, InfoDetail, InfoNetwork, StyledLi, } from "./FooterStyles"
 import { RxGithubLogo } from "react-icons/rx";
+import SelectBar from "../common/selectbar/SelectBar";
+import SearchBar from "../common/searchbar/SearchBar";
+import { FaAngleDown } from "react-icons/fa6";
 
 const Footer = () => {
 
@@ -11,6 +14,19 @@ const Footer = () => {
     { src: naver, href: "https://tv.naver.com/ktwiz", alt: "Naver" }
   ];
 
+  const options = [
+    { label: 'KT estate', url: "https://www.ktestate.com/" },
+    { label: 'KT telecom', url: "https://www.kttelecop.co.kr/" },
+    { label: 'KT sat', url: "https://www.ktestate.com/" },
+    { label: 'KT engineering', url: "https://www.ktestate.com/" },
+    { label: 'KT is', url: "https://www.ktestate.com/" },
+    { label: 'KT cs', url: "https://www.ktestate.com/" },
+    { label: 'KT m&s', url: "https://www.ktestate.com/" },
+    { label: 'KT linkus', url: "https://www.ktestate.com/" },
+    { label: 'KT ds', url: "https://www.ktestate.com/" },
+    { label: 'KT NexR', url: "https://www.ktestate.com/" },
+  ];
+  
   return (
     <FooterContainer>
       <FooterBox>
@@ -43,7 +59,26 @@ const Footer = () => {
           </InfoDetail>
           <p>Copyright 2024 kt sports. All rights reserved.</p>
         </Info>
-        <InfoNetwork>
+          <SelectBar 
+          items={options} 
+          placeholder="KT 그룹사 및 관련사이트" 
+          width="252px"
+          height="40px"
+          containerBorder="1px solid rgba(0, 0, 0, .3)"
+          containerBorderRadius="7px"
+          containerPadding="13px 16px"
+          labelPadding="0"
+          labelTextSize="13px"
+          textAlign="left"
+          itemListBorder="0"
+          itemListBorderRadius="16px"
+          itemListPadding="7px 15px"
+          maxHeight="120px"
+          boxShadow="0 4px 6px rgba(0, 0, 0, .16)"
+          itemTextSize="12px"
+          itemPadding="8px 0"
+          buttonIcon={FaAngleDown}/>
+          <InfoNetwork>
           {/* selectbox */}
           <ul>
             {
@@ -55,6 +90,8 @@ const Footer = () => {
             }
           </ul>
         </InfoNetwork>
+        <SearchBar placeholder="선수를 입력하세요" containerWidth="220px" height="35px" buttonWidth="50px"/>
+        
       </FooterBox>
     </FooterContainer>
   );
