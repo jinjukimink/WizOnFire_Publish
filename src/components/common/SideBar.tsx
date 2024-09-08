@@ -91,7 +91,7 @@ const categories = [
   { title: "찾아오기" },
   {
     title: "정규 리그",
-    subtitles: ["박스스코어", "순위기록", "관전포인트"]
+    // subtitles: ["박스스코어", "순위기록", "관전포인트"]
   },
   {
     title: "코칭스텝",
@@ -112,7 +112,7 @@ const sidebars = [
         { title: "찾아오기", route: "/wizpark/location" },
   ],
   [
-      { title: "정규리그", route: "/game/regular/schedule" },
+      { title: "경기 일정", route: "/game/regular/schedule" },
       { title: "박스스코어", route: "/game/regular/boxscore" },
       { title: "순위기록", route: "/game/regular/ranking" },
       { title: "관전포인트", route: "/game/regular/watchPoint" },
