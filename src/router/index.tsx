@@ -2,17 +2,15 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layouts/Layout";
 import Home from "../pages/Home";
 import NotFound from "../components/NotFound";
-// import BoxScore from "../pages/regular/BoxScore";
-// import Ranking from "../pages/regular/Ranking";
-// import News from "../pages/news/News";
 import SideBar from "../components/common/Sidebar";
+
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "",
     element: <Layout />,
     children: [
       {
-        path: "",
+        path: "/",
         element: <Home />,
       },
       {
@@ -20,70 +18,70 @@ const router = createBrowserRouter([
         children: [
           {
             path: "about",
-            element:<SideBar/>,
+            element: <SideBar />, 
           },
           {
             path: "history",
-            element:<SideBar/>,
+            element: <SideBar />, 
           }
         ]
       },
-            {
+      {
         path: "wizpark",
         children: [
           {
             path: "intro",
-            element:<SideBar/>,
+            element: <SideBar />, 
           },
           {
             path: "guide",
-            element:<SideBar/>,
+            element: <SideBar />, 
           },
           {
             path: "location",
-            element:<SideBar/>,
+            element: <SideBar />, 
           }
         ]
       },
-                  {
+      {
         path: "game/regular",
         children: [
           {
             path: "schedule",
-            element:<SideBar/>,
+            element: <SideBar />, 
           },
           {
             path: "boxscore",
-            element:<SideBar/>,
+            element: <SideBar />, 
           },
           {
             path: "ranking",
-            element:<SideBar/>,
+            element: <SideBar />, 
           },
           {
-             path: "watchPoint",
-            element:<SideBar/>,
+            path: "watchPoint",
+            element: <SideBar />, 
           },
         ]
       },
-                                    {
+      {
         path: "player",
         children: [
           {
             path: "coach",
-            element:<SideBar/>,
+            element: <SideBar />,
           },
           {
             path: "pitcher",
-            element:<SideBar/>,
+            element: <SideBar />,
           },
           {
             path: "catcher",
-            element:<SideBar/>,
+            element: <SideBar />,
           },
           {
-             path: "cheer",
-            element:<SideBar/>,
+            path: "cheer",
+            element: <SideBar />,
           },
         ]
       },
@@ -92,7 +90,7 @@ const router = createBrowserRouter([
         children: [
           {
             path: "wiznews",
-            element:<SideBar/>,
+            element: <SideBar />,
           },
           {
             path: "wizpress",
@@ -100,23 +98,6 @@ const router = createBrowserRouter([
           },
         ]
       }
-      // {
-      //   path:"game/regular",
-      //   children: [
-      //     {
-      //       path:"boxscore",
-      //       element: <BoxScore />,
-      //     },
-      //     {
-      //       path:"ranking/team",
-      //       element: <Ranking />,
-      //     },
-      //   ],
-      // },
-      // {
-      //   path:"media/wiznews",
-      //   element: <News />
-      // },
     ],
   },
   {
@@ -124,4 +105,5 @@ const router = createBrowserRouter([
     element: <NotFound />,
   },
 ]);
+
 export default router;

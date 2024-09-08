@@ -3,7 +3,8 @@ import { Outlet } from "react-router-dom";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import subBackground from "../assets/images/common/subBackground.png"
-// import SideBar from "../components/common/SideBar";
+import SideBar from "../components/common/Sidebar";
+
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -11,7 +12,7 @@ const PageContainer = styled.div`
 `;
 
 const MainContent = styled.main`
-  margin-top: -120px;
+  margin-top: -100px;
   flex-grow: 1;  // 메인 컨텐츠 영역이 가능한 많은 공간을 차지하도록 설정
   overflow-y: auto;
   max-height: 480vh;
@@ -35,12 +36,12 @@ const Layout = () => {
     <PageContainer>
       <Header />
       <MainContent>
-        {isLandingPage?null:      <SubImageWrapper>
+        {isLandingPage ? null : <SubImageWrapper>
+          {/* <SideBar/> */}
           {/* <SubImage src={subBackground}/> */}
         </SubImageWrapper>}
 
         <Outlet />
-        {/* <SideBar /> */}
         {/* 이곳에 컴포넌트를 넣기 */}
       </MainContent>
       <Footer />
