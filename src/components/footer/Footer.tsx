@@ -1,3 +1,4 @@
+
 import { logo_ko, facebook, instagram, naver, youtube } from "../../assets/assets"
 import { FooterContainer, FooterBox, Logo, Info, InfoDetail, InfoNetwork, StyledLi } from "./FooterStyles"
 import { RxGithubLogo } from "react-icons/rx";

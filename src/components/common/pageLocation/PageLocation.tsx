@@ -14,6 +14,7 @@ const PageLocation = () => {
   const isLandingPage = window.location.pathname === "/";
   const { selectedCategory, selectedSubCategory, selectedSidebar} = useLocationStore();
   const isShopOrSponsor = ["shop","스폰서"].includes(selectedCategory);
+  console.log("page location")
   return (   
       !(isLandingPage || isShopOrSponsor) && (
       <PageLocationContainer>
