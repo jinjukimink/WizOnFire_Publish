@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import subBackground from "../assets/images/common/subBackground.png"
+import SideBar from "../components/common/Sidebar";
 
 const PageContainer = styled.div`
   display: flex;
@@ -39,7 +40,7 @@ const Layout = () => {
           {/* <SubImage src={subBackground}/> */}
         </SubImageWrapper>}
 
-        <Outlet />  {/* 이곳에 컴포넌트를 넣기 */}
+        <Outlet />  <SideBar/>{/* 이곳에 컴포넌트를 넣기 */}
       </MainContent>
       <Footer />
     </PageContainer>

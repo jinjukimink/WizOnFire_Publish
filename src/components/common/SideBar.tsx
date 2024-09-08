@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { subBackground } from '../../assets/assets';
-// styled-components
 const SidebarContainer = styled.div`
   width: 100%;
   height: 255px;
