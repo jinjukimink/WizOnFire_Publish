@@ -4,5 +4,6 @@ import instagram from "./images/footer/instagram.png"
 import naver from "./images/footer/naver.png"
 import youtube from "./images/footer/youtube.png"
 import subBackground from "./images/common/subBackground.png"
+import subBg from "./images/common/subBg.png"
 
-export {logo_ko,facebook,instagram,naver,youtube,subBackground};
+export {logo_ko,facebook,instagram,naver,youtube,subBackground,subBg};

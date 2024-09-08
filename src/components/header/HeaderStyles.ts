@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {motion}from 'framer-motion';
+import colors from '../../assets/Colors';
 
 
 export const UpNav = styled(motion.nav)<{isHovered:boolean}>` 
@@ -14,7 +15,7 @@ export const UpNav = styled(motion.nav)<{isHovered:boolean}>`
     gap: 43px;
     transition: color 0.3s ease-in-out;
     a{
-        color: ${({ isHovered }) => (isHovered ? "black" : "white")};
+        color: ${({ isHovered }) => (isHovered ? `${colors.black}` :`${colors.white}`)};
         transition: color 0.3s ease-in-out;
         left:20px;//로고 정렬할 때 중요
         //margin-right: 10px;
@@ -44,16 +45,15 @@ export const UpNav = styled(motion.nav)<{isHovered:boolean}>`
         transition: width 0.3s ease;
         clip-path: polygon(
             0 0, 
-            46% 0, 
-            46% 100%, 
+            45% 0, 
+            45% 100%, 
 
-            53.5% 100%, 
-            53.5% 0, 
+            55% 100%, 
+            55% 0, 
 
             100% 0, 
             100% 100%,
              0 100%);
-  
     }
 
 `;
@@ -116,17 +116,24 @@ export const SubCategoryColumn=styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 29px;
+    gap: 30px;
     position:relative;
-    //left:-58.7px;
-    //left:-30px;
-    left:-51px;//첫번째 열 시작 부분 조정
     &:hover{
         cursor: pointer;
     }
-    &:nth-child(5){
-        margin-left: 215px;//4-5열 간격 조정
+    left: -55px;
+    &:nth-child(1){
+        margin-right: 5px;
     }
+    &:nth-child(2){
+        margin-right: 5px;
+    } 
+    &:nth-child(5){
+        margin-left:215px;
+    } 
+    &:nth-child(7){
+        margin-left:10px;
+    } 
 `;
 
 

@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import PageLocation from "../components/common/pageLocation/PageLocation";
-import Sidebar from "../components/common/Sidebar";
+import SideBar from "../components/common/Sidebar";
 
 const PageContainer = styled.div`
   display: flex;
@@ -22,10 +22,10 @@ const Layout = () => {
   return (
     <PageContainer>
       <Header />
-      {!isLandingPage && <Sidebar/>}
+      <SideBar />
       <MainContent>
       <PageLocation />
-        <Outlet />  {/* 이곳에 컴포넌트를 넣기 */}
+        <Outlet /> 
       </MainContent>
       <Footer />
     </PageContainer>

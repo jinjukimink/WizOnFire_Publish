@@ -11,12 +11,16 @@ export type TButton ={
     fontColor?:string;
     fontSize?:string;
     backgroundColor?:string;
+    hoverColor?:string;
     margin?:string;
     border?:string;
     padding?:string;
+    position?:string;
     type?:string;
+    right?:string;
+    top?:string;
     style?:React.CSSProperties
-    isActive?: boolean
+    isActive?:boolean;
 };
 
 export const Btn = styled.button<TButton>`
@@ -32,11 +36,13 @@ export const Btn = styled.button<TButton>`
     justify-content: center;
     align-items: center;
     text-align: center;
+    right: ${({right})=>right};
+    top: ${({top})=>top};
     padding:${({padding})=>padding};
     box-sizing: border-box;
     cursor: pointer; 
     &:hover {
-        background-color: ${colors.redPrimary}; 
+        background-color: ${({hoverColor}) => hoverColor || colors.redPrimary };
         border: none;
         color: ${colors.white};
     }

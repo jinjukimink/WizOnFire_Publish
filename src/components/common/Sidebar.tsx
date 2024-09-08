@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import { subBackground } from '../../assets/assets';
+import { subBackground,subBg } from '../../assets/assets';
 import colors from '../../assets/Colors';
+import { useLocationStore } from '../../stores/useLocation.store';
 
 const SidebarContainer = styled.div`
   width: 100%;
   height: 255px;
+  margin-top: 110px;
   background-color: ${colors.darkGray}; /* 기존 #333 대신 colors 사용 */
 `;
 
@@ -17,7 +19,8 @@ const SectionContainer = styled.div`
   justify-content: center;
   text-align: center;
   height: 300px;
-  background: url(${subBackground}) no-repeat center center;
+  /* background: url(${subBackground}) no-repeat center center; */
+  background: url(${subBg}) no-repeat;
   background-size: cover;
   color: ${colors.white}; /* 기존 'white' 대신 colors 사용 */
 `;
@@ -39,7 +42,7 @@ interface ButtonProps {
   active: boolean;
 }
 
-export const Button = styled.button<ButtonProps>`
+export const SidebarButton = styled.button<ButtonProps>`
   background: none;
   border: none;
   font-size: 20px;
@@ -112,6 +115,10 @@ const sidebars = [
 
 // SideBar 컴포넌트
 const SideBar = () => {
+  const isLandingPage = window.location.pathname === "/";
+  const { selectedCategory } = useLocationStore();
+  const isShopOrSponsor = ["shop","스폰서"].includes(selectedCategory);
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -154,13 +161,14 @@ const SideBar = () => {
   };
 
   return (
+    !(isLandingPage || isShopOrSponsor) && (
     <SidebarContainer>
       <SectionContainer>
         <h1>{getTitle()}</h1>
 
         <ButtonContainer>
           {sidebars[categoryIndex]?.map((subCategory, index) => (
-            <Button
+            <SidebarButton
               key={index}
               active={activeTab === subCategory.title}
               onClick={() => {
@@ -169,13 +177,14 @@ const SideBar = () => {
               }}
             >
               {subCategory.title}
-            </Button>
+            </SidebarButton>
           ))}
         </ButtonContainer>
       </SectionContainer>
 
       <ContentContainer>{renderContent()}</ContentContainer>
     </SidebarContainer>
+    )
   );
 };
 

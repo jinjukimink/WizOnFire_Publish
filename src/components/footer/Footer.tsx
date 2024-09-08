@@ -34,7 +34,7 @@ const Footer = () => {
         <Info>
           <ul>
             <StyledLi>
-              <a href="https://github.com/WizOnFire/KT_Web">
+              <a href="https://github.com/WizOnFire/KT_Web" target="_blank">
                 <RxGithubLogo />
               </a>
             </StyledLi>

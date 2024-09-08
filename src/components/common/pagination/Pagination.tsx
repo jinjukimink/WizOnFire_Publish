@@ -1,18 +1,9 @@
 import { useEffect } from "react";
-import styled from "styled-components";
 import axios from "axios";
 import { usePaginationStore } from "../../../stores/usePagination.store";
 import Button from "../button/Button";
-
-const PaginationContainer = styled.div`
-    max-width: 100%;
-    width: 1100px;
-    height: 25px;
-    margin-top: 55px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`;
+import { PaginationContainer,PaginationIcon } from './PaginationStyles'
+import { GrNext, GrPrevious } from "react-icons/gr";
 
 const Pagination = () => {
 
@@ -58,35 +49,17 @@ const Pagination = () => {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
 
-  /*
-  width:string;
-    height:string;
-    borderRadius?:string;
-    children?: React.ReactNode;//자식 타입 설정
-    onClick?:()=>void;
-    fontColor?:string;
-    fontSize?:string;
-    backgroundColor?:string;
-    marginLeft?:string;
-    marginRight?:string;
-    border?:string;
-    padding?:string;
-    type?:string;
-*/
-
-// background-color: ${({ isActive, backgroundColor})=> isActive ? colors.redPrimary : backgroundColor};
-//     font-size: ${({fontSize})=>fontSize};
-//     color:${({ isActive, fontColor})=> isActive ? colors.white : fontColor};
-
   return (
     <PaginationContainer>
-     
       {pageActiveIdx > 0 && (
-        <button onClick={() => setPageActiveIdx(pageActiveIdx - 1)}>이전</button>
+        <PaginationIcon>
+          <GrPrevious onClick={() => setPageActiveIdx(pageActiveIdx - 1)} />
+        </PaginationIcon>
       )}
       {pageNationNumbers.map(number => (
-          <Button width="40px"
-          height="40px"
+          <Button 
+          width="30px"
+          height="30px"
           fontColor="black"
           borderRadius="50%"
           border="1px solid #333"
@@ -105,7 +78,9 @@ const Pagination = () => {
         // </button>
       ))}
       {pageActiveIdx < totalPageCount - 1 && (
-        <button onClick={() => setPageActiveIdx(pageActiveIdx + 1)}>다음</button>
+        <PaginationIcon>
+          <GrNext onClick={() => setPageActiveIdx(pageActiveIdx + 1)} />
+        </PaginationIcon>
       )}
     </PaginationContainer>
   );

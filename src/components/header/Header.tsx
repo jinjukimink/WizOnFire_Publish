@@ -5,9 +5,11 @@ import { UpNav, Logo, Category, BottomNav, SubCategoryColumn, SubCategory } from
 import { useLocationStore } from "../../stores/useLocation.store";
 import ktwizBtn from "../../assets/images/landing/ktwizBtn.png"
 //import ktwizBtnWhite from "../../assets/images/landing/ktwizBtnWhite.png"
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import newLogo from "../../assets/images/common/newLogo.png"
+import Button from "../common/button/Button";
+import colors from "../../assets/Colors";
 const Header = () => {
   const categories = [
     "kt wiz",
@@ -197,24 +199,23 @@ const Header = () => {
       }
   </React.Fragment>
 ))}
-
-    <Button
-        fontColor="blue" fontSize="20px" 
+    <a href="http://kt-sports.co.kr/sports/site/main.do" target="_blank" >
+      <Button
         width="90px" height="40px" 
         borderRadius="10px" 
-        //backgroundColor={isHovered? "#ECEEF2"  :"rgba(0,0,0,0)"}
-        backgroundColor={"#ECEEF2"}
-        onClick={()=>{}}
-        border={isHovered?"none":"0.5px solid #ECEEF2"}
+        backgroundColor={isHovered? "colors.ashGray"  :"rgba(0,0,0,0)"}
+        border={isHovered?"none": `0.5px solid ${colors.darkGray}`}
         position="relative"
-        right="-230px"
-        top="10px"
+        right="-40px"
+        top="15px"
+        hoverColor="colors.ashGray"
         // style={{ position: "relative", right: "-230px",top:"10px" }} /* 왼쪽으로 이동 */
         >
           {/* <img src={isHovered?ktwizBtn:ktwizBtnWhite} alt="button" style={{width:"70px", height:"auto"}}/> */}
           <img src={ktwizBtn} alt="button" style={{width:"70px", height:"auto"}}/>
         
       </Button>  
+    </a>
       </UpNav>
       {/* <Border/> */}
 
