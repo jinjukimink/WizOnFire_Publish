@@ -9,10 +9,12 @@ export type TButton ={
     fontColor?:string;
     fontSize?:string;
     backgroundColor?:string;
-    marginLeft?:string;
-    marginRight?:string;
+    margin?:string
     border?:string;
-    style?:React.CSSProperties
+    style?:React.CSSProperties;
+    position?:string;
+    right?:string;
+    top?:string;
 };
 
 const Btn = styled.button<TButton>`
@@ -22,14 +24,19 @@ const Btn = styled.button<TButton>`
     background-color: ${({backgroundColor})=>backgroundColor};
     font-size: ${({fontSize})=>fontSize};
     color:${({fontColor})=>fontColor};
-    position:relative;
-    margin-left: ${({marginLeft})=>marginLeft};
-    margin-right: ${({marginRight})=>marginRight};
+    //position:relative;
+
     border:${({border})=>border};
     justify-content: center;
     align-items: center;
     text-align: center;
-    &:hover { cursor: pointer; }
+    position: relative;
+    margin:${({margin})=>margin};
+    &:hover { cursor: pointer; };
+    position: ${({position})=>position};
+    right: ${({right})=>right};
+    top: ${({top})=>top};
+
 `
 
 
