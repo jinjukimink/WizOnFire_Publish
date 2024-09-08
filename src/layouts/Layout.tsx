@@ -22,7 +22,7 @@ const Layout = () => {
   return (
     <PageContainer>
       <Header />
-      <Sidebar />
+      {!isLandingPage && <Sidebar/>}
       <MainContent>
       <PageLocation />
         <Outlet />  {/* 이곳에 컴포넌트를 넣기 */}
