@@ -3,9 +3,9 @@ import { useScroll, useMotionValueEvent, useAnimation,AnimatePresence } from "fr
 import ktwiz from "../../assets/images/landing/ktwiz.png"
 import { UpNav, Logo, Category, BottomNav, SubCategoryColumn, SubCategory } from "./HeaderStyles"; // 스타일 불러오기
 import { useLocationStore } from "../../stores/useLocation.store";
-import Button from "../common/Button";
 import ktwizBtn from "../../assets/images/landing/ktwizBtn.png"
 import ktwizBtnWhite from "../../assets/images/landing/ktwizBtnWhite.png"
+import Button from "../common/button/Button";
 
 const Header = () => {
   const categories = [
@@ -169,7 +169,7 @@ const Header = () => {
                 borderRadius="10px" 
                 backgroundColor={isHovered? "#ECEEF2"  :"rgba(0,0,0,0)"}
                 onClick={()=>{}}
-                marginRight="-41px"
+                margin="0 -41px 0 0"
                 border={isHovered?"none":"0.5px solid #ECEEF2"}
                 style={{ position: "relative", left: "94px" }} /* 왼쪽으로 이동 */
                 >

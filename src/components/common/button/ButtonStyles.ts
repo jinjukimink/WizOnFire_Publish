@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React from "react";
+import colors from "../../../assets/Colors";
 
 export type TButton ={
     width:string;
@@ -10,28 +11,33 @@ export type TButton ={
     fontColor?:string;
     fontSize?:string;
     backgroundColor?:string;
-    marginLeft?:string;
-    marginRight?:string;
+    margin?:string;
     border?:string;
     padding?:string;
     type?:string;
+    style?:React.CSSProperties
+    isActive?: boolean
 };
 
 export const Btn = styled.button<TButton>`
     width: ${({width})=>width};
     height:${({height})=>height};
     border-radius:${({borderRadius})=>borderRadius};
-    background-color: ${({backgroundColor})=>backgroundColor};
+    background-color: ${({isActive,backgroundColor})=> isActive ? colors.redPrimary : backgroundColor};
     font-size: ${({fontSize})=>fontSize};
-    color:${({fontColor})=>fontColor};
+    color:${({ isActive, fontColor })=> isActive ? colors.white : fontColor};
     position:relative;
-    margin-left: ${({marginLeft})=>marginLeft};
-    margin-right: ${({marginRight})=>marginRight};
-    border:${({border})=>border||'none'};
+    margin: ${({margin})=>margin};
+    border:${({ isActive, border})=> isActive ? 'none' : border};
     justify-content: center;
     align-items: center;
     text-align: center;
-    &:hover { cursor: pointer; }
     padding:${({padding})=>padding};
     box-sizing: border-box;
+    cursor: pointer; 
+    &:hover {
+        background-color: ${colors.redPrimary}; 
+        border: none;
+        color: ${colors.white};
+    }
 `
