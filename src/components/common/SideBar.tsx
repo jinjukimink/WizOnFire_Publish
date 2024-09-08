@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { subBackground } from '../../assets/assets';
+import colors from '../../assets/Colors';
 
 const SidebarContainer = styled.div`
   width: 100%;
   height: 255px;
-  background-color: #333;
+  background-color: ${colors.darkGray}; /* 기존 #333 대신 colors 사용 */
 `;
 
 const SectionContainer = styled.div`
@@ -18,12 +19,13 @@ const SectionContainer = styled.div`
   height: 300px;
   background: url(${subBackground}) no-repeat center center;
   background-size: cover;
-  color: white;
+  color: ${colors.white}; /* 기존 'white' 대신 colors 사용 */
 `;
 
 export const Title = styled.h1`
   font-size: 50px;
   margin-bottom: 10px;
+  color: ${colors.white}; /* 타이틀 색상을 colors.white로 설정 */
 `;
 
 export const ButtonContainer = styled.div`
@@ -45,16 +47,16 @@ export const Button = styled.button<ButtonProps>`
   cursor: pointer;
   border-bottom: 2px solid transparent;
   transition: border-bottom 1s ease;
-  color: ${({ active }) => (active ? 'black' : 'white')};
+  color: ${({ active }) => (active ? colors.black : colors.white)}; /* colors 객체 사용 */
 
   &:hover {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid ${colors.black}; /* hover 상태에서도 colors 사용 */
   }
 
   ${({ active }) =>
     active &&
     `
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid ${colors.black};
   `}
 `;
 
@@ -63,12 +65,10 @@ export const ContentContainer = styled.div`
   text-align: left;
 `;
 
-
-
 export const ContentText = styled.p`
   font-size: 20px;
   line-height: 1;
-  color: #333;
+  color: ${colors.black}; /* 텍스트 색상에 colors 사용 */
 `;
 
 const categories = [
@@ -77,7 +77,7 @@ const categories = [
   { title: "찾아오기" },
   { title: "정규 리그" },
   { title: "코칭스텝", subtitles: ["투수", "타자", "응원단"] },
-  {title:"wiz 뉴스"},
+  { title: "wiz 뉴스" },
 ];
 
 const sidebars = [
@@ -106,7 +106,7 @@ const sidebars = [
   ],
   [
     { title: "wiz 뉴스", description: "wiz소식 리스트", route: "/media/wiznews" },
-    {title:"wiz 보도자료",description:"이벤트 공유",route:"/media/wizpress"}
+    { title: "wiz 보도자료", description: "이벤트 공유", route: "/media/wizpress" },
   ],
 ];
 
@@ -132,7 +132,7 @@ const SideBar = () => {
     }
   }, [location.pathname]);
 
-  //사이드바 밑 컨텐츠들 여기에 하시믄 됩니다
+  // 사이드바 밑 컨텐츠들 여기에 표시
   const renderContent = () => {
     const activeContent = sidebars[categoryIndex].find((item) => item.title === activeTab);
     if (activeContent) {
