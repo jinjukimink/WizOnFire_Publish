@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { usePaginationStore } from "../../../stores/usePagination.store";
+import Button from "../button/Button";
 
 const PaginationContainer = styled.div`
     max-width: 100%;
@@ -12,7 +13,6 @@ const PaginationContainer = styled.div`
     justify-content: center;
     align-items: center;
 `;
-
 
 const Pagination = () => {
 
@@ -29,17 +29,6 @@ const Pagination = () => {
     setIsLoading,
     setPosts
   } = usePaginationStore();
-  /*
-  const [currentPage, setCurrentPage] = useState(1); // 현재 페이지
-  const postPerPage = 10; // 한 페이지당 보여줄 포스트 수
-  const maxPageNum = 5; // 한 페이지당 보이는 페이지네이션 번호
-  const [pageActiveIdx, setPageActiveIdx] = useState(0); // 현재 페이지 그룹
-  const [isloading,setIsLoading] = useState(false);
-  const [error,setError] = useState(false);
-  const [posts,setPosts] = useState<TPost[]>([]);
-
-const { data: posts, isLoading, error } = useFetchData<TPost[]>('https://jsonplaceholder.typicode.com/posts');
-*/
 
   const fetchPosts = async () => {
     setIsLoading(true);
@@ -69,19 +58,51 @@ const { data: posts, isLoading, error } = useFetchData<TPost[]>('https://jsonpla
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
 
+  /*
+  width:string;
+    height:string;
+    borderRadius?:string;
+    children?: React.ReactNode;//자식 타입 설정
+    onClick?:()=>void;
+    fontColor?:string;
+    fontSize?:string;
+    backgroundColor?:string;
+    marginLeft?:string;
+    marginRight?:string;
+    border?:string;
+    padding?:string;
+    type?:string;
+*/
+
+// background-color: ${({ isActive, backgroundColor})=> isActive ? colors.redPrimary : backgroundColor};
+//     font-size: ${({fontSize})=>fontSize};
+//     color:${({ isActive, fontColor})=> isActive ? colors.white : fontColor};
+
   return (
     <PaginationContainer>
+     
       {pageActiveIdx > 0 && (
         <button onClick={() => setPageActiveIdx(pageActiveIdx - 1)}>이전</button>
       )}
       {pageNationNumbers.map(number => (
-        <button
+          <Button width="40px"
+          height="40px"
+          fontColor="black"
+          borderRadius="50%"
+          border="1px solid #333"
+          margin="0 3px"
+          backgroundColor="white"
           key={number}
+          isActive={currentPage === number}
           onClick={() => setCurrentPage(number)}
-          style={{ fontWeight: currentPage === number ? 'bold' : 'normal' }}
-        >
-          {number}
-        </button>
+          >{number}</Button>  
+        // <button
+        //   key={number}
+        //   onClick={() => setCurrentPage(number)}
+        //   style={{ fontWeight: currentPage === number ? 'bold' : 'normal' }}
+        // >
+        //   {number}
+        // </button>
       ))}
       {pageActiveIdx < totalPageCount - 1 && (
         <button onClick={() => setPageActiveIdx(pageActiveIdx + 1)}>다음</button>
