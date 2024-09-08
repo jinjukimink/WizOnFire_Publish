@@ -132,7 +132,7 @@ const SideBar = () => {
     }
   }, [location.pathname]);
 
-
+  //사이드바 밑 컨텐츠들 여기에 하시믄 됩니다
   const renderContent = () => {
     const activeContent = sidebars[categoryIndex].find((item) => item.title === activeTab);
     if (activeContent) {
