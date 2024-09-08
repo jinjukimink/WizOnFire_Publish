@@ -1,3 +1,8 @@
-import backgroundLogo from "./images/background.png"
+import logo_ko from "./images/footer/ktwiz_ko.svg"
+import facebook from "./images/footer/facebook.png"
+import instagram from "./images/footer/instagram.png"
+import naver from "./images/footer/naver.png"
+import youtube from "./images/footer/youtube.png"
+import subBackground from "./images/common/subBackground.png"
 
-export{backgroundLogo}
+export {logo_ko,facebook,instagram,naver,youtube,subBackground};

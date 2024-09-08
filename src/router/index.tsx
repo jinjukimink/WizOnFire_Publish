@@ -1,48 +1,106 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layouts/Layout";
-// import Home from "../pages/Home";
+// import Home from "../pages/landing/Home";
 import NotFound from "../components/NotFound";
-import Ktwiz from "../components/common/Ktwiz";
-import Wizpark from "../components/common/Wizpark";
-import Game from "../components/common/Game";
+// import BoxScore from "../pages/regular/BoxScore";
+// import Ranking from "../pages/regular/Ranking";
+// import News from "../pages/news/News";
+import SideBar from "../components/common/Sidebar";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Layout />,
     children: [
       {
-        path: 'ktwiz/about', //사이드바 가장 왼쪽 버튼을 기준으로 컴포넌트를 나눔.
-        element: <Ktwiz />,
+        path: "ktwiz",
+        children: [
+          {
+            path: "about",
+            element:<SideBar/>,
+          },
+          {
+            path: "history",
+            element:<SideBar/>,
+          }
+        ]
       },
-      {
-        path: 'ktwiz/history',  // 구단 연혁 경로 추가
-        element: <Ktwiz />,     // 같은 Ktwiz 컴포넌트를 사용
+            {
+        path: "wizpark",
+        children: [
+          {
+            path: "intro",
+            element:<SideBar/>,
+          },
+          {
+            path: "guide",
+            element:<SideBar/>,
+          },
+          {
+            path: "location",
+            element:<SideBar/>,
+          }
+        ]
       },
-      {
-        path: 'wizpark/intro', // 이하 동문
-        element:<Wizpark/>,
+                  {
+        path: "game/regular",
+        children: [
+          {
+            path: "schedule",
+            element:<SideBar/>,
+          },
+          {
+            path: "boxscore",
+            element:<SideBar/>,
+          },
+          {
+            path: "ranking",
+            element:<SideBar/>,
+          },
+          {
+             path: "watchPoint",
+            element:<SideBar/>,
+          },
+        ]
       },
-      {
-        path: 'wizpark/guide',
-        element:<Wizpark/>,
+                                    {
+        path: "player",
+        children: [
+          {
+            path: "coach",
+            element:<SideBar/>,
+          },
+          {
+            path: "pitcher",
+            element:<SideBar/>,
+          },
+          {
+            path: "catcher",
+            element:<SideBar/>,
+          },
+          {
+             path: "cheer",
+            element:<SideBar/>,
+          },
+        ]
       },
-      {
-        path: 'game/regular/schedule',
-        element:<Game/>,
-      },
-      {
-        path: 'game/regular/boxscore',
-        element:<Game/>,
-      },
-      {
-        path: 'game/regular/ranking/',
-        element:<Game/>,
-      },
-      {
-        path: 'game/regular/watchPoint',
-        element:<Game/>,
-      },
+      // {
+      //   path:"game/regular",
+      //   children: [
+      //     {
+      //       path:"boxscore",
+      //       element: <BoxScore />,
+      //     },
+      //     {
+      //       path:"ranking/team",
+      //       element: <Ranking />,
+      //     },
+      //   ],
+      // },
+      // {
+      //   path:"media/wiznews",
+      //   element: <News />
+      // },
     ],
   },
   {
