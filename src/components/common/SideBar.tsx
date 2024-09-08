@@ -108,7 +108,6 @@ const sidebars = [
     { title: "wiz 뉴스", description: "wiz소식 리스트", route: "/media/wiznews" },
     {title:"wiz 보도자료",description:"이벤트 공유",route:"/media/wizpress"}
   ],
-  // 반복 제거, 필요한 경우만 추가
 ];
 
 // SideBar 컴포넌트
