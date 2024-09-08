@@ -164,6 +164,7 @@ const SideBar = () => {
     }
   }, [location.pathname]);
 
+  //사이드바 밑에 렌더링 될 페이지
   const renderContent = () => {
     const activeContent = sidebars[categoryIndex].find((item) => item.title === activeTab);
     if (activeContent) {
