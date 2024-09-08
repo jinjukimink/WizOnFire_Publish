@@ -7,7 +7,6 @@ import Button from "../common/Button";
 import ktwizBtn from "../../assets/images/landing/ktwizBtn.png"
 import ktwizBtnWhite from "../../assets/images/landing/ktwizBtnWhite.png"
 import { useNavigate } from "react-router-dom";
-import { nav } from "framer-motion/client";
 
 const Header = () => {
   const categories = [
