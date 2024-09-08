@@ -95,7 +95,7 @@ const sidebars = [
       { title: "구장 안내도", route: "/wizpark/guide" },
     ],
     [
-        { title: "찾아오기", route: "wizpark/location" },
+        { title: "찾아오기", route: "/wizpark/location" },
   ],
   [
       { title: "정규리그", route: "/game/regular/schedule" },

@@ -6,7 +6,6 @@ import NotFound from "../components/NotFound";
 // import Ranking from "../pages/regular/Ranking";
 // import News from "../pages/news/News";
 import SideBar from "../components/common/Sidebar";
-
 const router = createBrowserRouter([
   {
     path: "/",
