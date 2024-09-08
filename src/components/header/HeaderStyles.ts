@@ -62,7 +62,7 @@ export const Logo = styled.div<{isHovered:boolean}>`
     `;
 
 export const Category=styled.a<{isHovered: boolean; hoveredCategory:string}>` 
-    font-size: 20px;
+    font-size: 18px;
     text-decoration: none;
     height: 80px;
     display: flex;
