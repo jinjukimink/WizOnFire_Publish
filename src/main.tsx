@@ -7,7 +7,7 @@ import GlobalStyle from "./GlobalStyle.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <GlobalStyle/>
+    <GlobalStyle />
     <RouterProvider router={router} />
     {/* <App /> */}
   </StrictMode>
