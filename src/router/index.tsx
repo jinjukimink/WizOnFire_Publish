@@ -87,6 +87,19 @@ const router = createBrowserRouter([
           },
         ]
       },
+      {
+        path: "media",
+        children: [
+          {
+            path: "wiznews",
+            element:<SideBar/>,
+          },
+          {
+            path: "wizpress",
+            element: <SideBar />,
+          },
+        ]
+      }
       // {
       //   path:"game/regular",
       //   children: [
