@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useLocationStore } from '../../stores/useLocation.store';
-import { ButtonContainer, ContentContainer, ContentText, SectionContainer, SidebarButton, SidebarContainer } from './SidebarStyles';
+import { ButtonContainer, ContentContainer, SectionContainer, SidebarButton, SidebarContainer } from './SidebarStyles';
 
 const categories = [
   { title: "kt wiz는?" },
@@ -14,31 +14,31 @@ const categories = [
 
 const sidebars = [
   [
-    { title: "구단 소개", description: "구단소개요", route: "/ktwiz/about" },
-    { title: "구단 연혁", description: "구단연혁이요", route: "/ktwiz/history" },
+    { title: "구단 소개", route: "/ktwiz/about" },
+    { title: "구단 연혁", route: "/ktwiz/history" },
   ],
   [
-    { title: "구장 소개", description: "구장 소개요", route: "/wizpark/intro" },
-    { title: "구장 안내도", description: "구장 안내도요", route: "/wizpark/guide" },
+    { title: "구장 소개", route: "/wizpark/intro" },
+    { title: "구장 안내도", route: "/wizpark/guide" },
   ],
   [
-    { title: "찾아오기", description: "찾아오는 방법이요", route: "/wizpark/location" },
+    { title: "찾아오기", route: "/wizpark/location" },
   ],
   [
-    { title: "경기 일정", description: "일정이요", route: "/game/regular/schedule" },
-    { title: "박스스코어", description: "스코어요", route: "/game/regular/boxscore" },
-    { title: "순위기록", description: "순위요", route: "/game/regular/ranking" },
-    { title: "관전포인트", description: "다시봐야할거", route: "/game/regular/watchPoint" },
+    { title: "경기 일정", route: "/game/regular/schedule" },
+    { title: "박스스코어", route: "/game/regular/boxscore" },
+    { title: "순위기록", route: "/game/regular/ranking/team" },
+    { title: "관전포인트", route: "/game/regular/watchPoint" },
   ],
   [
-    { title: "코칭스텝", description: "코칭스텝 정보", route: "/player/coach" },
-    { title: "투수", description: "투수 정보", route: "/player/pitcher" },
-    { title: "타자", description: "타자 정보", route: "/player/catcher" },
-    { title: "응원단", description: "응원단 정보", route: "/player/cheer" },
+    { title: "코칭스텝", route: "/player/coach" },
+    { title: "투수", route: "/player/pitcher" },
+    { title: "타자", route: "/player/catcher" },
+    { title: "응원단", route: "/player/cheer" },
   ],
   [
-    { title: "wiz 뉴스", description: "wiz소식 리스트", route: "/media/wiznews" },
-    { title: "wiz 보도자료", description: "이벤트 공유", route: "/media/wizpress" },
+    { title: "wiz 뉴스", route: "/media/wiznews" },
+    { title: "wiz 보도자료", route: "/media/wizpress" },
   ],
 ];
 
@@ -74,7 +74,8 @@ const SideBar = () => {
     if (activeContent) {
       return (
         <div>
-          <ContentText>{activeContent.description}</ContentText>
+          {/* <ContentText>{}</ContentText> */}
+          {/*메인 컨텐츠 */}
         </div>
       );
     }
