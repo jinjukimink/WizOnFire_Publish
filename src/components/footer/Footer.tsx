@@ -4,6 +4,9 @@ import { FooterContainer, FooterBox, Logo, Info, InfoDetail, InfoNetwork, Styled
 import { RxGithubLogo } from "react-icons/rx";
 import SelectBar from "../common/selectbar/SelectBar";
 import { FaAngleDown } from "react-icons/fa6";
+import Button from "../common/button/Button";
+import colors from "../../assets/Colors";
+import ktwizBtn from "../../assets/images/landing/ktwizBtn.png"
 
 const Footer = () => {
 
@@ -63,7 +66,7 @@ const Footer = () => {
             <SelectBar 
             items={options} 
             placeholder="KT 그룹사 및 관련사이트" 
-            width="252px"
+            width="300px"
             height="40px"
             containerBorder="1px solid rgba(0, 0, 0, .3)"
             containerBorderRadius="7px"
@@ -89,6 +92,16 @@ const Footer = () => {
                 ))
               }
             </ul>
+            <a href="http://kt-sports.co.kr/sports/site/main.do" target="_blank" >
+              <Button
+                width="90px" height="40px" 
+                borderRadius="10px" 
+                border="none"
+                hoverColor="colors.ashGray"
+                >
+                  <img src={ktwizBtn} alt="button" style={{width:"70px", height:"auto"}}/>
+              </Button>  
+            </a>
           </InfoNetwork>
         </div>
       </FooterBox>
