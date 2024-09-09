@@ -47,16 +47,16 @@ export const SidebarButton = styled.button<ButtonProps>`
   cursor: pointer;
   border-bottom: 2px solid transparent;
   transition: border-bottom 1s ease;
-  color: ${({ active }) => (active ? colors.black : colors.white)}; /* colors 객체 사용 */
+  color: ${({ active }) => (active ? colors.redSecondary : colors.white)}; /* colors 객체 사용 */
 
   &:hover {
-    border-bottom: 2px solid ${colors.black}; /* hover 상태에서도 colors 사용 */
+    border-bottom: 2px solid ${colors.redPrimary}; /* hover 상태에서도 colors 사용 */
   }
 
   ${({ active }) =>
     active &&
     `
-    border-bottom: 2px solid ${colors.black};
+    border-bottom: 2px solid ${colors.redSecondary}; /* 버튼 클릭시 버튼 밑에 밑줄 상태 */
   `}
 `;
 
@@ -65,8 +65,8 @@ export const ContentContainer = styled.div`
   text-align: left;
 `;
 
-export const ContentText = styled.p`
-  font-size: 20px;
-  line-height: 1;
-  color: ${colors.black}; /* 텍스트 색상에 colors 사용 */
-`;
+// export const ContentText = styled.p`
+//   font-size: 20px;
+//   line-height: 1;
+//   color: ${colors.black}; /* 텍스트 색상에 colors 사용 */
+// `;
