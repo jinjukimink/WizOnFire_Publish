@@ -199,23 +199,6 @@ const Header = () => {
       }
   </React.Fragment>
 ))}
-    <a href="http://kt-sports.co.kr/sports/site/main.do" target="_blank" >
-      <Button
-        width="90px" height="40px" 
-        borderRadius="10px" 
-        backgroundColor={isHovered? "colors.ashGray"  :"rgba(0,0,0,0)"}
-        border={isHovered?"none": `0.5px solid ${colors.darkGray}`}
-        position="relative"
-        right="-40px"
-        top="15px"
-        hoverColor="colors.ashGray"
-        // style={{ position: "relative", right: "-230px",top:"10px" }} /* 왼쪽으로 이동 */
-        >
-          {/* <img src={isHovered?ktwizBtn:ktwizBtnWhite} alt="button" style={{width:"70px", height:"auto"}}/> */}
-          <img src={ktwizBtn} alt="button" style={{width:"70px", height:"auto"}}/>
-        
-      </Button>  
-    </a>
       </UpNav>
       {/* <Border/> */}
 
