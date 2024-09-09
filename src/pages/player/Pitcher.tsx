@@ -5,4 +5,4 @@ const Pitcher = () => {
     </>
   );
 }
-export default Pitcher
+export default Pitcher 

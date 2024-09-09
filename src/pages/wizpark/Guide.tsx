@@ -5,4 +5,4 @@ const Guide = () => {
     </>
   );
 }
-export default Guide
+export default Guide 

@@ -5,4 +5,4 @@ const BoxScore = () => {
     </>
   );
 }
-export default BoxScore
+export default BoxScore 

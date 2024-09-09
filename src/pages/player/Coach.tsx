@@ -5,4 +5,4 @@ const Coach = () => {
     </>
   );
 }
-export default Coach
+export default Coach 

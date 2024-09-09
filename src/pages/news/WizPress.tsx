@@ -5,4 +5,4 @@ const WizPress = () => {
     </>
   );
 }
-export default WizPress
+export default WizPress 
