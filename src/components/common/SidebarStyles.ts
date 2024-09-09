@@ -69,4 +69,4 @@ export const ContentContainer = styled.div`
 //   font-size: 20px;
 //   line-height: 1;
 //   color: ${colors.black}; /* 텍스트 색상에 colors 사용 */
-// `;
+// `; 
