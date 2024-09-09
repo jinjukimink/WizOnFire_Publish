@@ -5,4 +5,4 @@ const Catcher = () => {
     </>
   );
 }
-export default Catcher
+export default Catcher 

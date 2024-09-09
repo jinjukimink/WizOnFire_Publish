@@ -5,4 +5,4 @@ const Schedule = () => {
     </>
   );
 }
-export default Schedule
+export default Schedule 
