@@ -2,6 +2,7 @@ import styled from "styled-components";
 import backgroundImage from "../../assets/images/landing/landingBackground.png"
 import leftArrow from "../../assets/images/landing/leftArrow.png";
 import rightArrow from "../../assets/images/landing/rightArrow.png";
+
 const StartImage = styled.div`
   height: 1000px;
   width: auto;
@@ -29,7 +30,6 @@ const Home = () => {
         <ArrowWapper style={{width:"90px",height:"80px"}}src={leftArrow} />
         <ArrowWapper style={{width:"90px",height:"80px"}}src={rightArrow}/>
       </StartImage>
-
     </>
   );
 };
