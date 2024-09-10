@@ -1,7 +1,17 @@
+import { ktParkKorean, ParkGuide } from "../../assets/assets";
+import { Container, Image, ImageContainer } from "../PagesStyles";
+
 const Guide = () => {
   return (
     <>
-      <h1>Guide Component</h1>
+      <Container>
+        <ImageContainer>
+          <Image src={ktParkKorean} alt="ktParkKorean" />
+        </ImageContainer>
+        <ImageContainer>
+          <Image src={ParkGuide} alt="ParkGuide" />
+        </ImageContainer>
+    </Container>
     </>
   );
 }
