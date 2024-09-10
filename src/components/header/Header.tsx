@@ -1,15 +1,10 @@
 import { useState,useEffect } from "react";
 import { useScroll, useMotionValueEvent, useAnimation,AnimatePresence } from "framer-motion";
-//import ktwiz from "../../assets/images/landing/ktwiz.png"
 import { UpNav, Logo, Category, BottomNav, SubCategoryColumn, SubCategory } from "./HeaderStyles"; // 스타일 불러오기
 import { useLocationStore } from "../../stores/useLocation.store";
-import ktwizBtn from "../../assets/images/landing/ktwizBtn.png"
-//import ktwizBtnWhite from "../../assets/images/landing/ktwizBtnWhite.png"
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import newLogo from "../../assets/images/common/newLogo.png"
-import Button from "../common/button/Button";
-import colors from "../../assets/Colors";
 const Header = () => {
   const categories = [
     "kt wiz",
