@@ -15,6 +15,9 @@ const colors = {
     redSecondary: "#EA0101",
     redTertiary: "#D60C0C",
     white: "#FFFFFF",
+    green:"#3aac16",
+    ligthBlue:"#3864ca"
+
 }
 
 export default colors;

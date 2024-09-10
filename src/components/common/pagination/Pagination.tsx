@@ -1,40 +1,89 @@
-import { useEffect, useState } from "react";
-import styled from "styled-components";
-
-const PaginationContainer = styled.div`
-    max-width: 100%;
-    width: 1100px;
-    height: 25px;
-    margin-top: 55px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
-
+import { useEffect } from "react";
+import axios from "axios";
+import { usePaginationStore } from "../../../stores/usePagination.store";
+import Button from "../button/Button";
+import { PaginationContainer,PaginationIcon } from './PaginationStyles'
+import { GrNext, GrPrevious } from "react-icons/gr";
 
 const Pagination = () => {
-  //API 저장 state
-  const [posts, setPosts] = useState([]); //axios로 받아 온 데이터 저장
-  const [loading, setLoading] = useState(false); // db받는동안 로딩
-  //페이지 index
-  const [currentPage, setCurrentPage] = useState(1);
-  const postPerPage = 10; //한페이지당 보여줄 데이터 개수
-  //페이지네이션 그룹화
-  const [pageActiveIdx, setPageActiveIdx]= useState(0); //현재 보고있는 페이지 그룹 = 몇번째 페이지네이션을 리랜더할지
-  const maxPageNum = 5; //한 페이지당 보이는 페이지네이션 번호 [1,2,3,4,5]
- 
+
+  const {
+    currentPage,
+    postPerPage,
+    maxPageNum,
+    pageActiveIdx,
+    isLoading,
+    error,
+    posts,
+    setCurrentPage,
+    setPageActiveIdx,
+    setIsLoading,
+    setPosts
+  } = usePaginationStore();
+
+  const fetchPosts = async () => {
+    setIsLoading(true);
+    try {
+      const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+      setPosts(response.data);
+    } catch (error) {
+      console.error('Failed to fetch posts:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(()=>{
-    const fetchPosts = async () => {
-
-    };
     fetchPosts();
-  },[]);
+  },[])
+  
+  const pageCount = Math.ceil(posts.length / postPerPage);
+  const postsNumber = Array.from({ length: pageCount }, (_, i) => i + 1);
+
+  const totalPageCount = Math.ceil(pageCount / maxPageNum);
+  const startNum = pageActiveIdx * maxPageNum;
+  const endNum = startNum + maxPageNum;
+  const pageNationNumbers = postsNumber.slice(startNum, endNum);
+
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
 
   return (
     <PaginationContainer>
-      Pagination Component
+      {pageActiveIdx > 0 && (
+        <PaginationIcon>
+          <GrPrevious onClick={() => setPageActiveIdx(pageActiveIdx - 1)} />
+        </PaginationIcon>
+      )}
+      {pageNationNumbers.map(number => (
+          <Button 
+          width="30px"
+          height="30px"
+          fontColor="black"
+          borderRadius="50%"
+          border="1px solid #333"
+          margin="0 3px"
+          backgroundColor="white"
+          key={number}
+          isActive={currentPage === number}
+          onClick={() => setCurrentPage(number)}
+          >{number}</Button>  
+        // <button
+        //   key={number}
+        //   onClick={() => setCurrentPage(number)}
+        //   style={{ fontWeight: currentPage === number ? 'bold' : 'normal' }}
+        // >
+        //   {number}
+        // </button>
+      ))}
+      {pageActiveIdx < totalPageCount - 1 && (
+        <PaginationIcon>
+          <GrNext onClick={() => setPageActiveIdx(pageActiveIdx + 1)} />
+        </PaginationIcon>
+      )}
     </PaginationContainer>
   );
-}
-export default Pagination
+};
+
+export default Pagination;

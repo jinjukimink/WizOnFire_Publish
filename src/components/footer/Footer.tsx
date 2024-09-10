@@ -1,8 +1,12 @@
 
 import { logo_ko, facebook, instagram, naver, youtube } from "../../assets/assets"
-import { FooterContainer, FooterBox, Logo, Info, InfoDetail, InfoNetwork, StyledLi} from "./FooterStyles"
+import { FooterContainer, FooterBox, Logo, Info, InfoDetail, InfoNetwork, StyledLi } from "./FooterStyles"
 import { RxGithubLogo } from "react-icons/rx";
-import SelectBar from "../common/SelectBar";
+import SelectBar from "../common/selectbar/SelectBar";
+import { FaAngleDown } from "react-icons/fa6";
+import Button from "../common/button/Button";
+//import colors from "../../assets/Colors";
+import ktwizBtn from "../../assets/images/landing/ktwizBtn.png"
 
 const Footer = () => {
 
@@ -12,6 +16,7 @@ const Footer = () => {
     { src: youtube, href: "https://www.youtube.com/c/ktwiztv", alt: "YouTube" },
     { src: naver, href: "https://tv.naver.com/ktwiz", alt: "Naver" }
   ];
+
   const options = [
     { label: 'KT estate', url: "https://www.ktestate.com/" },
     { label: 'KT telecom', url: "https://www.kttelecop.co.kr/" },
@@ -24,8 +29,7 @@ const Footer = () => {
     { label: 'KT ds', url: "https://www.ktestate.com/" },
     { label: 'KT NexR', url: "https://www.ktestate.com/" },
   ];
-
-
+  
   return (
     <FooterContainer>
       <FooterBox>
@@ -33,7 +37,7 @@ const Footer = () => {
         <Info>
           <ul>
             <StyledLi>
-              <a href="https://github.com/WizOnFire/KT_Web">
+              <a href="https://github.com/WizOnFire/KT_Web" target="_blank">
                 <RxGithubLogo />
               </a>
             </StyledLi>
@@ -58,25 +62,48 @@ const Footer = () => {
           </InfoDetail>
           <p>Copyright 2024 kt sports. All rights reserved.</p>
         </Info>
-        <InfoNetwork>
-          {/* selectbox */}
-<SelectBar
-  searchList={options}
-  width="600px"
-  height="40px"
-  onClick={() => console.log("Option clicked!")}
-/>
-
-          <ul>
-            {
-              snsIcons.map((icon, index)=>(
-                <li key={index}>
-                  <a href={icon.href}><img src={icon.src} alt={icon.alt}/></a>
-                </li>
-              ))
-            }
-          </ul>
-        </InfoNetwork>
+        <div>
+            <SelectBar 
+            items={options} 
+            placeholder="KT 그룹사 및 관련사이트" 
+            width="300px"
+            height="40px"
+            containerBorder="1px solid rgba(0, 0, 0, .3)"
+            containerBorderRadius="7px"
+            containerPadding="13px 16px"
+            labelPadding="0"
+            labelTextSize="13px"
+            textAlign="left"
+            itemListBorder="0"
+            itemListBorderRadius="16px"
+            itemListPadding="7px 15px"
+            maxHeight="120px"
+            boxShadow="0 4px 6px rgba(0, 0, 0, .16)"
+            itemTextSize="12px"
+            itemPadding="8px 0"
+            buttonIcon={FaAngleDown}/>
+            <InfoNetwork>
+            <ul>
+              {
+                snsIcons.map((icon, index)=>(
+                  <li key={index}>
+                    <a href={icon.href}><img src={icon.src} alt={icon.alt}/></a>
+                  </li>
+                ))
+              }
+            </ul>
+            <a href="http://kt-sports.co.kr/sports/site/main.do" target="_blank" >
+              <Button
+                width="90px" height="40px" 
+                borderRadius="10px" 
+                border="none"
+                hoverColor="colors.ashGray"
+                >
+                  <img src={ktwizBtn} alt="button" style={{width:"70px", height:"auto"}}/>
+              </Button>  
+            </a>
+          </InfoNetwork>
+        </div>
       </FooterBox>
     </FooterContainer>
   );
