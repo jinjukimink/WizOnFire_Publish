@@ -14,7 +14,7 @@ export const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  max-width: 1136px;
+  max-width: 1136px; 
   margin-bottom: 20px;
 `;
 
