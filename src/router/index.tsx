@@ -5,6 +5,19 @@ import NotFound from "../components/NotFound";
 import BoxScore from "../pages/regular/BoxScore";
 import Ranking from "../pages/regular/Ranking";
 import News from "../pages/news/News";
+import WizPress from "../pages/news/WizPress";
+import About from "../pages/ktwiz/About";
+import History from "../pages/ktwiz/History";
+import Intro from "../pages/wizpark/Intro";
+//import Location from "../pages/wizpark/Location";
+import Guide from "../pages/wizpark/Guide";
+import Schedule from "../pages/regular/Schedule";
+import WatchPoint from "../pages/regular/WatchPoint";
+import Coach from "../pages/player/Coach";
+import Pitcher from "../pages/player/Pitcher";
+import Catcher from "../pages/player/Catcher";
+import Cheer from "../pages/player/Cheer";
+import Map from "../pages/game/Map";
 
 const router = createBrowserRouter([
   {
@@ -12,12 +25,47 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "",
+       index:true,
         element: <Home />,
+      },
+      {
+        path: "ktwiz",
+        children: [
+          {
+            path: "about",
+            element:<About/>,
+          },
+          {
+            path: "history",
+            element:<History/>,
+          },
+
+        ]
+      },
+      {
+        path: "wizpark",
+        children: [
+          {
+            path: "intro",
+            element:<Intro/>,
+          },
+          {
+            path: "guide",
+            element:<Guide/>,
+          },
+          {
+            path: "location",
+            element:<Map/>,
+          },
+        ]
       },
       {
         path:"game/regular",
         children: [
+          {
+            path: "schedule",
+            element: <Schedule/>,
+          },
           {
             path:"boxscore",
             element: <BoxScore />,
@@ -26,11 +74,45 @@ const router = createBrowserRouter([
             path:"ranking/team",
             element: <Ranking />,
           },
+          {
+            path: "watchPoint",
+            element:<WatchPoint/>,
+          }
         ],
       },
       {
-        path:"media/wiznews",
-        element: <News />
+        path: "player",
+        children: [
+          {
+            path: "coach",
+            element:<Coach/>,
+          },
+          {
+            path: "pitcher",
+            element:<Pitcher/>,
+          },
+          {
+            path: "catcher",
+            element:<Catcher/>,
+          },
+          {
+            path: "cheer",
+            element:<Cheer/>,
+          },
+        ]
+      },
+      {
+        path:"media",
+        children: [
+          {
+            path: "wiznews",
+            element:<News/>,
+          },
+          {
+            path: "wizpress",
+            element:<WizPress/>,
+          },
+        ]
       },
     ],
   },
@@ -40,4 +122,4 @@ const router = createBrowserRouter([
   },
 ]);
 
-export default router;
+export default router; 
