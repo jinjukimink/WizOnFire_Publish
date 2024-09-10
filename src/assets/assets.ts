@@ -5,6 +5,6 @@ import naver from "./images/footer/naver.png"
 import youtube from "./images/footer/youtube.png"
 import subBackground from "./images/common/subBackground.png"
 import subBg from "./images/common/subBg.png"
-import ktWizParkStadium from "./images/common/wizpark.jpg"
+import ktWizParkStadium from "./images/common/ktWizParkStadium.jpg"
 
 export {logo_ko,facebook,instagram,naver,youtube,subBackground,subBg,ktWizParkStadium}; 
