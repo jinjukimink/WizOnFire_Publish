@@ -13,7 +13,7 @@ import Intro from "../pages/wizpark/Intro";
 import Guide from "../pages/wizpark/Guide";
 import Schedule from "../pages/regular/Schedule";
 import WatchPoint from "../pages/regular/WatchPoint";
-import Coach from "../pages/player/Coach";
+import Coach from "../pages/player/coach/Coach";
 import Pitcher from "../pages/player/Pitcher";
 import Catcher from "../pages/player/Catcher";
 import Cheer from "../pages/player/Cheer";
