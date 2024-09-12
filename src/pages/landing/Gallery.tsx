@@ -7,7 +7,6 @@ import {
     GalleryLine,
 } from "./GalleryStyles";
 
-import SimpleSlider from "../../components/common/slider/SimpleSlider";
 const LargePhoto = styled.div`
     width: 550px;
     height: 600px;
@@ -23,7 +22,6 @@ const Gallery = () => {
             <GalleryTitle>GALLERY</GalleryTitle>
             <GalleryLine />
         </GalleryNews>
-            <SimpleSlider/>
     </GalleryContainer>
   );
 }
