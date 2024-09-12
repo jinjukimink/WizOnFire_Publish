@@ -11,11 +11,7 @@ left:13%;
   @media (max-width: 1200px) {
     left: 1%; /* 작은 화면일 때 오른쪽 위치 조정 */
   }
-
 `;
-
-
-
 export const TopContainer = styled.div`
   display: flex;
   justify-content: center;
