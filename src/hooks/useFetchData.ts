@@ -1,4 +1,3 @@
-//API불러오기
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -17,7 +16,6 @@ const useFetchData = <T>(url:string) => {
         } catch (error) {
             setError("데이터 통신 오류!")
             setIsLoading(true);
-            //setIsLoading(false);
         }
     };
 
