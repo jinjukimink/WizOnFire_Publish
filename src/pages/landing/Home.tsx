@@ -1,12 +1,12 @@
 import { rightArrow, leftArrow } from "../../assets/assets";
 import GradientChip from "../../components/common/gradientChip/GradientChip";
 import useFetchData from "../../hooks/useFetchData";
-import Banner01 from "./Banner01";
-import Banner02 from "./Banner02";
-import Gallery from "./Gallery";
-import HighLight from "./HighLight";
+import Banner01 from "./banner/Banner01";
+import Banner02 from "./banner/Banner02";
+import Gallery from "./gallery/Gallery";
+import HighLight from "./highLight/HighLight";
 import { StartImage, ArrowWapper, StartWizNews } from "./HomeStyles"
-import TeamMatch from "./TeamMatch";
+import TeamMatch from "./teamMatch/TeamMatch";
 
 const Home = () => {
   const { data, isLoading, error } = useFetchData<THotIssue[]>('/media/hotissue?count=10'); 
