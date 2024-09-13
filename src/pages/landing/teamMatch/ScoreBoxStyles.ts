@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import colors from "../../assets/Colors"
+import colors from "../../../assets/Colors"
 
 type LeftProps = {
     left?: string;

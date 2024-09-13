@@ -1,5 +1,5 @@
-import GradientChip from "../../components/common/gradientChip/GradientChip";
-import { rightArrow, leftArrow, doosan, ktwiz, nc} from "../../assets/assets";
+import GradientChip from "../../../components/common/gradientChip/GradientChip";
+import { rightArrow, leftArrow, doosan, ktwiz, nc} from "../../../assets/assets";
 import {
     TeamMatchContainer,
     TeamMathNews,
@@ -11,9 +11,9 @@ import {
     MatchInfo,
 } from "./TeamMatchStyles"
 import ScoreBox from "./ScoreBox";
-import { GradientCircle } from "../../components/common/gradientChip/GradientChipStyles";
+import { GradientCircle } from "../../../components/common/gradientChip/GradientChipStyles";
 import { GrNext } from "react-icons/gr";
-import useFetchData from "../../hooks/useFetchData";
+import useFetchData from "../../../hooks/useFetchData";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
