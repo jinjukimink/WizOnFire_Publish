@@ -36,7 +36,6 @@ const StaffList = ({apiUrl,staffType}:TStaffListProps) => {
 
 
   const navigate=useNavigate();
-
     let stafflist: TStaff[] = [];
 
     if (staffType === "coach" && (staffs as unknown as TCoachData)?.data?.list) {
@@ -46,7 +45,7 @@ const StaffList = ({apiUrl,staffType}:TStaffListProps) => {
     }
 
   //if (isLoading) return <p>Loading...</p>;
-  if(isLoading) return <ListSkeleton/>
+  if(!isLoading) return <ListSkeleton/>
   if (error) return <p>{error}</p>;
 
   const onClick=(pcode:string)=>{
