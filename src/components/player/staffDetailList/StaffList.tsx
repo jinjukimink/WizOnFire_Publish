@@ -4,13 +4,12 @@ import {
   CoachCard,
   CoachImage,
   TextWrapper,
-} from "./staffDetailList/StaffListStyles"
-import useFetchData from "../../hooks/useFetchData";
-import SearchBar from "../common/searchbar/SearchBar";
-import { Container } from "../../pages/PagesStyles";
+} from "./StaffListStyles"
+import useFetchData from "../../../hooks/useFetchData";
+import SearchBar from "../../common/searchbar/SearchBar";
+import { Container } from "../../../pages/PagesStyles";
 import { useNavigate} from "react-router-dom";
-import SkeletonProfile from "../common/skeleton/SkeletonProfile";
-
+import ListSkeleton from "../../common/skeleton/ListSkeleton";
 
 export type TStaff = {
   playerName: string;
@@ -47,7 +46,7 @@ const StaffList = ({apiUrl,staffType}:TStaffListProps) => {
     }
 
   //if (isLoading) return <p>Loading...</p>;
-  if(isLoading) return <SkeletonProfile/>
+  if(isLoading) return <ListSkeleton/>
   if (error) return <p>{error}</p>;
 
   const onClick=(pcode:string)=>{

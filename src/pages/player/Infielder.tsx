@@ -1,4 +1,4 @@
-import StaffList from "../../components/player/StaffList";
+import StaffList from "../../components/player/staffDetailList/StaffList";
 
 const Infielder = () => {
   return (
