@@ -73,8 +73,7 @@ export const Logo = styled.div<{isHovered:boolean}>`
     &:hover{
         cursor: pointer;
     }
-
-    `;
+`;
 
 export const Category=styled.a<{isHovered: boolean; hoveredCategory:string;}>` 
     position: relative;

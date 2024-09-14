@@ -56,12 +56,12 @@ const StaffList = ({apiUrl,staffType}:TStaffListProps) => {
 
   return (
     <>
-    <Container style={{padding:"0px"}}>
+    <Container >
         <SearchBarContainer>    
         <SearchBar placeholder="검색어를 입력해주세요." containerWidth="220px" height="29px" buttonWidth="45px" />
       </SearchBarContainer>
         <GridContainer>
-          {staffs  ? (
+          {staffs ? (
             stafflist.map((staff) => (
               <CoachCard key={staff.pcode}>
                 <CoachImage

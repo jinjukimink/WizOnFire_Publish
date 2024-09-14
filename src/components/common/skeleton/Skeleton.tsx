@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { Container } from "../../../pages/PagesStyles";
 
 const loadingAnimation = keyframes`
     100% {
@@ -29,8 +30,8 @@ const SkeletonLine = styled(Shining)<{ visible: boolean }>`
 const SkeletonGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr); //4열 맞추기
-  gap: 7px; 
-  margin-top: 24px;
+  gap: 24px; 
+  margin-top: 0px;
 `;
 
 interface SkeletonPropsType {
@@ -62,11 +63,15 @@ interface SkeletonGridProps {
 
 export const SkeletonGridContainer = ({ count }: SkeletonGridProps) => {
   return (
-    <SkeletonGrid>
-      {Array.from({ length: count }).map((_, index) => (
-        <Skeleton key={index} />
-      ))}
-    </SkeletonGrid>
+<Container>
+
+      <SkeletonGrid>
+        {Array.from({ length: count }).map((_, index) => (
+          <Skeleton key={index} />
+        ))}
+      </SkeletonGrid>
+
+    </Container>  
   );
 };
 

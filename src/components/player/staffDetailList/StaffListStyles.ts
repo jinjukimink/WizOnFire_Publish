@@ -4,9 +4,9 @@ import styled from "styled-components";
 
 export const SearchBarContainer = styled.div`
   position: relative; /* 위치를 부모 요소에 상대적으로 조정 */
-  left: -36%;
+  left: -30%;
   display: inline-block;
-  top: -40px; /* 위로 이동 */
+  top: -84px; /* 위로 이동 */
   //padding-right: 10px;
    @media (max-width: 1300px) {
       left: -37%;
@@ -35,14 +35,14 @@ export const SearchBarContainer = styled.div`
 `;
 
 
-
 export const GridContainer = styled.div`
   margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   min-height: 100px;
-  width: 100%;
+  width: 80%;
+
 
   @media (max-width: 1200px) {
     grid-template-columns: repeat(3, 1fr);
@@ -75,7 +75,6 @@ export const TextWrapper = styled.div`
   right: 10px;
   color: black;
   font-size: 17px;
-
   p {
     margin: 0;
   }
