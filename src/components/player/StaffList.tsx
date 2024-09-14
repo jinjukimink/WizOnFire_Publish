@@ -9,6 +9,7 @@ import useFetchData from "../../hooks/useFetchData";
 import SearchBar from "../common/searchbar/SearchBar";
 import { Container } from "../../pages/PagesStyles";
 import { useNavigate} from "react-router-dom";
+import SkeletonProfile from "../common/skeleton/SkeletonProfile";
 
 
 export type TStaff = {
@@ -45,7 +46,8 @@ const StaffList = ({apiUrl,staffType}:TStaffListProps) => {
     stafflist = staffs as TStaff[];
     }
 
-  if (isLoading) return <p>Loading...</p>;
+  //if (isLoading) return <p>Loading...</p>;
+  if(isLoading) return <SkeletonProfile/>
   if (error) return <p>{error}</p>;
 
   const onClick=(pcode:string)=>{
