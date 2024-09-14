@@ -4,41 +4,37 @@ import styled from "styled-components";
 
 export const SearchBarContainer = styled.div`
   position: relative; /* 위치를 부모 요소에 상대적으로 조정 */
-  left: -28%;
+  left: -36%;
   display: inline-block;
   top: -40px; /* 위로 이동 */
   //padding-right: 10px;
-
+   @media (max-width: 1300px) {
+      left: -37%;
+    }
    @media (max-width: 1200px) {
-      left: -27%;
+      left: -34%;
     }
    @media (max-width: 1170px) {
-      left: -18%;
+      left: -34%;
     }
     @media (max-width: 1150px) {
-      left: -29%;
+      left: -33%;
     }
     @media (max-width: 1100px) {
-      left:-30%;
+      left:-34%;
     }
     @media (max-width: 1000px) {
-    left:-32%
+    left:-25%
     }
-    @media (max-width: 768px) {
-        left:-26%;
-    }
-    @media (max-width: 480px) {
-       left: -28%;
-    }
+    /* @media (max-width: 768px) {
+        left:-25%;
+    } */
+    /* @media (max-width: 480px) {
+      left: -20%;
+    } */
 `;
 
-export const TopContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-`;
+
 
 export const GridContainer = styled.div`
   margin-top: 50px;
@@ -46,7 +42,7 @@ export const GridContainer = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   min-height: 100px;
-  width: 75%;
+  width: 100%;
 
   @media (max-width: 1200px) {
     grid-template-columns: repeat(3, 1fr);

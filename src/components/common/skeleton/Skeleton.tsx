@@ -24,7 +24,13 @@ const SkeletonLine = styled(Shining)<{ visible: boolean }>`
   border-radius: 1rem;
   display: inline-block;
   background: ${({ visible }) => !visible && 'white'};
-  
+`;
+
+const SkeletonGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); //4열 맞추기
+  gap: 7px; 
+  margin-top: 24px;
 `;
 
 interface SkeletonPropsType {
@@ -32,19 +38,37 @@ interface SkeletonPropsType {
   height?: string;
   margin?: string;
   borderRadius?: string;
-  visible?:boolean;
+  visible?: boolean;
 }
 
-function Skeleton({ width, height, margin, borderRadius,visible=true }: SkeletonPropsType) {
-
+function Skeleton({
+  width = "240px", 
+  height = "275px", 
+  margin = "0", 
+  borderRadius = "0px", 
+  visible = true,
+}: SkeletonPropsType) {
   return (
     <SkeletonLine
-    visible={visible}
+      visible={visible}
       style={{ width, height, margin, borderRadius }}>
-        
-      </SkeletonLine>
+    </SkeletonLine>
   );
 }
 
-export default Skeleton;
+interface SkeletonGridProps {
+  count: number;
+}
+
+export const SkeletonGridContainer = ({ count }: SkeletonGridProps) => {
+  return (
+    <SkeletonGrid>
+      {Array.from({ length: count }).map((_, index) => (
+        <Skeleton key={index} />
+      ))}
+    </SkeletonGrid>
+  );
+};
+
+export default SkeletonGridContainer;
 
