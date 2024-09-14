@@ -33,7 +33,7 @@ export type TCoachData = {
 
 const StaffList = ({apiUrl,staffType}:TStaffListProps) => {
   const { data: staffs, isLoading, error } = useFetchData<TStaff[]>(apiUrl);
-  //console.log(staffs)//배열 그자체임
+
 
   const navigate=useNavigate();
 
