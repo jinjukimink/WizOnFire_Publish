@@ -45,7 +45,7 @@ const StaffList = ({apiUrl,staffType}:TStaffListProps) => {
     }
 
   //if (isLoading) return <p>Loading...</p>;
-  if(!isLoading) return <ListSkeleton/>
+  if(isLoading) return <ListSkeleton/>
   if (error) return <p>{error}</p>;
 
   const onClick=(pcode:string)=>{

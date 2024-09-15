@@ -1,5 +1,5 @@
 
-import SkeletonGridContainer from "./Skeleton";
+import SkeletonGridContainer from "./SkeletonGridContainer";
 
 
 
