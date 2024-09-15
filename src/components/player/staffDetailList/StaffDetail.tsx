@@ -19,9 +19,7 @@ export type TDetailStaff={
 }
 
 export type TCoachData={
-
   coachstep:TDetailStaff
-
 }
 type TStaffDetailProps={
   detailPath:string
