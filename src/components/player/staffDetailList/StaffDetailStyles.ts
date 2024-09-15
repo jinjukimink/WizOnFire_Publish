@@ -11,10 +11,15 @@ export const Contents = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  //position: relative;
 `;
 
 export const Img = styled.img`
   display: block;
+    @media (max-width: 1200px) {
+        max-width: 900px; 
+    }
+
 `;
 
 export const StaffInfo = styled.dl``;
