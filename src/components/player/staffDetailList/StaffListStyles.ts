@@ -1,6 +1,4 @@
-
 import styled from "styled-components";
-
 
 export const SearchBarContainer = styled.div`
   position: relative; /* 위치를 부모 요소에 상대적으로 조정 */
@@ -34,7 +32,7 @@ export const SearchBarContainer = styled.div`
     } */
 `;
 
-type TGridContainerProps={
+export type TGridContainerProps={
   columns:number;
 }
 export const GridContainer = styled.div<TGridContainerProps>`

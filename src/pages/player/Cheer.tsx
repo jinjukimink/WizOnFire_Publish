@@ -3,6 +3,9 @@ import { GridContainer } from "../../components/player/staffDetailList/StaffList
 import useFetchData from "../../hooks/useFetchData";
 import { Container } from "../PagesStyles";
 import CheerImage from "../../assets/images/landing/bg02.png"
+import colors from "../../assets/Colors";
+import SkeletonGridContainer from "../../components/common/skeleton/SkeletonGridContainer";
+import ListSkeleton from "../../components/common/skeleton/ListSkeleton";
 
 export type TCheerleader = {
   imgPath: string;
@@ -23,12 +26,13 @@ export type TCheerData = {
 // CheerCard 스타일 개선
 const CheerCard = styled.div`
   width: 250px;
-  height: 450px;
+  height: 454px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #d6d6d6;
-  padding: 16px;
+  //background-color: #d6d6d6;
+  //background-color:{colors.};
+  //padding: 16px;
   margin: 10px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -47,16 +51,16 @@ const CheerCard = styled.div`
   }
 
   img {
-    width: 200px;
-    height: 200px;
-    border-radius: 20%;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
     object-fit: cover;
     margin-bottom: 16px;
-    margin-top: 16px;
+    margin-top: 13px;
   }
 
   h1 {
-    font-size: 30px;
+    font-size: 33px;
     font-weight: 1000;
     color: #333;
     margin: 8px 0;
@@ -95,8 +99,7 @@ const Cheer = () => {
   const { data, isLoading, error } = useFetchData<TCheerData|null>('player/cheerleader');
   const fetchDataList = data?.data.list;
   console.log(fetchDataList)
-
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <ListSkeleton columns={3} margin="10px" width="240px" height="400px" borderRadius="7%"/>;
   if (error) return <p>Error loading data...</p>;
 
   return (
