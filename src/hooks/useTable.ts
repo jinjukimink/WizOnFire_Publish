@@ -8,7 +8,12 @@ type TableParams<TData> = {
     transformData?: (data: any) => TData[];
 };
 
-export const useTable = <TData,>({ apiUrl, columnDefs, transformData }: TableParams<TData>) => {
+export const useTable = <TData,>({
+    apiUrl,
+    columnDefs,
+    transformData
+}: TableParams<TData>) => {
+
     const [data, setData] = useState<TData[]>([]); 
     const BASE_URL = import.meta.env.VITE_BASE_URL || '';
 
@@ -22,7 +27,6 @@ export const useTable = <TData,>({ apiUrl, columnDefs, transformData }: TablePar
             console.error("데이터를 가져오는데 실패했습니다.", error);
         }
     };
-
     useEffect(() => {
         if (apiUrl) {
             fetchData();
@@ -30,7 +34,6 @@ export const useTable = <TData,>({ apiUrl, columnDefs, transformData }: TablePar
     }, [apiUrl]);
 
     const columns = useMemo(() => columnDefs, [columnDefs]);
-
     const table = useReactTable({
         data,
         columns,
