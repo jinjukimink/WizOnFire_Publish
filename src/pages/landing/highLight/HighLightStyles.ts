@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import colors from "../../assets/Colors"
+import colors from "../../../assets/Colors"
 
 export const HighLightContainer = styled.section`
     width: 100vw;

@@ -83,3 +83,20 @@ type THighLightResponse = {
         list: THighLight[];
     }
 }
+
+type TMonthlyPlayer = {
+    "imgFilePath": string;
+    "name": string;
+    "num": number;
+}
+
+type TGalleryData = {
+    "imgFilePath": string,
+    "artcSeq"?: number,
+}
+
+type TGalleryResponse = {
+    data: {
+        list: TGalleryData[];
+    }
+}

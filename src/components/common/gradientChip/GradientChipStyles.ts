@@ -13,6 +13,7 @@ export type TGradientCircle = {
     padding?:string;
     textGradient?: string;
     backgroundColor?: string;
+    color?: string;
 }
 
 export const GradientContainer = styled.div<TGradient>`
@@ -28,6 +29,7 @@ export const GradientCircle = styled.div<TGradientCircle>`
     border-radius: 20px;
     border: 3px solid ${colors.beige};
     background-color: ${({backgroundColor}) => backgroundColor || `${colors.redGradient}`} ;
+    color : ${({color}) => color};
     display: flex;
     justify-content: center;
     align-items: center;

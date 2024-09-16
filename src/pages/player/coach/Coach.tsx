@@ -8,7 +8,6 @@ import {
 } from "./CoachStyles"; // 스타일을 import
 import useFetchData from "../../../hooks/useFetchData";
 import SearchBar from "../../../components/common/searchbar/SearchBar";
-import { Container } from "../../PagesStyles";
 
 type TStaff = {
   playerName: string;
@@ -23,20 +22,13 @@ type TList = {
 };
 
 const Coach = () => {
-  const { data: coaches, isLoading, error } = useFetchData<{ data: TList }>("player/coachlist");
-  console.log(coaches?.data.list);
-
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
-
   return (
     <>
       <SearchBarContainer>    
         <SearchBar placeholder="검색어를 입력해주세요." containerWidth="220px" height="29px" buttonWidth="45px" />
       </SearchBarContainer>
 
-      {/* <TopContainer> */}
-      <Container>
+      <TopContainer>
         <GridContainer>
           {coaches && coaches.data.list.length > 0 ? (
             coaches.data.list.map((coach) => (
@@ -55,10 +47,8 @@ const Coach = () => {
             <p>No coach data available</p>
           )}
         </GridContainer>
-      {/* </TopContainer> */}
-      </Container>
+      </TopContainer>
     </>
   );
-};
-
-export default Coach;
+}
+export default Coach
