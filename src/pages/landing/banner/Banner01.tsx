@@ -1,7 +1,7 @@
-import colors from "../../assets/Colors";
-import { item01, item02 } from "../../assets/assets";
-import GradientChip from "../../components/common/gradientChip/GradientChip";
-import useFetchData from "../../hooks/useFetchData";
+import colors from "../../../assets/Colors";
+import { item01, item02 } from "../../../assets/assets";
+import GradientChip from "../../../components/common/gradientChip/GradientChip";
+import useFetchData from "../../../hooks/useFetchData";
 import {
   BannerContainer,
   BannerImg01,

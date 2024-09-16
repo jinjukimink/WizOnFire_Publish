@@ -1,7 +1,9 @@
+import StaffList from "../../components/player/staffDetailList/StaffList";
+
 const Catcher = () => {
   return (
     <>
-      <h1>Catcher Component</h1>
+     <StaffList apiUrl="player/catcherlist" staffType="catcher"/>
     </>
   );
 }
