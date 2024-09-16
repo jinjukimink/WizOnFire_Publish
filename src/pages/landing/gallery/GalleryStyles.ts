@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import colors from "../../assets/Colors"
+import colors from "../../../assets/Colors"
 
 export const GalleryContainer = styled.section`
     width: 100vw;
@@ -9,6 +9,7 @@ export const GalleryContainer = styled.section`
     flex-direction: column;
     color: ${colors.black};
     margin-top: 180px;
+
 `;
 
 export const GalleryNews = styled.div`
