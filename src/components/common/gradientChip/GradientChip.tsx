@@ -10,6 +10,7 @@ type TGradientChipType = {
     fontFamily?:string;
     textGradient?: string;
     backgroundColor?: string;
+    color?: string;
 }
 
 
@@ -22,7 +23,8 @@ const GradientChip = ({
     height,
     fontFamily,
     textGradient,
-    backgroundColor
+    backgroundColor,
+    color
 }: TGradientChipType) => {
     
     return (
@@ -34,6 +36,7 @@ const GradientChip = ({
                 padding={padding}
                 textGradient={textGradient}
                 backgroundColor={backgroundColor}
+                color={color}
                 >
                 <span>{main}</span>
             </GradientCircle>

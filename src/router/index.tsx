@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-       index:true,
+        path: "/",
         element: <Home />,
       },
       {
@@ -67,7 +67,11 @@ const router = createBrowserRouter([
             element: <Schedule/>,
           },
           {
-            path:"boxscore",
+            path: "boxscore/",
+            element: <BoxScore />,
+          },
+          {
+            path: "boxscore/:gameDate/:gmkey",
             element: <BoxScore />,
           },
           {
