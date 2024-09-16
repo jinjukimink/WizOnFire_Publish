@@ -91,6 +91,7 @@ export type ThpitchersAndvpitchers = {
     "tb": string;
     "w": number;
     "wls": string;
+    "accmErFormatted": string;
 }
 
 export type Tschedule = {

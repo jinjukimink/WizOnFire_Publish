@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import colors from "../../../../../assets/Colors";
 
-export const MainStatsLabel = styled.h3`
+export const PitchRecordLabel = styled.h3`
     margin-top: 50px;
 `;
 
 
-export const MainStatsTable = styled.table`
+export const PitchRecordTable = styled.table`
     width: 100%;
     border-collapse: collapse;
     caret-color: transparent;
@@ -16,19 +16,22 @@ export const MainStatsTable = styled.table`
 `;
 
 
-export const MainStatsHeaderCell   = styled.td`
+export const PitchRecordHeaderCell   = styled.td`
     padding-block: 10px;
     text-align: center;
     /* border-top: 1.5px solid ${colors.silverGray}; */
     background-color: ${colors.redGradient};
     color: ${colors.white};
     font-weight: 500;
-    &:nth-child(2) {
+    &:nth-child(1) {
         width: 10%;
+    }
+    &:last-child {
+        width: 8%;
     }
 `
 
-export const RowTr = styled.tr`
+export const PitchRecordRow = styled.tr`
     &:last-child {
         border-bottom: 1.5px solid ${colors.silverGray};
     }
@@ -39,7 +42,7 @@ export const RowTr = styled.tr`
     }
 `;
 
-export const MainStatsCell = styled.td`
+export const PitchRecordCell = styled.td`
         padding-block: 10px;
         text-align: center;
         border: 1px solid ${colors.silverGray};
