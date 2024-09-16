@@ -33,8 +33,6 @@ export type TCoachData = {
 
 const StaffList = ({apiUrl,staffType}:TStaffListProps) => {
   const { data: staffs, isLoading, error } = useFetchData<TStaff[]>(apiUrl);
-
-
   const navigate=useNavigate();
     let stafflist: TStaff[] = [];
 
@@ -59,7 +57,7 @@ const StaffList = ({apiUrl,staffType}:TStaffListProps) => {
         <SearchBarContainer>    
         <SearchBar placeholder="검색어를 입력해주세요." containerWidth="220px" height="29px" buttonWidth="45px" />
       </SearchBarContainer>
-        <GridContainer>
+        <GridContainer columns={4}>
           {staffs ? (
             stafflist.map((staff) => (
               <CoachCard key={staff.pcode}>
