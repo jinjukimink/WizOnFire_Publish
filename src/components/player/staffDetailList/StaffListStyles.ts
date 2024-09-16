@@ -34,15 +34,15 @@ export const SearchBarContainer = styled.div`
     } */
 `;
 
-
-export const GridContainer = styled.div`
-  margin-top: 50px;
+type TGridContainerProps={
+  columns:number;
+}
+export const GridContainer = styled.div<TGridContainerProps>`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(${props=>props.columns},1fr);
   gap: 20px;
   min-height: 100px;
-  //width: 100%;
-
+  //width: 00%;
 
   @media (max-width: 1200px) {
     grid-template-columns: repeat(3, 1fr);
