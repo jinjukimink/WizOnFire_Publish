@@ -18,6 +18,9 @@ import Pitcher from "../pages/player/Pitcher";
 import Catcher from "../pages/player/Catcher";
 import Cheer from "../pages/player/Cheer";
 import Map from "../pages/game/Map";
+import StaffDetail from "../components/player/staffDetailList/StaffDetail";
+import Infielder from "../pages/player/Infielder";
+import Outfielder from "../pages/player/Outfielder";
 
 const router = createBrowserRouter([
   {
@@ -92,17 +95,38 @@ const router = createBrowserRouter([
             element:<Coach/>,
           },
           {
+            path:"coach/detail",
+            element:<StaffDetail detailPath="coachdetail"/>
+          },
+          {
             path: "pitcher",
             element:<Pitcher/>,
+          },
+          {
+            path:"pitcher/detail",
+            element:<StaffDetail detailPath="pitcherdetail"/>
           },
           {
             path: "catcher",
             element:<Catcher/>,
           },
           {
+            path:"catcher/detail",
+            element:<StaffDetail detailPath="catcherdetail"/>
+          },
+          {
+            path:"infielder",
+            element:<Infielder/>
+          },
+          {
+            path:"outfielder",
+            element:<Outfielder/>
+          },
+          {
             path: "cheer",
             element:<Cheer/>,
           },
+  
         ]
       },
       {
@@ -111,7 +135,7 @@ const router = createBrowserRouter([
           {
             path: "wiznews",
             element:<News/>,
-          },
+         },
           {
             path: "wizpress",
             element:<WizPress/>,
