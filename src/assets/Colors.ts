@@ -1,9 +1,3 @@
-/*
-컴퍼넌트에서 아래처럼 사용하면 됨
-    const MyComponent = styled.div`
-    color: ${colors.secondary};
-    `;
-*/
 const colors = {
     black: "#231F20",
     darkGray: "#35383E",
