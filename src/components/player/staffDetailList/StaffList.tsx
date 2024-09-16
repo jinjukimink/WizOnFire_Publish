@@ -43,7 +43,7 @@ const StaffList = ({apiUrl,staffType}:TStaffListProps) => {
     }
 
   //if (isLoading) return <p>Loading...</p>;
-  if(isLoading) return <ListSkeleton/>
+  if(isLoading) return <ListSkeleton columns={4} margin="0px" width="240px" height="275px" borderRadius="0px"/>
   if (error) return <p>{error}</p>;
 
   const onClick=(pcode:string)=>{
@@ -54,7 +54,7 @@ const StaffList = ({apiUrl,staffType}:TStaffListProps) => {
   return (
     <>
     <Container >
-        <SearchBarContainer>    
+      <SearchBarContainer>    
         <SearchBar placeholder="검색어를 입력해주세요." containerWidth="220px" height="29px" buttonWidth="45px" />
       </SearchBarContainer>
         <GridContainer columns={4}>
