@@ -18,7 +18,7 @@ const BoxScore = () => {
     useEffect(() => {
         if (!gameDate || !gmkey) {
             // 파라미터가 없을 때
-            setApiUrl(`/game/boxscore?gameDate=20240914&gmkey=20240914KTOB0`);
+            setApiUrl('/game/boxscore');
         } else {
             // 파라미터가 있을 때
             setApiUrl(`/game/boxscore?gameDate=${gameDate}&gmkey=${gmkey}`);

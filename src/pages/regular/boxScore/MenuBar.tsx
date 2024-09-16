@@ -10,7 +10,7 @@ const MenuBar = ({apiUrl} : {apiUrl: string}) => {
     const menu = [
         {title: "주요기록", component: <MainStats apiUrl={apiUrl}/>},
         {title: "타자기록", component: <HitRecords apiUrl={apiUrl}/>},
-        {title: "투수기록", component: <PitchRecords/>},
+        {title: "투수기록", component: <PitchRecords apiUrl={apiUrl}/>},
     ]
 
     const [selectedMenu, setSelectedMenu] = useState("주요기록");
