@@ -77,6 +77,7 @@ const TeamMatch = () => {
                         teamName={show.homeKey}
                         score={show.homeScore}
                         />
+                    <strong>vs</strong>
                     <ScoreBox
                         hiddenLeft="95%"
                         scoreLeft="87%"

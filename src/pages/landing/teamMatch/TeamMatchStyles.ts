@@ -39,7 +39,7 @@ export const TeamMatchLine = styled.div`
 
 export const TeamMatchArrowBox = styled.div`
     display: flex;
-    gap: 62vh;
+    gap: 75vh;
 `;
 
 export const TeamMatchArrow = styled.img`
@@ -66,6 +66,13 @@ export const MatchInfo = styled.div`
 `
 export const ScoreContainer = styled.div`
     display: flex;
-    gap: 150px;
+    gap: 100px;
     margin-bottom: 50PX;
+
+    strong{
+        font-size: 60px;
+        display: flex;
+        align-items: center;
+        margin-top: 40px;
+    }
 `
