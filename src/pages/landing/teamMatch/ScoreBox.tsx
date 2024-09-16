@@ -34,12 +34,6 @@ const ScoreBox = ({
             >
               {score || 0}
           </ScoreBold>
-          {/* <ScoreBold
-            left={scoreLeft}
-            transform={transform}
-            >
-            12
-          </ScoreBold> */}
           <div>
             <img src={imageSrc} alt={teamName} />
             <span>{teamName}</span>

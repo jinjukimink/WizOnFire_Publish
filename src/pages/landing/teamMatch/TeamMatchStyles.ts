@@ -1,12 +1,13 @@
 import styled from "styled-components"
-import colors from "../../assets/Colors"
-import { landingBackground02 } from "../../assets/assets";
+import colors from "../../../assets/Colors"
+import { landingBackground02 } from "../../../assets/assets";
 
 export const TeamMatchContainer = styled.section`
     background-image: url(${landingBackground02});
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center ;
+    max-width: 1690px;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -38,7 +39,7 @@ export const TeamMatchLine = styled.div`
 
 export const TeamMatchArrowBox = styled.div`
     display: flex;
-    gap: 62vh;
+    gap: 75vh;
 `;
 
 export const TeamMatchArrow = styled.img`
@@ -65,6 +66,13 @@ export const MatchInfo = styled.div`
 `
 export const ScoreContainer = styled.div`
     display: flex;
-    gap: 150px;
+    gap: 100px;
     margin-bottom: 50PX;
+
+    strong{
+        font-size: 60px;
+        display: flex;
+        align-items: center;
+        margin-top: 40px;
+    }
 `

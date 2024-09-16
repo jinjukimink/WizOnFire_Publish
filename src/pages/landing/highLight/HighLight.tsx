@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import GradientChip from "../../components/common/gradientChip/GradientChip";
-import useFetchData from "../../hooks/useFetchData";
+import GradientChip from "../../../components/common/gradientChip/GradientChip";
+import useFetchData from "../../../hooks/useFetchData";
 import {
     HighLightContainer,
     HighLightNews,
@@ -8,8 +8,8 @@ import {
     HighLightTitle,
 } from "./HighLightStyles";
 import { GrNext } from "react-icons/gr";
-import { GradientCircle } from "../../components/common/gradientChip/GradientChipStyles";
-import colors from "../../assets/Colors";
+import { GradientCircle } from "../../../components/common/gradientChip/GradientChipStyles";
+import colors from "../../../assets/Colors";
 
 const HighLightVedioBox = styled.section`
     max-width: 1110px;

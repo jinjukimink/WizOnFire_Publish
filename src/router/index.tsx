@@ -9,7 +9,6 @@ import WizPress from "../pages/news/WizPress";
 import About from "../pages/ktwiz/About";
 import History from "../pages/ktwiz/History";
 import Intro from "../pages/wizpark/Intro";
-//import Location from "../pages/wizpark/Location";
 import Guide from "../pages/wizpark/Guide";
 import Schedule from "../pages/regular/Schedule";
 import WatchPoint from "../pages/regular/WatchPoint";
@@ -21,6 +20,7 @@ import Map from "../pages/game/Map";
 import StaffDetail from "../components/player/staffDetailList/StaffDetail";
 import Infielder from "../pages/player/Infielder";
 import Outfielder from "../pages/player/Outfielder";
+//import Location from "../pages/wizpark/Location";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-       index:true,
+        path: "/",
         element: <Home />,
       },
       {
@@ -70,7 +70,11 @@ const router = createBrowserRouter([
             element: <Schedule/>,
           },
           {
-            path:"boxscore",
+            path: "boxscore/",
+            element: <BoxScore />,
+          },
+          {
+            path: "boxscore/:gameDate/:gmkey",
             element: <BoxScore />,
           },
           {
@@ -131,7 +135,7 @@ const router = createBrowserRouter([
           {
             path: "wiznews",
             element:<News/>,
-         },
+          },
           {
             path: "wizpress",
             element:<WizPress/>,
