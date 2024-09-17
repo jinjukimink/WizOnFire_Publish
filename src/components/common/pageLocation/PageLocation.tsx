@@ -24,7 +24,8 @@ const PageLocation = () => {
   //console.log(selectedCategory,selectedSubCategory,selectedSidebar)
   //console.log(location)
 
-   const truncatedPathItems = pathItems.length > 3 ? pathItems.slice(0, 3) : pathItems;
+  const truncatedPathItems =( pathItems.length > 3 && pathItems[2]==="schedule" )? pathItems.slice(0, 3) : pathItems;
+  
 
   return (   
       !(isLandingPage || isShopOrSponsor) && (
@@ -33,12 +34,15 @@ const PageLocation = () => {
           <PageLocationInfo>
             <span><AiFillHome /></span>
             <span>Home</span>
-          {truncatedPathItems.map((item, index) => (
-            <span key={index}>
+          {truncatedPathItems.map((item, index) => {
+            const isLastItem = index === truncatedPathItems.length - 1;
+            return(
+                  <span key={index}>
               <span><MdArrowForwardIos /></span>
-              <span>{item}</span>
+              <span style={{ color: isLastItem ? "red" : "inherit" }}>{item}</span>
             </span>
-))}
+            )
+          })}
 
             {/* <span>{selectedSubCategory}</span>
             {selectedSidebar !== null ? (
