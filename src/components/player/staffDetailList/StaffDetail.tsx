@@ -3,7 +3,7 @@ import useFetchData from "../../../hooks/useFetchData";
 import { Container } from "../../../pages/PagesStyles";
 import { Wrapper, Contents, Img,  MainInfo, InfoList } from "./StaffDetailStyles"; // Import styles
 import styled from "styled-components";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import RegularSeasonRecord from "./regularSeasonRecord";
 import React from "react";
 
@@ -60,7 +60,7 @@ const RecordNav = styled.nav<{ imgWidth?: number }>`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
   margin-bottom: 30px;
-  
+
   @media (max-width: 1200px) {
         max-width: 900px; 
   }
@@ -72,6 +72,7 @@ const RecordNav = styled.nav<{ imgWidth?: number }>`
     padding: 10px 20px;
     transition: all 0.3s ease;
     position: relative;
+    
 
     &:before {
       content: "";
@@ -83,18 +84,15 @@ const RecordNav = styled.nav<{ imgWidth?: number }>`
       left: 50%;
       transition: all 0.3s ease;
     }
-
     &:hover {
       color: #c00000; /* 마우스를 올리면 레드로 전환 */
     }
-
     &:hover:before {
       width: 100%;
       left: 0;
     }
   }
 `;
-
 
 
 const StaffDetail = ({detailPath}:TStaffDetailProps) => {
@@ -108,8 +106,8 @@ const StaffDetail = ({detailPath}:TStaffDetailProps) => {
   const imgRef = React.useRef<HTMLImageElement>(null);
   const [imgWidth, setImgWidth] = React.useState<number | undefined>();
 
-
   // 데이터 타입에 따라 처리 (코치 vs 선수)
+
   let staffData: TDetailStaff |any;
   if (detailPath === "coachdetail") {
     //staffData = staff?.data.coachstep as TDetailStaff; // 코치 데이터는 직접 할당
@@ -118,13 +116,12 @@ const StaffDetail = ({detailPath}:TStaffDetailProps) => {
     staffData = (staff?.data as TGamePlayerProps)?.gameplayer;
   } 
 
-
   const regularLeagueData = useMemo(
     () => (staff?.data as TGamePlayerProps)?.seasonsummary,
     [staff]
   );
 
-  console.log(staffData)
+  //console.log(staffData)
 
   React.useEffect(() => {
     if (imgRef.current) {
@@ -132,14 +129,15 @@ const StaffDetail = ({detailPath}:TStaffDetailProps) => {
     }
   }, [staffData]);
 
-    // 로딩 중일 때 처리
+  const [whichDetail,setWhichDetail]=useState(categoryList[0]);
+  const onClick=(category:string)=>{
+    setWhichDetail(category);
+  }
+
   if (isLoading) return <p>Loading...</p>;
-
-  // 에러 발생 시 처리
   if (error) return <p>에러 발생: {error}</p>;
-
-  // 데이터가 없는 경우 처리
   if (!staff) return <p>정보를 찾을 수 없습니다.</p>;
+
   return (
     <>
     <Container>
@@ -167,12 +165,15 @@ const StaffDetail = ({detailPath}:TStaffDetailProps) => {
           {/* </StaffInfo> */}
         </Contents>
       </Wrapper>
-      {/* <RecordWapper>   */}
+      {detailPath!=='coachdetail' &&(
+        <>
         <RecordNav imgWidth={imgWidth}>
-        {categoryList.map(category=><h1>{category}</h1>)}
-        </RecordNav>
-      {/* </RecordWapper> */}
-      <RegularSeasonRecord regularLeagueData={regularLeagueData}/>
+            {categoryList.map(category => <h1 onClick={() => onClick(category)}>{category}</h1>)}
+          </RecordNav>
+          {whichDetail===categoryList[0] &&<RegularSeasonRecord regularLeagueData={regularLeagueData} /> }
+          </>
+      ) }
+
       </Container>
     </>
   );
