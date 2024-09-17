@@ -1,7 +1,7 @@
 import { ColumnDef, flexRender } from "@tanstack/react-table";
 import { useTable } from "../../../../../hooks/useTable";
 import { TBoxScoreResponse, ThbattersAndvbatters } from "../../../../../types/game";
-import { MainStatsLabel, MainStatsTable, MainStatsHeaderCell, RowTr, MainStatsCell } from "./HitRecordStyles"
+import { HitRecordLabel, HitRecordTable, HitRecordHeaderCell, HitRecordRow, HitRecordCell } from "./HitRecordStyles"
 import { useState } from "react";
 
 const HitRecords = ({apiUrl} : {apiUrl: string}) => {
@@ -84,59 +84,59 @@ const HitRecords = ({apiUrl} : {apiUrl: string}) => {
 
   return (
     <>
-      <MainStatsLabel>{homeTeam} 타자 기록</MainStatsLabel>
-      <MainStatsTable>
+      <HitRecordLabel>{homeTeam} 타자 기록</HitRecordLabel>
+      <HitRecordTable>
         <thead>
           {homeTable.getHeaderGroups().map(headerGroup => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map(header => (
-                <MainStatsHeaderCell key={header.id} colSpan={header.colSpan}>
+                <HitRecordHeaderCell key={header.id} colSpan={header.colSpan}>
                   {flexRender(header.column.columnDef.header, header.getContext())}
-                </MainStatsHeaderCell>
+                </HitRecordHeaderCell>
               ))}
             </tr>
           ))}
         </thead>
         <tbody>
           {homeTable.getRowModel().rows.map((row,rowIndex) => (
-            <RowTr key={row.id}>
+            <HitRecordRow key={row.id}>
               {row.getVisibleCells().map((cell,cellIndex) => (
-                <MainStatsCell key={cell.id}>
+                <HitRecordCell key={cell.id}>
                   {rowIndex === homeTable.getRowModel().rows.length-1 && cellIndex === 0 
                   ? "" : String(cell.getValue())}
-                </MainStatsCell>
+                </HitRecordCell>
               ))}
-            </RowTr>
+            </HitRecordRow>
           ))}
         </tbody>
-      </MainStatsTable>
+      </HitRecordTable>
   
-      <MainStatsLabel>{visitTeam} 타자 기록</MainStatsLabel>
-      <MainStatsTable>
+      <HitRecordLabel>{visitTeam} 타자 기록</HitRecordLabel>
+      <HitRecordTable>
         <thead>
           {visitTable.getHeaderGroups().map(headerGroup => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map(header => (
-                <MainStatsHeaderCell key={header.id} colSpan={header.colSpan}>
+                <HitRecordHeaderCell key={header.id} colSpan={header.colSpan}>
                   {flexRender(header.column.columnDef.header, header.getContext())}
-                </MainStatsHeaderCell>
+                </HitRecordHeaderCell>
               ))}
             </tr>
           ))}
         </thead>
         <tbody>
           {visitTable.getRowModel().rows.map((row,rowIndex) => (
-            <RowTr key={row.id}>
+            <HitRecordRow key={row.id}>
               {row.getVisibleCells().map((cell,cellIndex) => (
-                <MainStatsCell key={cell.id}>
+                <HitRecordCell key={cell.id}>
                     {rowIndex === visitTable.getRowModel().rows.length-1 && cellIndex === 0 
                   ? "": String(cell.getValue())}
-                </MainStatsCell>
+                </HitRecordCell>
               ))}
-            </RowTr>
+            </HitRecordRow>
           ))}
         </tbody>
-      </MainStatsTable>
+      </HitRecordTable>
     </>
   );
 }

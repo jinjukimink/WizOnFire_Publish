@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import colors from "../../../../../assets/Colors";
 
-export const MainStatsLabel = styled.h3`
+export const HitRecordLabel = styled.h3`
     margin-top: 50px;
 `;
 
-
-export const MainStatsTable = styled.table`
+export const HitRecordTable = styled.table`
     width: 100%;
     border-collapse: collapse;
     caret-color: transparent;
@@ -15,8 +14,7 @@ export const MainStatsTable = styled.table`
     color: ${colors.mediumGray};
 `;
 
-
-export const MainStatsHeaderCell   = styled.td`
+export const HitRecordHeaderCell   = styled.td`
     padding-block: 10px;
     text-align: center;
     /* border-top: 1.5px solid ${colors.silverGray}; */
@@ -26,9 +24,9 @@ export const MainStatsHeaderCell   = styled.td`
     &:nth-child(2) {
         width: 10%;
     }
-`
+`;
 
-export const RowTr = styled.tr`
+export const HitRecordRow = styled.tr`
     &:last-child {
         border-bottom: 1.5px solid ${colors.silverGray};
     }
@@ -39,15 +37,13 @@ export const RowTr = styled.tr`
     }
 `;
 
-export const MainStatsCell = styled.td`
-        padding-block: 10px;
-        text-align: center;
-        border: 1px solid ${colors.silverGray};
-    
+export const HitRecordCell = styled.td`
+    padding-block: 10px;
+    text-align: center;
+    border: 1px solid ${colors.silverGray};
     &:nth-child(1) {
         border-left: none;
     }
-
     &:last-child {
         border-right: none;
     }

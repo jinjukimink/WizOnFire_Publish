@@ -1,26 +1,28 @@
 import { useState } from "react";
-import MainStats from "./recordButton/mainRecords/MainRecords";
-import HitRecords from "./recordButton/hitRecords/HitRecords";
-import PitchRecords from "./recordButton/pitchRecords/PitchRecords";
-import { MenuContainer,MenuBottomLine } from "./MenuBarStyles"
+import { RankingMenuContainer, RankingMenuBottomLine } from "./RankingMenuBarStyles"
 import { GradientCircle } from "../../../components/common/gradientChip/GradientChipStyles";
 import colors from "../../../assets/Colors";
+import BatterRanking from "./batter/BatterRanking";
+import TeamRanking from "./team/TeamRanking";
+import PitcherRanking from "./pitcher/PitcherRanking";
+import AudienceStatus from "./audience/AudienceStatus";
 
-const MenuBar = ({apiUrl} : {apiUrl: string}) => {
+const RankingMenuBar = () => {
     const menu = [
-        {title: "주요기록", component: <MainStats apiUrl={apiUrl}/>},
-        {title: "타자기록", component: <HitRecords apiUrl={apiUrl}/>},
-        {title: "투수기록", component: <PitchRecords apiUrl={apiUrl}/>},
+        {title: "팀순위", component: <TeamRanking />},
+        {title: "투수순위", component: <PitcherRanking/>},
+        {title: "타자순위", component: <BatterRanking />},
+        {title: "관중현황", component: <AudienceStatus />},
     ]
 
-    const [selectedMenu, setSelectedMenu] = useState("주요기록");
+    const [selectedMenu, setSelectedMenu] = useState("팀순위");
     const handleClick = (title: string) => {
         setSelectedMenu(title);
     };
 
     return (
     <>
-        <MenuContainer>
+        <RankingMenuContainer>
             {
                 menu.map((item)=>(
                     <GradientCircle
@@ -37,8 +39,8 @@ const MenuBar = ({apiUrl} : {apiUrl: string}) => {
                     </GradientCircle>
                 ))
             }
-        </MenuContainer>
-        <MenuBottomLine/>
+        </RankingMenuContainer>
+        <RankingMenuBottomLine/>
         <div>
             {
                 menu.find(item => item.title === selectedMenu)?.component
@@ -47,4 +49,4 @@ const MenuBar = ({apiUrl} : {apiUrl: string}) => {
     </>
 );
 }
-export default MenuBar
+export default RankingMenuBar;

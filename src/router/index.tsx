@@ -2,8 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layouts/Layout";
 import Home from "../pages/landing/Home";
 import NotFound from "../components/NotFound";
-import BoxScore from "../pages/regular/BoxScore";
-import Ranking from "../pages/regular/Ranking";
+import BoxScore from "../pages/regular/boxScore/BoxScore";
 import News from "../pages/news/News";
 import WizPress from "../pages/news/WizPress";
 import About from "../pages/ktwiz/About";
@@ -20,6 +19,7 @@ import Map from "../pages/game/Map";
 import StaffDetail from "../components/player/staffDetailList/StaffDetail";
 import Infielder from "../pages/player/Infielder";
 import Outfielder from "../pages/player/Outfielder";
+import Ranking from "../pages/regular/ranking/Ranking";
 //import Location from "../pages/wizpark/Location";
 
 const router = createBrowserRouter([

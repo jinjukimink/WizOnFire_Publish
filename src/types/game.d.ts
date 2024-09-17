@@ -95,17 +95,18 @@ export type ThpitchersAndvpitchers = {
 }
 
 export type Tschedule = {
-    current: TCurrentAndPrevInfo;
-    prev: TCurrentAndPrevInfo;
+    current?: TCurrentAndPrevInfo;
+    prev?: TCurrentAndPrevInfo;
+    next?: TCurrentAndPrevInfo;
 }
 
-export type TCurrentAndPrevInfo = {
+export type TScheduleInfo = {
     "broadcast": string;
     "cancelFlag": string;
     "crowdCn": number;
     "endFlag": string;
     "game": string;
-    "gameDate": number;
+    "gameDate": string;
     "gday": number;
     "gmkey": string;
     "gmonth": number;
@@ -119,6 +120,8 @@ export type TCurrentAndPrevInfo = {
     "visit": string;
     "visitKey": string;
     "vscore": number;
+    "homeLogo": string;
+    "visitLogo": string;
 }
 
 export type TScoreboard = {
