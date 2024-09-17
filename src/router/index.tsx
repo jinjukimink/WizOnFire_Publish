@@ -75,6 +75,7 @@ const router = createBrowserRouter([
           },
           {
             path: "boxscore/:gameDate/:gmkey",
+            //path:"game/regular/boxscore",
             element: <BoxScore />,
           },
           {

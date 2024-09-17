@@ -6,9 +6,12 @@ import styled from 'styled-components';
 
 
 const TableWrapper=styled.div`
-    width:90%;
+    width:1100px;
     justify-content: center;
     align-items: center;
+    @media (max-width: 1200px) {
+        max-width: 900px; 
+  }
   `
 const RegularSeasonRecord = ({ regularLeagueData }: { regularLeagueData: TRegularLeagueProps }) => {
     //console.log("rendering")
@@ -27,7 +30,8 @@ const RegularSeasonRecord = ({ regularLeagueData }: { regularLeagueData: TRegula
     { header: '투구수', accessorKey: 'tugucount' },            
     { header: '이닝', accessorKey: 'innDisplay' },             
     { header: '피안타', accessorKey: 'hit' },                  
-    { header: '피홈런', accessorKey: 'hr' },                   
+    { header: '피홈런', accessorKey: 'hr' }, 
+    { header: '',id:'empty', accessorKey: '', enableSorting: false, cell: () => null }, // 빈열 추가                  
   ];
 
   // 두 번째 줄에 렌더링할 15개의 컬럼
@@ -87,22 +91,19 @@ const handleData = (data: TRegularLeagueProps): TRegularLeagueProps => {
   const firstRowTable = useTableWithoutApi<TRegularLeagueProps>({
     data: [regularLeagueData],
     columnDefs: firstRowColumns,
-    transformData:handleData
+    transformData:handleData,
   });
 
   const secondRowTable = useTableWithoutApi<TRegularLeagueProps>({
     data: [regularLeagueData],
     columnDefs: secondRowColumns,
-    transformData:handleData
+    transformData:handleData,
   });
 
-
-
-  
   return (
     <>
     <TableWrapper>
-    <MainStatsTable>
+    <MainStatsTable style={{justifyContent:"center", alignContent:"center"}}>
       {/* <table> */}
         {/* 첫 번째 줄 헤더 */}
         <thead>

@@ -23,6 +23,9 @@ const PageLocation = () => {
   const isShopOrSponsor = ["shop","스폰서"].includes(selectedCategory);
   //console.log(selectedCategory,selectedSubCategory,selectedSidebar)
   //console.log(location)
+
+   const truncatedPathItems = pathItems.length > 3 ? pathItems.slice(0, 3) : pathItems;
+
   return (   
       !(isLandingPage || isShopOrSponsor) && (
       <PageLocationContainer>
@@ -30,12 +33,12 @@ const PageLocation = () => {
           <PageLocationInfo>
             <span><AiFillHome /></span>
             <span>Home</span>
-            <span><MdArrowForwardIos /></span>
-            <span>{pathItems[0]}</span>
-            <span><MdArrowForwardIos /></span>
-            <span>{pathItems[1]}</span>
-            {/* <span>{selectedCategory}</span>
-            <span><MdArrowForwardIos /></span> */}
+          {truncatedPathItems.map((item, index) => (
+            <span key={index}>
+              <span><MdArrowForwardIos /></span>
+              <span>{item}</span>
+            </span>
+))}
 
             {/* <span>{selectedSubCategory}</span>
             {selectedSidebar !== null ? (
