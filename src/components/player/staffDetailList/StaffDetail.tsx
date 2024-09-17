@@ -1,8 +1,11 @@
 import { useSearchParams } from "react-router-dom";
 import useFetchData from "../../../hooks/useFetchData";
 import { Container } from "../../../pages/PagesStyles";
-import { Wrapper, Contents, Img, StaffInfo, MainInfo, InfoList } from "./StaffDetailStyles"; // Import styles
+import { Wrapper, Contents, Img,  MainInfo, InfoList } from "./StaffDetailStyles"; // Import styles
 import styled from "styled-components";
+import { useMemo } from "react";
+import RegularSeasonRecord from "./regularSeasonRecord";
+import React from "react";
 
 
 export type TDetailStaff={
@@ -35,16 +38,16 @@ export type TGamePlayerProps={//오타 점검
   yearrecodists:any;
 }
 
-const RecordWapper=styled.section`
-  width: 90%;
-  height:100%;
-  justify-content: center;
-  align-items: center;
-  //text-align:center;
-`
-;
-const RecordNav = styled.nav`
-  //width: 80%;
+// const RecordWapper=styled.section`
+//   width: 90%;
+//   height:100%;
+//   justify-content: center;
+//   align-items: center;
+//   //text-align:center;
+// `
+// ;
+const RecordNav = styled.nav<{ imgWidth?: number }>`
+  width: ${({ imgWidth }) => (imgWidth ? `${imgWidth}px` : 'auto')};
   height:40px;
   align-items: center;//텍스트 중간 위치
   display: flex;
@@ -55,7 +58,12 @@ const RecordNav = styled.nav`
   padding: 20px 0;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  margin-bottom: 30px;
   
+  @media (max-width: 1200px) {
+        max-width: 900px; 
+  }
   h1 {
     font-size: 20px;
     color: #ffffff; /* 흰색 글씨 */
@@ -96,7 +104,10 @@ const StaffDetail = ({detailPath}:TStaffDetailProps) => {
   //console.log(staff)
 //들어오는 객체 타입이 다름. 선수의 경우에는 객체안에 있는 또다른 객체한테 접근해야 함.
 
-  const categoryList=["정규리그 기록","최근 5경기","통산기록"]
+  const categoryList=["정규리그 기록","최근 5경기","통산기록"];
+  const imgRef = React.useRef<HTMLImageElement>(null);
+  const [imgWidth, setImgWidth] = React.useState<number | undefined>();
+
 
   // 데이터 타입에 따라 처리 (코치 vs 선수)
   let staffData: TDetailStaff |any;
@@ -107,7 +118,19 @@ const StaffDetail = ({detailPath}:TStaffDetailProps) => {
     staffData = (staff?.data as TGamePlayerProps)?.gameplayer;
   } 
 
+
+  const regularLeagueData = useMemo(
+    () => (staff?.data as TGamePlayerProps)?.seasonsummary,
+    [staff]
+  );
+
   console.log(staffData)
+
+  React.useEffect(() => {
+    if (imgRef.current) {
+      setImgWidth(imgRef.current.offsetWidth);
+    }
+  }, [staffData]);
 
     // 로딩 중일 때 처리
   if (isLoading) return <p>Loading...</p>;
@@ -122,7 +145,7 @@ const StaffDetail = ({detailPath}:TStaffDetailProps) => {
     <Container>
       <Wrapper>
         <Contents>
-          <Img src={staffData?.playerPrvwImg2} alt={staffData?.backnum}/>
+          <Img  ref={imgRef} src={staffData?.playerPrvwImg2} alt={staffData?.backnum}/>
           {/* <StaffInfo> */}
             <MainInfo>
             <span style={{color:"#c00000"}}>No. {staffData?.backnum}</span>
@@ -144,13 +167,12 @@ const StaffDetail = ({detailPath}:TStaffDetailProps) => {
           {/* </StaffInfo> */}
         </Contents>
       </Wrapper>
-
-      <RecordWapper>  
-        <RecordNav>
+      {/* <RecordWapper>   */}
+        <RecordNav imgWidth={imgWidth}>
         {categoryList.map(category=><h1>{category}</h1>)}
         </RecordNav>
-      </RecordWapper>
-      
+      {/* </RecordWapper> */}
+      <RegularSeasonRecord regularLeagueData={regularLeagueData}/>
       </Container>
     </>
   );
