@@ -1,8 +1,14 @@
+import styled from "styled-components";
+import AudienceRecord from "./AudienceRecord";
+
+const AudienceContainer = styled.main`
+  margin-top: 50px;
+`
 const AudienceStatus = () => {
   return (
-    <>
-      <h1>AudienceStatus Component</h1>
-    </>
+    <AudienceContainer>
+      <AudienceRecord/>
+    </AudienceContainer>
   );
 }
 export default AudienceStatus

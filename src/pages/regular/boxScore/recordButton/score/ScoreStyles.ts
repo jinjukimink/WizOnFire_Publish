@@ -65,7 +65,7 @@ export const ScoreCell = styled.td`
 `;
 
 export const ScoreArrowAndInfoBox= styled.div`
-    z-index: 41;
+    z-index: 40;
     width: 100%;
     position: absolute;
     top: 90px;

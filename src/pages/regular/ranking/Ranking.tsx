@@ -8,6 +8,7 @@ const RankingContainer = styled.div`
     margin: 0 auto;
     margin-top: 50px;
 `;
+
 const Ranking = () => {
   return (
     <RankingContainer>
