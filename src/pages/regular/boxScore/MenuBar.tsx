@@ -16,11 +16,13 @@ const MenuBar = ({apiUrl} : {apiUrl: string}) => {
     const [selectedMenu, setSelectedMenu] = useState("주요기록");
     const handleClick = (title: string) => {
         setSelectedMenu(title);
+        window.scrollTo(0,0);
     };
 
     return (
-    <>
+        <>
         <MenuContainer>
+        <MenuBottomLine/>
             {
                 menu.map((item)=>(
                     <GradientCircle
@@ -38,7 +40,6 @@ const MenuBar = ({apiUrl} : {apiUrl: string}) => {
                 ))
             }
         </MenuContainer>
-        <MenuBottomLine/>
         <div>
             {
                 menu.find(item => item.title === selectedMenu)?.component
