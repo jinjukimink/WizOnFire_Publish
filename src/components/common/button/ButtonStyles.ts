@@ -13,6 +13,7 @@ export type TButton ={
     backgroundColor?:string;
     hoverColor?:string;
     hoverBorder?: string; 
+    hoverFontColor?:string;
     margin?:string;
     border?:string;
     padding?:string;
@@ -45,6 +46,7 @@ export const Btn = styled.button<TButton>`
     &:hover {
         background-color: ${({hoverColor}) => hoverColor || colors.redPrimary };
         border: ${({hoverBorder}) => hoverBorder || "none"};
-        color: ${colors.white};
+        // color: ${colors.white};
+        color: ${({hoverFontColor}) => hoverFontColor || colors.white}; // 호버 시 폰트 컬러를 props로 설정
     }
 `

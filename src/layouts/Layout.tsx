@@ -17,7 +17,6 @@ const MainContent = styled.main`
 `;
 
 const Layout = () => {
-
   return (
     <PageContainer >
       <ScrollToTop/>
