@@ -133,6 +133,7 @@ const Header = () => {
 
   const handleCategoryClick = (category: string) => {
     const firstSubCategory = subCategories[categories.indexOf(category)][0];
+    console.log(category)
     setSelectedCategory(category);
     setSelectedSubCategory(firstSubCategory);
     setSelectedSidebar(sidebars[categories.indexOf(category)][0][0] || null);
@@ -157,6 +158,7 @@ const Header = () => {
       else{
         navigate(`/${forNav}/regular/${subCategoriesForNav[categoryIndex][subIndex]}`);
       }
+      console.log(forNav)
       return;
     }
 
@@ -178,7 +180,9 @@ const Header = () => {
     {/* 카테고리 렌더링 */}
     <Category
       hoveredCategory={category}
-      href={`/${categoriesForNav[index]}/${subCategoriesForNav[index][0]}`}
+      href={categoriesForNav[index]==='game'?
+        `/${categoriesForNav[index]}/regular/${subCategoriesForNav[index][0]}`
+        :`/${categoriesForNav[index]}/${subCategoriesForNav[index][0]}`}
       onMouseEnter={() => handleMouseEnterCategory(category)}
       onMouseLeave={handleMouseLeaveCategory}
       isHovered={hoveredCategory !== "" && hoveredCategory === category}
