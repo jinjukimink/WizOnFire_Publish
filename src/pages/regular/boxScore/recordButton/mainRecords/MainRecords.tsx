@@ -1,7 +1,7 @@
 import { ColumnDef } from '@tanstack/react-table';
 import { TBoxScoreResponse, TEtcgame } from '../../../../../types/game';
 import { useTable } from '../../../../../hooks/useTable';
-import { MainStatsTable, MainStatsCell } from "./MainRecordStyles"
+import { MainStatsTable, MainStatsCell, MainStatsTr } from "./MainRecordStyles"
 
 const columnDefs: ColumnDef<TEtcgame>[] = [
     { header: '결승타', accessorKey: 'how' },
@@ -27,11 +27,11 @@ const MainRecords = ({apiUrl} : {apiUrl: string}) => {
         <MainStatsTable>
             <tbody>
                 {getRowModel().rows.map(row => (
-                    <tr key={row.id}>
+                    <MainStatsTr key={row.id}>
                         {row.getVisibleCells().map(cell => (
                             <MainStatsCell key={cell.id}>{String(cell.getValue())}</MainStatsCell>
                         ))}
-                    </tr>
+                    </MainStatsTr>
                 ))}
             </tbody>
         </MainStatsTable>
