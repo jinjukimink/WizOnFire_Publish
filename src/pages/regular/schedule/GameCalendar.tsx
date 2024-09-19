@@ -11,6 +11,7 @@ import useFetchData from '../../../hooks/useFetchData';
 import KtEvent from './KtEvent';
 import { useNavigate } from 'react-router-dom';
 import AllEvent from './AllEvent';
+import { GradientCircle } from '../../../components/common/gradientChip/GradientChipStyles';
 
 moment.locale('ko');
 
@@ -68,6 +69,7 @@ const CalendarComponent = () => {
   const [isKt,setIsKt] = useState(true);
   const navigate = useNavigate();
 
+
   // const yearMonth = moment(currentDate).format('YYYYMM');
 
   // moment를 사용하지 않고 날짜 포맷팅 (apiUrl)
@@ -122,6 +124,11 @@ const CalendarComponent = () => {
     setCurrentDate(newDate);
   };
 
+  const handleMonthSelect = (selectedMonth: string) => {
+    const newDate = moment(selectedMonth, 'YYYYMM').toDate();
+    setCurrentDate(newDate);
+  };
+
   // 홈이 kt 일때 배경색 변경
   const dayPropGetter = (date: { toDateString: () => string; }) => {
     const isHomeKt = events.some(event => 
@@ -135,34 +142,37 @@ const CalendarComponent = () => {
     return {};
   };
   
+  
   return (
     <CalendarBox>
       <CalendarHeader>
         <div>
-          <Button 
-            border='none' 
-            width='120px' 
-            height='30px' 
-            hoverColor='none' 
-            hoverFontColor='none' 
-            backgroundColor={isKt ? colors.redPrimary: colors.white} 
-            fontColor={isKt ? colors.white : colors.black}
-            onClick={()=>setIsKt(true)}
-          >
+          <GradientCircle
+            key = "ktwiz 경기"
+            width="110px"
+            height="28px"
+            margin="0 5px 0 0"
+            fontFamily="KBO_Gothic_bold"
+            border="none"
+            color={isKt ? colors.white : colors.black}
+            backgroundColor={isKt ? colors.redQuaternary : colors.white}
+            onClick = {()=>setIsKt(true)}
+            >
             KT Wiz 경기
-          </Button>
-          <Button 
-            border='none' 
-            width='120px' 
-            height='30px' 
-            hoverColor='none' 
-            hoverFontColor='none' 
-            backgroundColor={!isKt ? colors.redPrimary: colors.white} 
-            fontColor={!isKt ? colors.white : colors.black}
-            onClick={()=>setIsKt(false)}
-          >
+            </GradientCircle>
+          <GradientCircle
+            key = "전체 리그"
+            width="110px"
+            height="28px"
+            margin="0 5px 0 0"
+            fontFamily="KBO_Gothic_bold"
+            border="none"
+            color={!isKt ? colors.white : colors.black}
+            backgroundColor={!isKt ? colors.redQuaternary : colors.white}
+            onClick = {()=>setIsKt(false)}
+            >
             전체 리그
-          </Button>
+            </GradientCircle>
         </div>        
         <MonthSelector>
           <Button 
@@ -205,14 +215,20 @@ const CalendarComponent = () => {
           date={currentDate}
           //onNavigate={date => setCurrentDate(date)}
           onSelectEvent={(event: TEvent) => {
-            navigate(`/game/regular/boxscore/${event.gameDate}/${event.gmkey}`)} // 임시 경로 지정
-          }
+            if(isKt){
+              const eventDate = new Date(event.start);
+              const today = new Date();
+              if (eventDate <= today) {
+                navigate(`/game/regular/boxscore/${event.gameDate}/${event.gmkey}`); // 임시 경로 지정
+              }
+            }
+          }}
           //캘린더 이벤트 커스터마이징
           components={{
             event: isKt ? KtEvent : AllEvent,
           }}
           dayPropGetter={isKt ? dayPropGetter : undefined}
-         style={{ height: '100%' }} 
+         style={{ height: '100%'}} 
         />
       </StyledCalendarContainer>
     </CalendarBox>
