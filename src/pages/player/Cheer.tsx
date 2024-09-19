@@ -3,8 +3,6 @@ import { GridContainer } from "../../components/player/staffDetailList/StaffList
 import useFetchData from "../../hooks/useFetchData";
 import { Container } from "../PagesStyles";
 import CheerImage from "../../assets/images/landing/bg02.png"
-import colors from "../../assets/Colors";
-import SkeletonGridContainer from "../../components/common/skeleton/SkeletonGridContainer";
 import ListSkeleton from "../../components/common/skeleton/ListSkeleton";
 
 export type TCheerleader = {
