@@ -1,7 +1,6 @@
 import {
     PitMenuSelected,
     SubMenuText,
-    Triangle,
 } from "./SelectMenuStyles"
 
 type TSubMenuType = {
@@ -10,10 +9,9 @@ type TSubMenuType = {
     left?: string;
 }; 
 
-const SelectMenu = ({isSelected, children, left}: TSubMenuType) => {
+const SelectMenu = ({isSelected, children}: TSubMenuType) => {
     return (
         <PitMenuSelected isSelected={isSelected}>
-            <Triangle left={left}/>
             <SubMenuText>
                 {children}
             </SubMenuText>
