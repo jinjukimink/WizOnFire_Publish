@@ -22,7 +22,6 @@ const useFetchData = <T>(url:string) => {
     useEffect(()=>{
         fetchData();
     },[url]);
-
     return { data, isLoading, error };
 }
 export default useFetchData;
