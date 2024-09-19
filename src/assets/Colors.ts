@@ -10,6 +10,7 @@ const colors = {
     redPrimary: "#F53232",
     redSecondary: "#EA0101",
     redTertiary: "#D60C0C",
+    // redGradient: "#BF0413",
     redGradient: "#7B0000",
     ivory: "#f3f7f6",
     white: "#FFFFFF",

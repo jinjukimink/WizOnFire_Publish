@@ -5,6 +5,7 @@ export const MainStatsTable = styled.table`
     width: 100%;
     border-collapse: collapse;
     caret-color: transparent;
+    margin-top: 50px;
 `;
 
 export const MainStatsCell = styled.td`

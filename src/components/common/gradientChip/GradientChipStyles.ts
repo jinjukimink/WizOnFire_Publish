@@ -11,6 +11,7 @@ export type TGradientCircle = {
     height?:string;
     fontFamily?:string;
     padding?:string;
+    margin?:string;
     textGradient?: string;
     backgroundColor?: string;
     color?: string;
@@ -36,6 +37,7 @@ export const GradientCircle = styled.div<TGradientCircle>`
     caret-color: transparent;
     font-family: ${({fontFamily}) => fontFamily || "Noto Sans KR"} ;
     padding: ${({padding}) => padding || '0'};
+    margin: ${({margin}) => margin || '0'};
     cursor: pointer;
     span{
         font-family:"PartialSansKR" ;

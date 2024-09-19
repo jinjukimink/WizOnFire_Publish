@@ -4,6 +4,7 @@ import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import PageLocation from "../components/common/pageLocation/PageLocation";
 import SideBar from "../components/common/Sidebar";
+import ScrollToTop from "../hooks/ScrollToTop";
 
 const PageContainer = styled.div`//DOM으로 props가 전달되지 않도록 해야 함.(스타일에만 한정)
   display: flex;
@@ -22,6 +23,7 @@ const Layout = () => {
 
   return (
     <PageContainer >
+      <ScrollToTop/>
       <Header />
       <SideBar/>
       <MainContent>

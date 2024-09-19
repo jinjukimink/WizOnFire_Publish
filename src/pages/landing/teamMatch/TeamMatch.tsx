@@ -1,5 +1,5 @@
 import GradientChip from "../../../components/common/gradientChip/GradientChip";
-import { rightArrow, leftArrow, doosan, ktwiz, nc} from "../../../assets/assets";
+import { rightArrow, leftArrow } from "../../../assets/assets";
 import {
     TeamMatchContainer,
     TeamMathNews,
