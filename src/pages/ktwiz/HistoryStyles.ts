@@ -36,7 +36,7 @@ export const LeftBox = styled.div<{algin?:string}>`
   width: 430px;
   position: relative;
   border: 1px solid #e4e4e4;
-  border-top: 1.5px solid ${colors.redPrimary};
+  border-top: 2.5px solid ${colors.redPrimary};
   background-color: #f9f9f9;
   padding: 38px 28px;
   color: #5b5a5a;
@@ -71,7 +71,7 @@ export const RightBox = styled.div<{algin?:string}>`
   width: 430px;
   position: relative;
   border: 1px solid #e4e4e4;
-  border-top: 1.5px solid ${colors.redPrimary};
+  border-top: 2.5px solid ${colors.redPrimary};
   background-color: #f9f9f9;
   padding: 38px 28px;
   color: #5b5a5a;

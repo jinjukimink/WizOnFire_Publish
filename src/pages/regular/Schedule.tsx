@@ -1,8 +1,14 @@
+import GameCalendar from "./schedule/GameCalendar"
+import MatchBox from "./schedule/MatchBox"
+
 const Schedule = () => {
+
   return (
-    <>
-      <h1>Schedule Component</h1>
-    </>
-  );
+  <>
+  <MatchBox/>
+  <GameCalendar />
+  </>
+  )
 }
-export default Schedule 
+
+export default Schedule
