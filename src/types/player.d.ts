@@ -19,7 +19,7 @@ export type TRegularLeagueProps={
     ib: number;            // 고의4구 (ex. 1)
     hp: number;            // 사구 (ex. 1)
     kk: number;            // 탈삼진 (ex. 23)
-    wp: number;            // 폭투 (ex. 3)
+    wra: number;            // 승률 (ex. 3)
     bk: number;            
     r: number;             
     er: number;            
