@@ -10,7 +10,7 @@ export const NewsContainer = styled.div`
 `;
 
 export const NewsList = styled.div`
-  width: 90%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   margin-top: 20px;
@@ -49,7 +49,6 @@ export const Description = styled.p`
 export const Meta = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
   color: #999;
   font-size: 0.9rem;
 `;
@@ -58,7 +57,7 @@ export const MetaInfo = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 90%;
   margin-top: 10px;
 `;
 
