@@ -34,6 +34,7 @@ const GradientChip = ({
                 height={height}
                 fontFamily={fontFamily}
                 padding={padding}
+                margin={margin}
                 textGradient={textGradient}
                 backgroundColor={backgroundColor}
                 color={color}
