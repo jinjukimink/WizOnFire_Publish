@@ -13,8 +13,9 @@ export const PitRankingTable = styled.table`
 export const PitRankingHeaderCell   = styled.td`
     padding-block: 10px;
     text-align: center;
-    background-color: ${colors.redGradient};
-    color: ${colors.white};
+    border-top: 1.5px solid ${colors.redQuaternary};
+    background-color: ${colors.mediumIvory};
+    color: ${colors.black};
     font-weight: 500;
     &:nth-child(1) {
         width: 5%;

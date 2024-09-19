@@ -2,7 +2,7 @@ import { useState } from "react";
 import MainStats from "./recordButton/mainRecords/MainRecords";
 import HitRecords from "./recordButton/hitRecords/HitRecords";
 import PitchRecords from "./recordButton/pitchRecords/PitchRecords";
-import { MenuContainer,MenuBottomLine } from "./MenuBarStyles"
+import { MenuContainer } from "./MenuBarStyles"
 import { GradientCircle } from "../../../components/common/gradientChip/GradientChipStyles";
 import colors from "../../../assets/Colors";
 
@@ -23,17 +23,17 @@ const MenuBar = ({apiUrl} : {apiUrl: string}) => {
     return (
         <>
         <MenuContainer>
-        <MenuBottomLine/>
             {
                 menu.map((item)=>(
                     <GradientCircle
                         key={item.title}
                         width="80px"
-                        height="25px"
+                        height="28px"
                         margin="0 5px 0 0"
                         fontFamily="KBO_Gothic_bold"
+                        border="none"
                         color={ selectedMenu === item.title ? colors.white : colors.black}
-                        backgroundColor={ selectedMenu === item.title ? colors.redGradient : colors.white}
+                        backgroundColor={ selectedMenu === item.title ? colors.redQuaternary : colors.white}
                         onClick={()=>handleClick(item.title)}
                     >
                         {item.title}
