@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import {
   LineChart,
   Line,
@@ -6,116 +5,114 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ReferenceArea,
 } from 'recharts';
+import styled from 'styled-components';
+import colors from '../../../../../assets/Colors';
+import { redBaseball } from '../../../../../assets/assets';
+import useFetchData from '../../../../../hooks/useFetchData';
+import { TTotalTeamRankResponse } from '../../../../../types/ranking';
 
-const initialData = [
-  { name: 1, cost: 4.11, impression: 500 },
-  { name: 2, cost: 2.39, impression: 120 },
-  { name: 3, cost: 1.37, impression: 150 },
-  { name: 4, cost: 1.16, impression: 180 },
-  { name: 5, cost: 2.29, impression: 200 },
-  { name: 6, cost: 3, impression: 499 },
-  { name: 7, cost: 0.53, impression: 50 },
-  { name: 8, cost: 2.52, impression: 100 },
-  { name: 9, cost: 1.79, impression: 200 },
-  { name: 10, cost: 2.94, impression: 222 },
-  { name: 11, cost: 4.3, impression: 210 },
-  { name: 12, cost: 4.41, impression: 300 },
-  { name: 13, cost: 2.1, impression: 50 },
-  { name: 14, cost: 8, impression: 190 },
-  { name: 15, cost: 0, impression: 300 },
-  { name: 16, cost: 9, impression: 400 },
-  { name: 17, cost: 3, impression: 200 },
-  { name: 18, cost: 2, impression: 50 },
-  { name: 19, cost: 3, impression: 100 },
-  { name: 20, cost: 7, impression: 100 },
-];
-
-const getAxisYDomain = (
-  from: number,
-  to: number,
-  ref: string,
-  offset: number
-) => {
-  const refData: any[] = initialData.slice(from - 1, to);
-  let [bottom, top] = [refData[0][ref], refData[0][ref]];
-
-  refData.forEach((d) => {
-    if (d[ref] > top) top = d[ref];
-    if (d[ref] < bottom) bottom = d[ref];
-  });
-
-  return [(bottom | 0) - offset, (top | 0) + offset];
+const ChartWrapper = styled.div`
+  width: 100%;
+  height: auto;
+  padding: 50px;
+  font-size: 12px;
+  box-sizing: border-box;
+  border: 1px solid ${colors.ashGray};
+  caret-color: transparent;
+`
+const CustomizedAxisTick = (props: any) => {
+  const { x, y, payload } = props;
+  return (
+    <g transform={`translate(${x},${y})`}>
+      <text
+        x={0}
+        y={0}
+        dy={16}
+        textAnchor="end"
+        transform="rotate(-45)"
+        fill={colors.mediumGray}
+      >
+        {payload.value}
+      </text>
+    </g>
+  );
 };
 
-const initialState = {
-  data: initialData,
-  left: 'dataMin',
-  right: 'dataMax',
-  refAreaLeft: '',
-  refAreaRight: '',
-  top: 'dataMax+20',
-  bottom: 'dataMin-20',
-  animation: true,
-};
-
-export default class App extends Component<any, any> {
-  constructor(props: any) {
-    super(props);
-    this.state = initialState;
-  }
-  render() {
-    const {
-      data,
-      left,
-      right,
-      refAreaLeft,
-      refAreaRight,
-      top,
-      bottom,
-    } = this.state;
-
-    console.log(this.state);
-
+const CustomizedDot = (props: any) => {
+  const { cx, cy, payload, lastestDate } = props;
+  
+  if (payload.date === lastestDate) {
     return (
-      <div className="highlight-bar-charts" style={{ userSelect: 'none'}}>
+      <image
+      x={cx - 20}
+      y={cy - 20} 
+      width={40}
+      height={40}
+      href={redBaseball} 
+      />
+      );
+    }
+    
+    return (
+      <circle
+      cx={cx}
+      cy={cy} 
+      r={4} // 반지름
+      fill={colors.redTertiary}
+    />
+  );
+};
+
+const Chart = () => {
+  const { data } = useFetchData<TTotalTeamRankResponse>("/game/rank/periodteamrank"); 
+  const transFormedData = data?.data?.list || [];
+  const lastestDate = transFormedData[transFormedData.length - 1]?.date || "";
+  const transFormedDate = transFormedData.map((item) => {
+    const splitDate = item?.date ? `${item.date.slice(4,6)}.${item.date.slice(6,8)}` : "MM.DD"; 
+    return {
+      ...item,
+      transformedDate: splitDate
+    };
+  });
+  
+  return (
+      <ChartWrapper>
         <LineChart
-          width={800}
-          height={400}
-          data={data}
-          onMouseDown={(e: any) =>
-            this.setState({ refAreaLeft: e.activeLabel })
-          }
-          onMouseMove={(e: any) =>
-            this.state.refAreaLeft &&
-            this.setState({ refAreaRight: e.activeLabel })
-          }
+          width={1100}
+          height={300}
+          data={transFormedDate}
+          margin={{
+            top: 0,
+            right: 130,
+            left: -15,
+            bottom: 10
+          }}
         >
-          <CartesianGrid vertical={false} opacity="40%" />
-          <XAxis
-            allowDataOverflow
-            dataKey="name"
-            domain={[left, right]}
-            type="number"
-          />
-          <YAxis
-            orientation="left"
-            allowDataOverflow
-            domain={[bottom, top]}
-            type="number"
-            yAxisId="1"
-          />
-          <Tooltip />
-          <Line
-            yAxisId="1"
-            type="natural"
-            dataKey="impression"
-            stroke="#ff0000"
-            animationDuration={300}
-          />
-        </LineChart>
-      </div>
-    );
-  }
-}
+        {/* dataKey = 문자열만가능 */}
+        <CartesianGrid vertical={false} opacity={10} stroke={colors.lightGray} />
+        <XAxis 
+          interval={0}
+          dataKey="transformedDate"
+          stroke={colors.ashGray} 
+          tick={<CustomizedAxisTick />}
+        />
+        <YAxis 
+          ticks={[1, 2, 3, 4, 5, 6, 7, 8]} 
+          tickFormatter={(value) => `${value}위`} 
+          stroke={colors.ashGray} 
+          tickMargin={10}
+          domain={[1,8]}
+        />
+        <Tooltip />
+        <Line
+          dataKey="rank"
+          stroke={colors.redTertiary}
+          dot={<CustomizedDot lastestDate={lastestDate}/>}
+        />
+      </LineChart>
+    </ChartWrapper>
+  );
+};
+
+export default Chart;

@@ -1,3 +1,15 @@
+// 2024 시즌 팀 순위
+export type TTotalTeamRankResponse = {
+    data: {
+        list ?: TTotalTeamRankType[];
+    }
+};
+
+export type TTotalTeamRankType = {
+    date: string;
+    rank: number;
+}
+
 // 2024 시즌 팀 기록
 export type TTeamRankResponse = {
     data: {
