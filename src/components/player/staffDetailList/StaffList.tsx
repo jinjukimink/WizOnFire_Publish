@@ -10,6 +10,7 @@ import SearchBar from "../../common/searchbar/SearchBar";
 import { Container } from "../../../pages/PagesStyles";
 import { useNavigate} from "react-router-dom";
 import ListSkeleton from "../../common/skeleton/ListSkeleton";
+import { useState } from "react";
 
 export type TStaff = {
   playerName: string;
@@ -33,6 +34,7 @@ export type TCoachData = {
 
 const StaffList = ({apiUrl,staffType}:TStaffListProps) => {
   const { data: staffs, isLoading, error } = useFetchData<TStaff[]>(apiUrl);
+  const [searchTerm, setSearchTerm] = useState<string>(''); 
   const navigate=useNavigate();
     let stafflist: TStaff[] = [];
 
@@ -41,25 +43,33 @@ const StaffList = ({apiUrl,staffType}:TStaffListProps) => {
     } else {
     stafflist = staffs as TStaff[];
     }
+    console.log("스태프 리스트: ",stafflist);
 
-  //if (isLoading) return <p>Loading...</p>;
   if(isLoading) return <ListSkeleton columns={4} margin="0px" width="240px" height="275px" borderRadius="0px"/>
   if (error) return <p>{error}</p>;
 
   const onClick=(pcode:string)=>{
-    console.log(pcode);
     navigate(`/player/${staffType}/detail?pcode=${pcode}`);
   }
+
+  const filteredStaffList = stafflist?.length > 0
+    ? stafflist.filter((staff) =>
+        staff.playerName.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : [];
 
   return (
     <>
     <Container >
       <SearchBarContainer>    
-        <SearchBar placeholder="검색어를 입력해주세요." containerWidth="220px" height="29px" buttonWidth="45px" />
+        <SearchBar 
+        placeholder="검색어를 입력해주세요." containerWidth="220px"
+         height="29px" buttonWidth="45px"
+         onSearch={(term)=>setSearchTerm(term)} />
       </SearchBarContainer>
         <GridContainer columns={4}>
           {staffs ? (
-            stafflist.map((staff) => (
+            filteredStaffList.map((staff) => (
               <CoachCard key={staff.pcode}>
                 <CoachImage
                   src={staff.playerPrvwImg ? staff.playerPrvwImg : "https://via.placeholder.com/100"}
