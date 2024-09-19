@@ -7,6 +7,8 @@ import { useMemo, useState,useEffect } from "react";
 //import RegularSeasonRecord from "./regularSeasonRecord";
 import RegularSeasonRecord from "./RegularSeasonRecord";
 import React from "react";
+import Recent5Record from "./Recent5Record";
+import TotalRecord from "./TotalRecord";
 
 
 export type TDetailStaff={
@@ -127,15 +129,19 @@ const StaffDetail = ({detailPath}:TStaffDetailProps) => {
       console.log(parsedData)
   }
   parseDataToString = parsedData?.join("-");
-  const regularLeagueData = useMemo(
+  const regularLeagueData = useMemo(//이렇게 해야 반복 렌더링 막음.
     () => (staff?.data as TGamePlayerProps)?.seasonsummary,
     [staff]
   );
-  console.log(regularLeagueData);
-  const recent5gameRecords=(staff?.data as TGamePlayerProps)?.recentgamerecordlist;
-  console.log(recent5gameRecords);
-  const totalRecord=(staff?.data as TGamePlayerProps)?.yearrecordlist;
-  console.log(totalRecord);
+  //console.log(regularLeagueData);
+
+  const recent5gameRecords=useMemo(()=>(staff?.data as TGamePlayerProps)?.recentgamerecordlist,[staff]);
+  const totalRecords=useMemo(()=>(staff?.data as TGamePlayerProps)?.yearrecordlist,[staff]);
+  console.log("통산기록",totalRecords);
+
+  //console.log("최근 5경기",recent5gameRecords);
+  //const totalRecord=(staff?.data as TGamePlayerProps)?.yearrecordlist;
+  //console.log(totalRecord);
 
 const formatDate = (dateString: string) => {
   // YYYYMMDD 형식을 YYYY.MM.DD로 변환
@@ -195,6 +201,8 @@ const formatDate = (dateString: string) => {
             {categoryList.map(category => <h1 onClick={() => onClick(category)}>{category}</h1>)}
           </RecordNav>
           {whichDetail===categoryList[0] &&<RegularSeasonRecord regularLeagueData={regularLeagueData} /> }
+          {whichDetail===categoryList[1] && <Recent5Record recent5gameRecords={recent5gameRecords}/>}
+          {whichDetail===categoryList[2] && <TotalRecord totalRecords={totalRecords}/>}
           </>
       ):null}
 
