@@ -1,11 +1,12 @@
 import { ColumnDef, flexRender } from "@tanstack/react-table";
 import { useTable } from "../../../../../hooks/useTable";
 import { TBoxScoreResponse, ThbattersAndvbatters } from "../../../../../types/game";
-import { MainStatsTable,MainStatsHeaderCell,RowTr, MainStatsCell } from "./HitRecordStyles"
+import { HitRecordLabel, HitRecordTable, HitRecordHeaderCell, HitRecordRow, HitRecordCell } from "./HitRecordStyles"
+import { useState } from "react";
 
 const HitRecords = ({apiUrl} : {apiUrl: string}) => {
 
-  const columnDefs : ColumnDef<ThbattersAndvbatters>[] = [
+  const columnDefs: ColumnDef<ThbattersAndvbatters>[] = [
     { header: '타순', accessorKey: 'turn' },
     { header: '타자', accessorKey: 'name' },
     { header: '포지션', accessorKey: 'position' },
@@ -26,59 +27,117 @@ const HitRecords = ({apiUrl} : {apiUrl: string}) => {
     { header: '안타', accessorKey: 'hit' },
     { header: '타점', accessorKey: 'rbi' },
     { header: '타율', accessorKey: 'battingAverage' },
-  ]
+  ];
 
-  const { getHeaderGroups,getRowModel } = useTable<ThbattersAndvbatters>({
-    apiUrl:apiUrl,
+  const [homeTeam, setHomeTeam] = useState("홈팀");
+  const [visitTeam, setVisitTeam] = useState("원정팀");
+  const [sortedHomeData, setSortedHomeData] = useState<ThbattersAndvbatters[]>([]);
+  const [sortedVisitData, setSortedVisitData] = useState<ThbattersAndvbatters[]>([]);
+
+  const homeTable = useTable<ThbattersAndvbatters>({
+    apiUrl: apiUrl,
     columnDefs,
     transformData: (data: TBoxScoreResponse) => {
-      if(data?.data?.hbatters){
-        return data.data.hbatters.map(player => {
-          //타율계산 (안타 / 타수)
+      const homeLabel = data?.data?.schedule?.current?.home;
+      setHomeTeam(homeLabel);
+      if (data?.data?.hbatters) {
+        const sortedData = data.data.hbatters
+          .map(player => {
           const battingAverage = player.ab > 0 ? (player.hit / player.ab).toFixed(3) : '0.000';
-          //turn 값을 숫자로 변환 (11타순이면 1로 만들기 위해)
-          const turnValue = parseInt(player.turn,10);
-          const disPlayTurn = turnValue >=11 ? turnValue - 10 : turnValue;
-          
-          return {...player, turn: String(disPlayTurn), battingAverage: parseFloat(battingAverage)};
+          const turnValue = parseInt(player.turn, 10);
+          const displayTurn = turnValue > 9 ? ((turnValue -1) % 9) + 1 : turnValue;
+          return { ...player, turn: String(displayTurn), battingAverage: parseFloat(battingAverage) };
         })
+        .sort((a,b) => parseInt(a.turn) - parseInt(b.turn));
+        setSortedHomeData(sortedData);
+        return sortedData;
       } else {
         console.error("홈팀 타자 데이터를 찾을 수 없습니다.", data);
         return [];
+      }
     }
+  });
+  
+  const visitTable = useTable<ThbattersAndvbatters>({
+    apiUrl: apiUrl,
+    columnDefs,
+    transformData: (data: TBoxScoreResponse) => {
+      const visitLabel = data?.data?.schedule?.current?.visit;
+      setVisitTeam(visitLabel);
+      if (data?.data?.vbatters) {
+        const sortedData = data.data.vbatters
+        .map(player => {
+          const battingAverage = player.ab > 0 ? (player.hit / player.ab).toFixed(3) : '0.000';
+          const turnValue = parseInt(player.turn, 10);
+          const displayTurn = turnValue > 9 ? ((turnValue -1) % 9) + 1 : turnValue;
+          return { ...player, turn: String(displayTurn), battingAverage: parseFloat(battingAverage) };
+        })
+        .sort((a,b)=> parseInt(a.turn) - parseInt(b.turn));
+        setSortedVisitData(sortedData);
+        return sortedData;
+      } else {
+        console.error("원정팀 타자 데이터를 찾을 수 없습니다.", data);
+        return [];
+      }
     }
   });
 
   return (
-  <MainStatsTable>
-      <thead>
-        {getHeaderGroups().map(headerGroup => (
-          <tr key={headerGroup.id}>
-            {headerGroup.headers.map(header => (
-              <MainStatsHeaderCell key={header.id} colSpan={header.colSpan}>
-                {flexRender(
-                  header.column.columnDef.header,
-                  header.getContext()
-                )}
-              </MainStatsHeaderCell>
-            ))}
-          </tr>
-        ))}
-      </thead>
-    <tbody>
-      {getRowModel().rows.map((row, rowIndex) => (
-        <RowTr key={row.id}>
-          {row.getVisibleCells().map((cell, cellIndex) => (
-            <MainStatsCell key={cell.id}>
-              {rowIndex === getRowModel().rows.length-1 && cellIndex === 0
-                ? "" :
-                String(cell.getValue())}
-            </MainStatsCell>
+    <>
+      <HitRecordLabel>{homeTeam} 타자 기록</HitRecordLabel>
+      <HitRecordTable>
+        <thead>
+          {homeTable.getHeaderGroups().map(headerGroup => (
+            <tr key={headerGroup.id}>
+              {headerGroup.headers.map(header => (
+                <HitRecordHeaderCell key={header.id} colSpan={header.colSpan}>
+                  {flexRender(header.column.columnDef.header, header.getContext())}
+                </HitRecordHeaderCell>
+              ))}
+            </tr>
           ))}
-        </RowTr>
-      ))}
-    </tbody>
-  </MainStatsTable>
+        </thead>
+        <tbody>
+          {homeTable.getRowModel().rows.map((row,rowIndex) => (
+            <HitRecordRow key={row.id}>
+              {row.getVisibleCells().map((cell,cellIndex) => (
+                <HitRecordCell key={cell.id}>
+                  {rowIndex === homeTable.getRowModel().rows.length-1 && cellIndex === 0 
+                  ? "" : String(cell.getValue())}
+                </HitRecordCell>
+              ))}
+            </HitRecordRow>
+          ))}
+        </tbody>
+      </HitRecordTable>
+  
+      <HitRecordLabel>{visitTeam} 타자 기록</HitRecordLabel>
+      <HitRecordTable>
+        <thead>
+          {visitTable.getHeaderGroups().map(headerGroup => (
+            <tr key={headerGroup.id}>
+              {headerGroup.headers.map(header => (
+                <HitRecordHeaderCell key={header.id} colSpan={header.colSpan}>
+                  {flexRender(header.column.columnDef.header, header.getContext())}
+                </HitRecordHeaderCell>
+              ))}
+            </tr>
+          ))}
+        </thead>
+        <tbody>
+          {visitTable.getRowModel().rows.map((row,rowIndex) => (
+            <HitRecordRow key={row.id}>
+              {row.getVisibleCells().map((cell,cellIndex) => (
+                <HitRecordCell key={cell.id}>
+                    {rowIndex === visitTable.getRowModel().rows.length-1 && cellIndex === 0 
+                  ? "": String(cell.getValue())}
+                </HitRecordCell>
+              ))}
+            </HitRecordRow>
+          ))}
+        </tbody>
+      </HitRecordTable>
+    </>
   );
 }
 export default HitRecords;

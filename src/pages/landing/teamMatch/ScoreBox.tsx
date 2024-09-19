@@ -1,7 +1,10 @@
 import {
     EachTeamBox,
     ScoreBold,
-    HiddenBlackBox } from "./ScoreBoxStyles"
+    HiddenBlackBox,
+    ScoreLogo,
+    ScoreTeamName
+  } from "./ScoreBoxStyles"
 
 type TScoreBoxType = {
     hiddenLeft?: string;
@@ -10,9 +13,13 @@ type TScoreBoxType = {
     imageSrc?: string;
     teamName?: string;
     score?: number;
-    
+    backgroundColor?: string;
+    fontSize?: string;
+    width?: string;
+    height?: string;
+    scale?: string;
+    margin?: string;
 }
-
 
 const ScoreBox = ({ 
     hiddenLeft,
@@ -20,26 +27,34 @@ const ScoreBox = ({
     transform,
     imageSrc,
     teamName,
-    score
+    score,
+    backgroundColor,
+    fontSize,
+    width,
+    height,
+    scale,
+    margin
   }:TScoreBoxType) => {
-    console.log('Image Source:', imageSrc);
-    console.log('Team Name:', teamName);
-  return (
-    <>
-        <EachTeamBox>
-          <HiddenBlackBox left={hiddenLeft} />
-          <ScoreBold
-            left={scoreLeft}
-            transform={transform}
-            >
-              {score || 0}
-          </ScoreBold>
-          <div>
-            <img src={imageSrc} alt={teamName} />
-            <span>{teamName}</span>
-          </div>
-        </EachTeamBox>
-    </>
-  );
+    return (
+      <>
+          <EachTeamBox width={width} height={height}>
+            <HiddenBlackBox
+              left={hiddenLeft}
+              backgroundColor={backgroundColor}
+            />
+            <ScoreBold
+              left={scoreLeft}
+              transform={transform}
+              fontSize={fontSize}
+              >
+                {score || 0}
+            </ScoreBold>
+            <div>
+              <ScoreLogo src={imageSrc} alt={teamName} scale={scale}/>
+              <ScoreTeamName margin={margin}>{teamName}</ScoreTeamName>
+            </div>
+          </EachTeamBox>
+      </>
+    );
 }
 export default ScoreBox;
