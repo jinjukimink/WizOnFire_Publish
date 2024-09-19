@@ -28,6 +28,7 @@ const Outcome = styled.span<{ outcome: string }>`
     text-align: center;
     justify-content: center;
     align-items: center;
+
     background-color: ${({ outcome }) => {
       switch(outcome) {
         case '승': return colors.redPrimary;
@@ -40,7 +41,9 @@ const Outcome = styled.span<{ outcome: string }>`
     color: white;
     border-radius: 3px;
     z-index: 1000;
-    
+    position: relative;
+    margin-top: -7px;
+    margin-left: 5px;
 `;
 const GInfo = styled.div`
     color: ${colors.redPrimary};
@@ -59,16 +62,9 @@ const KtEvent = ({ event }: { event: any }) => {
   if (event) {
     console.log(event);
   }
+    
     return (
       <>
-
-      {event.outcome && (
-        <div>
-          <Outcome outcome={event.outcome}>
-              {event.outcome}
-          </Outcome>
-        </div>
-      )}
       <EventContainer>
         <div style={{ marginTop: event.outcome ? '0' : '22px' }}>
         {event.home === 'KT' && event.visitLogo && (
@@ -88,6 +84,14 @@ const KtEvent = ({ event }: { event: any }) => {
             <p>{event.broadcast}</p>
           </GInfo>
           </div>
+          {event.outcome && (
+        <div style={{display:'flex', justifyContent:'flex-start'}}>
+          <Outcome outcome={event.outcome}>
+              {event.outcome}
+          </Outcome>
+        </div>
+
+      )}
         </EventContainer>
         </>
     );

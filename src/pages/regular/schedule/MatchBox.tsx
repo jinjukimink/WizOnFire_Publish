@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ContentBox, DateContainer, GameBox, MatchResult, ScheduleBox, Score, TeamInfo, TeamLogo, TeamsContainer } from "./MatchBoxStyles";
 import colors from "../../../assets/Colors";
 import Button from "../../../components/common/button/Button";
+import { TGameResponse } from "../../../types/landing";
 
 const MatchBox = () => {
   const navigate = useNavigate();

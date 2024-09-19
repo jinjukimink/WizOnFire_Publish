@@ -36,21 +36,30 @@ export const StyledCalendarContainer = styled.div`
         }
 
     .rbc-month-row {
+        display:flex;
         min-height: 190px; /* 각 date cell의 최소 높이 설정 */
+        max-height: 200px;
+        //overflow: scroll; /* 스크롤 가능하도록 설정 */
     }
 
     .rbc-day-bg {
         min-height: 100px; /* 각 date cell의 최소 높이 설정 */
+        max-height: 200px; /* 최대 높이 설정 */
+        overflow: hidden;
+        position:relative;
     }
 
 
     .rbc-date-cell {
-        flex: 1 1 0;
+        flex: 1 1 50%; /* 요소가 줄의 절반만 사용하도록 설정 */
         min-width: 0;
-        padding-right: 5px;
-        text-align: right;
+        padding-left: 5px;
+        text-align: left;
         z-index: 1;
-        
+        display: block; /* 요소를 보이도록 설정 */
+        height:100%;
+        overflow: scroll; /* 스크롤 가능하도록 설정 */
+        min-height:20px;
 
         // > a {
         //     &,
@@ -77,6 +86,7 @@ export const StyledCalendarContainer = styled.div`
         margin-top: 7px;
         pointer-events: none; // 날짜 셀의 클릭 기능 비활성화
         padding:0px;
+
 
 }
 
