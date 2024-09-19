@@ -5,7 +5,7 @@ const Guide = () => {
   return (
     <>
       <Container>
-        <ImageContainer>
+        <ImageContainer width="342px">
           <Image src={ktParkKorean} alt="ktParkKorean" />
         </ImageContainer>
         <ImageContainer>

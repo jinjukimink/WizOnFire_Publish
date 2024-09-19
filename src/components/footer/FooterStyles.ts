@@ -5,6 +5,7 @@ export const FooterContainer = styled.footer`
   display: flex;
   justify-content: center;
   border-top: 1px solid ${colors.lightGray};
+  margin-top: 150px;
 `
 
 export const FooterBox = styled.div`
