@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Box, Down, Item, ItemList, Label, TSelectBox } from "./SelectBoxStyles";
 
 const SelectBox = ({
