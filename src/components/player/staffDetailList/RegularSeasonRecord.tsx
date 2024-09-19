@@ -5,7 +5,7 @@ import { HitRecordHeaderCell,HitRecordTable,HitRecordRow,HitRecordCell} from '..
 import styled from 'styled-components';
 
 
-const TableWrapper=styled.div`
+export const TableWrapper=styled.div`
     width:1100px;
     justify-content: center;
     align-items: center;
@@ -105,7 +105,7 @@ const handleData = (data: TRegularLeagueProps): TRegularLeagueProps => {
   return (
     <>
     <TableWrapper>
-    <HitRecordTable style={{justifyContent:"center", alignContent:"center"}}>
+    <HitRecordTable >
       {/* <table> */}
         {/* 첫 번째 줄 헤더 */}
         <thead>
