@@ -24,7 +24,7 @@ const PageLocation = () => {
   //console.log(selectedCategory,selectedSubCategory,selectedSidebar)
   //console.log(location)
 
-  const truncatedPathItems =( pathItems.length > 3 && pathItems[2]==="schedule" )? pathItems.slice(0, 3) : pathItems;
+  const truncatedPathItems =( pathItems.length > 3 && (pathItems[2]==="schedule" || pathItems[2]=="boxscore"))? pathItems.slice(0, 3) : pathItems;
   
 
   return (   

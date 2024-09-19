@@ -4,7 +4,8 @@ import { Container } from "../../../pages/PagesStyles";
 import { Wrapper, Contents, Img,  MainInfo, InfoList } from "./StaffDetailStyles"; // Import styles
 import styled from "styled-components";
 import { useMemo, useState,useEffect } from "react";
-import RegularSeasonRecord from "./regularSeasonRecord";
+//import RegularSeasonRecord from "./regularSeasonRecord";
+import RegularSeasonRecord from "./RegularSeasonRecord";
 import React from "react";
 
 
@@ -73,7 +74,6 @@ const RecordNav = styled.nav<{ imgWidth?: number }>`
     transition: all 0.3s ease;
     position: relative;
     
-
     &:before {
       content: "";
       position: absolute;
@@ -189,14 +189,14 @@ const formatDate = (dateString: string) => {
           {/* </StaffInfo> */}
         </Contents>
       </Wrapper>
-      {detailPath!=='coachdetail' &&(
+      {detailPath!=='coachdetail'?(
         <>
         <RecordNav imgWidth={imgWidth}>
             {categoryList.map(category => <h1 onClick={() => onClick(category)}>{category}</h1>)}
           </RecordNav>
           {whichDetail===categoryList[0] &&<RegularSeasonRecord regularLeagueData={regularLeagueData} /> }
           </>
-      ) }
+      ):null}
 
       </Container>
     </>
