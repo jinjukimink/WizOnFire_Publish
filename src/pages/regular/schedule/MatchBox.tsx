@@ -1,8 +1,8 @@
-import useFetchData from "../../hooks/useFetchData";
+import useFetchData from "../../../hooks/useFetchData";
 import { useNavigate } from "react-router-dom";
 import { ContentBox, DateContainer, GameBox, MatchResult, ScheduleBox, Score, TeamInfo, TeamLogo, TeamsContainer } from "./MatchBoxStyles";
-import colors from "../../assets/Colors";
-import Button from "../../components/common/button/Button";
+import colors from "../../../assets/Colors";
+import Button from "../../../components/common/button/Button";
 
 const MatchBox = () => {
   const navigate = useNavigate();

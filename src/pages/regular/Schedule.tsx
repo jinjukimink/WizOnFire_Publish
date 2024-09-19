@@ -1,11 +1,12 @@
-import GameCalendar from "./GameCalendar"
-import MatchBox from "./MatchBox"
+import GameCalendar from "./schedule/GameCalendar"
+import MatchBox from "./schedule/MatchBox"
 
 const Schedule = () => {
+
   return (
   <>
   <MatchBox/>
-  <GameCalendar/>
+  <GameCalendar />
   </>
   )
 }
