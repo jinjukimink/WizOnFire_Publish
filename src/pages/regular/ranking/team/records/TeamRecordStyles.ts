@@ -13,9 +13,9 @@ export const TeamRankingTable = styled.table`
 export const TeamRankingHeaderCell   = styled.td`
     padding-block: 10px;
     text-align: center;
-    /* border-top: 1.5px solid ${colors.silverGray}; */
-    background-color: ${colors.redGradient};
-    color: ${colors.white};
+    border-top: 2px solid ${colors.redQuaternary};
+    background-color: ${colors.mediumIvory};
+    color: ${colors.darkGray};
     font-weight: 500;
     &:nth-child(2) {
         width: 10%;
@@ -27,7 +27,7 @@ export const TeamRankingRow = styled.tr`
         border-bottom: 1.5px solid ${colors.silverGray};
     }
     &:hover {
-        background-color: ${colors.ivory};
+        background-color: ${colors.white};
         color: ${colors.darkGray};
         font-weight: 500;
     }

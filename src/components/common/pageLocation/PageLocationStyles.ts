@@ -11,6 +11,7 @@ export const PageLocationBox = styled.div`
     width: 100%;
     margin-top: 100px;//진주: 마진 조정했습니다!
     height: 33px;
+    font-size: 15px;
      @media (max-width: 1200px) {
         max-width: 900px; 
     }

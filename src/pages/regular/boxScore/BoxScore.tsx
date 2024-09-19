@@ -16,8 +16,6 @@ const BoxScore = () => {
     const { gameDate, gmkey } = useParams<string>();
     //const params=useSearchParams();
     //console.log(params.toString());
-
-    
     
     useEffect(() => {
         if (!gameDate || !gmkey) {

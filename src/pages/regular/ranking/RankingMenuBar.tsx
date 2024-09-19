@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { RankingMenuContainer } from "./RankingMenuBarStyles";
 import { GradientCircle } from "../../../components/common/gradientChip/GradientChipStyles";
 import BatterRanking from "./batter/BatterRanking";
 import TeamRanking from "./team/TeamRanking";
@@ -10,7 +9,11 @@ import SelectMenu from "../../../components/ranking/menubar/SelectMenu";
 import AllBatterRank from "./batter/AllBatterRank";
 import AllPitcherRank from "./pitcher/AllPitcherRank";
 import { SubMenuText } from "../../../components/ranking/menubar/SelectMenuStyles";
+import styled from "styled-components";
 
+const RankingMenuContainer = styled.div`
+    display: flex;
+`
 const RankingMenuBar = () => {
     const [selectedMenu, setSelectedMenu] = useState("팀순위");
     const [clickSelectedMenu, setClickSelectedMenu] = useState("ktwiz 투수");
@@ -53,11 +56,12 @@ const RankingMenuBar = () => {
                     <GradientCircle
                         key={item.title}
                         width="80px"
-                        height="25px"
+                        height="28px"
                         margin="0 8px 0 0"
+                        border="`1.5px solid ${colors.white}`"
                         fontFamily="KBO_Gothic_bold"
                         color={selectedMenu === item.title ? colors.white : colors.black}
-                        backgroundColor={selectedMenu === item.title ? colors.redGradient : colors.white}
+                        backgroundColor={selectedMenu === item.title ? colors.redQuaternary : colors.white}
                         onClick={() => handleClickMenu(item.title)}
                     >
                         {item.title}

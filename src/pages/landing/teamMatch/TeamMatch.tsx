@@ -1,5 +1,12 @@
 import GradientChip from "../../../components/common/gradientChip/GradientChip";
 import { rightArrow, leftArrow } from "../../../assets/assets";
+import ScoreBox from "./ScoreBox";
+import { GradientCircle } from "../../../components/common/gradientChip/GradientChipStyles";
+import { GrNext } from "react-icons/gr";
+import useFetchData from "../../../hooks/useFetchData";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { TGameResponse } from "../../../types/landing";
 import {
     TeamMatchContainer,
     TeamMathNews,
@@ -10,12 +17,6 @@ import {
     ScoreContainer,
     MatchInfo,
 } from "./TeamMatchStyles"
-import ScoreBox from "./ScoreBox";
-import { GradientCircle } from "../../../components/common/gradientChip/GradientChipStyles";
-import { GrNext } from "react-icons/gr";
-import useFetchData from "../../../hooks/useFetchData";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const TeamMatch = () => {
     const navigate = useNavigate();
