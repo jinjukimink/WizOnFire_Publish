@@ -25,7 +25,7 @@ export type TCheerData = {
 
 // CheerCard 스타일 개선
 const CheerCard = styled.div`
-  width: 250px;
+  width: 260px;
   height: 454px;
   display: flex;
   flex-direction: column;
