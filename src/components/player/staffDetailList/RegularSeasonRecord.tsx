@@ -1,7 +1,7 @@
 import { ColumnDef, flexRender } from '@tanstack/react-table';
 import { useTableWithoutApi } from '../../../hooks/useTableWithoutApi';
 import { TRegularLeagueProps } from '../../../types/player';
-import { MainStatsHeaderCell,MainStatsTable,RowTr,MainStatsCell} from '../../../pages/regular/boxScore/recordButton/hitRecords/HitRecordStyles';
+import { HitRecordHeaderCell,HitRecordTable,HitRecordRow,HitRecordCell} from '../../../pages/regular/boxScore/recordButton/hitRecords/HitRecordStyles';
 import styled from 'styled-components';
 
 
@@ -42,7 +42,7 @@ const RegularSeasonRecord = ({ regularLeagueData }: { regularLeagueData: TRegula
     { header: '고의4구', accessorKey: 'ib' },                 
     { header: '사구', accessorKey: 'hp' },                    
     { header: '탈삼진', accessorKey: 'kk' },                  
-    { header: '폭투', accessorKey: 'wp' },                    
+    { header: '폭투', accessorKey: 'wra' },                    
     { header: '보크', accessorKey: 'bk' },                    
     { header: '실점', accessorKey: 'r' },                     
     { header: '자책점', accessorKey: 'er' },                  
@@ -105,18 +105,18 @@ const handleData = (data: TRegularLeagueProps): TRegularLeagueProps => {
   return (
     <>
     <TableWrapper>
-    <MainStatsTable style={{justifyContent:"center", alignContent:"center"}}>
+    <HitRecordTable style={{justifyContent:"center", alignContent:"center"}}>
       {/* <table> */}
         {/* 첫 번째 줄 헤더 */}
         <thead>
           {firstRowTable.getHeaderGroups().map(headerGroup => (
-            <RowTr key={headerGroup.id}>
+            <HitRecordRow key={headerGroup.id}>
               {headerGroup.headers.map(header => (
-                <MainStatsHeaderCell key={header.id} colSpan={header.colSpan}>
+                <HitRecordHeaderCell key={header.id} colSpan={header.colSpan}>
                   {flexRender(header.column.columnDef.header, header.getContext())}
-                </MainStatsHeaderCell>
+                </HitRecordHeaderCell>
               ))}
-            </RowTr>
+            </HitRecordRow>
           ))}
         </thead>
         <tbody>
@@ -124,9 +124,9 @@ const handleData = (data: TRegularLeagueProps): TRegularLeagueProps => {
           {firstRowTable.getRowModel().rows.map(row => (
             <tr key={row.id}>
               {row.getVisibleCells().map(cell => (
-                <MainStatsCell key={cell.id}>
+                <HitRecordCell key={cell.id}>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </MainStatsCell>
+                </HitRecordCell>
               ))}
             </tr>
           ))}
@@ -137,9 +137,9 @@ const handleData = (data: TRegularLeagueProps): TRegularLeagueProps => {
           {secondRowTable.getHeaderGroups().map(headerGroup => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map(header => (
-                <MainStatsHeaderCell key={header.id} colSpan={header.colSpan}>
+                <HitRecordHeaderCell key={header.id} colSpan={header.colSpan}>
                   {flexRender(header.column.columnDef.header, header.getContext())}
-                </MainStatsHeaderCell>
+                </HitRecordHeaderCell>
               ))}
             </tr>
           ))}
@@ -149,15 +149,15 @@ const handleData = (data: TRegularLeagueProps): TRegularLeagueProps => {
           {secondRowTable.getRowModel().rows.map(row => (
             <tr key={row.id}>
               {row.getVisibleCells().map(cell => (
-                <MainStatsCell key={cell.id}>
+                <HitRecordCell key={cell.id}>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </MainStatsCell>
+                </HitRecordCell>
               ))}
             </tr>
           ))}
         </tbody>
       {/* </table> */}
-      </MainStatsTable>
+      </HitRecordTable>
       </TableWrapper>
     </>
   );

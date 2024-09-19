@@ -1,17 +1,21 @@
 import { useState, useEffect, useMemo } from "react";
-import { ColumnDef, getCoreRowModel, useReactTable } from "@tanstack/react-table";
+import { ColumnDef, SortingState, Updater, getCoreRowModel, getSortedRowModel, useReactTable } from "@tanstack/react-table";
 import axios from "axios";
 
 type TableParams<TData> = {
     apiUrl: string;
     columnDefs: ColumnDef<TData>[];
     transformData?: (data: any) => TData[];
+    sorting?: SortingState;
+    onSortingChange?: (updaterOrValue: Updater<SortingState>) => void;
 };
 
 export const useTable = <TData,>({
     apiUrl,
     columnDefs,
-    transformData
+    transformData,
+    sorting,
+    onSortingChange,
 }: TableParams<TData>) => {
 
     const [data, setData] = useState<TData[]>([]); 
@@ -38,6 +42,9 @@ export const useTable = <TData,>({
         data,
         columns,
         getCoreRowModel: getCoreRowModel(),
+        getSortedRowModel: getSortedRowModel(),
+        state: {sorting},  
+        onSortingChange, 
     });
 
     return table;
