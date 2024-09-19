@@ -33,7 +33,19 @@ const MatchBox = () => {
               <ContentBox>
                 <Score>{prev?.visitScore} : {prev?.homeScore}</Score>
                 <MatchResult>{prev?.outcome}</MatchResult>
-                <Button width="80px" height="25px" fontSize="13px" backgroundColor="#9e9e9e" border="none" fontColor="white" borderRadius="20px" onClick={()=>navigate("/game/regular/boxscore")}>경기 정보</Button>
+                <Button 
+                  width="80px" 
+                  height="25px" 
+                  fontSize="13px" 
+                  backgroundColor="#9e9e9e" 
+                  border="none" 
+                  fontColor="white" 
+                  borderRadius="20px" 
+                  onClick={() => navigate(`/game/regular/boxscore/${prev?.gameDate}/${prev?.gmkey}`)}
+                  hoverColor={colors.redQuaternary}
+                >
+                  경기 정보
+                </Button>
               </ContentBox>
               <TeamInfo>
                   <TeamLogo src={prev?.homeLogo} alt="Home Team" />
@@ -44,7 +56,7 @@ const MatchBox = () => {
         </GameBox>
 
         <GameBox width="360px" height="190px" boxShadow="0 3px 7px 0 rgba(0, 0, 0, .24)">
-          <DateContainer backgroundColor={colors.redTertiary}>{formatDate(current?.displayDate)}</DateContainer>
+          <DateContainer backgroundColor={colors.redQuaternary}>{formatDate(current?.displayDate)}</DateContainer>
           <TeamsContainer>
               <TeamInfo>
                   <TeamLogo src={current?.visitLogo} alt="Away Team" />
@@ -54,7 +66,19 @@ const MatchBox = () => {
               <ContentBox>
                 <Score>{current?.visitScore} : {current?.homeScore}</Score>
                 <MatchResult>{current?.outcome}</MatchResult>
-                <Button width="80px" height="25px" fontSize="13px" backgroundColor="#9e9e9e" border="none" fontColor="white" borderRadius="20px" onClick={()=>navigate("/game/regular/boxscore")}>경기 정보</Button>
+                  <Button 
+                    width="80px" 
+                    height="25px" 
+                    fontSize="13px" 
+                    backgroundColor="#9e9e9e" 
+                    border="none" 
+                    fontColor="white" 
+                    borderRadius="20px" 
+                    onClick={()=>navigate(`/game/regular/boxscore/${current?.gameDate}/${current?.gmkey}`)}
+                    hoverColor={colors.redQuaternary}
+                  >
+                    경기 정보
+                  </Button>
               </ContentBox>
               <TeamInfo>
                   <TeamLogo src={current?.homeLogo} alt="Home Team" />
@@ -75,7 +99,18 @@ const MatchBox = () => {
               <ContentBox> 
                 <Score>VS</Score>
                 <span>{next?.gtime} {next?.stadium} </span>
-                <Button width="80px" height="25px" fontSize="13px" backgroundColor="#9e9e9e" border="none" fontColor="white" borderRadius="20px" onClick={()=>navigate("/game/regular/boxscore")}>경기 정보</Button>
+                  <Button 
+                    width="80px" 
+                    height="25px" 
+                    fontSize="13px" 
+                    backgroundColor="#9e9e9e" 
+                    border="none" 
+                    fontColor="white" 
+                    borderRadius="20px" 
+                    hoverColor={colors.redQuaternary}
+                  >
+                    경기 정보
+                  </Button> 
              </ContentBox>
               <TeamInfo>
                   <TeamLogo src={next?.homeLogo} alt="Home Team" />
