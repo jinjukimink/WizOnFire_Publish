@@ -25,7 +25,7 @@ const RegularSeasonRecord = ({ regularLeagueData }: { regularLeagueData: TRegula
     { header: '패', accessorKey: 'l' },                        
     { header: '세이브', accessorKey: 'sv' },                   
     { header: '홀드', accessorKey: 'hold' },                   
-    { header: '승률', accessorKey: 'wp' },                     
+    { header: '승률', accessorKey: 'wra' },                     
     { header: '타자', accessorKey: 'bf' },                     
     { header: '투구수', accessorKey: 'tugucount' },            
     { header: '이닝', accessorKey: 'innDisplay' },             

@@ -4,6 +4,7 @@ import useFetchData from "../../hooks/useFetchData";
 import { Container } from "../PagesStyles";
 import CheerImage from "../../assets/images/landing/bg02.png"
 import ListSkeleton from "../../components/common/skeleton/ListSkeleton";
+import redBack from "../../assets/images/player/redB.jpg"
 
 export type TCheerleader = {
   imgPath: string;
@@ -13,6 +14,7 @@ export type TCheerleader = {
   leaderMotto: string;
   leaderNickName:string;
   leaderLikePlayer: string; // 추가된 필드
+  leaderPosition:string;
 };
 
 export type TCheerData = {
@@ -23,7 +25,7 @@ export type TCheerData = {
 
 // CheerCard 스타일 개선
 const CheerCard = styled.div`
-  width: 260px;
+  width: 270px;
   height: 454px;
   display: flex;
   flex-direction: column;
@@ -35,10 +37,12 @@ const CheerCard = styled.div`
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease-in-out;
-  /* background-image: url(${CheerImage});
-  background-size:150px 100px;
-  background-repeat: no-repeat;
-  background-position: bottom -20px center; */
+  /* background-image: url(${redBack});
+  background-size:cover;
+  background-repeat: no-repeat; */
+  //background-position: bottom -20px center;
+  border: 1px solid #ef5353;
+
   div{
     text-align: center;
   }
@@ -54,7 +58,7 @@ const CheerCard = styled.div`
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 16px;
-    margin-top: 13px;
+    margin-top: -10px;
   }
 
   h1 {
@@ -66,11 +70,25 @@ const CheerCard = styled.div`
   }
 
   p {
-    font-size: 25px;
+    font-size: 18px;
     color: #000000;;
     margin: 4px 0;
     font-weight: 600;
     font-family: KBO_Gothic_bold;
+    border-bottom: none;
+  }
+
+  p.position {
+    font-size: 18px;
+    color: #822222;
+    margin: 4px 0;
+    font-weight: 600;
+    font-family: KBO_Gothic_bold;
+    border-bottom: 2px solid #822222;
+    width: 80%;
+    text-align: center;
+    margin-bottom: 15px;
+    
   }
 
   .info {
@@ -114,9 +132,10 @@ const Cheer = () => {
       <GridContainer columns={3}>
         {fetchDataList?.map((cheerleader, index) => (
           <CheerCard key={index}>
-            <img src={cheerleader.imgPath} alt={cheerleader.leaderEngName} />
             <h1>{cheerleader.leaderEngName}</h1>
-            <Title>Motto</Title>
+            <img src={cheerleader.imgPath} alt={cheerleader.leaderEngName} />
+            <p className="position">{cheerleader.leaderPosition}</p>
+            {/* <Title>Motto</Title> */}
             <p style={{fontSize:"16px"}}>{cheerleader.leaderMotto}</p>
             <div className="info">
               <div>
