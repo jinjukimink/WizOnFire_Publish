@@ -3,19 +3,18 @@ import Button from "../button/Button";
 import { Input, TSearchBar } from "./SearchBarStyles";
 
 
-const SearchBar = ({containerWidth, height, lineHeight, buttonWidth, placeholder}:TSearchBar) => {
+const SearchBar = ({containerWidth, height, lineHeight, buttonWidth, placeholder,onSearch}:TSearchBar) => {
   const [searchTerm, setSearchTerm] = useState<string>('');
 
-  // const handleSearch = () => {
-  //   onSearch(searchTerm);
-  // };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    onSearch(searchTerm);
     console.log(searchTerm);
+    setSearchTerm("")
   }
 
 

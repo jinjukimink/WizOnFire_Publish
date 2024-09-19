@@ -6,6 +6,7 @@ export type TSearchBar = {
     height: string;
     lineHeight?: string;
     placeholder?: string;
+    onSearch:(term:string)=>void;
   }
   
 export const Container = styled.div`
