@@ -17,9 +17,9 @@ export const HitRecordTable = styled.table`
 export const HitRecordHeaderCell   = styled.td`
     padding-block: 10px;
     text-align: center;
-    /* border-top: 1.5px solid ${colors.silverGray}; */
-    background-color: ${colors.redGradient};
-    color: ${colors.white};
+    border-top: 1.5px solid ${colors.redQuaternary};
+    background-color: ${colors.mediumIvory};
+    color: ${colors.black};
     font-weight: 500;
     &:nth-child(2) {
         width: 10%;
