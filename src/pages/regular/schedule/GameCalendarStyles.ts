@@ -60,7 +60,6 @@ export const StyledCalendarContainer = styled.div`
         height:100%;
         overflow: scroll; /* 스크롤 가능하도록 설정 */
         min-height:20px;
-
         // > a {
         //     &,
         //     &:active,
