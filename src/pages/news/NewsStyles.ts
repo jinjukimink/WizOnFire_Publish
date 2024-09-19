@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const NewsContainer = styled.div`
+export const NewsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,9 +9,16 @@ const NewsContainer = styled.div`
   width: 100%;
 `;
 
-const NewsItem = styled.div`
-  background-color: #fff;
+export const NewsList = styled.div`
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+`;
+
+export const NewsItem = styled.div`
+  background-color: #fff;
+  width: 100%;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   margin: 15px 0;
@@ -19,6 +26,7 @@ const NewsItem = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
+  cursor: pointer;
 
   &:hover {
     transform: translateY(-5px);
@@ -26,26 +34,40 @@ const NewsItem = styled.div`
   }
 `;
 
-const Title = styled.h3`
+export const Title = styled.h3`
   font-size: 1.4rem;
   color: #222;
   margin-bottom: 5px;
 `;
 
-const Description = styled.p`
+export const Description = styled.p`
   font-size: 1rem;
   color: #666;
   margin-bottom: 10px;
 `;
 
-const Meta = styled.div`
+export const Meta = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: #999;
   font-size: 0.9rem;
 `;
 
-const Pagination = styled.div`
+export const MetaInfo = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+`;
+
+export const Views = styled.div`
+  color: #888;
+  font-size: 0.9rem;
+`;
+
+export const Pagination = styled.div`
   display: flex;
   justify-content: center;
   margin: 20px 0;
@@ -63,5 +85,17 @@ const Pagination = styled.div`
     &:hover {
       background-color: #555;
     }
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
   }
+`;
+
+export const SearchBarWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
 `;
