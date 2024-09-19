@@ -1,4 +1,4 @@
-import { Container, TextContainer, Description, Image, ImageContainer, Title, SubTitle } from "./WizParkStyles";
+import { Container, TextContainer, Description, Image, ImageContainer, Title, SubTitle } from "./PagesStyles";
 import { ktWizParkStadium } from "../../assets/assets";
 
 const Intro = () => {
