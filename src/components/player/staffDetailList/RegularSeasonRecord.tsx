@@ -25,7 +25,7 @@ const RegularSeasonRecord = ({ regularLeagueData }: { regularLeagueData: TRegula
     { header: '패', accessorKey: 'l' },                        
     { header: '세이브', accessorKey: 'sv' },                   
     { header: '홀드', accessorKey: 'hold' },                   
-    { header: '승률', accessorKey: 'wp' },                     
+    { header: '승률', accessorKey: 'wra' },                     
     { header: '타자', accessorKey: 'bf' },                     
     { header: '투구수', accessorKey: 'tugucount' },            
     { header: '이닝', accessorKey: 'innDisplay' },             
@@ -52,7 +52,9 @@ const RegularSeasonRecord = ({ regularLeagueData }: { regularLeagueData: TRegula
     { header: 'QS', accessorKey: 'qs' },                      
     { header: 'K/BB', accessorKey: 'kbb' },                   
   ];
-
+/**
+ * 
+*/
 
 const handleData = (data: TRegularLeagueProps): TRegularLeagueProps => {
   return {
@@ -76,7 +78,7 @@ const handleData = (data: TRegularLeagueProps): TRegularLeagueProps => {
     ib: data.ib ?? 0,                    // 고의4구
     hp: data.hp ?? 0,                    // 사구
     kk: data.kk ?? 0,                    // 탈삼진
-    wp: data.wp ?? 0,                    // 폭투
+    wra: data.wra ?? 0,                    // 폭투
     bk: data.bk ?? 0,                    // 보크
     r: data.r ?? 0,                      // 실점
     er: data.er ?? 0,                    // 자책점

@@ -31,11 +31,11 @@ type TStaffDetailProps={
 
 export type TGamePlayerProps={//오타 점검
   gameplayer:TDetailStaff
-  recentgamerecordist:any;
+  recentgamerecordlist:any;
   recentgamerecordlistfutures:any;
   seasonsummary:any;
   seasonsummaryfutures:any;
-  yearrecodists:any;
+  yearrecordlist:any;
 }
 
 // const RecordWapper=styled.section`
@@ -98,7 +98,7 @@ const StaffDetail = ({detailPath}:TStaffDetailProps) => {
   const [params]=useSearchParams();
   const pcode=params.get("pcode");
   const {data:staff,isLoading,error} = useFetchData<{data:TGamePlayerProps}|{data:TCoachData}>(`player/${detailPath}?pcode=${pcode}`);
-  //console.log(staff)
+  console.log(staff)
 //들어오는 객체 타입이 다름. 선수의 경우에는 객체안에 있는 또다른 객체한테 접근해야 함.
 
   const categoryList=["정규리그 기록","최근 5경기","통산기록"];
@@ -106,6 +106,7 @@ const StaffDetail = ({detailPath}:TStaffDetailProps) => {
   const [imgWidth, setImgWidth] = React.useState<number | undefined>();
 
   // 데이터 타입에 따라 처리 (코치 vs 선수)
+ // console.log()
 
   let staffData: TDetailStaff |any;
   let parsedData:string[]=[];
@@ -118,24 +119,23 @@ const StaffDetail = ({detailPath}:TStaffDetailProps) => {
   else { 
       staffData = (staff?.data as TGamePlayerProps)?.gameplayer;
    } 
-   console.log(staffData)
-
-  //console.log("코치 데이터",staffData?.career)//파싱
+  console.log(staffData)
   parsedData = staffData?.career.split("-");
-  //console.log(parsedData);
-  //console.log(parsedData.length);
 
   if(parsedData?.length>4){//대학교 까지만 출력되게끔
       parsedData=parsedData.slice(0,4);
       console.log(parsedData)
   }
-
   parseDataToString = parsedData?.join("-");
-
   const regularLeagueData = useMemo(
     () => (staff?.data as TGamePlayerProps)?.seasonsummary,
     [staff]
   );
+  console.log(regularLeagueData);
+  const recent5gameRecords=(staff?.data as TGamePlayerProps)?.recentgamerecordlist;
+  console.log(recent5gameRecords);
+  const totalRecord=(staff?.data as TGamePlayerProps)?.yearrecordlist;
+  console.log(totalRecord);
 
 const formatDate = (dateString: string) => {
   // YYYYMMDD 형식을 YYYY.MM.DD로 변환
