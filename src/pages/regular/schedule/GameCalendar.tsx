@@ -26,10 +26,12 @@ export type TSchedule = {
   stadium?: string;
   broadcast?: string;
   displayDate: string;
-
   visit?: string;
   visitScore?:string;
   homeScore?:string;
+
+  gameDate?:string;
+  gmkey?:string;
 };
 
 export type TscheduleList = {
@@ -55,6 +57,9 @@ export type TEvent ={
   visit?: string;
   visitScore?:string;
   homeScore?:string;
+
+  gameDate?:string;
+  gmkey?:string;
 }
 
 const CalendarComponent = () => {
@@ -99,6 +104,9 @@ const CalendarComponent = () => {
         visit:schedule.visit,
         visitScore:schedule.visitScore,
         homeScore: schedule.homeScore,
+
+        gmkey: schedule.gmkey,
+        gameDate: schedule.gameDate,
         
       }));
       setEvents(calendarEvents);
@@ -196,7 +204,9 @@ const CalendarComponent = () => {
           defaultView="month"
           date={currentDate}
           //onNavigate={date => setCurrentDate(date)}
-          onSelectEvent={() => navigate("/game/regular/boxscore")} // 임시 경로 지정
+          onSelectEvent={(event: TEvent) => {
+            navigate(`/game/regular/boxscore/${event.gameDate}/${event.gmkey}`)} // 임시 경로 지정
+          }
           //캘린더 이벤트 커스터마이징
           components={{
             event: isKt ? KtEvent : AllEvent,
