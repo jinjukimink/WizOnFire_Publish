@@ -26,7 +26,7 @@ export const PageLocationBox = styled.div`
 
 export const PageLocationInfo = styled.div`
     width: 100%;
-    border-bottom : 1.5px solid ${colors.redPrimary};
+    border-bottom : 2.5px solid ${colors.redPrimary};
     text-align: right;
     z-index: 20;
     padding-bottom: 15px;
