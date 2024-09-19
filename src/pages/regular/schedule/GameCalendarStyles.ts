@@ -58,7 +58,6 @@ export const StyledCalendarContainer = styled.div`
         z-index: 1;
         display: block; /* 요소를 보이도록 설정 */
         height:100%;
-        overflow: scroll; /* 스크롤 가능하도록 설정 */
         min-height:20px;
         // > a {
         //     &,
@@ -103,6 +102,7 @@ export const CalendarHeader = styled.div`
       border: none;
       cursor: pointer;
       font-size: 14px;
+  }
 `;
 
 export const MonthSelector = styled.div`

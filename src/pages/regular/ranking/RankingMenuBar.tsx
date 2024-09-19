@@ -2,7 +2,6 @@ import { useState } from "react";
 import { GradientCircle } from "../../../components/common/gradientChip/GradientChipStyles";
 import BatterRanking from "./batter/BatterRanking";
 import TeamRanking from "./team/TeamRanking";
-import AudienceStatus from "./audience/AudienceStatus";
 import colors from "../../../assets/Colors";
 import PitcherRanking from "./pitcher/PitcherRanking";
 import SelectMenu from "../../../components/ranking/menubar/SelectMenu";
@@ -10,6 +9,7 @@ import AllBatterRank from "./batter/AllBatterRank";
 import AllPitcherRank from "./pitcher/AllPitcherRank";
 import { SubMenuText } from "../../../components/ranking/menubar/SelectMenuStyles";
 import styled from "styled-components";
+import AudienceRecord from "./audience/AudienceRecord";
 
 const RankingMenuContainer = styled.div`
     display: flex;
@@ -17,12 +17,18 @@ const RankingMenuContainer = styled.div`
 const RankingMenuBar = () => {
     const [selectedMenu, setSelectedMenu] = useState("팀순위");
     const [clickSelectedMenu, setClickSelectedMenu] = useState("ktwiz 투수");
+    // const {year} = useRankStore();
+    // const navigate = useNavigate();
 
     const menu = [
         { title: "팀순위", component: <TeamRanking /> },
         { title: "투수순위"},
         { title: "타자순위"},
-        { title: "관중현황", component: <AudienceStatus /> },
+        { 
+            title: "관중현황", 
+            component: <AudienceRecord />, 
+            // onClick: () => navigate(`/game/regular/ranking/team/${year}`) 
+        },
     ];
 
     const pitSubMenu = [

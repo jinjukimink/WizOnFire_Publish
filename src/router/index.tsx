@@ -84,6 +84,10 @@ const router = createBrowserRouter([
             element: <Ranking />,
           },
           {
+            path:"ranking/team/:gyear",
+            element: <Ranking />,
+          },
+          {
             path:"ranking/team/:gyear/:pname/:sortKey",
             element: <Ranking />,
           },
