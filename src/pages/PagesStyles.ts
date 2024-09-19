@@ -2,7 +2,7 @@ import styled from "styled-components";
 import colors from "../assets/Colors";
 
 //Intro에 쓸 CSS
-export const Container = styled.div`
+export const Container= styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,41 +10,41 @@ export const Container = styled.div`
   background-color: ${colors.white};
 `;
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled.div<{width?:string;}> `
   display: flex;
   justify-content: center;
-  width: 100%;
-  max-width: 1136px; 
-  margin-bottom: 20px;
+  width: ${({ width }) => width || '100%'};
+  max-width: 1100px; 
+  margin-bottom: 50px;
 `;
 
 export const Image = styled.img`
-  max-width: 1136px;
+  width: 100%;
   height: auto;
-  border-radius: 10px;
 `;
 
 export const TextContainer = styled.div`
   width: 100%;
-  max-width: 1136px;
+  max-width: 1100px;
   text-align: left;
+  margin-bottom: 80px;
 `;
 
 export const Title = styled.h1`
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: 700;
   color: ${colors.redSecondary};
-  margin-top: 20px;
   position: relative;
   text-align: left;
+  margin-top: 0px;
 
   &::after {
     content: "";
     display: block;
-    width: 50px;
-    height: 3px;
+    width: 35px;
+    height: 2.5px;
     background-color: ${colors.redSecondary};
-    margin: 10px 0;
+    margin: 30px 0;
   }
 `;
 
@@ -57,9 +57,9 @@ export const SubTitle = styled.h2`
 `;
 
 export const Description = styled.p`
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.8;
-  color: ${colors.mediumGray};
+  color: ${colors.darkGray};
   margin: 20px 0;
   text-align: left;
 `;

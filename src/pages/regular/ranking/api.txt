@@ -1,0 +1,59 @@
+//2024 시즌 팀 순위 = 차트 몇위였는지? [0]
+//http://3.35.51.214/api/game/rank/periodteamrank
+
+//2024 시즌 팀 기록 - 팀순위 [1]
+//http://3.35.51.214/api/game/teamrankbyyear
+
+//2024 시즌 팀 투수 기록[2] - 팀투수순위
+//http://3.35.51.214/api/game/rank/pitching
+
+//2024 시즌 팀 투수 기록[3] -팀타자순위
+//http://3.35.51.214/api/game/rank/batting
+
+// 2024 시즌 팀 간 승패표[4] - 팀상대전적
+http://3.35.51.214/api/game/rank/teamvs
+
+---------------------------------------------------------------------------------------------------------------------
+
+//투수순위 - 평균자책점 top3
+//http://3.35.51.214/api/game/rank/pitcher/era/top3
+
+//투수순위 - 승리 top3
+//http://3.35.51.214/api/game/rank/pitcher/win/top3
+
+//투수순위 - 전체투수순위 - 평균자책점 top5
+//http://3.35.51.214/api/game/rank/pitcher/total/top5
+
+//투수순위 - KTWIZ 투수
+//http://3.35.51.214/api/game/rank/kt/pitcher?gyear=2024&pname=문용익&sortKey=ERA
+
+//투수순위 - 전체투수순위
+//http://3.35.51.214/api/game/rank/total/pitcher?gyear=2024&pname=&sortKey=ERA
+
+---------------------------------------------------------------------------------------------------------------------
+
+//타자순위 - 타자타율 top3
+//http://3.35.51.214/api/game/rank/batter/hra/top3
+
+//타자순위 - 타자타율 top3
+http://3.35.51.214/api/game/rank/batter/hra/top3
+
+//타자순위 - 타자홈런 top3
+http://3.35.51.214/api/game/rank/batter/hr/top3
+
+//타자순위 - 전체타자타율 top5
+http://3.35.51.214/api/game/rank/batter/total/top5
+
+//타자순위 - KTWIZ 타자
+http://3.35.51.214/api/game/rank/kt/batter?gyear=2024&pname=&sortKey=HRA
+
+//타자순위 - 전체타자순위
+http://3.35.51.214/api/game/rank/total/batter?gyear=2024&pname&sortKey=HRA
+
+---------------------------------------------------------------------------------------------------------------------
+
+//관중순위
+(2024 시즌 누적관중 / 2024 시즌 관중기록 (누적관중 / 경기수 (소수점 버리기)) - 2가지)
+http://3.35.51.214/api/game/rank/crowd?gyear=2024
+
+
