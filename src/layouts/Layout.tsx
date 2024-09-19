@@ -11,11 +11,9 @@ const PageContainer = styled.div`//DOM으로 props가 전달되지 않도록 해
   flex-direction: column;
   //justify-content: center; /* Center horizontally */
   //align-items: center; /* Center vertically */
-
 `;
 const MainContent = styled.main`
   flex-grow: 1;  // 메인 컨텐츠 영역이 가능한 많은 공간을 차지하도록 설정
-  //overflow-y: auto;
 `;
 
 const Layout = () => {
