@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { GridContainer } from "../../components/player/staffDetailList/StaffListStyles";
 import useFetchData from "../../hooks/useFetchData";
 import { Container } from "../PagesStyles";
-import CheerImage from "../../assets/images/landing/bg02.png"
+import colors from "../../assets/Colors";
 import ListSkeleton from "../../components/common/skeleton/ListSkeleton";
 import redBack from "../../assets/images/player/redB.jpg"
 
@@ -80,15 +80,14 @@ const CheerCard = styled.div`
 
   p.position {
     font-size: 18px;
-    color: #822222;
+    color: ${colors.redQuaternary};
     margin: 4px 0;
     font-weight: 600;
     font-family: KBO_Gothic_bold;
-    border-bottom: 2px solid #822222;
+    border-bottom: 2px solid ${colors.redQuaternary};
     width: 80%;
     text-align: center;
     margin-bottom: 15px;
-    
   }
 
   .info {
@@ -99,25 +98,24 @@ const CheerCard = styled.div`
     position: relative;
     display: flex;
     gap:50px;
-
   }
 `;
 
 const Title=styled.div`
-    width: 80px;
-    height: 25px;
+    width: 95px;
+    height: 32px;
     border-radius: 20px;
-    border: 3px solid #BF8371;
-    background-color: #7B0000;
+    border: none;
+    background-color: ${colors.redQuaternary};
     color: #FFFFFF;
     display: flex;
     justify-content: center;
     align-items: center;
     caret-color: transparent;
     font-family: KBO_Gothic_bold;
-    font-size: 12px;
     padding: 0;
-    cursor: pointer;
+    margin: 0 5px 0 0;
+    //cursor: pointer;
 `
 
 const Cheer = () => {

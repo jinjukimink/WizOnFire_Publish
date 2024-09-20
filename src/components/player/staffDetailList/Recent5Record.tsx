@@ -13,8 +13,8 @@ const Recent5Record = ({recent5gameRecords}:{recent5gameRecords:TRecent5Records}
         const result=getValue<string>();
         return result==='W'?'승':result==='L'?'패':result;
     },
-},
-    {header:'평균자책점',accessorKey:'er'},
+    },
+    {header:'평균자책점',accessorKey:'era'},
     {header:'타자',accessorKey:'hit'},
     {header:'이닝',accessorKey:'innDisplay'},
     {header:'피안타',accessorKey:'hit'},
@@ -30,6 +30,7 @@ const Recent5Record = ({recent5gameRecords}:{recent5gameRecords:TRecent5Records}
     columnDefs:columns
   })
  // console.log(rowTable)
+  const hasData = recent5gameRecords && recent5gameRecords.length > 0;
   
     return (
     <>
@@ -47,23 +48,23 @@ const Recent5Record = ({recent5gameRecords}:{recent5gameRecords:TRecent5Records}
                 ))}
             </thead>
             <tbody>
-                {rowTable.getRowModel().rows.map(row=>(
-                    // <HitRecordRow key={row.id}>
-                    //     {row.getVisibleCells().map((cell)=>(
-                    //         <HitRecordCell key={cell.id}>
-                    //             {String(cell.getValue())}
-                    //         </HitRecordCell>
-                    //     ))}
-
-                    // </HitRecordRow>
-                    <tr key={row.id}>
-                        {row.getVisibleCells().map(cell=>(
-                            <HitRecordCell key={cell.id}>
-                                {flexRender(cell.column.columnDef.cell,cell.getContext())}
-                            </HitRecordCell>
-                        ))}
-                    </tr>
-                ))}
+                {hasData ? (
+                            rowTable.getRowModel().rows.map(row => (
+                                <tr key={row.id}>
+                                    {row.getVisibleCells().map(cell => (
+                                        <HitRecordCell key={cell.id}>
+                                            {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                        </HitRecordCell>
+                                    ))}
+                                </tr>
+                            ))
+                        ) : (
+                            <HitRecordRow>
+                                <HitRecordCell colSpan={columns.length}>
+                                    데이터가 없습니다.
+                                </HitRecordCell>
+                            </HitRecordRow>
+                        )}
             </tbody>
 
 
