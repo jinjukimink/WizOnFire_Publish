@@ -20,7 +20,7 @@ interface ApiResponse {
 }
 
 const formatArticleContents = (contents: string) => {
-  const baseUrl = 'http://3.35.51.214'; // Server base URL
+  const baseUrl = 'https://wizzap.ktwiz.co.kr/';
   return contents.replace(/src="\/files/g, `src="${baseUrl}/files`);
 };
 
