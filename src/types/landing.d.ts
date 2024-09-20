@@ -32,6 +32,12 @@ export type TGameData = {
     homeScore?: number;
     homeLogo?: string;
     visitLogo?: string;
+    homeDecision?: string;
+    homeDecisionPitcher?: string;
+    visitDecision?: string;
+    visitDecisionPitcher?: string;
+
+
 }
 
 export type TGameResponse  = {
