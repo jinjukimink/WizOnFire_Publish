@@ -186,18 +186,22 @@ const Header = () => {
       onMouseEnter={() => handleMouseEnterCategory(category)}
       onMouseLeave={handleMouseLeaveCategory}
       isHovered={hoveredCategory !== "" && hoveredCategory === category}
-      onClick={() => handleCategoryClick(category)}
+      onClick={() => {
+        handleCategoryClick(category);
+        //setIsHovered(prev=>!prev)
+      }}
     >
       {category}
     </Category>
 
       {/* 3번 인덱스 다음에 로고를 렌더링 */}
     {index === 3 &&                   
-    <Logo isHovered={isHovered} >
+    <Logo isHovered={isHovered}>
     <img
         onClick={() => {
           console.log('clicked');
-          navigate('/')
+          navigate('/');
+          //setIsHovered(prev=>!prev);
         }}
         // src={isHovered ? "https://www.ktwiz.co.kr/v2/imgs/img-logo-black.svg" : ktwiz}
         src={newLogo}
