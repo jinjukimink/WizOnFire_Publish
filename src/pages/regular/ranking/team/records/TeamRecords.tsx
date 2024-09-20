@@ -2,7 +2,7 @@ import { ColumnDef, flexRender } from "@tanstack/react-table";
 import { useTable } from "../../../../../hooks/useTable";
 import {
   TeamRankingTable,
-  TeamRankingHeaderCell,
+  TeamRankAudienceCell,
   TeamRankingRow,
   TeamRankingCell
 } from "./TeamRecordStyles"
@@ -44,9 +44,9 @@ const TeamRecords = () => {
           {getHeaderGroups().map(headerGroup => (
             <TeamRankingRow key={headerGroup.id}>
               {headerGroup.headers.map(header => (
-                <TeamRankingHeaderCell key={header.id} colSpan={header.colSpan}>
+                <TeamRankAudienceCell key={header.id} colSpan={header.colSpan}>
                   {flexRender(header.column.columnDef.header, header.getContext())}
-                </TeamRankingHeaderCell>
+                </TeamRankAudienceCell>
               ))}
             </TeamRankingRow>
           ))}

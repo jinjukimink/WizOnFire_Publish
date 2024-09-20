@@ -4,12 +4,23 @@ import { TAudienceResponse, TAudienceType } from "../../../../types/ranking";
 import {
     TeamRankingTable,
     TeamRankingRow,
-    TeamRankingHeaderCell,
+    TeamRankAudienceCell,
     TeamRankingCell
 } from "../team/records/TeamRecordStyles"
+import Graph from "./Graph";
+import styled from "styled-components";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import SearchAndSelect from "../../../../components/ranking/searchAndSelect/SearchAndSelect";
+
+const AudienceWrapper = styled.h3`
+    margin-top: 50px;
+`
 
 const AudienceRecord = () => {
-    // const {year} = useRankStore();
+    // const [apiUrl, setApiUrl] = useState<string>("");
+    // const {gyear} = useParams<string>();
+
     const columnDefs: ColumnDef<TAudienceType>[] = [
         { header: "순위", accessorKey: "num" }, 
         { header: "팀명", accessorKey: "teamName" },
@@ -26,8 +37,20 @@ const AudienceRecord = () => {
         },
     ];
 
+    /*
+    useEffect(() => {
+        if (!gyear) {
+            // 파라미터가 없을 때
+            setApiUrl('/game/regular/ranking/team');
+        } else {
+            // 파라미터가 있을 때
+            setApiUrl(`/game/rank/crowd?gyear=${gyear}`);
+        }
+    }, [gyear]);
+    */
+
     const {getHeaderGroups, getRowModel} = useTable({
-        apiUrl: "/game/rank/crowd?gyear=2024",
+        apiUrl: (`/game/rank/crowd?gyear=2024`),
         columnDefs,
         transformData: (data: TAudienceResponse) => {
             return data?.data?.list.map((audience, index) => {
@@ -44,16 +67,24 @@ const AudienceRecord = () => {
             }) || [];
         }
     });
+
+    const graphData = getRowModel().rows.map(row => ({
+        teamName: row.original.teamName,
+        crowd: row.original.crowd,
+    }))
     return (
     <>
+        <AudienceWrapper>2024 시즌 누적관중</AudienceWrapper>
+        <Graph graphData={graphData}/>
+        <AudienceWrapper>2024 시즌 관중기록</AudienceWrapper>
         <TeamRankingTable>
             <thead>
             {getHeaderGroups().map(headerGroup => (
                 <TeamRankingRow key={headerGroup.id}>
                 {headerGroup.headers.map(header => (
-                    <TeamRankingHeaderCell key={header.id} colSpan={header.colSpan}>
+                    <TeamRankAudienceCell key={header.id} colSpan={header.colSpan}>
                     {flexRender(header.column.columnDef.header, header.getContext())}
-                    </TeamRankingHeaderCell>
+                    </TeamRankAudienceCell>
                 ))}
                 </TeamRankingRow>
             ))}

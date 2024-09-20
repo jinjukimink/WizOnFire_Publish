@@ -10,6 +10,8 @@ export const TeamRankingTable = styled.table`
     color: ${colors.mediumGray};
 `;
 
+
+
 export const TeamRankingHeaderCell   = styled.td`
     padding-block: 10px;
     text-align: center;
@@ -17,10 +19,11 @@ export const TeamRankingHeaderCell   = styled.td`
     background-color: ${colors.mediumIvory};
     color: ${colors.darkGray};
     font-weight: 500;
-    &:nth-child(2) {
-        width: 10%;
+    &:nth-child(1) {
+        width: 15%;
     }
 `;
+
 
 export const TeamRankingRow = styled.tr`
     &:last-child {
@@ -44,5 +47,21 @@ export const TeamRankingCell = styled.td<{isKT?:boolean, isKTColumn?:boolean}>`
     }
     &:last-child {
         border-right: none;
+    }
+`;
+
+//2024시즌팀 기록 , 관중기록
+export const TeamRankAudienceCell   = styled.td`
+    padding-block: 10px;
+    text-align: center;
+    border-top: 2px solid ${colors.redQuaternary};
+    background-color: ${colors.mediumIvory};
+    color: ${colors.darkGray};
+    font-weight: 500;
+    &:nth-child(1) {
+        width: 8%;
+    }
+    &:nth-child(2) {
+        width: 20%;
     }
 `;
