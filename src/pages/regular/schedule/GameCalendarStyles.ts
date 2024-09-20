@@ -59,7 +59,6 @@ export const StyledCalendarContainer = styled.div`
         display: block; 
         height:100%;
         min-height:20px;
-        
         // > a {
         //     &,
         //     &:active,
@@ -103,7 +102,6 @@ export const CalendarHeader = styled.div`
       border: none;
       cursor: pointer;
       font-size: 14px;
-}
 `;
 
 export const MonthSelector = styled.div`
@@ -133,3 +131,4 @@ export const WeekdayHeader = styled.div`
     text-align: center;
   }
 `;
+

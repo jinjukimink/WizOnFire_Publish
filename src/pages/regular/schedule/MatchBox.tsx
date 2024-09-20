@@ -28,7 +28,7 @@ const MatchBox = () => {
               <TeamInfo>
                   <TeamLogo src={prev?.visitLogo} alt="Away Team" />
                   <span>{prev?.visitFullname}</span>
-                  <span>L: {prev?.visitStarter}</span>
+                  <span>{prev?.visitDecision} : {prev?.visitDecisionPitcher}</span>
               </TeamInfo>
               <ContentBox>
                 <Score>{prev?.visitScore} : {prev?.homeScore}</Score>
@@ -50,7 +50,7 @@ const MatchBox = () => {
               <TeamInfo>
                   <TeamLogo src={prev?.homeLogo} alt="Home Team" />
                   <span>{prev?.homeFullname}</span>
-                  <span>W: {prev?.homeStarter}</span>
+                  <span>{prev?.homeDecision} : {prev?.homeDecisionPitcher}</span>
               </TeamInfo>
           </TeamsContainer>
         </GameBox>
@@ -61,7 +61,7 @@ const MatchBox = () => {
               <TeamInfo>
                   <TeamLogo src={current?.visitLogo} alt="Away Team" />
                   <span>{current?.visitFullname}</span>
-                  <span>L: {current?.visitStarter}</span>
+                  <span>{current?.visitDecision} : {current?.visitDecisionPitcher}</span>
               </TeamInfo>
               <ContentBox>
                 <Score>{current?.visitScore} : {current?.homeScore}</Score>
@@ -83,7 +83,7 @@ const MatchBox = () => {
               <TeamInfo>
                   <TeamLogo src={current?.homeLogo} alt="Home Team" />
                   <span>{current?.homeFullname}</span>
-                  <span>W: {current?.homeStarter}</span>
+                  <span>{current?.homeDecision} : {current?.homeDecisionPitcher}</span>
               </TeamInfo>
           </TeamsContainer>
         </GameBox>
@@ -94,7 +94,7 @@ const MatchBox = () => {
               <TeamInfo>
                   <TeamLogo src={next?.visitLogo} alt="Away Team" />
                   <span>{next?.visitFullname}</span>
-                  <span>선발: {next?.visitStarter}</span>
+                  <span>선발: {next?.visitStarter || '미정'} </span>
               </TeamInfo>
               <ContentBox> 
                 <Score>VS</Score>
@@ -115,7 +115,7 @@ const MatchBox = () => {
               <TeamInfo>
                   <TeamLogo src={next?.homeLogo} alt="Home Team" />
                   <span>{next?.homeFullname}</span>
-                  <span>선발: {next?.homeStarter}</span>
+                  <span>선발: {next?.homeStarter || '미정'}</span>
               </TeamInfo>
           </TeamsContainer>
         </GameBox>

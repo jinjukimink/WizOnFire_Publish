@@ -29,6 +29,7 @@ export const HitRecordHeaderCell   = styled.td`
 export const HitRecordRow = styled.tr`
     &:last-child {
         border-bottom: 1.5px solid ${colors.silverGray};
+        background-color: ${colors.mediumIvory};
     }
     &:hover {
         background-color: ${colors.ivory};

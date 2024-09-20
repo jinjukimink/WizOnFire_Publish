@@ -21,11 +21,11 @@ const SearchAndSelect = () => {
         })}
         </SelectBoxPitRank>
         <SearchBar
-        containerWidth="150px"
-        height="25px"
-        lineHeight="10px"
-        buttonWidth="50px"
-        placeholder="입력"
+            containerWidth="150px"
+            height="25px"
+            lineHeight="10px"
+            buttonWidth="50px"
+            placeholder="입력"
         />
         <span>*각 항목을 클릭하시면 순위를 보실 수 있습니다.</span>
     </SelectBoxRank>
