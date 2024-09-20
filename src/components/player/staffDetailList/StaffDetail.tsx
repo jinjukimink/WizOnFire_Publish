@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { useMemo, useState,useEffect } from "react";
 //import RegularSeasonRecord from "./regularSeasonRecord";
 import RegularSeasonRecord from "./RegularSeasonRecord";
-import React from "react";
+import { useRef } from "react";
 import Recent5Record from "./Recent5Record";
 import TotalRecord from "./TotalRecord";
 
@@ -50,9 +50,11 @@ export type TGamePlayerProps={//오타 점검
 // `
 // ;
 
-const RecordNav = styled.nav<{ imgWidth?: number }>`
-  //width: ${({ imgWidth }) => (imgWidth ? `${imgWidth}px` : 'auto')};
-  width: ${({ imgWidth }) => (`${imgWidth}px` )};
+const RecordNav = styled.nav.attrs<{ imgWidth?: number }>((props) => ({
+  style: {
+    width: `${props.imgWidth}px`,
+  },
+}))`
   height:40px;
   align-items: center;//텍스트 중간 위치
   display: flex;
@@ -105,9 +107,9 @@ const StaffDetail = ({detailPath}:TStaffDetailProps) => {
 //들어오는 객체 타입이 다름. 선수의 경우에는 객체안에 있는 또다른 객체한테 접근해야 함.
 
   const categoryList=["정규리그 기록","최근 5경기","통산기록"];
-  const imgRef = React.useRef<HTMLImageElement>(null);
-  const [imgWidth, setImgWidth] = React.useState<number | undefined>();
-
+  const imgRef = useRef<HTMLImageElement>(null);
+  const [imgWidth, setImgWidth] = useState<number>(1100);
+  console.log("imgWidth:" , imgWidth)
   // 데이터 타입에 따라 처리 (코치 vs 선수)
  // console.log()
 
@@ -157,6 +159,13 @@ const formatDate = (dateString: string) => {
     }
   }, [staffData]);
 
+
+  const handleImageLoad=()=>{
+    if(imgRef.current){
+      setImgWidth(imgRef.current.offsetWidth);
+    }
+  }
+
   const [whichDetail,setWhichDetail]=useState(categoryList[0]);
   const onClick=(category:string)=>{
     setWhichDetail(category);
@@ -174,7 +183,10 @@ const formatDate = (dateString: string) => {
     <Container>
       <Wrapper>
         <Contents>
-          <Img  ref={imgRef} src={staffData?.playerPrvwImg2} alt={staffData?.backnum}/>
+          <Img ref={imgRef} 
+          src={staffData?.playerPrvwImg2} 
+          alt={staffData?.backnum}
+          onLoad={handleImageLoad}/>
           {/* <StaffInfo> */}
             <MainInfo>
             <span style={{color:"#c00000"}}>No. {staffData?.backnum}</span>
@@ -199,11 +211,11 @@ const formatDate = (dateString: string) => {
       {detailPath!=='coachdetail'&&(
         <>
         <RecordNav imgWidth={imgWidth}>
-            {categoryList.map(category => <h1 onClick={() => onClick(category)}>{category}</h1>)}
-          </RecordNav>
-          {whichDetail===categoryList[0] &&<RegularSeasonRecord regularLeagueData={regularLeagueData} /> }
-          {whichDetail===categoryList[1] && <Recent5Record recent5gameRecords={recent5gameRecords}/>}
-          {whichDetail===categoryList[2] && <TotalRecord totalRecords={totalRecords}/>}
+            {categoryList.map((category,index) => <h1 key={index}  onClick={() => onClick(category)}>{category}</h1>)}
+        </RecordNav>
+          {whichDetail=== categoryList[0] && < RegularSeasonRecord regularLeagueData={regularLeagueData} /> }
+          {whichDetail=== categoryList[1] && < Recent5Record recent5gameRecords={recent5gameRecords}/>}
+          {whichDetail=== categoryList[2] && < TotalRecord totalRecords={totalRecords}/>}
           </>
       )}
 
