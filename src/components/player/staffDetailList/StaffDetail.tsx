@@ -51,7 +51,8 @@ export type TGamePlayerProps={//오타 점검
 // ;
 
 const RecordNav = styled.nav<{ imgWidth?: number }>`
-  width: ${({ imgWidth }) => (imgWidth ? `${imgWidth}px` : 'auto')};
+  //width: ${({ imgWidth }) => (imgWidth ? `${imgWidth}px` : 'auto')};
+  width: ${({ imgWidth }) => (`${imgWidth}px` )};
   height:40px;
   align-items: center;//텍스트 중간 위치
   display: flex;
@@ -65,7 +66,7 @@ const RecordNav = styled.nav<{ imgWidth?: number }>`
   margin-bottom: 30px;
 
   @media (max-width: 1200px) {
-        max-width: 900px; 
+    max-width: 900px; 
   }
   h1 {
     font-size: 20px;
@@ -195,7 +196,7 @@ const formatDate = (dateString: string) => {
           {/* </StaffInfo> */}
         </Contents>
       </Wrapper>
-      {detailPath!=='coachdetail'?(
+      {detailPath!=='coachdetail'&&(
         <>
         <RecordNav imgWidth={imgWidth}>
             {categoryList.map(category => <h1 onClick={() => onClick(category)}>{category}</h1>)}
@@ -204,7 +205,7 @@ const formatDate = (dateString: string) => {
           {whichDetail===categoryList[1] && <Recent5Record recent5gameRecords={recent5gameRecords}/>}
           {whichDetail===categoryList[2] && <TotalRecord totalRecords={totalRecords}/>}
           </>
-      ):null}
+      )}
 
       </Container>
     </>
