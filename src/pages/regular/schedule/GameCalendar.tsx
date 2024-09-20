@@ -219,7 +219,7 @@ const CalendarComponent = () => {
               const eventDate = new Date(event.start);
               const today = new Date();
               if (eventDate <= today) {
-                navigate(`/game/regular/boxscore/${event.gameDate}/${event.gmkey}`); // 임시 경로 지정
+                navigate(`/game/regular/boxscore/${event.gameDate}/${event.gmkey}`);
               }
             }
           }}
