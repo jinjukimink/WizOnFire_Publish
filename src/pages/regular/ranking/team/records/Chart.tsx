@@ -84,7 +84,7 @@ const Chart = () => {
           data={transFormedDate}
           margin={{
             top: 0,
-            right: 130,
+            right: 100,
             left: -15,
             bottom: 10
           }}
