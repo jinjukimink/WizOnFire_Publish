@@ -51,12 +51,12 @@ export const StyledCalendarContainer = styled.div`
 
 
     .rbc-date-cell {
-        flex: 1 1 50%; /* 요소가 줄의 절반만 사용하도록 설정 */
+        flex: 1 1 50%; 
         min-width: 0;
         padding-left: 5px;
         text-align: left;
         z-index: 1;
-        display: block; /* 요소를 보이도록 설정 */
+        display: block; 
         height:100%;
         min-height:20px;
         // > a {
@@ -102,7 +102,6 @@ export const CalendarHeader = styled.div`
       border: none;
       cursor: pointer;
       font-size: 14px;
-  }
 `;
 
 export const MonthSelector = styled.div`
@@ -132,3 +131,4 @@ export const WeekdayHeader = styled.div`
     text-align: center;
   }
 `;
+

@@ -4,11 +4,11 @@ import moment from 'moment';
 import 'moment/locale/ko';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { GrPrevious, GrNext } from "react-icons/gr";
-import { CalendarHeader, CalendarBox, MonthSelector, StyledCalendarContainer, WeekdayHeader } from './GameCalendarStyles';
+import { CalendarHeader, CalendarBox, MonthSelector, StyledCalendarContainer, WeekdayHeader} from './GameCalendarStyles';
 import Button from '../../../components/common/button/Button';
 import colors from '../../../assets/Colors';
 import useFetchData from '../../../hooks/useFetchData';
-import KtEvent from './KtEvent';
+import KtEvent, { Outcome } from './KtEvent';
 import { useNavigate } from 'react-router-dom';
 import AllEvent from './AllEvent';
 import { GradientCircle } from '../../../components/common/gradientChip/GradientChipStyles';
@@ -69,10 +69,6 @@ const CalendarComponent = () => {
   const [isKt,setIsKt] = useState(true);
   const navigate = useNavigate();
 
-
-  // const yearMonth = moment(currentDate).format('YYYYMM');
-
-  // moment를 사용하지 않고 날짜 포맷팅 (apiUrl)
   const formatYearMonth = (date: Date): string => {
     const year = date.getFullYear(); 
     const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -124,10 +120,7 @@ const CalendarComponent = () => {
     setCurrentDate(newDate);
   };
 
-  const handleMonthSelect = (selectedMonth: string) => {
-    const newDate = moment(selectedMonth, 'YYYYMM').toDate();
-    setCurrentDate(newDate);
-  };
+
 
   // 홈이 kt 일때 배경색 변경
   const dayPropGetter = (date: { toDateString: () => string; }) => {
@@ -144,6 +137,7 @@ const CalendarComponent = () => {
   
   
   return (
+    <>
     <CalendarBox>
       <CalendarHeader>
         <div>
@@ -182,7 +176,7 @@ const CalendarComponent = () => {
             backgroundColor='white' 
             onClick={() => handleMonthChange(-1)}
           >
-            <GrPrevious size={25} />
+          <GrPrevious size={25} />
           </Button>
           <span>{moment(currentDate).format('YYYY년 MM월')}</span>
           <Button 
@@ -195,6 +189,12 @@ const CalendarComponent = () => {
             <GrNext size={25} />
           </Button>
         </MonthSelector>
+        <div style={{display:'flex'}}>
+          <Outcome outcome='승'>승</Outcome>
+          <Outcome outcome='패'>패</Outcome>
+          <Outcome outcome='무'>무</Outcome>
+          {/* <Outcome outcome='취'>취</Outcome> */}
+        </div> 
       </CalendarHeader>
 
       <WeekdayHeader>
@@ -219,7 +219,7 @@ const CalendarComponent = () => {
               const eventDate = new Date(event.start);
               const today = new Date();
               if (eventDate <= today) {
-                navigate(`/game/regular/boxscore/${event.gameDate}/${event.gmkey}`); // 임시 경로 지정
+                navigate(`/game/regular/boxscore/${event.gameDate}/${event.gmkey}`);
               }
             }
           }}
@@ -232,6 +232,7 @@ const CalendarComponent = () => {
         />
       </StyledCalendarContainer>
     </CalendarBox>
+    </>
   );
 };
 
