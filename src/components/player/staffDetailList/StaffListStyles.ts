@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
 export const SearchBarContainer = styled.div`
-  position: relative; /* 위치를 부모 요소에 상대적으로 조정 */
-  left: -30%;
-  display: inline-block;
-  top: -84px; /* 위로 이동 */
+  //position: sticky; /* 위치를 부모 요소에 상대적으로 조정 */
+  position: relative;
+  margin-right: 60%;
+  top: -87px;  /* 현재 위치에서 20px 위로 이동 */
+  //left: -420px;  /* 현재 위치에서 10px 왼쪽으로 이동 */
+  //z-index: 100; /* 다른 요소 위에 고정되도록 설정 */
+  //left: -30%;
+  //display: inline-block;
+  //top: 00px; /* 위로 이동 */
   //padding-right: 10px;
-   @media (max-width: 1300px) {
+   /* @media (max-width: 1300px) {
       left: -37%;
     }
    @media (max-width: 1200px) {
@@ -29,7 +34,7 @@ export const SearchBarContainer = styled.div`
     } */
     /* @media (max-width: 480px) {
       left: -20%;
-    } */
+    } */ 
 `;
 
 export type TGridContainerProps={
