@@ -13,8 +13,8 @@ const Recent5Record = ({recent5gameRecords}:{recent5gameRecords:TRecent5Records}
         const result=getValue<string>();
         return result==='W'?'승':result==='L'?'패':result;
     },
-},
-    {header:'평균자책점',accessorKey:'er'},
+    },
+    {header:'평균자책점',accessorKey:'era'},
     {header:'타자',accessorKey:'hit'},
     {header:'이닝',accessorKey:'innDisplay'},
     {header:'피안타',accessorKey:'hit'},
