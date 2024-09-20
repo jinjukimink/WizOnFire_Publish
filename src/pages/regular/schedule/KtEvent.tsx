@@ -20,7 +20,7 @@ const EventContainer = styled.div`
   z-index:11;
 `;
 
-const Outcome = styled.span<{ outcome: string }>`
+export const Outcome = styled.span<{ outcome: string }>`
     width: 23px;
     height: 23px;
     font-size: 14px;
@@ -45,6 +45,7 @@ const Outcome = styled.span<{ outcome: string }>`
     margin-top: -7px;
     margin-left: 5px;
 `;
+
 const GInfo = styled.div`
     color: ${colors.redPrimary};
     font-size: 14px;
