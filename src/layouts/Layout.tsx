@@ -19,13 +19,14 @@ const MainContent = styled.main<{height?:string}>`
 const Layout = () => {
   const location=useLocation();
   const isCoachPage=location.pathname==='/player/coach/detail';
+  
   return (
     <>
     <PageContainer>
       <ScrollToTop />
       <Header />
       <SideBar />
-      <MainContent height={isCoachPage ? '500px' : 'auto'} >
+      <MainContent height={isCoachPage ? '600px' : 'auto'} >
       <PageLocation />
       <Outlet />
       </MainContent>
