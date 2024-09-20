@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Outlet} from "react-router-dom";
+import { Outlet, useLocation} from "react-router-dom";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import PageLocation from "../components/common/pageLocation/PageLocation";
@@ -9,26 +9,30 @@ import ScrollToTop from "../hooks/ScrollToTop";
 const PageContainer = styled.div`//DOM으로 props가 전달되지 않도록 해야 함.(스타일에만 한정)
   display: flex;
   flex-direction: column;
-  //justify-content: center; /* Center horizontally */
-  //align-items: center; /* Center vertically */
 `;
-const MainContent = styled.main`
+const MainContent = styled.main<{height?:string}>`
   flex-grow: 1;  // 메인 컨텐츠 영역이 가능한 많은 공간을 차지하도록 설정
+  //coach일때 컨텐츠 영역을 조절해야함
+  height:${(props)=>props.height}
 `;
 
 const Layout = () => {
+  const location=useLocation();
+  const isCoachPage=location.pathname==='/player/coach/detail';
   return (
-    <PageContainer >
-      <ScrollToTop/>
+    <>
+    <PageContainer>
+      <ScrollToTop />
       <Header />
-      <SideBar/>
-      <MainContent>
-      <PageLocation/>
-        <Outlet /> 
+      <SideBar />
+      <MainContent height={isCoachPage ? '500px' : 'auto'} >
+      <PageLocation />
+      <Outlet />
       </MainContent>
-      <Footer />
+    <Footer />
     </PageContainer>
+    </>
   );
-};
+}
 
 export default Layout;

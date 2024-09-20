@@ -19,6 +19,7 @@ export const Img = styled.img`
     @media (max-width: 1200px) {
         max-width: 900px; 
     }
+  //margin-bottom: 1px;
 
 `;
 
