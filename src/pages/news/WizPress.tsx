@@ -1,8 +1,9 @@
 import useFetchData from '../../hooks/useFetchData';
-import { WizPressContainer, NewsList, NewsItem, Title, MetaInfo, Views, SearchBarWrapper } from './WizPressStyles';
+import { WizPressContainer, NewsList, NewsItem, Title, MetaInfo, Views, SearchBarWrapper, Pagination } from './WizPressStyles';
 import { useState, useEffect } from 'react';
 import Button from '../../components/common/button/Button';
 import SearchBar from '../../components/common/searchbar/SearchBar';
+import colors from '../../assets/Colors'; // Import your colors
 
 interface Article {
   artcSeq: number;
@@ -20,7 +21,7 @@ interface ApiResponse {
 
 // 이미지 경로를 절대 경로로 변환하는 함수
 const formatArticleContents = (contents: string) => {
-  const baseUrl = 'http://3.35.51.214'; // 서버 베이스 URL
+  const baseUrl = 'https://wizzap.ktwiz.co.kr/';
   return contents.replace(/src="\/files/g, `src="${baseUrl}/files`);
 };
 
@@ -29,8 +30,10 @@ const WizPress = () => {
   const { data, isLoading, error } = useFetchData<ApiResponse>(`article/wizpresslist?searchWord=${searchTerm}`);
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
   const [currentItems, setCurrentItems] = useState<Article[]>([]);
+  const itemsPerPage = 5;
+  const maxVisibleButtons = 5;
+  const [startPage, setStartPage] = useState(1);
 
   // 검색어 변경 시 useEffect로 새로운 데이터 가져오기
   useEffect(() => {
@@ -44,9 +47,16 @@ const WizPress = () => {
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
     setSelectedArticle(null);
+
+    if (pageNumber > startPage + maxVisibleButtons - 1) {
+      setStartPage(startPage + maxVisibleButtons);
+    } else if (pageNumber < startPage) {
+      setStartPage(Math.max(pageNumber - maxVisibleButtons + 1, 1));
+    }
   };
 
   const totalPages = Math.ceil((data?.data?.list.length || 0) / itemsPerPage);
+  const endPage = Math.min(startPage + maxVisibleButtons - 1, totalPages);
 
   const handleClick = (article: Article) => {
     setSelectedArticle(article);
@@ -64,7 +74,6 @@ const WizPress = () => {
 
   return (
     <WizPressContainer>
-      {/* 상단에 SearchBar 추가 */}
       <SearchBarWrapper>
         <SearchBar 
           containerWidth="15%" 
@@ -81,10 +90,14 @@ const WizPress = () => {
           <MetaInfo>
             <Views>Views: {selectedArticle.viewCnt}</Views>
           </MetaInfo>
-          {/* 기사 내용을 표시할 때 formatArticleContents 적용 */}
           <div dangerouslySetInnerHTML={{ __html: formatArticleContents(selectedArticle.artcContents) }} />
-          <Button onClick={() => setSelectedArticle(null)} backgroundColor="#ccc" fontColor="#fff" padding="10px 20px">
-            Back to list
+          <Button 
+            onClick={() => setSelectedArticle(null)} 
+            backgroundColor={colors.black} 
+            fontColor={colors.white} 
+            padding="10px 15px" 
+          >
+            돌아가기
           </Button>
         </div>
       ) : (
@@ -104,17 +117,40 @@ const WizPress = () => {
             )}
           </NewsList>
 
-          <div className="pagination" style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-            {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
-              <Button
-                key={page}
-                onClick={() => handlePageChange(page)}
-                backgroundColor={currentPage === page ? '#f00' : '#ccc'}
-              >
-                {page}
-              </Button>
-            ))}
-          </div>
+          <Pagination>
+            <Button
+              onClick={() => handlePageChange(currentPage - 1)}
+              backgroundColor={currentPage === 1 ? colors.ashGray : colors.darkGray}
+              fontColor={colors.white}
+              padding="10px 15px"
+              // disabled={currentPage === 1}
+            >
+              &lt;
+            </Button>
+            {Array.from({ length: endPage - startPage + 1 }, (_, index) => {
+              const page = startPage + index;
+              return (
+                <Button
+                  key={page}
+                  onClick={() => handlePageChange(page)}
+                  backgroundColor={currentPage === page ? colors.redPrimary : colors.silverGray}
+                  fontColor={colors.white}
+                  padding="10px 15px"
+                >
+                  {page}
+                </Button>
+              );
+            })}
+            <Button
+              onClick={() => handlePageChange(currentPage + 1)}
+              backgroundColor={currentPage === totalPages ? colors.ashGray : colors.darkGray}
+              fontColor={colors.white}
+              padding="10px 15px"
+              // disabled={currentPage === totalPages}
+            >
+              &gt;
+            </Button>
+          </Pagination>
         </>
       )}
     </WizPressContainer>
