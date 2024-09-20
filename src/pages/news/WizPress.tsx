@@ -21,8 +21,8 @@ interface ApiResponse {
 
 // 이미지 경로를 절대 경로로 변환하는 함수
 const formatArticleContents = (contents: string) => {
-  const baseUrl = 'http://3.35.51.214'; // 서버 베이스 URL
-  return contents.replace(/src="\/files/g, `src="${baseUrl}/files`);
+  const baseUrl = 'http://3.35.51.214';
+  return contents.replace(/src="\/files/g, `src="/files/article/${baseUrl}`);
 };
 
 const WizPress = () => {
