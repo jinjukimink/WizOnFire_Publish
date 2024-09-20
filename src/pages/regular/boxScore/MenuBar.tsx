@@ -23,8 +23,7 @@ const MenuBar = ({apiUrl} : {apiUrl: string}) => {
     return (
         <>
         <MenuContainer>
-            {
-                menu.map((item)=>(
+            {menu.map((item)=>(
                     <GradientCircle
                         key={item.title}
                         width="80px"
