@@ -201,7 +201,7 @@ const Header = () => {
         onClick={() => {
           console.log('clicked');
           navigate('/');
-          //setIsHovered(prev=>!prev);
+          setIsHovered(prev=>!prev);
         }}
         // src={isHovered ? "https://www.ktwiz.co.kr/v2/imgs/img-logo-black.svg" : ktwiz}
         src={newLogo}
