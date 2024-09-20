@@ -77,11 +77,9 @@ const CategoryItem = styled.h1<{ isSelected: boolean }>`
     left: 0;
     transition: all 0.3s ease;
   }
-
   &:hover {
     color: #c00000;
   }
-
   &:hover:before {
     width: 100%;
   }
