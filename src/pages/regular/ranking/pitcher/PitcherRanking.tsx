@@ -3,6 +3,7 @@ import { useRankStore } from "../../../../stores/useRank.store";
 import RankingApiTabel from "./PitcherRankTable";
 import { useState } from "react";
 import { TPitcherResponse } from "../../../../types/ranking";
+import TopPitRank from "./topRank/TopPitRank";
 
 const PitcherRanking = () => {
   const [sorting, setSorting] = useState<SortingState>([]);
@@ -14,8 +15,13 @@ const PitcherRanking = () => {
 
   return (
     <>
-      <RankingApiTabel apiUrl={apiUrl} sorting={sorting}
-      onSortingChange={setSorting} transformData={transformData}/>
+      <TopPitRank/>
+      <RankingApiTabel
+        apiUrl={apiUrl}
+        sorting={sorting}
+        onSortingChange={setSorting}
+        transformData={transformData}
+      />
     </>
   );
 }
@@ -24,4 +30,3 @@ export default PitcherRanking;
 {/* 평균자책점 top3 */}
 {/* 승리 top3 */}
 {/* 전체 투수평균자책점 top5 */}
-{/* ktwiz투수 */}

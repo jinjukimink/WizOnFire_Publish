@@ -233,5 +233,88 @@ export type TAudienceType = {
     [key:string]: any;
 };
 
+//----------------------------
+//투수 - 평균자책점 top3
+export type TAvgPitResponse = {
+    data: {
+        list: TAvgPitType[]; 
+    };
+};
 
+export type TAvgPitType = {
+    era: string;
+    playerName: string;
+    playerPrvwImg: string;
+    [key:string]: any;
+};
 
+//투수 - 승리 top3
+export type TWinPitResponse = {
+    data: {
+        list: TWinPitType[]; 
+    };
+};
+
+export type TWinPitType = {
+    w: number;
+    playerName: string;
+    playerPrvwImg: string;
+    [key:string]: any;
+};
+
+//전체 투수 평균자책점 TOP5
+export type TAllAvgPitResponse = {
+    data: {
+        list: TAllAvgPitType[]; 
+    };
+};
+
+export type TAllAvgPitType = {
+    era: string;
+    playerName: string;
+    teamName: string;
+    [key:string]: any;
+};
+
+//----------------------------
+//타자 - 평균자책점 top3
+export type TAvgBattResponse = {
+    data: {
+        list: TAvgPitType[]; 
+    };
+};
+
+export type TAvgBattType = {
+    era: string;
+    playerName: string;
+    playerPrvwImg: string;
+    [key:string]: any;
+};
+
+//타자 - 승리 top3
+export type TWinBattResponse = {
+    data: {
+        list: TWinBattType[]; 
+    };
+};
+
+export type TWinBattType = {
+    w: number;
+    playerName: string;
+    playerPrvwImg: string;
+    [key:string]: any;
+};
+
+//전체 타자 평균자책점 TOP5
+export type TAllAvgBattResponse = {
+    data: {
+        list: TAllAvgBattType[]; 
+    };
+};
+
+export type TAllAvgBattType = {
+    era: string;
+    playerName: string;
+    teamName: string;
+    [key:string]: any;
+};

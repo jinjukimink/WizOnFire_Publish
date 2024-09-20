@@ -21,6 +21,7 @@ export type TEtcgame = {
     seq?: number;
 }
 
+//홈,원정팀 타자 
 export type ThbattersAndvbatters = {
     ab: number;
     accmAb: number;
@@ -65,7 +66,7 @@ export type ThbattersAndvbatters = {
     battingAverage?: number; //타율계산
 }
 
-
+//홈,원정팀 투수
 export type ThpitchersAndvpitchers = {
     ab: number;
     accmEr: number;
