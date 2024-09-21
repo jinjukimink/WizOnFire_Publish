@@ -17,13 +17,12 @@ const parseInningToNumber = (innDisplay: string): number => {
   return wholeInnings + fractionalInnings;
 };
 
-
 const Recent5Record = ({recent5gameRecords,isCatcher}:{recent5gameRecords:TRecent5Records|TRecent5Records_C|any; isCatcher:boolean}) => {
   const columns:ColumnDef<TRecent5RecordProps|TRecent5RecordProps_C>[]= useMemo(()=>{
     return isCatcher? [
       { header: '일자', accessorKey: 'displayDate' },       // Displayed Date (일자)
       { header: '상대', accessorKey: 'matchTeamName' },     // Opponent Team Name (상대)
-      { header: '타율', accessorKey: 'bra' },               // Batting Average (타율)
+      { header: '타율', accessorKey: 'hra' },               // Batting Average (타율)
       { header: '타수', accessorKey: 'ab' },                // At-bats (타수)
       { header: '득점', accessorKey: 'run' },               // Runs Scored (득점)
       { header: '안타', accessorKey: 'hit' },               // Hits (안타)
@@ -46,12 +45,12 @@ const Recent5Record = ({recent5gameRecords,isCatcher}:{recent5gameRecords:TRecen
     cell:({getValue})=>{
         const result=getValue<string>();
         return result==='W'?'승':result==='L'?'패':result;
-    },
-    },
+    },},
     {header:'평균자책점',
-    cell: ({ row }) => {
+    cell: ({ row }:any) => {
         const er = row.original.er ?? 0; // 자책점
         const innDisplay = row.original.innDisplay ?? "0"; // 이닝 (문자열)
+        
         // 이닝을 실수형으로 변환 (예: "6.2" -> 6 + (2/3))
         const innings = parseInningToNumber(innDisplay);
         
@@ -74,7 +73,6 @@ const Recent5Record = ({recent5gameRecords,isCatcher}:{recent5gameRecords:TRecen
   },[isCatcher])
 
 
-  
   const rowTable=useTableWithoutApi<TRecent5RecordProps|TRecent5RecordProps_C>({
     data:recent5gameRecords,
     columnDefs:columns

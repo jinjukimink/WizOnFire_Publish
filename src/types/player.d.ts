@@ -1,4 +1,4 @@
-import { TRecent5RecordProps, TTotalRecordProps, TRecent5RecordProps_C } from './player.d';
+import { TRecent5RecordProps, TTotalRecordProps, TRecent5RecordProps_C, TTotalRecords } from './player.d';
 export type TRegularLeagueProps={
     era: string;           // 평균 자책점 (ex. "4.62")
     gamenum: number;       // 경기수 (ex. 26)
@@ -140,7 +140,30 @@ export type TTotalRecordProps={
     wra: string;              // Win ratio (likely as a string representation of a float)
 }
 
-
-
-
 export type TTotalRecords=TTotalRecordProps[];
+
+export type TTotalRecordProps_C={
+    ab: number;          // At-bats (타수)
+    bb: number;          // Walks (볼넷)
+    bra: string;         // Batting Runs Above Average (타점권 타율)
+    cs: number;          // Caught Stealing (도루 실패)
+    gamenum: number;     // Number of Games (경기수)
+    gd: number;          // Grounded into Double Play (병살)
+    gyear: string;       // Game Year (연도)
+    h2: number;          // Doubles (2루타)
+    h3: number;          // Triples (3루타)
+    hit: number;         // Hits (안타)
+    hp: number;          // Hit by Pitch (사구)
+    hr: number;          // Home Runs (홈런)
+    hra: string;         // Home Run Average (홈런 비율)
+    kk: number;          // Strikeouts (삼진)
+    rbi: number;         // Runs Batted In (타점)
+    run: number;         // Runs Scored (득점)
+    sb: number;          // Stolen Bases (도루)
+    slg: string;         // Slugging Percentage (장타율)
+    teamCode: string;    // Team Code (팀 코드)
+    teamName: string;    // Team Name (팀 이름)
+}
+
+export type TTotalRecords_C = TTotalRecordProps_C[];
+
