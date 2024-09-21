@@ -14,8 +14,11 @@ export const UpNav = styled(motion.nav)<{isHovered:boolean}>`
     z-index: 101;
     gap: 40px;
     transition: color 0.3s ease-in-out;
+    background-color:${({ isHovered  }) => (isHovered ? `${colors.white}` :`${colors.black}`)} ;
+    will-change:none;
+    
     a{
-        color: ${({ isHovered }) => (isHovered ? `${colors.black}` :`${colors.white}`)};
+        color: ${({ isHovered  }) => (isHovered ? `${colors.black}` :`${colors.white}`)};//이ㅅ새끼 문제임아아
         transition: color 0.3s ease-in-out;
         left:-10px;//로고 정렬할 때 중요
         //margin-right: 10px;
@@ -53,6 +56,9 @@ export const UpNav = styled(motion.nav)<{isHovered:boolean}>`
              0 100%
             );
     }
+    @media screen and (max-width: 808px) {
+        gap:2%;
+    }
 
 `;
 
@@ -73,21 +79,35 @@ export const Logo = styled.div<{isHovered:boolean}>`
     &:hover{
         cursor: pointer;
     }
+    @media screen and (max-width:800px) {
+        justify-content: center;
+        transform: translateX(-3%);//로고 위치 중간 조정
+    }
 `;
 
-export const Category=styled.a<{isHovered: boolean; hoveredCategory:string;}>` 
-    position: relative;
-    //left:100px;
-    font-size: 20px;
-    text-decoration: none;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 30px;
-    ${({isHovered})=>isHovered && ` border-bottom: 3px solid red;`}
-    `;
+
+// styled-components에서 prop 필터링
+export const Category = styled.a<{ isHovered: boolean; isActive: boolean }>`
+  position: relative;
+  font-size: 20px;
+  text-decoration: none;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+  
+  ${({ isActive }) => isActive && `border-bottom: 3px solid red;`}
+
+  @media screen and (max-width: 820px) {
+    font-size: 14px;
+  }
+`;
+
+
+
+    
 
 
 export const BottomNav=styled(motion.div)` 

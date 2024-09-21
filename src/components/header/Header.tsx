@@ -85,8 +85,24 @@ const Header = () => {
 
   const { setSelectedCategory, setSelectedSubCategory,  setSelectedSidebar } = useLocationStore();
   const navigate = useNavigate();
+    // 화면 크기 변경을 감지하는 useEffect
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth); 
   useEffect(() => {
-      if (isLandingPage) {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // 리사이즈 이벤트 리스너 추가
+    window.addEventListener("resize", handleResize);
+
+    // 컴포넌트가 언마운트될 때 리스너 제거
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+      if (isLandingPage && !isHovered) {
         navAnimation.start({ backgroundColor: "rgba(0,0,0,0)" });
       } else {
         navAnimation.start({ backgroundColor: "rgba(0,0,0,1)" });
@@ -113,12 +129,11 @@ const Header = () => {
           navAnimation.start({ backgroundColor: "rgba(0,0,0,1)" });
       }
     }
-
   });
 
   const handleMouseEnter = () => {
     setIsHovered(true);
-    navAnimation.start({ backgroundColor: "white" });
+    navAnimation.start({ backgroundColor: "rgba(255, 255, 255, 1)" });
   };
 
   const handleMouseLeave = () => {//호버가 끝나면 무조건 네비바는 검은색임
@@ -133,10 +148,13 @@ const Header = () => {
 
   const handleCategoryClick = (category: string) => {
     const firstSubCategory = subCategories[categories.indexOf(category)][0];
-    console.log(category)
+    
     setSelectedCategory(category);
     setSelectedSubCategory(firstSubCategory);
     setSelectedSidebar(sidebars[categories.indexOf(category)][0][0] || null);
+    console.log(category)
+        // 클릭 시 호버 상태를 무조건 false로 초기화
+    setIsHovered(true);
   };
 
   const handleSubCategoryClick = (subCategory: string,subIndex:number) => {
@@ -163,9 +181,13 @@ const Header = () => {
     }
 
     navigate(`/${forNav}/${subCategoriesForNav[categoryIndex][subIndex]}`); // 경로를 제대로 작성
-    console.log("here2");
+   // console.log("here2");
   };
+
+  console.log(isHovered);
   return (
+
+
     <>
     <header>         
       <UpNav
@@ -175,41 +197,51 @@ const Header = () => {
         onMouseLeave={handleMouseLeave}
         isHovered={isHovered}
       >
-{categories.map((category, index) => (
-  <React.Fragment key={index}>
-    {/* 카테고리 렌더링 */}
-    <Category
-      hoveredCategory={category}
-      href={categoriesForNav[index]==='game'?
-        `/${categoriesForNav[index]}/regular/${subCategoriesForNav[index][0]}`
-        :`/${categoriesForNav[index]}/${subCategoriesForNav[index][0]}`}
-      onMouseEnter={() => handleMouseEnterCategory(category)}
-      onMouseLeave={handleMouseLeaveCategory}
-      isHovered={hoveredCategory !== "" && hoveredCategory === category}
-      onClick={() => {
-        handleCategoryClick(category);
-        //setIsHovered(prev=>!prev)
-      }}
-    >
-      {category}
-    </Category>
+          {/* 화면 너비가 800px 이상일 때만 카테고리 렌더링 */}
+          {windowWidth<=800 && <Logo isHovered={isHovered}>
+                  <img
+                    onClick={() => {
+                      navigate('/');
+                      setIsHovered(false);
+                    }}
+                    src={newLogo}
+                    alt="logo"
+                  />
+                </Logo>}
 
-      {/* 3번 인덱스 다음에 로고를 렌더링 */}
-    {index === 3 &&                   
-    <Logo isHovered={isHovered}>
-    <img
-        onClick={() => {
-          console.log('clicked');
-          navigate('/');
-          setIsHovered(prev=>!prev);
-        }}
-        // src={isHovered ? "https://www.ktwiz.co.kr/v2/imgs/img-logo-black.svg" : ktwiz}
-        src={newLogo}
-        alt="logo"
-      /></Logo>
-      }
-  </React.Fragment>
-))}
+          {windowWidth > 800 && categories.map((category, index) => (
+            <React.Fragment key={index}>
+              <Category
+                isActive={hoveredCategory === category}
+                href={categoriesForNav[index] === 'game'
+                  ? `/${categoriesForNav[index]}/regular/${subCategoriesForNav[index][0]}`
+                  : `/${categoriesForNav[index]}/${subCategoriesForNav[index][0]}`
+                }
+                onMouseEnter={() => handleMouseEnterCategory(category)}
+                onMouseLeave={handleMouseLeaveCategory}
+                isHovered={hoveredCategory !== "" && hoveredCategory === category}
+                onClick={() => {
+                  handleCategoryClick(category);
+                  //setIsHovered(false)
+                }}
+              >
+                {category}
+              </Category>
+              {/* 3번 인덱스 다음에 로고 렌더링 */}
+              {index === 3 && (
+                <Logo isHovered={isHovered}>
+                  <img
+                    onClick={() => {
+                      navigate('/');
+                      setIsHovered(prev => !prev);
+                    }}
+                    src={newLogo}
+                    alt="logo"
+                  />
+                </Logo>
+              )}
+            </React.Fragment>
+          ))}
       </UpNav>
       {/* <Border/> */}
 
