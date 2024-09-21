@@ -8,7 +8,7 @@ let locationMap = new Map([
   ['player','Player'],
   ['coach','코칭스텝'],
   ['pitcher','투수'],
-  ['catcher','포수'],
+  ['catcher','타자'],
   ['cheer','응원단'],
 
   ['game','Game'],

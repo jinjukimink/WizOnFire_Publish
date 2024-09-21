@@ -51,7 +51,7 @@ export const UpNav = styled(motion.nav)<{isHovered:boolean}>`
             100% 0, 
             100% 100%,
              0 100%
-             );
+            );
     }
 
 `;
