@@ -1,4 +1,4 @@
-import { TRecent5RecordProps, TTotalRecordProps } from './player.d';
+import { TRecent5RecordProps, TTotalRecordProps, TRecent5RecordProps_C } from './player.d';
 export type TRegularLeagueProps={
     era: string;           // 평균 자책점 (ex. "4.62")
     gamenum: number;       // 경기수 (ex. 26)
@@ -30,7 +30,6 @@ export type TRegularLeagueProps={
     qs: number;            
     kbb: string;           
 }
-
 export type TRegularLeagueProps_C={//타자들의 타입
   ab: number;              // At-bats
   babip: string;           // Batting Average on Balls in Play
@@ -72,9 +71,6 @@ export type TRegularLeagueProps_C={//타자들의 타입
 }
 
 
-
-
-
 export type TRecent5RecordProps={
     bb: number;               // Base on balls (walks)
     displayDate: string;      // Date display format, e.g. "09.14"
@@ -95,6 +91,29 @@ export type TRecent5RecordProps={
     wls: string;              // Win/loss/save status, e.g. "L" for loss
 }
 export type TRecent5Records=TRecent5RecordProps[];
+
+export type TRecent5RecordProps_C={
+    ab: number;              // At-bats (타수)
+    bb: number;              // Walks (볼넷)
+    bra: string;             // Batting Runs Above Average (타점권 타율)
+    cs: number;              // Caught Stealing (도루 실패)
+    displayDate: string;     // Displayed Date (경기 일자)
+    gd: number;              // Grounded into Double Play (병살)
+    h2: number;              // Doubles (2루타)
+    h3: number;              // Triples (3루타)
+    hit: number;             // Hits (안타)
+    hp: number;              // Hit by Pitch (사구)
+    hr: number;              // Home Runs (홈런)
+    hra: string;             // Home Run Average (홈런 비율)
+    kk: number;              // Strikeouts (삼진)
+    matchTeamCode: string;   // Opponent Team Code (상대 팀 코드)
+    matchTeamName: string;   // Opponent Team Name (상대 팀 이름)
+    rbi: number;             // Runs Batted In (타점)
+    run: number;             // Runs Scored (득점)
+    sb: number;              // Stolen Bases (도루)
+}
+export type TRecent5Records_C=TRecent5RecordProps_C[];
+
 
 export type TTotalRecordProps={
     bb: number;               // Walks (Base on balls)
