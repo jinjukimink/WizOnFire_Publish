@@ -86,6 +86,7 @@ const CategoryItem = styled.h1<{ isSelected: boolean }>`
 `;
 
 const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
+  console.log(detailPath)
   const [params] = useSearchParams();
   const pcode = params.get("pcode");
   const { data: staff, isLoading, error } = useFetchData<{ data: TGamePlayerProps } | { data: TCoachData }>(
@@ -97,6 +98,9 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
   const imgRef = useRef<HTMLImageElement>(null);
   const [imgWidth, setImgWidth] = useState<number>(1100);
   console.log("imgWidth:", imgWidth);
+  const isCatcher = ["catcherdetail", "infielderdetail", "outfielderdetail"].includes(detailPath);
+
+  console.log(isCatcher);
 
   let staffData: TDetailStaff | any;
   let parsedData: string[] = [];
@@ -181,7 +185,7 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
                 </CategoryItem>
               ))}
             </RecordNav>
-            {whichDetail === categoryList[0] && <RegularSeasonRecord regularLeagueData={regularLeagueData} />}
+            {whichDetail === categoryList[0] && <RegularSeasonRecord regularLeagueData={regularLeagueData} isCatcher={isCatcher} />}
             {whichDetail === categoryList[1] && <Recent5Record recent5gameRecords={recent5gameRecords} />}
             {whichDetail === categoryList[2] && <TotalRecord totalRecords={totalRecords} />}
           </>

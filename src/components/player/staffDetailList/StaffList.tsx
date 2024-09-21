@@ -43,7 +43,7 @@ const StaffList = ({apiUrl,staffType}:TStaffListProps) => {
     } else {
     stafflist = staffs as TStaff[];
     }
-    console.log("스태프 리스트: ",stafflist);
+    //console.log("스태프 리스트: ",stafflist);
 
   if(isLoading) return <ListSkeleton columns={4} margin="0px" width="240px" height="275px" borderRadius="0px"/>
   if (error) return <p>{error}</p>;
