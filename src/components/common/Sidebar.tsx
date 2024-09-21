@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useLocationStore } from '../../stores/useLocation.store';
-import { ButtonContainer, ContentContainer, SectionContainer, SidebarButton, SidebarContainer } from './SidebarStyles';
-import styled from 'styled-components';
+import { ButtonContainer, ContentContainer, SectionContainer, SidebarButton, SidebarContainer,SubCategoryContainer,SidebarButtonWrapper } from './SidebarStyles';
 
 const categories = [
   { title: "kt wiz는?" },
@@ -36,6 +35,7 @@ const sidebars = [
     { title: "투수", route: "/player/pitcher" },
     { title: "타자", route: "/player/catcher" }, // 타자를 클릭하면 서브 카테고리 표시
     { title: "응원단", route: "/player/cheer" },
+
   ],
   [
     { title: "wiz 뉴스", route: "/media/wiznews" },
@@ -49,22 +49,9 @@ const catcherSubbar = [
   { title: "외야수", route: "/player/outfielder" },
 ];
 
-const SubCategoryContainer = styled.div`
-  display: flex;
-  justify-content: center;  /* 수평 가운데 정렬 */
-  margin-top: 47px;  /* 메인 카테고리와의 간격 */
-  flex-wrap: wrap;   /* 화면이 작아지면 줄 바꿈 */
-  position: absolute;
-  gap:15px;
 
-  margin-right: -1%;
-`;
 
-const SidebarButtonWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;  /* 카테고리 및 서브 카테고리 정렬 */
-`;
+
 
 // SideBar 컴포넌트
 const SideBar = () => {
@@ -80,12 +67,18 @@ const SideBar = () => {
 
   useEffect(() => {
     const currentPath = location.pathname;
+
+    if (currentPath.includes("catcher") || currentPath.includes("infielder") || currentPath.includes("outfielder")) {
+      setShowSubCategories(true);  
+      setActiveTab("타자");        // Set active tab to "타자"
+    }
     const activeCategoryIndex = sidebars.findIndex((sidebar) =>
       sidebar.some((item) => currentPath.includes(item.route))
     );
     if (activeCategoryIndex !== -1) {
       const activeTabData = sidebars[activeCategoryIndex].find((item) =>
-        currentPath.includes(item.route)
+        //currentPath.includes(item.route)
+        currentPath===item.route
       );
       setCategoryIndex(activeCategoryIndex);
       setActiveTab(activeTabData?.title || '');
@@ -100,6 +93,58 @@ const SideBar = () => {
     return category.title;
   };
 
+
+  // If the path includes 'infielder' or 'outfielder', return early and stop further rendering
+  if (location.pathname.includes('infielder') || location.pathname.includes('outfielder')) {
+    return <>
+      <SidebarContainer>
+        <SectionContainer>
+          <h1>{getTitle()}</h1>
+
+          <ButtonContainer>
+            {sidebars[4]?.map((subCategory, index) => (
+              <SidebarButtonWrapper key={index}>
+                <SidebarButton
+                  active={activeTab === subCategory.title}
+                  onClick={() => {
+                    setActiveTab(subCategory.title);
+                    if (subCategory.title === '타자') {
+                      setShowSubCategories(!showSubCategories); // 타자 클릭 시 서브 카테고리 토글
+                    } else {
+                      setShowSubCategories(false); // 다른 카테고리 클릭 시 서브 카테고리 숨기기
+                    }
+                    navigate(subCategory.route);
+                  }}
+                >
+                  {subCategory.title}
+                </SidebarButton>
+
+                {/* 타자 카테고리가 활성화되면 서브 카테고리 렌더링 */}
+                {(subCategory.title === '타자') && showSubCategories && (
+                  <SubCategoryContainer>
+                    {catcherSubbar.map((subbar, idx) => (
+                      <SidebarButton
+                      style={{fontSize:"15px"}}
+                        key={idx}
+                        active={location.pathname.includes(subbar.route)}
+                        onClick={() => navigate(subbar.route)}
+                      >
+                        {subbar.title}
+                      </SidebarButton>
+                    ))}
+                  </SubCategoryContainer>
+                )}
+              </SidebarButtonWrapper>
+            ))}
+          </ButtonContainer>
+        </SectionContainer>
+
+        <ContentContainer>{/* Main content goes here */}</ContentContainer>
+      </SidebarContainer>
+      </>;
+  }
+
+  
   return (
     !(isLandingPage || isShopOrSponsor) && (
       <SidebarContainer>
@@ -125,7 +170,7 @@ const SideBar = () => {
                 </SidebarButton>
 
                 {/* 타자 카테고리가 활성화되면 서브 카테고리 렌더링 */}
-                {subCategory.title === '타자' && showSubCategories && (
+                {(subCategory.title === '타자') && showSubCategories && (
                   <SubCategoryContainer>
                     {catcherSubbar.map((subbar, idx) => (
                       <SidebarButton

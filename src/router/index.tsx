@@ -129,8 +129,16 @@ const router = createBrowserRouter([
             element:<Infielder/>
           },
           {
+            path:"infielder/detail",
+            element:<StaffDetail detailPath="infielderdetail"/>
+          },
+          {
             path:"outfielder",
             element:<Outfielder/>
+          },
+          {
+            path:"outfielder/detail",
+            element:<StaffDetail detailPath="outfielderdetail"/>
           },
           {
             path: "cheer",

@@ -31,6 +31,50 @@ export type TRegularLeagueProps={
     kbb: string;           
 }
 
+export type TRegularLeagueProps_C={//타자들의 타입
+  ab: number;              // At-bats
+  babip: string;           // Batting Average on Balls in Play
+  bb: number;              // Walks (Bases on Balls)
+  bbkk: string;            // BB/KK Ratio
+  bra: string;             // Batting Runs Above Average
+  cs: number;              // Caught Stealing
+  finalHit: number;        // Final Hit
+  gamenum: number;         // Number of Games
+  gd: number;              // Grounded into Double Play
+  gyear: string;           // Game Year
+  h2: number;              // Doubles
+  h3: number;              // Triples
+  hit: number;             // Hits
+  hp: number;              // Hit by Pitch
+  hr: number;              // Home Runs
+  hra: string;             // Home Runs Average
+  ib: number;              // Intentional Walks
+  kk: number;              // Strikeouts
+  ops: string;             // On-base Plus Slugging
+  opsPlus: string;         // OPS+
+  pa: number;              // Plate Appearances
+  pcode: string;           // Player Code
+  rbi: number;             // Runs Batted In
+  run: number;             // Runs
+  sb: number;              // Stolen Bases
+  sbTryCn: number;         // Stolen Base Attempts
+  sba: string;             // Stolen Base Average
+  sf: number;              // Sacrifice Fly
+  sh: number;              // Sacrifice Hit (Bunt)
+  slg: string;             // Slugging Percentage
+  spHra: string;           // Specific Home Run Average
+  war: string;             // Wins Above Replacement
+  winShares: string;       // Win Shares
+  woba: string;            // Weighted On-base Average
+  wrHit: string;           // Weighted Runs Created Plus (wRC+)
+  wraa: string;            // Weighted Runs Above Average (wRAA)
+  xbhrun: string;          // Extra-base Hits / Home Runs
+}
+
+
+
+
+
 export type TRecent5RecordProps={
     bb: number;               // Base on balls (walks)
     displayDate: string;      // Date display format, e.g. "09.14"
@@ -76,5 +120,8 @@ export type TTotalRecordProps={
     wCg: number;              // Complete games won
     wra: string;              // Win ratio (likely as a string representation of a float)
 }
+
+
+
 
 export type TTotalRecords=TTotalRecordProps[];
