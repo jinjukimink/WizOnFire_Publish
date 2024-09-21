@@ -5,6 +5,7 @@ import { TRegularLeagueProps, TRegularLeagueProps_C } from '../../../types/playe
 import { HitRecordHeaderCell, HitRecordTable, HitRecordRow, HitRecordCell } from '../../../pages/regular/boxScore/recordButton/hitRecords/HitRecordStyles';
 import styled from 'styled-components';
 
+
 export const TableWrapper = styled.div`
   width: 1100px;
   justify-content: center;

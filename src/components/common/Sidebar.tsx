@@ -12,7 +12,7 @@ const categories = [
   { title: "wiz 뉴스" },
 ];
 
-const sidebars = [
+export const sidebars = [
   [
     { title: "구단 소개", route: "/ktwiz/about" },
     { title: "구단 연혁", route: "/ktwiz/history" },
