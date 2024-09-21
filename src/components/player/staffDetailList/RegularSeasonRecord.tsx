@@ -49,7 +49,7 @@ const RegularSeasonRecord = ({ regularLeagueData, isCatcher }: { regularLeagueDa
       { header: '이닝', accessorKey: 'innDisplay' },
       { header: '피안타', accessorKey: 'hit' },
       { header: '피홈런', accessorKey: 'hr' },
-      { header: '',id:'empty', accessorKey: '', enableSorting: false, cell: () => null }, // 빈열 추가   
+      //{ header: '',id:'empty', accessorKey: '', enableSorting: false, cell: () => null }, // 빈열 추가   
     ];
   }, [isCatcher]);
 
@@ -69,7 +69,7 @@ const RegularSeasonRecord = ({ regularLeagueData, isCatcher }: { regularLeagueDa
       { header: '장타/안타', accessorKey: 'xbhrun' }, // Extra-Base Hits per Hit
       { header: 'OPS', accessorKey: 'ops' },        // OPS (On-base Plus Slugging)
       { header: '득점권 타율', accessorKey: 'spHra' }, // Batting Average with Runners in Scoring Position
-      { header: '',id:'empty', accessorKey: '', enableSorting: false, cell: () => null }, // 빈열 추가   
+      //{ header: '',id:'empty', accessorKey: '', enableSorting: false, cell: () => null }, // 빈열 추가   
     ] : [
       { header: '희비', accessorKey: 'sfi' },
       { header: '희타', accessorKey: 'sh' },
