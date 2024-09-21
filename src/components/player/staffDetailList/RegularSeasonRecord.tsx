@@ -5,22 +5,21 @@ import { TRegularLeagueProps, TRegularLeagueProps_C } from '../../../types/playe
 import { HitRecordHeaderCell, HitRecordTable, HitRecordRow, HitRecordCell } from '../../../pages/regular/boxScore/recordButton/hitRecords/HitRecordStyles';
 import styled from 'styled-components';
 
-
 export const TableWrapper = styled.div`
-  width:1100px;
+  width: 1100px;
   justify-content: center;
   align-items: center;
   @media (max-width: 1200px) {
-    max-width: 900px; 
+    max-width: 900px;
   }
 `;
 
-const RegularSeasonRecord = ({ regularLeagueData, isCatcher }: { regularLeagueData: TRegularLeagueProps | TRegularLeagueProps_C, isCatcher: boolean }) => {
-
+const RegularSeasonRecord = ({ regularLeagueData, isCatcher }: { regularLeagueData: TRegularLeagueProps | TRegularLeagueProps_C | any, isCatcher: boolean }) => {
+  
   // 첫 번째 줄 컬럼을 isCatcher에 따라 분리
   const firstRowColumns = useMemo(() => {
     return isCatcher ? [
-      { header: '타율', accessorKey: 'babip' },    // Batting Average
+      { header: '타율', accessorKey: 'hra' },    // Batting Average
       { header: '경기수', accessorKey: 'gamenum' }, // Games Played
       { header: '타석', accessorKey: 'pa' },        // Plate Appearances
       { header: '타수', accessorKey: 'ab' },        // At-Bats
@@ -37,7 +36,7 @@ const RegularSeasonRecord = ({ regularLeagueData, isCatcher }: { regularLeagueDa
     ] : [
       { header: '평균 자책점', accessorKey: 'era' },
       { header: '경기수', accessorKey: 'gamenum' },
-      { header: '완투', accessorKey: 'cg' },
+      { header: '완투', accessorKey: 'wCg' },
       { header: '완봉', accessorKey: 'sho' },
       { header: '승', accessorKey: 'w' },
       { header: '패', accessorKey: 'l' },
@@ -49,7 +48,9 @@ const RegularSeasonRecord = ({ regularLeagueData, isCatcher }: { regularLeagueDa
       { header: '이닝', accessorKey: 'innDisplay' },
       { header: '피안타', accessorKey: 'hit' },
       { header: '피홈런', accessorKey: 'hr' },
-      //{ header: '',id:'empty', accessorKey: '', enableSorting: false, cell: () => null }, // 빈열 추가   
+      {header:'IP/G',cell:({row}:any)=>{
+        return ((row.original.innDisplay)/(row.original.gamenum)).toFixed(3);
+      }}
     ];
   }, [isCatcher]);
 
@@ -63,15 +64,21 @@ const RegularSeasonRecord = ({ regularLeagueData, isCatcher }: { regularLeagueDa
       { header: '병살', accessorKey: 'gd' },        // Grounded into Double Plays
       { header: '장타율', accessorKey: 'slg' },     // Slugging Percentage
       { header: '출루율', accessorKey: 'bra' },     // On-Base Percentage
-      { header: '실책', accessorKey: 'e' },         // Errors
-      { header: '도루성공률', accessorKey: 'sbRate' }, // Stolen Base Success Rate
+      { header: '실책', accessorKey: 'cs' },         // Errors
+      { header: '도루성공률',
+        cell: ({ row }: any) => {
+          const cs = row.original.cs ?? 0;
+          const sb = row.original.sb ?? 0;
+          return (sb / (cs + sb)).toFixed(3);
+        }
+      }, // Stolen Base Success Rate
       { header: 'BB/K', accessorKey: 'bbkk' },      // Walk-to-Strikeout Ratio
       { header: '장타/안타', accessorKey: 'xbhrun' }, // Extra-Base Hits per Hit
       { header: 'OPS', accessorKey: 'ops' },        // OPS (On-base Plus Slugging)
       { header: '득점권 타율', accessorKey: 'spHra' }, // Batting Average with Runners in Scoring Position
-      //{ header: '',id:'empty', accessorKey: '', enableSorting: false, cell: () => null }, // 빈열 추가   
+      { header: 'ISO', cell: ({ row }) => (row.original.slg - row.original.hra).toFixed(3) }
     ] : [
-      { header: '희비', accessorKey: 'sfi' },
+      { header: '희비', accessorKey: 'sf' },
       { header: '희타', accessorKey: 'sh' },
       { header: '볼넷', accessorKey: 'bb' },
       { header: '고의4구', accessorKey: 'ib' },
@@ -89,92 +96,23 @@ const RegularSeasonRecord = ({ regularLeagueData, isCatcher }: { regularLeagueDa
     ];
   }, [isCatcher]);
 
-  const handleData = (data: any):any => {
-  return !isCatcher?{
-    era: data.era ?? 0,                  // 평균 자책점
-    gamenum: data.gamenum ?? 0,          // 경기수
-    cg: data.cg ?? 0,                    // 완투
-    sho: data.sho ?? 0,                  // 완봉
-    w: data.w ?? 0,                      // 승
-    l: data.l ?? 0,                      // 패
-    sv: data.sv ?? 0,                    // 세이브
-    hold: data.hold ?? 0,                // 홀드
-    wp: data.wp ?? 0,                    // 승률
-    bf: data.bf ?? 0,                    // 타자
-    tugucount: data.tugucount ?? 0,      // 투구수
-    innDisplay: data.innDisplay ?? "0",  // 이닝 (문자열로 표시되는 값일 가능성이 크므로 0을 문자열로 반환)
-    hit: data.hit ?? 0,                  // 피안타
-    hr: data.hr ?? 0,                    // 피홈런
-    sfi: data.sfi ?? 0,                  // 희비
-    sh: data.sh ?? 0,                    // 희타
-    bb: data.bb ?? 0,                    // 볼넷
-    ib: data.ib ?? 0,                    // 고의4구
-    hp: data.hp ?? 0,                    // 사구
-    kk: data.kk ?? 0,                    // 탈삼진
-    wra: data.wra ?? 0,                    // 폭투
-    bk: data.bk ?? 0,                    // 보크
-    r: data.r ?? 0,                      // 실점
-    er: data.er ?? 0,                    // 자책점
-    bs: data.bs ?? 0,                    // 블론 세이브
-    whip: data.whip ?? 0,                // WHIP (이닝당 안타와 볼넷 허용률)
-    oavg: data.oavg ?? 0,                // 피안타율
-    qs: data.qs ?? 0,                    // QS (퀄리티 스타트)
-    kbb: data.kbb ?? 0,                  // K/BB 비율
-  }
-  :{
-    ab: data.ab ?? 0,                    // 타수
-    babip: data.babip ?? "0",            // 타율 (BABIP)
-    bb: data.bb ?? 0,                    // 볼넷
-    bbkk: data.bbkk ?? "0",              // BB/K 비율
-    bra: data.bra ?? "0",                // Batting Runs Above Average
-    cs: data.cs ?? 0,                    // 도실 (Caught Stealing)
-    finalHit: data.finalHit ?? 0,        // Final Hit
-    gamenum: data.gamenum ?? 0,          // 경기수
-    gd: data.gd ?? 0,                    // 병살 (Grounded into Double Play)
-    gyear: data.gyear ?? "0",            // 연도 (Game Year)
-    h2: data.h2 ?? 0,                    // 2루타
-    h3: data.h3 ?? 0,                    // 3루타
-    hit: data.hit ?? 0,                  // 안타 (Hits)
-    hp: data.hp ?? 0,                    // 사구 (Hit by Pitch)
-    hr: data.hr ?? 0,                    // 홈런 (Home Runs)
-    hra: data.hra ?? "0",                // 홈런 비율 (Home Runs Average)
-    ib: data.ib ?? 0,                    // 고의4구 (Intentional Walks)
-    kk: data.kk ?? 0,                    // 삼진 (Strikeouts)
-    ops: data.ops ?? "0",                // OPS (On-base Plus Slugging)
-    opsPlus: data.opsPlus ?? "0",        // OPS+
-    pa: data.pa ?? 0,                    // 타석 (Plate Appearances)
-    pcode: data.pcode ?? "",             // 선수 코드 (Player Code)
-    rbi: data.rbi ?? 0,                  // 타점 (RBIs)
-    run: data.run ?? 0,                  // 득점 (Runs)
-    sb: data.sb ?? 0,                    // 도루 (Stolen Bases)
-    sbTryCn: data.sbTryCn ?? 0,          // 도루 시도 (Stolen Base Attempts)
-    sba: data.sba ?? "0",                // 도루 성공률 (Stolen Base Average)
-    sf: data.sf ?? 0,                    // 희비 (Sacrifice Fly)
-    sh: data.sh ?? 0,                    // 희타 (Sacrifice Hit)
-    slg: data.slg ?? "0",                // 장타율 (Slugging Percentage)
-    spHra: data.spHra ?? "0",            // 특정 홈런 비율 (Specific Home Run Average)
-    war: data.war ?? "0",                // 대체 승리 기여도 (Wins Above Replacement)
-    winShares: data.winShares ?? "0",    // Win Shares
-    woba: data.woba ?? "0",              // 가중 출루율 (Weighted On-base Average)
-    wrHit: data.wrHit ?? "0",            // wRC+ (Weighted Runs Created Plus)
-    wraa: data.wraa ?? "0",              // wRAA (Weighted Runs Above Average)
-    xbhrun: data.xbhrun ?? "0/0",        // 장타/홈런 (Extra-base Hits / Home Runs)
+  const handleData = (data: any): any => {
+    return data ? { ...data } : {};
   };
-};
 
-  // 첫 번째 줄 테이블
   const firstRowTable = useTableWithoutApi<TRegularLeagueProps | TRegularLeagueProps_C>({
-    data: [regularLeagueData],
+    data: regularLeagueData ? [regularLeagueData] : [],
     columnDefs: firstRowColumns,
     transformData: handleData,
   });
 
-  // 두 번째 줄 테이블
   const secondRowTable = useTableWithoutApi<TRegularLeagueProps | TRegularLeagueProps_C>({
-    data: [regularLeagueData],
+    data: regularLeagueData ? [regularLeagueData] : [],
     columnDefs: secondRowColumns,
     transformData: handleData,
   });
+
+  const hasData = regularLeagueData && Object.keys(regularLeagueData).length > 0;
 
   return (
     <>
@@ -193,16 +131,23 @@ const RegularSeasonRecord = ({ regularLeagueData, isCatcher }: { regularLeagueDa
             ))}
           </thead>
           <tbody>
-            {/* 첫 번째 줄 데이터 */}
-            {firstRowTable.getRowModel().rows.map((row) => (
-              <tr key={row.id}>
-                {row.getVisibleCells().map((cell) => (
-                  <HitRecordCell key={cell.id}>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </HitRecordCell>
-                ))}
-              </tr>
-            ))}
+            {hasData ? (
+              firstRowTable.getRowModel().rows.map((row) => (
+                <tr key={row.id}>
+                  {row.getVisibleCells().map((cell) => (
+                    <HitRecordCell key={cell.id}>
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    </HitRecordCell>
+                  ))}
+                </tr>
+              ))
+            ) : (
+              <HitRecordRow>
+                <HitRecordCell colSpan={firstRowColumns.length}>
+                  데이터가 없습니다.
+                </HitRecordCell>
+              </HitRecordRow>
+            )}
           </tbody>
 
           {/* 두 번째 줄 헤더 */}
@@ -218,16 +163,23 @@ const RegularSeasonRecord = ({ regularLeagueData, isCatcher }: { regularLeagueDa
             ))}
           </thead>
           <tbody>
-            {/* 두 번째 줄 데이터 */}
-            {secondRowTable.getRowModel().rows.map((row) => (
-              <tr key={row.id}>
-                {row.getVisibleCells().map((cell) => (
-                  <HitRecordCell key={cell.id}>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </HitRecordCell>
-                ))}
-              </tr>
-            ))}
+            {hasData ? (
+              secondRowTable.getRowModel().rows.map((row) => (
+                <tr key={row.id}>
+                  {row.getVisibleCells().map((cell) => (
+                    <HitRecordCell key={cell.id}>
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    </HitRecordCell>
+                  ))}
+                </tr>
+              ))
+            ) : (
+              <HitRecordRow>
+                <HitRecordCell colSpan={secondRowColumns.length}>
+                  데이터가 없습니다.
+                </HitRecordCell>
+              </HitRecordRow>
+            )}
           </tbody>
         </HitRecordTable>
       </TableWrapper>

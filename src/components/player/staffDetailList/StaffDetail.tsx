@@ -187,7 +187,7 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
             </RecordNav>
             {whichDetail === categoryList[0] && <RegularSeasonRecord regularLeagueData={regularLeagueData} isCatcher={isCatcher} />}
             {whichDetail === categoryList[1] && <Recent5Record recent5gameRecords={recent5gameRecords} isCatcher={isCatcher} />}
-            {whichDetail === categoryList[2] && <TotalRecord totalRecords={totalRecords} />}
+            {whichDetail === categoryList[2] && <TotalRecord totalRecords={totalRecords} isCatcher={isCatcher} />}
           </>
         )}
       </Container>

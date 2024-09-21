@@ -49,10 +49,6 @@ const catcherSubbar = [
   { title: "외야수", route: "/player/outfielder" },
 ];
 
-
-
-
-
 // SideBar 컴포넌트
 const SideBar = () => {
   const location = useLocation();
@@ -65,9 +61,10 @@ const SideBar = () => {
   const [categoryIndex, setCategoryIndex] = useState<number>(0); // 현재 카테고리 인덱스
   const [showSubCategories, setShowSubCategories] = useState<boolean>(false); // 타자 서브 카테고리 표시 여부
 
-  useEffect(() => {
-    const currentPath = location.pathname;
+  let currentPath = location.pathname;
 
+  useEffect(() => {
+    currentPath = location.pathname;
     if (currentPath.includes("catcher") || currentPath.includes("infielder") || currentPath.includes("outfielder")) {
       setShowSubCategories(true);  
       setActiveTab("타자");        // Set active tab to "타자"
@@ -85,6 +82,7 @@ const SideBar = () => {
     }
   }, [location.pathname]);
 
+
   const getTitle = () => {
     const category = categories[categoryIndex];
     if (activeTab) {
@@ -93,19 +91,19 @@ const SideBar = () => {
     return category.title;
   };
 
+console.log(activeTab);
+//console.log(location.pathname.includes(activeTab));
 
-  // If the path includes 'infielder' or 'outfielder', return early and stop further rendering
   if (location.pathname.includes('infielder') || location.pathname.includes('outfielder')) {
     return <>
       <SidebarContainer>
         <SectionContainer>
           <h1>{getTitle()}</h1>
-
           <ButtonContainer>
             {sidebars[4]?.map((subCategory, index) => (
               <SidebarButtonWrapper key={index}>
                 <SidebarButton
-                  active={activeTab === subCategory.title}
+                  active={activeTab === subCategory.title || location.pathname.includes(subCategory.title)}
                   onClick={() => {
                     setActiveTab(subCategory.title);
                     if (subCategory.title === '타자') {
@@ -144,18 +142,16 @@ const SideBar = () => {
       </>;
   }
 
-  
   return (
     !(isLandingPage || isShopOrSponsor) && (
       <SidebarContainer>
         <SectionContainer>
           <h1>{getTitle()}</h1>
-
           <ButtonContainer>
             {sidebars[categoryIndex]?.map((subCategory, index) => (
               <SidebarButtonWrapper key={index}>
                 <SidebarButton
-                  active={activeTab === subCategory.title}
+                  active={activeTab === subCategory.title ||location.pathname.startsWith(subCategory.route)}
                   onClick={() => {
                     setActiveTab(subCategory.title);
                     if (subCategory.title === '타자') {
@@ -168,7 +164,6 @@ const SideBar = () => {
                 >
                   {subCategory.title}
                 </SidebarButton>
-
                 {/* 타자 카테고리가 활성화되면 서브 카테고리 렌더링 */}
                 {(subCategory.title === '타자') && showSubCategories && (
                   <SubCategoryContainer>
