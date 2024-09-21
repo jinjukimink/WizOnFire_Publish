@@ -38,6 +38,10 @@ export const PageLocationInfo = styled.div`
          /* &:last-child{
         color: ${colors.redPrimary};
         }  */
+        cursor: pointer;
+    }
+    span :last-child{
+        pointer-events: none;
     }
 
 `
