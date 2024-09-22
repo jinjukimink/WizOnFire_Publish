@@ -17,11 +17,10 @@ const SearchBar = ({containerWidth, height, lineHeight, buttonWidth, placeholder
     setSearchTerm("")
   }
 
-
   return (
-  <form onSubmit={onSubmit} style={{display:'flex'}}> 
-    <Input type="text" placeholder={placeholder} value={searchTerm} onChange={handleInputChange} width={containerWidth} height={height} lineHeight={lineHeight}/>
-    <Button type="submit" width={buttonWidth} height={height} backgroundColor="#333" fontColor="#fff" fontSize="12px" margin="0 0 0 -3px" padding="0" > 검색 </Button>
+    <form onSubmit={onSubmit} style={{display:'flex'}}> 
+      <Input type="text" placeholder={placeholder} value={searchTerm} onChange={handleInputChange} width={containerWidth} height={height} lineHeight={lineHeight}/>
+      <Button type="submit" width={buttonWidth} height={height} backgroundColor="#333" fontColor="#fff" fontSize="12px" margin="0 0 0 -3px" padding="0" > 검색 </Button>
     </form>
   );
 }
