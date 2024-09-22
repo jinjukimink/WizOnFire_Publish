@@ -51,7 +51,7 @@ const BatterRankTable = <T,>({
         sorting: sorting.length === 0 ? defaultSorting : sorting,
         onSortingChange
     });
-
+console.log('apiurl 테이블 먼저니?!?!!?');
     return (
     <>
         <BattRankingTable>
@@ -64,7 +64,7 @@ const BatterRankTable = <T,>({
                         colSpan={header.colSpan}
                         onClick={header.column.getToggleSortingHandler()}
                         style={{ cursor: "pointer" }}
-                        isSorted = {!!header.column.getIsSorted()}
+                        issorted = {!!header.column.getIsSorted()}
                     >
                         {flexRender(header.column.columnDef.header, header.getContext())}
                         {header.column.getCanSort() && "▼"}
