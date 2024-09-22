@@ -43,5 +43,4 @@ export const PageLocationInfo = styled.div`
     span :last-child{
         pointer-events: none;
     }
-
 `

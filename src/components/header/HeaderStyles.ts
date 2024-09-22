@@ -4,6 +4,9 @@ import colors from '../../assets/Colors';
 
 
 export const UpNav = styled(motion.nav)<{isHovered:boolean}>` 
+      /* display: grid;
+  grid-template-columns: no-repeat(8, 1fr);  */
+    
     justify-content: center;
     display: flex;
     position: fixed;
@@ -57,9 +60,10 @@ export const UpNav = styled(motion.nav)<{isHovered:boolean}>`
             );
     }
     @media screen and (max-width: 808px) {
-        gap:2%;
+        gap:1.5%;
+        //margin-top:10px;;
+        //height:100px
     }
-
 `;
 
 export const Logo = styled.div<{isHovered:boolean}>`
@@ -72,22 +76,30 @@ export const Logo = styled.div<{isHovered:boolean}>`
     //top:20px;
     margin-top: 24px;
     z-index: 103;
+    //pointer-events: none;//호버 이벤트 막으려고
     img {
         width: 130px;
         transition: width 0.3s ease-in-out;
+        @media screen and (max-width:750px) {
+            width:85px;
+            transform: translateX(-12%);//로고 위치 중간 조정
+    }
     }
     &:hover{
         cursor: pointer;
     }
-    @media screen and (max-width:800px) {
+    @media screen and (max-width:940px) {
         justify-content: center;
-        transform: translateX(-3%);//로고 위치 중간 조정
+        transform: translateX(-17%);//로고 위치 중간 조정
+        
     }
+    
 `;
 
 
-// styled-components에서 prop 필터링
-export const Category = styled.a<{ isHovered: boolean; isActive: boolean }>`
+export const Category = styled.a.attrs<{ isHovered: boolean; isActive: boolean }>((props) => ({
+  isActive: props.isActive ? true : false, // 필요 시 내부적으로 처리
+}))<{ isHovered: boolean; isActive: boolean }>`
   position: relative;
   font-size: 20px;
   text-decoration: none;
@@ -100,15 +112,10 @@ export const Category = styled.a<{ isHovered: boolean; isActive: boolean }>`
   
   ${({ isActive }) => isActive && `border-bottom: 3px solid red;`}
 
-  @media screen and (max-width: 820px) {
+  @media screen and (max-width: 940px) {
     font-size: 14px;
   }
 `;
-
-
-
-    
-
 
 export const BottomNav=styled(motion.div)` 
     padding-top: 30px;

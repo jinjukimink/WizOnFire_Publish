@@ -103,7 +103,7 @@ const PageLocation = () => {
                 <span key={index}>
                   <span><MdArrowForwardIos /></span>
                   <span
-                    style={{ color: isLastItem ? "red" : "inherit", cursor: isLastItem ? "pointer" : "default" }}
+                    style={{ color: isLastItem ? "red" : "inherit", cursor: isLastItem ? "none" : "pointer" }}
                     onClick={(e) => {path && navigate(path)
                     console.log(e)
                     }} // path가 유효한 경우에만 navigate 실행

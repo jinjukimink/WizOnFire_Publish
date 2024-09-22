@@ -132,8 +132,8 @@ const Header = () => {
   });
 
   const handleMouseEnter = () => {
-    setIsHovered(true);
     navAnimation.start({ backgroundColor: "rgba(255, 255, 255, 1)" });
+    setIsHovered(true);
   };
 
   const handleMouseLeave = () => {//호버가 끝나면 무조건 네비바는 검은색임
@@ -148,13 +148,10 @@ const Header = () => {
 
   const handleCategoryClick = (category: string) => {
     const firstSubCategory = subCategories[categories.indexOf(category)][0];
-    
     setSelectedCategory(category);
     setSelectedSubCategory(firstSubCategory);
     setSelectedSidebar(sidebars[categories.indexOf(category)][0][0] || null);
-    console.log(category)
-        // 클릭 시 호버 상태를 무조건 false로 초기화
-    setIsHovered(true);
+    console.log(category);
   };
 
   const handleSubCategoryClick = (subCategory: string,subIndex:number) => {
@@ -162,8 +159,8 @@ const Header = () => {
     const category = categories[categoryIndex];
     const forNav = categoriesForNav[categoryIndex];
 
-    console.log("forNav: ",forNav)
-    console.log("subIndex: ",subIndex)
+    // console.log("forNav: ",forNav)
+    // console.log("subIndex: ",subIndex)
     
     setSelectedCategory(category);
     setSelectedSubCategory(subCategory);
@@ -179,50 +176,55 @@ const Header = () => {
       console.log(forNav)
       return;
     }
-
     navigate(`/${forNav}/${subCategoriesForNav[categoryIndex][subIndex]}`); // 경로를 제대로 작성
-   // console.log("here2");
+   //console.log("here2");
   };
+  
+//
 
-  console.log(isHovered);
+  // if(windowWidth<800){
+  //   setIsHovered(false)
+  // }
   return (
-
-
     <>
     <header>         
       <UpNav
         animate={navAnimation}
         initial={{ backgroundColor: isLandingPage ? "rgba(0,0,0,0)" : "rgba(0,0,0,1)" }}
-        onMouseEnter={handleMouseEnter}
+        onMouseEnter={windowWidth>800? handleMouseEnter:undefined}
         onMouseLeave={handleMouseLeave}
         isHovered={isHovered}
-      >
-          {/* 화면 너비가 800px 이상일 때만 카테고리 렌더링 */}
-          {windowWidth<=800 && <Logo isHovered={isHovered}>
+        >
+          {/* 화면 너비가 800px 이상일 때만 카테고리 렌더링
+          {windowWidth<=800 && <Logo 
+          isHovered={isHovered}
+          //onMouseEnter={()=>setIsHovered(false)}
+          >
                   <img
-                    onClick={() => {
-                      navigate('/');
-                      setIsHovered(false);
-                    }}
+                    //onMouseEnter={handleMouseEnter}
+                    //onMouseLeave={handleMouseLeave}
+                    // onClick={() => {
+                    //   navigate('/');
+                    //   setIsHovered(true);
+                    // }}
                     src={newLogo}
                     alt="logo"
                   />
-                </Logo>}
+                </Logo>} */}
 
-          {windowWidth > 800 && categories.map((category, index) => (
+          { categories.map((category, index) => (
             <React.Fragment key={index}>
               <Category
                 isActive={hoveredCategory === category}
-                href={categoriesForNav[index] === 'game'
-                  ? `/${categoriesForNav[index]}/regular/${subCategoriesForNav[index][0]}`
-                  : `/${categoriesForNav[index]}/${subCategoriesForNav[index][0]}`
-                }
+                href={categoriesForNav[index]==='game'?
+                        `/${categoriesForNav[index]}/regular/${subCategoriesForNav[index][0]}`
+                        :`/${categoriesForNav[index]}/${subCategoriesForNav[index][0]}`}      
+               
                 onMouseEnter={() => handleMouseEnterCategory(category)}
                 onMouseLeave={handleMouseLeaveCategory}
                 isHovered={hoveredCategory !== "" && hoveredCategory === category}
                 onClick={() => {
                   handleCategoryClick(category);
-                  //setIsHovered(false)
                 }}
               >
                 {category}
@@ -232,8 +234,10 @@ const Header = () => {
                 <Logo isHovered={isHovered}>
                   <img
                     onClick={() => {
+                      if(!isLandingPage){
                       navigate('/');
-                      setIsHovered(prev => !prev);
+                      setIsHovered(false);
+                      }
                     }}
                     src={newLogo}
                     alt="logo"
@@ -247,7 +251,7 @@ const Header = () => {
 
 {/* exit이면 바텀네브가 사라지는 걸 transition으로: AnimatePresence로 감싸야 함 */}
       <AnimatePresence>  
-      {isHovered && (
+      {windowWidth > 800 && isHovered && (
         <BottomNav 
         initial={{opacity:0,height:0}} 
         animate={{opacity:1,height:300}}//투명도가 1이 되어 완전히 보이는 상태
@@ -258,7 +262,7 @@ const Header = () => {
         >
           {categories.map((_, index) => (
             <SubCategoryColumn key={index}
-            // onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
+            onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
             >
               {subCategories[index].length > 0 ? (
                 subCategories[index].map((subCategory,subIndex) => (
