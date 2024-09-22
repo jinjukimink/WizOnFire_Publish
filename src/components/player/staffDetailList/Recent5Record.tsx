@@ -73,7 +73,7 @@ const Recent5Record = ({recent5gameRecords,isCatcher}:{recent5gameRecords:TRecen
   },[isCatcher])
 
 
-  const rowTable=useTableWithoutApi<TRecent5RecordProps|TRecent5RecordProps_C>({
+  const rowTable = useTableWithoutApi<TRecent5RecordProps|TRecent5RecordProps_C>({
     data:recent5gameRecords,
     columnDefs:columns
   })
