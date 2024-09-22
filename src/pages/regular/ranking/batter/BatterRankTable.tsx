@@ -1,6 +1,5 @@
 import { ColumnDef, SortingState, Updater, flexRender } from "@tanstack/react-table";
 import { useTable } from "../../../../hooks/useTable";
-import SearchAndSelect from "../../../../components/ranking/searchAndSelect/SearchAndSelect";
 import {
     BattRankingTable,
     BattRankingHeaderCell,
@@ -23,7 +22,7 @@ const BatterRankTable = <T,>({
     sorting,
     onSortingChange
 }: RankingTableProps<T>) => {
-
+    const defaultSorting: SortingState = [{ id: "avg", desc: false }];
     const defaultColumnDefs: ColumnDef<T>[] = [
         { header: "선수명", accessorKey: "playerName", enableSorting: false },
         { header: "팀명", accessorKey: "teamName", enableSorting: false },
@@ -49,13 +48,12 @@ const BatterRankTable = <T,>({
         apiUrl,
         columnDefs,
         transformData,
-        sorting,
+        sorting: sorting.length === 0 ? defaultSorting : sorting,
         onSortingChange
     });
 
     return (
     <>
-        <SearchAndSelect/>
         <BattRankingTable>
             <thead>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -66,6 +64,7 @@ const BatterRankTable = <T,>({
                         colSpan={header.colSpan}
                         onClick={header.column.getToggleSortingHandler()}
                         style={{ cursor: "pointer" }}
+                        isSorted = {!!header.column.getIsSorted()}
                     >
                         {flexRender(header.column.columnDef.header, header.getContext())}
                         {header.column.getCanSort() && "▼"}
