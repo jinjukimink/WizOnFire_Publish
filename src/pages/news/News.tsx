@@ -22,12 +22,13 @@ interface ApiResponse {
   };
 }
 
+// 본문 이미지 경로를 변환하는 함수
 const formatArticleContents = (contents: string) => {
   const baseUrl = 'https://wizzap.ktwiz.co.kr/';
   return contents.replace(/src="\/files/g, `src="${baseUrl}/files`);
 };
 
-// 썸네일 URL을 포맷하는 함수
+// 썸네일 URL을 변환하는 함수 (formatArticleContents와 유사하게 처리)
 const formatThumbnail = (thumbnailUrl: string) => {
   const baseUrl = 'https://wizzap.ktwiz.co.kr/';
   
