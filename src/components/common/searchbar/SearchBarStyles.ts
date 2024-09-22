@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export type TSearchBar = {
-    containerWidth: string;
+    containerWidth?: string;
     buttonWidth: string;
     height: string;
     lineHeight?: string;

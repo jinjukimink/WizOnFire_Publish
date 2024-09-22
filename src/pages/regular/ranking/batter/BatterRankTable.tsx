@@ -6,10 +6,11 @@ import {
     BattRankingRow,
     BattRankingCell
 } from "./css/BatterRankStyles";
+import { useMemo} from "react";
 
 type RankingTableProps<T> = {
     apiUrl: string;
-    columnDefs?: ColumnDef<T>[]; 
+    columnDefs?: ColumnDef<T>[];
     transformData?: (data: any) => T[];
     sorting: SortingState;
     onSortingChange: (updaterOrValue: Updater<SortingState>) => void;
@@ -22,8 +23,10 @@ const BatterRankTable = <T,>({
     sorting,
     onSortingChange
 }: RankingTableProps<T>) => {
-    const defaultSorting: SortingState = [{ id: "avg", desc: false }];
-    const defaultColumnDefs: ColumnDef<T>[] = [
+    const defaultSorting: SortingState = useMemo(() => [{ id: "avg", desc: false }], []);
+    
+    // columnDefs는 useMemo로 메모이제이션
+    const defaultColumnDefs: ColumnDef<T>[] = useMemo(() => [
         { header: "선수명", accessorKey: "playerName", enableSorting: false },
         { header: "팀명", accessorKey: "teamName", enableSorting: false },
         { header: "타율", accessorKey: "avg", enableSorting: true }, //타율 = (안타 (hit) / 타수(ab))
@@ -40,10 +43,15 @@ const BatterRankTable = <T,>({
         { header: "사구", accessorKey: "hp", enableSorting: true },
         { header: "삼진", accessorKey: "kk", enableSorting: true },
         { header: "장타율", accessorKey: "slg", enableSorting: true },
-        { header: "출루율", accessorKey: "obp", enableSorting: true },// 출루율 = (안타(hit) + 볼넷(bb) + 사구(hp)) / (타수(ab) + 볼넷(bb) + 사구(hp) + 희생플라이(sf))
-    ];
-    
-    const columnDefs = customColumnDefs ? [...customColumnDefs, ...defaultColumnDefs] : defaultColumnDefs; 
+        { header: "출루율", accessorKey: "obp", enableSorting: true } // 출루율 계산
+    ], []);
+
+    // customColumnDefs가 있으면 결합, 없으면 defaultColumnDefs 사용
+    const columnDefs = useMemo(() => {
+        return customColumnDefs ? [...customColumnDefs, ...defaultColumnDefs] : defaultColumnDefs;
+    }, [customColumnDefs, defaultColumnDefs]);
+
+    // sorting 상태가 변경될 때만 새로운 배열을 만들지 않도록 useMemo 사용
     const table = useTable<T>({
         apiUrl,
         columnDefs,
@@ -51,41 +59,41 @@ const BatterRankTable = <T,>({
         sorting: sorting.length === 0 ? defaultSorting : sorting,
         onSortingChange
     });
-
+console.log("rendering")
     return (
-    <>
-        <BattRankingTable>
-            <thead>
-            {table.getHeaderGroups().map((headerGroup) => (
-                <BattRankingRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => (
-                    <BattRankingHeaderCell
-                        key={header.id}
-                        colSpan={header.colSpan}
-                        onClick={header.column.getToggleSortingHandler()}
-                        style={{ cursor: "pointer" }}
-                        isSorted = {!!header.column.getIsSorted()}
-                    >
-                        {flexRender(header.column.columnDef.header, header.getContext())}
-                        {header.column.getCanSort() && "▼"}
-                    </BattRankingHeaderCell>
-                ))}
-                </BattRankingRow>
-            ))}
-            </thead>
-            <tbody>
-            {table.getRowModel().rows.map((row) => (
-                <BattRankingRow key={row.id}>
-                {row.getVisibleCells().map((cell) => (
-                    <BattRankingCell key={cell.id}>
-                    {String((cell.getValue()) ?? "")}
-                    </BattRankingCell>
-                ))}
-                </BattRankingRow>
-            ))}
-            </tbody>
-        </BattRankingTable>
-    </>
+        <>
+            <BattRankingTable>
+                <thead>
+                    {table.getHeaderGroups().map((headerGroup) => (
+                        <BattRankingRow key={headerGroup.id}>
+                            {headerGroup.headers.map((header) => (
+                                <BattRankingHeaderCell
+                                    key={header.id}
+                                    colSpan={header.colSpan}
+                                    onClick={header.column.getToggleSortingHandler()}
+                                    style={{ cursor: "pointer" }}
+                                    isSorted={!!header.column.getIsSorted()}
+                                >
+                                    {flexRender(header.column.columnDef.header, header.getContext())}
+                                    {header.column.getCanSort() && "▼"}
+                                </BattRankingHeaderCell>
+                            ))}
+                        </BattRankingRow>
+                    ))}
+                </thead>
+                <tbody>
+                    {table.getRowModel().rows.map((row) => (
+                        <BattRankingRow key={row.id}>
+                            {row.getVisibleCells().map((cell) => (
+                                <BattRankingCell key={cell.id}>
+                                    {String(cell.getValue() ?? "")}
+                                </BattRankingCell>
+                            ))}
+                        </BattRankingRow>
+                    ))}
+                </tbody>
+            </BattRankingTable>
+        </>
     );
 };
 

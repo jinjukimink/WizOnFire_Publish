@@ -1,6 +1,6 @@
 import { SortingState } from "@tanstack/react-table";
 import { useRankStore } from "../../../../stores/useRank.store";
-import RankingApiTabel from "./PitcherRankTable";
+import RankingApiTable from "./PitcherRankTable";
 import { useState } from "react";
 import { TPitcherResponse } from "../../../../types/ranking";
 
@@ -14,7 +14,7 @@ const PitcherRank = () => {
 
   return (
     <>
-      <RankingApiTabel
+      <RankingApiTable
         apiUrl={apiUrl}
         sorting={sorting}
         onSortingChange={setSorting}
