@@ -27,7 +27,7 @@ const formatArticleContents = (contents: string) => {
 
 const WizPress = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');  // 검색어 상태 추가
-  const { data, isLoading, error } = useFetchData<ApiResponse>(`article/wizpresslist?searchWord=${searchTerm}`);
+  const { data, isLoading, error } = useFetchData<ApiResponse>(`/article/wizpresslist?searchWord=${searchTerm}`);
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [currentItems, setCurrentItems] = useState<Article[]>([]);
