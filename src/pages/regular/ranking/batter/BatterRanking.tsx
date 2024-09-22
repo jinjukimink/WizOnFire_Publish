@@ -1,12 +1,11 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { SortingState } from "@tanstack/react-table";
 import { useRankStore } from "../../../../stores/useRank.store";
 import RankingApiTable from "./BatterRankTable";
 import { transformBatterData } from "../../../../utils/batterUtils";
 import SeasonSelect from "../../../../components/ranking/seasonSelect/SeasonSelect";
 import styled from "styled-components";
-import Button from "../../../../components/common/button/Button";
-import { Input } from "../../../../components/common/searchbar/SearchBarStyles";
+import SearchBar from "../../../../components/common/searchbar/SearchBar";
 
 const SelectAndSearch = styled.div`
   display: flex;
@@ -23,7 +22,11 @@ const BatterRanking = () => {
   // const [debouncedSearchTerm, setDebouncedSearchTerm] = useState(searchTerm);
   const [sorting, setSorting] = useState<SortingState>([]);
   const { year } = useRankStore();
-  const apiUrl = `/game/rank/kt/batter?gyear=${year}&pname=&sortKey=`;
+  const apiUrl = useMemo(() => {
+    return `/game/rank/kt/batter?gyear=${year}&pname=&sortKey=`;
+  }, [year]);
+  console.log('searchTerm서치!!!!',searchTerm);
+  console.log('transformData 타자!!!!',transformBatterData);
 
   // useEffect(()=>{
   //   const handler = setTimeout(() => {
@@ -35,14 +38,6 @@ const BatterRanking = () => {
   //   };
   // },[searchTerm]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
-  };
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log(searchTerm);
-    setSearchTerm("")
-  }
 
   // const filterData = useMemo(()=>{
   //   return (data:TBatterRankType[]) => {
@@ -52,14 +47,24 @@ const BatterRanking = () => {
   //   }
   // },[searchTerm])
 
+  // const filteredStaffList = stafflist?.length > 0
+  // ? stafflist.filter((staff) =>
+  //     staff.playerName.toLowerCase().includes(searchTerm.toLowerCase())
+  //   )
+  // : [];
+
+
   return (
     <>
       <SelectAndSearch>
         <SeasonSelect />
-        <form onSubmit={onSubmit} style={{display:'flex'}}> 
-          <Input type="text" placeholder="검색어" value={searchTerm} onChange={handleInputChange} width="150px"height="25px" lineHeight="10px"/>
-          <Button type="submit" width="50px" height="25px" backgroundColor="#333" fontColor="#fff" fontSize="12px" margin="0 0 0 -3px" padding="0" > 검색 </Button>
-        </form>
+        <SearchBar 
+        placeholder="검색어를 입력해주세요." 
+        containerWidth="140px" 
+        height="29px" 
+        buttonWidth="45px"
+        onSearch={(term)=>setSearchTerm(term)} 
+        />
         <span>*각 항목을 클릭하시면 순위를 보실 수 있습니다.</span>
       </SelectAndSearch>
       <RankingApiTable

@@ -65,7 +65,7 @@ const PitcherRankTable = <T,>({
                         colSpan={header.colSpan}
                         onClick={header.column.getToggleSortingHandler()}
                         style={{ cursor: "pointer" }}
-                        isSorted = {!!header.column.getIsSorted()}
+                        issorted = {!!header.column.getIsSorted()}
                     >
                         {flexRender(header.column.columnDef.header, header.getContext())}
                         {header.column.getCanSort() && "▼"}
