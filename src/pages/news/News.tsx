@@ -12,8 +12,8 @@ interface Article {
   viewCnt: number;
   regDttm: number;
   artcContents: string;
-  imgFilePath?: string;
   thumbnailUrl?: string;// 썸네일 URL 필드
+  imgFilePath?: string;
 }
 
 interface ApiResponse {
@@ -56,7 +56,7 @@ const fetchArticleDetail = async (artcSeq: number) => {
 
 const News = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
-  const { data, isLoading, error } = useFetchData<ApiResponse>(`article/newslist?searchWord=${searchTerm}`);
+  const { data, isLoading, error } = useFetchData<ApiResponse>(`/article/newslist?searchWord=${searchTerm}`);
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
