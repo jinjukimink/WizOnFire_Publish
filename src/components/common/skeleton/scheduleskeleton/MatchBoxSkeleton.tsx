@@ -28,11 +28,18 @@ export const ScheduleBoxS = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 45px;
   width: 100%;
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
+
+  // 가운데 박스를 더 크게 강조하는 스타일 적용
+  & > div:nth-child(2) {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // 강조 효과
+    z-index: 1;
+  }
 `;
 
 export const GameBoxS = styled(SkeletonWrapper)`
@@ -45,7 +52,7 @@ export const GameBoxS = styled(SkeletonWrapper)`
   height: 170px;
   padding: 20px;
   background-color: #fff;
-  margin: 10px;
+  margin: 2px;
 `;
 
 export const DateContainerS = styled(SkeletonWrapper)`
