@@ -1,5 +1,5 @@
 import useFetchData from '../../hooks/useFetchData';
-import { NewsContainer, NewsList, NewsItem, Title, MetaInfo, Views, SearchBarWrapper, Pagination, Thumbnail } from './NewsStyles';
+import { NewsContainer, NewsList, NewsItem, Title, MetaInfo, Views, SearchBarWrapper, Pagination, Thumbnail, ViewsIcon } from './NewsStyles';
 import { useState, useEffect } from 'react';
 import Button from '../../components/common/button/Button';
 import SearchBar from '../../components/common/searchbar/SearchBar';
@@ -119,20 +119,22 @@ useEffect(() => {
   return (
     <NewsContainer>
       <SearchBarWrapper>
-        <SearchBar
-          containerWidth="15%"
-          height="40px"
-          lineHeight="1.5"
-          buttonWidth="60px"
-          placeholder="검색어를 입력해주세요"
-          onSearch={handleSearchSubmit}
+        <SearchBar 
+        placeholder="검색어를 입력해주세요." 
+        containerWidth="140px" 
+        height="29px" 
+        buttonWidth="45px"
+        onSearch={(term)=>setSearchTerm(term)} 
         />
       </SearchBarWrapper>
       {selectedArticle ? (
         <div>
           <Title>{selectedArticle.artcTitle}</Title>
           <MetaInfo>
-            <Views>Views: {selectedArticle.viewCnt}</Views>
+            <Views>
+              <ViewsIcon color="gray" />
+              {selectedArticle.viewCnt}
+            </Views>
           </MetaInfo>
           <div dangerouslySetInnerHTML={{ __html: formatArticleContents(selectedArticle.artcContents) }} />
           <Button
@@ -154,7 +156,10 @@ useEffect(() => {
                   <Thumbnail src={article.imgFilePath} alt="사진"/>
                   <Title>{article.artcTitle}</Title>
                   <MetaInfo>
-                    <Views>Views: {article.viewCnt}</Views>
+                    <Views>
+                      <ViewsIcon color="gray" />
+                      {article.viewCnt}
+                    </Views>
                   </MetaInfo>
                 </NewsItem>
               ))

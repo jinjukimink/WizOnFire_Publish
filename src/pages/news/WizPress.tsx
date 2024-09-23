@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Button from '../../components/common/button/Button';
 import SearchBar from '../../components/common/searchbar/SearchBar';
 import colors from '../../assets/Colors'; // Import your colors
+import { ViewsIcon } from './NewsStyles';
 
 interface Article {
   artcSeq: number;
@@ -76,21 +77,21 @@ const WizPress = () => {
     <WizPressContainer>
       <SearchBarWrapper>
         <SearchBar 
-          containerWidth="15%"
-          height="40px"
-          lineHeight="1.5"
-          buttonWidth="60px"
-          placeholder="검색어를 입력해주세요" onSearch={function (term: string): void {
-            throw new Error('Function not implemented.');
-          }}
-          // onSearch={handleSearchSubmit}
+        placeholder="검색어를 입력해주세요." 
+        containerWidth="140px" 
+        height="29px" 
+        buttonWidth="45px"
+        onSearch={(term)=>setSearchTerm(term)} 
         />
       </SearchBarWrapper>
       {selectedArticle ? (
         <div>
           <Title>{selectedArticle.artcTitle}</Title>
           <MetaInfo>
-            <Views>Views: {selectedArticle.viewCnt}</Views>
+            <Views>
+              <ViewsIcon color="gray" />
+              {selectedArticle.viewCnt}
+            </Views>
           </MetaInfo>
           <div dangerouslySetInnerHTML={{ __html: formatArticleContents(selectedArticle.artcContents) }} />
           <Button 
@@ -110,7 +111,10 @@ const WizPress = () => {
                 <NewsItem key={article.artcSeq} onClick={() => handleClick(article)}>
                   <Title>{article.artcTitle}</Title>
                   <MetaInfo>
-                    <Views>Views: {article.viewCnt}</Views>
+                    <Views>
+                      <ViewsIcon color="gray" />
+                      {article.viewCnt}
+                    </Views>
                   </MetaInfo>
                 </NewsItem>
               ))
