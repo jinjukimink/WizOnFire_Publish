@@ -19,7 +19,7 @@ const Top5TextLi = styled.li`
   display: flex;
   padding: 20px 0 0 0; 
   &:first-of-type {
-    margin-top: 30px;
+    margin-top: 15px;
   }
   `
 

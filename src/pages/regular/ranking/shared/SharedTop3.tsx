@@ -67,11 +67,11 @@ const AvgPitImg = styled.div`
 
 const AvgPitName = styled.div`
     display: flex;
+    justify-content: center;
     width: 100%;
     gap: 25px;
     margin-bottom:100px;
     margin-left: 50px;
-    justify-content: center;
     li {
         list-style: none;
         &:first-child {
@@ -89,7 +89,6 @@ const AvgPitName = styled.div`
 `;
 const MedalImg = styled.img<{$isFirst: boolean}>`
     width: ${({$isFirst}) => ($isFirst ? '30px' : '20px')};
-    height: auto;
     margin-right: 10px;
     margin-bottom: -5px;
 `

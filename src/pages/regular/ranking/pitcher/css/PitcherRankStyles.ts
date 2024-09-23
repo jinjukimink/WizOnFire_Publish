@@ -55,3 +55,13 @@ export const PitRankingCell = styled.td<{isKT?:boolean, isKTColumn?:boolean}>`
         border-right: none;
     }
 `;
+
+export const SelectAndSearch = styled.div`
+    display: flex;
+    gap: 5px;
+    span{
+        display: flex;
+        justify-content: flex-end;
+        flex: 1;
+    }
+`
