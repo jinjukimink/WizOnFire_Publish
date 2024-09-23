@@ -1,4 +1,3 @@
-import axios from 'axios';
 import useFetchData from '../../hooks/useFetchData';
 import { NewsContainer, NewsList, NewsItem, Title, MetaInfo, Views, SearchBarWrapper, Pagination, Thumbnail } from './NewsStyles';
 import { useState, useEffect } from 'react';
@@ -12,8 +11,8 @@ interface Article {
   viewCnt: number;
   regDttm: number;
   artcContents: string;
-  thumbnailUrl?: string;// 썸네일 URL 필드
-  imgFilePath?: string;
+  thumbnailUrl?: string;  // 썸네일 URL 필드 추가
+  imgFilePath:string;
 }
 
 interface ApiResponse {
@@ -21,7 +20,6 @@ interface ApiResponse {
     list: Article[];
   };
 }
-
 // 본문 이미지 경로를 변환하는 함수
 const formatArticleContents = (contents: string) => {
   const baseUrl = 'https://wizzap.ktwiz.co.kr/';
@@ -39,31 +37,14 @@ const formatArticleContents = (contents: string) => {
 const formatThumbnail = (thumbnailUrl: string) => {
   const baseUrl = 'https://wizzap.ktwiz.co.kr/';
   
-  return thumbnailUrl.replace(/src="\/files/g, `src="${baseUrl}/files`);
-};
-
-// 상세 정보를 가져와 썸네일 URL을 반환하는 함수
-const fetchArticleDetail = async (artcSeq: number) => {
-  try {
-    const response = await axios.get(`http://3.35.51.214/api/article/newsdetail?artcSeq=${artcSeq}`);
-    
-    // 응답에서 article과 imgFilePath가 정의되지 않은 경우를 처리
-    if (response.data && response.data.article && response.data.article.imgFilePath) {
-      return response.data.article.imgFilePath;  // imgFilePath 반환
-    } else {
-      console.warn(`No ${artcSeq}`);
-      return ''; 
-    }
-  } catch (error) {
-    console.error(`Error${artcSeq}:`, error);
-    return '';  // 오류 발생 시 빈 문자열 반환
-  }
+  // 썸네일 URL이 상대 경로로 시작하는 경우에만 변환
+  return thumbnailUrl.startsWith('/files') ? `${baseUrl}${thumbnailUrl}` : thumbnailUrl;
 };
 
 
 const News = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
-  const { data, isLoading, error } = useFetchData<ApiResponse>(`/article/newslist?searchWord=${searchTerm}`);
+  const { data, isLoading, error } = useFetchData<ApiResponse>(`article/newslist?searchWord=${searchTerm}`);
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
@@ -71,28 +52,38 @@ const News = () => {
   const [startPage, setStartPage] = useState(1);
   const maxVisibleButtons = 5;
 
-  useEffect(() => {
-    const fetchThumbnails = async () => {
-      if (data && data.data && data.data.list) {
-        const indexOfLastItem = currentPage * itemsPerPage;
-        const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-        const paginatedItems = data.data.list.slice(indexOfFirstItem, indexOfLastItem);
+// const{data:news}=useFetchData<any>("/article/newsdetail");
+// //http://3.35.51.214/api/article/newslist
+// console.log(news);
+// console.log("hi");
+// console.log(formatThumbnail);
+
+useEffect(() => {
+  if (data && data.data && data.data.list) {
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const paginatedItems = data.data.list.slice(indexOfFirstItem, indexOfLastItem);
 
     const updatedArticles = paginatedItems.map((article: Article) => {
+      console.log(article)
+      console.log(article.imgFilePath);
+      const imgFilePath=article.imgFilePath;
       const thumbnailUrl = article.thumbnailUrl ? formatThumbnail(article.thumbnailUrl) : '';
       console.log(`Article ${article.artcSeq}: Thumbnail URL = ${thumbnailUrl}`); // 썸네일 경로 확인
+
       return {
         ...article,
         thumbnailUrl,
+        imgFilePath,
+        
       };
     });
 
-        setCurrentItems(updatedArticles);
-      }
-    };
+    setCurrentItems(updatedArticles);
+  }
+}, [currentPage, data]);
 
-    fetchThumbnails();
-  }, [currentPage, data]);
+
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
@@ -160,7 +151,7 @@ const News = () => {
               currentItems.map((article: Article) => (
                 <NewsItem key={article.artcSeq} onClick={() => handleClick(article)}>
                   {/* 포맷팅된 썸네일 URL 적용 */}
-                  <Thumbnail src={article.thumbnailUrl}/>
+                  <Thumbnail src={article.imgFilePath} alt="사진"/>
                   <Title>{article.artcTitle}</Title>
                   <MetaInfo>
                     <Views>Views: {article.viewCnt}</Views>
