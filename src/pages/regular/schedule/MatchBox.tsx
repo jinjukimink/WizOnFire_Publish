@@ -4,12 +4,14 @@ import { ContentBox, DateContainer, GameBox, MatchResult, ScheduleBox, Score, Te
 import colors from "../../../assets/Colors";
 import Button from "../../../components/common/button/Button";
 import { TGameResponse } from "../../../types/landing";
+import MatchBoxSkeleton from "../../../components/common/skeleton/scheduleskeleton/MatchBoxSkeleton";
 
 const MatchBox = () => {
   const navigate = useNavigate();
-  const { data : game } = useFetchData<TGameResponse>("/game/recentGames");
+  const { data : game,isLoading } = useFetchData<TGameResponse>("/game/recentGames");
   const {current, prev, next} = game?.data || {};
-  console.log('Gamedata', game);
+  //console.log('Gamedata', game);
+
 
   // 날짜 포맷팅 함수
   const formatDate = (date:string | undefined):string => {
@@ -17,6 +19,9 @@ const MatchBox = () => {
     const month = date?.substring(4, 6) || "";
     const day = date?.substring(6, 8) || "";
     return  `${year}.${month}.${day}`;
+}
+if(!isLoading){
+  return <MatchBoxSkeleton/>
 }
 
   return (

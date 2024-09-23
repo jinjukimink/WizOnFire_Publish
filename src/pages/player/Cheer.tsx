@@ -3,7 +3,7 @@ import { GridContainer } from "../../components/player/staffDetailList/StaffList
 import useFetchData from "../../hooks/useFetchData";
 import { Container } from "../PagesStyles";
 import colors from "../../assets/Colors";
-import ListSkeleton from "../../components/common/skeleton/ListSkeleton";
+import ListSkeleton from "../../components/common/skeleton/gridskeleton/ListSkeleton";
 import redBack from "../../assets/images/player/redB.jpg"
 
 export type TCheerleader = {

@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
-import { Container } from "../../../pages/PagesStyles";
-import { TGridContainerProps } from "../../player/staffDetailList/StaffListStyles";
+import { Container } from "../../../../pages/PagesStyles";
+import { TGridContainerProps } from "../../../player/staffDetailList/StaffListStyles";
 
 const loadingAnimation = keyframes`
     100% {
@@ -57,6 +57,7 @@ function Skeleton({
     </SkeletonLine>
   );
 }
+
 
 interface SkeletonGridProps {
   count: number;
