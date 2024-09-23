@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import colors from '../../assets/Colors';
+import { FaEye } from 'react-icons/fa';
 
 export const NewsList = styled.div`
   width: 65%; 
@@ -109,7 +110,15 @@ export const Pagination = styled.div`
 `;
 
 export const SearchBarWrapper = styled.div`
-  margin-bottom: 10px; // 빨간 줄과 간격을 주기 위함
+  // margin-bottom: 10px; // 빨간 줄과 간격을 주기 위함
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  top: -87px;  /* 현재 위치에서 20px 위로 이동 */
 `;
 export const NewsContainer = styled.div`
   max-width: 1100px; 
@@ -125,4 +134,10 @@ export const Thumbnail = styled.img`
   object-fit: cover;  // 비율 유지하며 썸네일을 꽉 채움
   border-radius: 5px;
   margin-right: 15px; // 썸네일과 제목 사이 간격
+`;
+
+export const ViewsIcon = styled(FaEye)`
+  margin-right: 5px;
+  font-size: 16px;
+  color: ${props => props.color || 'inherit'};
 `;
