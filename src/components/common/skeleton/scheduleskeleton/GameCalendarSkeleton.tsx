@@ -46,6 +46,9 @@ const SkeletonButton = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+
 `;
 
 // Skeleton for Weekday Headers
@@ -70,6 +73,7 @@ const SkeletonCalendarCell = styled.div`
 `;
 
 const SkeletonCalendarContainer = styled.div`
+ ${SkeletonStyle}
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-gap: 8px;
@@ -82,13 +86,12 @@ const GameCalendarSkeleton = () => {
     <>
       <CalendarBox>
         <CalendarHeader>
-        <MonthSelector>
+        <MonthSelector >
             <SkeletonButton>
               <GrPrevious size={25} />
             </SkeletonButton>
-            <SkeletonStyle style={{ width: '100px', height: '25px',justifyContent:"center", alignContent:"center" }} />
+            <SkeletonStyle style={{ width: '100px', height: '25px' }} />
             <SkeletonButton>
-                
               <GrNext size={25} />
             </SkeletonButton>
         </MonthSelector>
@@ -98,7 +101,6 @@ const GameCalendarSkeleton = () => {
           <Outcome outcome='무'>무</Outcome>
           {/* <Outcome outcome='취'>취</Outcome> */}
         </div> 
-
         </CalendarHeader>
 
         <SkeletonWeekdayHeader>
