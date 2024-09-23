@@ -28,7 +28,14 @@ const formatArticleContents = (contents: string) => {
   return contents.replace(/src="\/files/g, `src="${baseUrl}/files`);
 };
 
-// 썸네일 URL을 변환하는 함수 (formatArticleContents와 유사하게 처리)
+// // 썸네일 URL을 변환하는 함수 (formatArticleContents와 유사하게 처리)
+// const formatThumbnail = (thumbnailUrl: string) => {
+//   const baseUrl = 'https://wizzap.ktwiz.co.kr/';
+  
+//   // /files 경로가 포함된 썸네일 URL을 절대 경로로 변환
+//   return thumbnailUrl.replace(/src="\/files/g, `src="${baseUrl}/files`);
+// };
+
 const formatThumbnail = (thumbnailUrl: string) => {
   const baseUrl = 'https://wizzap.ktwiz.co.kr/';
   
@@ -71,15 +78,14 @@ const News = () => {
         const indexOfFirstItem = indexOfLastItem - itemsPerPage;
         const paginatedItems = data.data.list.slice(indexOfFirstItem, indexOfLastItem);
 
-        const updatedArticles = await Promise.all(
-          paginatedItems.map(async (article: Article) => {
-            const thumbnailUrl = await fetchArticleDetail(article.artcSeq);
-            return {
-              ...article,
-              thumbnailUrl: thumbnailUrl ? formatThumbnail(thumbnailUrl) : '', // 썸네일 URL이 없으면 빈 문자열
-            };
-          })
-        );
+    const updatedArticles = paginatedItems.map((article: Article) => {
+      const thumbnailUrl = article.thumbnailUrl ? formatThumbnail(article.thumbnailUrl) : '';
+      console.log(`Article ${article.artcSeq}: Thumbnail URL = ${thumbnailUrl}`); // 썸네일 경로 확인
+      return {
+        ...article,
+        thumbnailUrl,
+      };
+    });
 
         setCurrentItems(updatedArticles);
       }
@@ -153,7 +159,8 @@ const News = () => {
             {currentItems.length > 0 ? (
               currentItems.map((article: Article) => (
                 <NewsItem key={article.artcSeq} onClick={() => handleClick(article)}>
-                  <Thumbnail src={article.thumbnailUrl || 'path/to/default-thumbnail.jpg'} />
+                  {/* 포맷팅된 썸네일 URL 적용 */}
+                  <Thumbnail src={article.thumbnailUrl}/>
                   <Title>{article.artcTitle}</Title>
                   <MetaInfo>
                     <Views>Views: {article.viewCnt}</Views>

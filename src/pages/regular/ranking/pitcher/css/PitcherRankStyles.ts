@@ -10,12 +10,12 @@ export const PitRankingTable = styled.table`
     color: ${colors.mediumGray};
 `;
 
-export const PitRankingHeaderCell   = styled.td`
+export const PitRankingHeaderCell   = styled.td<{isSorted?: boolean}>`
     padding-block: 10px;
     text-align: center;
     border-top: 1.5px solid ${colors.redQuaternary};
-    background-color: ${colors.mediumIvory};
-    color: ${colors.black};
+    background-color: ${({isSorted}) => isSorted ? `rgba(255, 0, 0, 0.1)` : colors.mediumIvory };
+    color: ${({isSorted}) => isSorted ? colors.redQuaternary : colors.black };
     font-weight: 500;
     &:nth-child(1) {
         width: 5%;
