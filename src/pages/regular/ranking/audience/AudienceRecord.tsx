@@ -1,6 +1,7 @@
 import { ColumnDef, flexRender } from "@tanstack/react-table";
 import { useTable } from "../../../../hooks/useTable";
 import { TAudienceResponse, TAudienceType } from "../../../../types/ranking";
+import { useRankStore } from "../../../../stores/useRank.store";
 import {
     TeamRankingTable,
     TeamRankingRow,
@@ -9,17 +10,27 @@ import {
 } from "../team/records/TeamRecordStyles"
 import Graph from "./Graph";
 import styled from "styled-components";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import SearchAndSelect from "../../../../components/ranking/searchAndSelect/SearchAndSelect";
+import SeasonSelect from "../../../../components/ranking/seasonSelect/SeasonSelect";
 
+const AudienceWrapperContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+`
 const AudienceWrapper = styled.h3`
+    margin-top: 50px;
+    margin-bottom: 20px;
+`
+const AudienceSelect = styled.div`
     margin-top: 50px;
 `
 
 const AudienceRecord = () => {
-    // const [apiUrl, setApiUrl] = useState<string>("");
-    // const {gyear} = useParams<string>();
+    const { setYear } = useRankStore();
+    
+    const handleYearChange = (e:React.ChangeEvent<HTMLSelectElement>) => {
+        setYear(e.target.value);
+    }
 
     const columnDefs: ColumnDef<TAudienceType>[] = [
         { header: "순위", accessorKey: "num" }, 
@@ -76,7 +87,12 @@ const AudienceRecord = () => {
     <>
         <AudienceWrapper>2024 시즌 누적관중</AudienceWrapper>
         <Graph graphData={graphData}/>
-        <AudienceWrapper>2024 시즌 관중기록</AudienceWrapper>
+        <AudienceWrapperContainer>
+            <AudienceWrapper>2024 시즌 관중기록</AudienceWrapper>
+            <AudienceSelect>
+                <SeasonSelect />
+            </AudienceSelect>
+        </AudienceWrapperContainer>
         <TeamRankingTable>
             <thead>
             {getHeaderGroups().map(headerGroup => (

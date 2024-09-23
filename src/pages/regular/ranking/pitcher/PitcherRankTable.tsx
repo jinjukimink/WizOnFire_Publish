@@ -1,6 +1,5 @@
 import { ColumnDef, SortingState, Updater, flexRender } from "@tanstack/react-table";
 import { useTable } from "../../../../hooks/useTable";
-import SearchAndSelect from "../../../../components/ranking/searchAndSelect/SearchAndSelect";
 import {
     PitRankingTable,
     PitRankingHeaderCell,
@@ -21,9 +20,10 @@ const PitcherRankTable = <T,>({
     columnDefs: customColumnDefs,
     transformData,
     sorting,
-    onSortingChange
+    onSortingChange,
 }: RankingTableProps<T>) => {
-
+    
+    const defaultSorting: SortingState = [{ id: "era", desc: false }];
     const defaultColumnDefs: ColumnDef<T>[] = [
         { header: "팀명", accessorKey: "teamName", enableSorting: false },
         { header: "선수명", accessorKey: "playerName", enableSorting: false },
@@ -49,13 +49,12 @@ const PitcherRankTable = <T,>({
         apiUrl,
         columnDefs,
         transformData,
-        sorting,
+        sorting: sorting.length === 0 ? defaultSorting : sorting, 
         onSortingChange
     });
 
     return (
     <>
-        <SearchAndSelect/>
         <PitRankingTable>
             <thead>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -66,6 +65,7 @@ const PitcherRankTable = <T,>({
                         colSpan={header.colSpan}
                         onClick={header.column.getToggleSortingHandler()}
                         style={{ cursor: "pointer" }}
+                        isSorted = {!!header.column.getIsSorted()}
                     >
                         {flexRender(header.column.columnDef.header, header.getContext())}
                         {header.column.getCanSort() && "▼"}
