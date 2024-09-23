@@ -1,12 +1,15 @@
-import { ColumnDef, SortingState, Updater, flexRender } from "@tanstack/react-table";
 import { useTable } from "../../../../hooks/useTable";
+import { useMemo } from "react";
+import { ColumnDef, SortingState, Updater, flexRender } from "@tanstack/react-table";
+import SeasonSelect from "../../../../components/ranking/seasonSelect/SeasonSelect";
+import SearchBar from "../../../../components/common/searchbar/SearchBar";
 import {
     BattRankingTable,
     BattRankingHeaderCell,
     BattRankingRow,
-    BattRankingCell
+    BattRankingCell,
+    SelectAndSearch
 } from "./css/BatterRankStyles";
-import { useMemo} from "react";
 
 type RankingTableProps<T> = {
     apiUrl: string;
@@ -14,6 +17,7 @@ type RankingTableProps<T> = {
     transformData?: (data: any) => T[];
     sorting: SortingState;
     onSortingChange: (updaterOrValue: Updater<SortingState>) => void;
+    setSearchTerm: React.Dispatch<React.SetStateAction<string>>
 };
 
 const BatterRankTable = <T,>({
@@ -21,7 +25,8 @@ const BatterRankTable = <T,>({
     columnDefs: customColumnDefs,
     transformData,
     sorting,
-    onSortingChange
+    onSortingChange,
+    setSearchTerm
 }: RankingTableProps<T>) => {
     const defaultSorting: SortingState = useMemo(() => [{ id: "avg", desc: false }], []);
     
@@ -62,6 +67,17 @@ const BatterRankTable = <T,>({
 console.log('apiurl 테이블 먼저니?!?!!?');
     return (
     <>
+    <SelectAndSearch>
+        <SeasonSelect />
+        <SearchBar 
+        placeholder="선수의 전체 이름을 입력해주세요 (예: 로하스 전상현)" 
+        containerWidth="350px" 
+        height="25px" 
+        buttonWidth="45px"
+        onSearch={(term)=>setSearchTerm(term)} 
+        />
+        <span>*각 항목을 클릭하시면 순위를 보실 수 있습니다.</span>
+    </SelectAndSearch>
         <BattRankingTable>
             <thead>
             {table.getHeaderGroups().map((headerGroup) => (

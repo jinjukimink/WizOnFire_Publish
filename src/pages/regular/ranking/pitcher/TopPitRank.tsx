@@ -6,12 +6,11 @@ import colors from "../../../../assets/Colors";
 const PitTopContainer = styled.div`
   display: flex;
 `
-
 const TitleText = styled.span`
+  width: 100%;
   font-size: 18px;
   font-weight: 500;
   padding: 5px;
-  width: 100%;
   border-radius: 10px;
   strong{
     color: ${colors.redQuaternary};
@@ -20,8 +19,7 @@ const TitleText = styled.span`
 
 const TopPitRank = () => {
   return (
-    <>
-        <PitTopContainer>
+    <PitTopContainer>
           <SharedTop3 
             condition="pitcherEra"
           >
@@ -34,11 +32,10 @@ const TopPitRank = () => {
               <h4>승리</h4>
               <h1>TOP3</h1>
           </SharedTop3>
-          <SharedAvgTop5 condition="pitcher">
+        <SharedAvgTop5 condition="pitcher">
             <TitleText><strong>전체 투수 평균자책점</strong> TOP5</TitleText>
-          </SharedAvgTop5>
-        </PitTopContainer>
-      </>
+        </SharedAvgTop5>
+      </PitTopContainer>
   );
 }
 export default TopPitRank;

@@ -26,7 +26,7 @@ const AudienceSelect = styled.div`
 `
 
 const AudienceRecord = () => {
-    const { setYear } = useRankStore();
+    const { year,setYear } = useRankStore();
     
     const handleYearChange = (e:React.ChangeEvent<HTMLSelectElement>) => {
         setYear(e.target.value);
@@ -61,7 +61,7 @@ const AudienceRecord = () => {
     */
 
     const {getHeaderGroups, getRowModel} = useTable({
-        apiUrl: (`/game/rank/crowd?gyear=2024`),
+        apiUrl: (`/game/rank/crowd?gyear=${year}`),
         columnDefs,
         transformData: (data: TAudienceResponse) => {
             return data?.data?.list.map((audience, index) => {
@@ -85,10 +85,10 @@ const AudienceRecord = () => {
     }))
     return (
     <>
-        <AudienceWrapper>2024 시즌 누적관중</AudienceWrapper>
+        <AudienceWrapper>{year} 시즌 누적관중</AudienceWrapper>
         <Graph graphData={graphData}/>
         <AudienceWrapperContainer>
-            <AudienceWrapper>2024 시즌 관중기록</AudienceWrapper>
+            <AudienceWrapper>{year} 시즌 관중기록</AudienceWrapper>
             <AudienceSelect>
                 <SeasonSelect />
             </AudienceSelect>
