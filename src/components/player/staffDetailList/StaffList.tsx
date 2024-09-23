@@ -34,7 +34,7 @@ export type TCoachData = {
 
 const StaffList = ({apiUrl,staffType}:TStaffListProps) => {
   const { data: staffs, isLoading, error } = useFetchData<TStaff[]>(apiUrl);
-  const [searchTerm, setSearchTerm] = useState<string>(''); 
+  const [searchTerm, setSearchTerm] = useState<string>(""); 
   const navigate=useNavigate();
     let stafflist: TStaff[] = [];
 
