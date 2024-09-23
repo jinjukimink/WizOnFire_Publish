@@ -9,7 +9,7 @@ import useFetchData from "../../../hooks/useFetchData";
 import SearchBar from "../../common/searchbar/SearchBar";
 import { Container } from "../../../pages/PagesStyles";
 import { useNavigate} from "react-router-dom";
-import ListSkeleton from "../../common/skeleton/ListSkeleton";
+import ListSkeleton from "../../common/skeleton/gridskeleton/ListSkeleton";
 import { useState } from "react";
 
 export type TStaff = {
