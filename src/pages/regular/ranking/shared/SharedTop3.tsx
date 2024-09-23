@@ -12,12 +12,12 @@ const AvgPitContainer = styled.div`
     margin-right: 40px;
 `;
 
-const AvgPitImgBlend = styled.div<{ imageUrl: string }>`
+const AvgPitImgBlend = styled.div<{ $imageurl: string }>`
     display: flex;
     width: 160px;
     height: 250px;
     border-radius: 60px;
-    background-image: url(${(props) => props.imageUrl});
+    background-image: url(${(props) => props.$imageurl});
     background-size: cover;
     background-position: center;
     mix-blend-mode: screen;
@@ -67,11 +67,11 @@ const AvgPitImg = styled.div`
 
 const AvgPitName = styled.div`
     display: flex;
+    justify-content: center;
     width: 100%;
     gap: 25px;
     margin-bottom:100px;
     margin-left: 50px;
-    justify-content: center;
     li {
         list-style: none;
         &:first-child {
@@ -87,9 +87,8 @@ const AvgPitName = styled.div`
         }
     }
 `;
-const MedalImg = styled.img<{isFirst: boolean}>`
-    width: ${({isFirst}) => (isFirst ? '30px' : '20px')};
-    height: auto;
+const MedalImg = styled.img<{$isFirst: boolean}>`
+    width: ${({$isFirst}) => ($isFirst ? '30px' : '20px')};
     margin-right: 10px;
     margin-bottom: -5px;
 `
@@ -154,14 +153,14 @@ const SharedTop3 = ({ condition, children }: TTopConditionRankType) => {
             <AvgPitImg>
                 {transformedData.map((player, index) => (
                     <li key={index}>
-                        <AvgPitImgBlend imageUrl={player.playerPrvwImg} />
+                        <AvgPitImgBlend $imageurl={player.playerPrvwImg} />
                     </li>
                 ))}
             </AvgPitImg>
             <AvgPitName>
                 {transformedData.map((player, index) => (
                     <li key={index}>
-                        <MedalImg src={getMedalImg(index)} alt="Medal" isFirst={index === 0}/>
+                        <MedalImg src={getMedalImg(index)} alt="Medal" $isFirst={index === 0}/>
                         <span>{player.playerName}</span>
                     </li>
                 ))}

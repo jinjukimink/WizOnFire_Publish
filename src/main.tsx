@@ -6,12 +6,12 @@ import GlobalStyle from "./GlobalStyles.tsx";
 
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
+  // <StrictMode>
   <>
     {/* <GlobalStyle /> */}
     <GlobalStyle />
     <RouterProvider router={router} />
     {/* <App /> */}
   </>
-  </StrictMode>
+  // </StrictMode>
 );

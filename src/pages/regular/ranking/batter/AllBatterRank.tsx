@@ -8,8 +8,9 @@ import { transformBatterData } from "../../../../utils/batterUtils";
 const AllBatterRank = () => {
   const { year } = useRankStore();
   const [sorting, setSorting] = useState<SortingState>([]);
-  const  apiUrl = `/game/rank/total/pitcher?gyear=${year}&pname=&sortKey=`;
-  
+  const [searchTerm, setSearchTerm] = useState<string>("");  // 실시간 검색어 상태
+  const apiUrl = `/game/rank/kt/batter?gyear=${year}&pname=${searchTerm}&sortKey=`;
+
   const transformData = (data: TBatterResponse) => {
     const transformedData = transformBatterData(data);
     return transformedData.map((batter: TBatterRankType, index:number) => ({
@@ -30,6 +31,7 @@ const AllBatterRank = () => {
         onSortingChange={setSorting}
         columnDefs={addColumnDefs}
         transformData={transformData}
+        setSearchTerm={setSearchTerm}
       />
     </>
   );
