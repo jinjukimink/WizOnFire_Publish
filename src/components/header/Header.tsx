@@ -1,3 +1,4 @@
+
 import { useState,useEffect } from "react";
 import { useScroll, useMotionValueEvent, useAnimation,AnimatePresence } from "framer-motion";
 import { UpNav, Logo, Category, BottomNav, SubCategoryColumn, SubCategory } from "./HeaderStyles"; // 스타일 불러오기
@@ -146,12 +147,25 @@ const Header = () => {
     }
   };
 
-  const handleCategoryClick = (category: string) => {
-    const firstSubCategory = subCategories[categories.indexOf(category)][0];
-    setSelectedCategory(category);
-    setSelectedSubCategory(firstSubCategory);
-    setSelectedSidebar(sidebars[categories.indexOf(category)][0][0] || null);
-    console.log(category);
+  const handleCategoryClick = (index:number,category: string,e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    // const firstSubCategory = subCategories[categories.indexOf(category)][0];
+    // setSelectedCategory(category);
+    // setSelectedSubCategory(firstSubCategory);
+    // setSelectedSidebar(sidebars[categories.indexOf(category)][0][0] || null);
+
+    const forNav = categoriesForNav[index];
+    if(forNav=="game"){
+       navigate(`/${forNav}/regular/${subCategoriesForNav[index][0]}`);
+    }else{
+      navigate(`/${forNav}/${subCategoriesForNav[index][0]}`);
+    }
+    
+    // console.log(category)
+    // console.log(index)
+    // console.log("clicked!");
+    
+    //
   };
 
   const handleSubCategoryClick = (subCategory: string,subIndex:number) => {
@@ -159,9 +173,6 @@ const Header = () => {
     const category = categories[categoryIndex];
     const forNav = categoriesForNav[categoryIndex];
 
-    // console.log("forNav: ",forNav)
-    // console.log("subIndex: ",subIndex)
-    
     setSelectedCategory(category);
     setSelectedSubCategory(subCategory);
     setSelectedSidebar(sidebars[categoryIndex][0][0] || null);
@@ -179,12 +190,7 @@ const Header = () => {
     navigate(`/${forNav}/${subCategoriesForNav[categoryIndex][subIndex]}`); // 경로를 제대로 작성
    //console.log("here2");
   };
-  
-//
 
-  // if(windowWidth<800){
-  //   setIsHovered(false)
-  // }
   return (
     <>
     <header>         
@@ -223,9 +229,7 @@ const Header = () => {
                 onMouseEnter={() => handleMouseEnterCategory(category)}
                 onMouseLeave={handleMouseLeaveCategory}
                 isHovered={hoveredCategory !== "" && hoveredCategory === category}
-                onClick={() => {
-                  handleCategoryClick(category);
-                }}
+                onClick={(e)=>(handleCategoryClick(index,category,e))}
               >
                 {category}
               </Category>
