@@ -73,7 +73,7 @@ const CheerCard = styled.div`
     font-size: 18px;
     color: #000000;;
     margin: 4px 0;
-    font-weight: 600;
+    //font-weight: 600;
     font-family: KBO_Gothic_bold;
     border-bottom: none;
   }
@@ -134,7 +134,7 @@ const Cheer = () => {
             <img src={cheerleader.imgPath} alt={cheerleader.leaderEngName} />
             <p className="position">{cheerleader.leaderPosition}</p>
             {/* <Title>Motto</Title> */}
-            <p style={{fontSize:"16px"}}>{cheerleader.leaderMotto}</p>
+            <p style={{fontSize:"16px", fontWeight:"100"}}>{cheerleader.leaderMotto}</p>
             <div className="info">
               <div>
               <Title>Height</Title>
