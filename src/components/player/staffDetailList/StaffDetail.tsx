@@ -165,7 +165,7 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
             </MainInfo>
             <InfoList>
               <ul>
-                <li>포지션&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {staffData?.position}</li>
+                <li>포지션&nbsp;&nbsp;&nbsp;&ensp;&ensp;&nbsp;{staffData?.position}</li>
                 <li>생년월일&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{formattedBirthDate}</li>
                 <li>
                   체격&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{staffData?.height}cm, {staffData?.weight}kg

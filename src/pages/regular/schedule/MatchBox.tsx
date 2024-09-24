@@ -22,7 +22,7 @@ const MatchBox = () => {
     const day = date?.substring(6, 8) || "";
     return  `${year}.${month}.${day}`;
 }
-if (isLoading) {
+if (!isLoading) {
   const speed = 1;
   const isPaused = false;
   const isStopped = false;
@@ -52,7 +52,7 @@ if (isLoading) {
           speed={speed}
           isPaused={isPaused}
           isStopped={isStopped}
-          style={{ width: "150px", height: "150px" }} // 로딩 애니메이션 크기 조정
+          style={{ width: "130px", height: "130px" }} // 로딩 애니메이션 크기 조정
         />
       </div>
     </div>
