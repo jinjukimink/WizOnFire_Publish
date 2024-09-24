@@ -7,12 +7,12 @@ export const WizPressContainer = styled.div`
   margin: 0 auto;
   padding: 20px;
   box-sizing : border-box;
-  background-color: #f5f5f5;
+  background-color: ${colors.white};
 `;
 
 export const NewsList = styled.div`
   max-width: 1100px;
-  background-color: #fff;
+  background-color: ${colors.white};
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 `;
@@ -20,7 +20,7 @@ export const NewsList = styled.div`
 export const NewsItem = styled.div`
   padding: 20px;
   border-bottom: 1px solid #ddd;
-  cursor: pointer;  // 클릭할 수 있게 손가락 모양이 나오게 합니다.
+  cursor: pointer;
 
   &:last-child {
     border-bottom: none;
@@ -59,7 +59,7 @@ export const SearchBarWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   position: relative;
-  top: -87px;  /* 현재 위치에서 20px 위로 이동 */
+  top: -57px;  /* 현재 위치에서 20px 위로 이동 */
 `;
 
 export const Pagination = styled.div`
@@ -116,4 +116,12 @@ export const ViewsIcon = styled(FaEye)`
   margin-right: 5px;
   font-size: 16px;
   color: ${props => props.color || 'inherit'};
+`;
+
+export const ArticleIndex = styled.div`
+  width: 50px;
+  text-align: center;
+  font-weight: bold;
+  color: ${colors.darkGray};
+  margin-right: 10px;
 `;

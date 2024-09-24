@@ -1,5 +1,5 @@
 import useFetchData from '../../hooks/useFetchData';
-import { NewsContainer, NewsList, NewsItem, Title, MetaInfo, Views, SearchBarWrapper, Pagination, Thumbnail, ViewsIcon } from './NewsStyles';
+import { NewsContainer, NewsList, NewsItem, Title, MetaInfo, Views, SearchBarWrapper, Pagination, Thumbnail, ViewsIcon, ArticleIndex } from './NewsStyles';
 import { useState, useEffect } from 'react';
 import Button from '../../components/common/button/Button';
 import SearchBar from '../../components/common/searchbar/SearchBar';
@@ -38,13 +38,13 @@ const formatThumbnail = (thumbnailUrl: string) => {
   const baseUrl = 'https://wizzap.ktwiz.co.kr/';
   
   // 썸네일 URL이 상대 경로로 시작하는 경우에만 변환
-  return thumbnailUrl.startsWith('/files') ? `${baseUrl}${thumbnailUrl}` : thumbnailUrl;
+  return thumbnailUrl.startsWith('/files') ? `${baseUrl}/${thumbnailUrl}` : thumbnailUrl;
 };
 
 
 const News = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
-  const { data, isLoading, error } = useFetchData<ApiResponse>(`article/newslist?searchWord=${searchTerm}`);
+  const { data, isLoading, error } = useFetchData<ApiResponse>(`/article/newslist?searchWord=${searchTerm}`);
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
@@ -103,10 +103,10 @@ useEffect(() => {
     setSelectedArticle(article);
   };
 
-  const handleSearchSubmit = (term: string) => {
-    setSearchTerm(term);
-    setCurrentPage(1);
-  };
+  // const handleSearchSubmit = (term: string) => {
+  //   setSearchTerm(term);
+  //   setCurrentPage(1);
+  // };
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -148,25 +148,31 @@ useEffect(() => {
         </div>
       ) : (
         <>
-          <NewsList>
-            {currentItems.length > 0 ? (
-              currentItems.map((article: Article) => (
-                <NewsItem key={article.artcSeq} onClick={() => handleClick(article)}>
-                  {/* 포맷팅된 썸네일 URL 적용 */}
-                  <Thumbnail src={article.imgFilePath} alt="사진"/>
-                  <Title>{article.artcTitle}</Title>
-                  <MetaInfo>
-                    <Views>
-                      <ViewsIcon color="gray" />
-                      {article.viewCnt}
-                    </Views>
-                  </MetaInfo>
-                </NewsItem>
-              ))
-            ) : (
-              <div>No data</div>
-            )}
-          </NewsList>
+            <NewsList>
+              {currentItems.length > 0 ? (
+                currentItems.map((article: Article, index: number) => (
+                  <NewsItem key={article.artcSeq} onClick={() => handleClick(article)}>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                      <ArticleIndex>{index + 1 + (currentPage - 1) * itemsPerPage}</ArticleIndex>
+                      <div style={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
+                        <Thumbnail src={article.imgFilePath} alt="사진" style={{ marginRight: '20px' }} />
+                        <div>
+                          <Title>{article.artcTitle}</Title>
+                          <MetaInfo>
+                            <Views>
+                              <ViewsIcon color="gray" />
+                              {article.viewCnt}
+                            </Views>
+                          </MetaInfo>
+                        </div>
+                      </div>
+                    </div>
+                  </NewsItem>
+    ))
+  ) : (
+    <div>No data</div>
+  )}
+</NewsList>
           <Pagination>
             <Button
               onClick={() => handlePageChange(currentPage - 1)}
