@@ -5,7 +5,7 @@ import { FaEye } from 'react-icons/fa';
 export const WizPressContainer = styled.div`
   max-width: 1100px;
   margin: 0 auto;
-  padding: 20px;
+  // padding: 20px;
   box-sizing : border-box;
   background-color: ${colors.white};
 `;
@@ -59,7 +59,7 @@ export const SearchBarWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   position: relative;
-  top: -57px;  /* 현재 위치에서 20px 위로 이동 */
+  top: -37px;  /* 현재 위치에서 20px 위로 이동 */
 `;
 
 export const Pagination = styled.div`
