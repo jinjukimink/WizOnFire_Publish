@@ -19,7 +19,7 @@ const Top5TextLi = styled.li`
   display: flex;
   padding: 20px 0 0 0; 
   &:first-of-type {
-    margin-top: 30px;
+    margin-top: 15px;
   }
   `
 
@@ -75,7 +75,7 @@ const SharedAvgTop5 = ({condition, children} :TTopConditionRankType) => {
       <Top5Container>
           <div>{children}</div>
           {transformedData?.map((player,index) => (
-            <>
+            <div key={player.playerName}>
               <Top5TextLi key={index}>
                 <PlayerInfo>{index + 1}) <b>{player.playerName}</b> ({player.teamName})</PlayerInfo>
                 <EraWrapper>
@@ -84,7 +84,7 @@ const SharedAvgTop5 = ({condition, children} :TTopConditionRankType) => {
                 </EraWrapper>
               </Top5TextLi>
               <Top5BottomLine/>
-            </>
+            </div>
           ))}
           <SeasonText>*2024 정규리그 시즌</SeasonText>
       </Top5Container>

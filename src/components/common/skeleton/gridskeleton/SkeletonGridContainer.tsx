@@ -57,8 +57,6 @@ function Skeleton({
     </SkeletonLine>
   );
 }
-
-
 interface SkeletonGridProps {
   count: number;
   columns:number;
@@ -70,14 +68,14 @@ interface SkeletonGridProps {
 
 export const SkeletonGridContainer = ({ count,columns,width,height,margin,borderRadius }: SkeletonGridProps) => {
   return (
-  <Container>
+    <Container>
       <SkeletonGrid columns={columns} >
         {Array.from({ length: count }).map((_, index) => (
           <Skeleton key={index} width={width} height={height} margin={margin} borderRadius={borderRadius}/>
         ))}
       </SkeletonGrid>
-
-    </Container>  
+      </Container>
+ 
   );
 };
 

@@ -10,7 +10,7 @@ import loadingAnimation from "../../../lottie/lottieloading.json"
 
 const MatchBox = () => {
   const navigate = useNavigate();
-  const { data : game,isLoading } = useFetchData<TGameResponse>("/game/recentGames");
+  const { data : game,isLoading } = useFetchData<TGameResponse>("game/recentGames");
   const {current, prev, next} = game?.data || {};
   //console.log('Gamedata', game);
 
@@ -22,7 +22,7 @@ const MatchBox = () => {
     const day = date?.substring(6, 8) || "";
     return  `${year}.${month}.${day}`;
 }
-if (!isLoading) {
+if (isLoading) {
   const speed = 1;
   const isPaused = false;
   const isStopped = false;
@@ -31,7 +31,6 @@ if (!isLoading) {
     <div style={{ position: "relative", width: "100%", height: "100%" }}>
       {/* MatchBoxSkeleton은 기본적으로 부모의 크기를 차지 */}
       <MatchBoxSkeleton />
-
       {/* 배경을 흐리게 만들 오버레이 */}
       <div style={{
         position: "absolute",

@@ -130,11 +130,9 @@ export const SkeletonButton = styled(Button)`
 
 
 const MatchBoxSkeleton = () => {
-
     const skeletonData = Array(3).fill(null); // 3개의 빈 데이터를 가진 배열
   return (
     <>
-
     <ScheduleBoxS>
         {skeletonData.map((_,index)=>(
             <GameBoxS key={index}>

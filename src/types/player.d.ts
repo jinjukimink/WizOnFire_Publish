@@ -70,6 +70,34 @@ export type TRegularLeagueProps_C={//타자들의 타입
   xbhrun: string;          // Extra-base Hits / Home Runs
 }
 
+export type TFutureLeagueProps={
+    ab: number;        // at-bats
+    bb: number;        // base on balls (walks)
+    bra: string;       // batting average on balls in play (BABIP)
+    cs: number;        // caught stealing
+    gamenum: number;   // number of games
+    gd: number;        // grounded into double plays
+    gyear: string;     // game year
+    h2: number;        // doubles
+    h3: number;        // triples
+    hit: number;       // hits
+    hp: number;        // hit by pitch
+    hr: number;        // home runs
+    hra: string;       // home run average
+    kk: number;        // strikeouts
+    pcode: string;     // player code
+    rbi: number;       // runs batted in
+    run: number;       // runs
+    sb: number;        // stolen bases
+    sf: number;        // sacrifice flies
+    sh: number;        // sacrifice hits
+    slg: string;       // slugging percentage
+    war: string;       // Wins Above Replacement
+    winShares: string; // win shares
+    woba: string;      // weighted on-base average
+    wraa: string;      // weighted runs above average
+    xbhRun: string;    // extra-base hits (e.g. "8/40")
+}
 
 export type TRecent5RecordProps={
     bb: number;               // Base on balls (walks)
