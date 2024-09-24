@@ -147,7 +147,7 @@ useEffect(() => {
           </Button>
         </div>
       ) : (
-        <>
+          <>
             <NewsList>
               {currentItems.length > 0 ? (
                 currentItems.map((article: Article, index: number) => (
@@ -168,11 +168,11 @@ useEffect(() => {
                       </div>
                     </div>
                   </NewsItem>
-    ))
-  ) : (
-    <div>No data</div>
-  )}
-</NewsList>
+                ))
+              ) : (
+                  <div>No data</div>
+              )}
+            </NewsList>
           <Pagination>
             <Button
               onClick={() => handlePageChange(currentPage - 1)}
