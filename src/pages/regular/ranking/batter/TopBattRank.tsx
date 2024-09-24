@@ -6,11 +6,9 @@ import colors from "../../../../assets/Colors";
 const PitTopContainer = styled.div`
   display: flex;
 `
-
 const TitleText = styled.span`
   font-size: 18px;
   font-weight: 500;
-  padding: 5px;
   width: 100%;
   border-radius: 10px;
   strong{
@@ -18,7 +16,6 @@ const TitleText = styled.span`
     margin-right: 10px;
   }
 `
-
 const TopBattRank = () => {
   return (
     <>
