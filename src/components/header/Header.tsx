@@ -135,6 +135,7 @@ const Header = () => {
   const handleMouseEnter = () => {
     navAnimation.start({ backgroundColor: "rgba(255, 255, 255, 1)" });
     setIsHovered(true);
+    console.log(isHovered)
   };
 
   const handleMouseLeave = () => {//호버가 끝나면 무조건 네비바는 검은색임
@@ -149,10 +150,10 @@ const Header = () => {
 
   const handleCategoryClick = (index:number,category: string,e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
-    // const firstSubCategory = subCategories[categories.indexOf(category)][0];
-    // setSelectedCategory(category);
-    // setSelectedSubCategory(firstSubCategory);
-    // setSelectedSidebar(sidebars[categories.indexOf(category)][0][0] || null);
+    const firstSubCategory = subCategories[categories.indexOf(category)][0];
+    setSelectedCategory(category);
+    setSelectedSubCategory(firstSubCategory);
+    setSelectedSidebar(sidebars[categories.indexOf(category)][0][0] || null);
 
     const forNav = categoriesForNav[index];
     if(forNav=="game"){
@@ -160,10 +161,11 @@ const Header = () => {
     }else{
       navigate(`/${forNav}/${subCategoriesForNav[index][0]}`);
     }
-    
+
+    //setIsHovered(false)
     // console.log(category)
     // console.log(index)
-    // console.log("clicked!");
+    console.log("clicked!");
     
     //
   };
@@ -229,7 +231,11 @@ const Header = () => {
                 onMouseEnter={() => handleMouseEnterCategory(category)}
                 onMouseLeave={handleMouseLeaveCategory}
                 isHovered={hoveredCategory !== "" && hoveredCategory === category}
-                onClick={(e)=>(handleCategoryClick(index,category,e))}
+                onClick={(e)=>{
+                  if(isLandingPage && isHovered){
+                    setIsHovered(false);
+                  }
+                  handleCategoryClick(index,category,e)}}
               >
                 {category}
               </Category>
