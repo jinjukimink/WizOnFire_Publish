@@ -63,9 +63,12 @@ const StaffList = ({apiUrl,staffType}:TStaffListProps) => {
     <Container >
       <SearchBarContainer>    
         <SearchBar 
-        placeholder="검색어를 입력해주세요." containerWidth="220px"
-         height="29px" buttonWidth="45px"
-         onSearch={(term)=>setSearchTerm(term)} />
+        placeholder="검색어를 입력해주세요." 
+        containerWidth="200px" 
+        height="29px" 
+        buttonWidth="45px"
+        onSearch={(term)=>setSearchTerm(term)} 
+        />
       </SearchBarContainer>
         <GridContainer columns={4}>
           {staffs ? (

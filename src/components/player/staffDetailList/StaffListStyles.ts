@@ -1,9 +1,15 @@
 import styled from "styled-components";
 
 export const SearchBarContainer = styled.div`
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   //position: sticky; /* 위치를 부모 요소에 상대적으로 조정 */
   position: relative;
-  margin-right: 60%;
+  // margin-right: 60%;
   top: -87px;  /* 현재 위치에서 20px 위로 이동 */
   //left: -420px;  /* 현재 위치에서 10px 왼쪽으로 이동 */
   //z-index: 100; /* 다른 요소 위에 고정되도록 설정 */
