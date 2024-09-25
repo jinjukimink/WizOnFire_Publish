@@ -15,10 +15,11 @@ import {
   BannerPlayerImg,
   BannerLight
 } from "./BannerStyles02";
+import { TMonthlyPlayer } from "../../../types/landing";
 
 const Banner02 = () => {
 
-  const { data } = useFetchData<TMonthlyPlayer>("/media/monthlyPlayer");
+  const { data } = useFetchData<TMonthlyPlayer>("media/monthlyPlayer");
 
   return (
     <ShopContainer>
