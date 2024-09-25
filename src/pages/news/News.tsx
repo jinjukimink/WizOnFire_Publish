@@ -1,5 +1,6 @@
 import useFetchData from '../../hooks/useFetchData';
 import { NewsContainer, NewsList, NewsItem, Title, MetaInfo, Views, SearchBarWrapper, Pagination, Thumbnail, ViewsIcon, ArticleIndex } from './NewsStyles';
+import { SkeletonWrapper, SkeletonNewsItem, SkeletonThumbnail, SkeletonText, SkeletonTitle, SkeletonDescription, SkeletonMeta } from './NewsStyles';
 import { useState, useEffect } from 'react';
 import Button from '../../components/common/button/Button';
 import SearchBar from '../../components/common/searchbar/SearchBar';
@@ -26,21 +27,13 @@ const formatArticleContents = (contents: string) => {
   return contents.replace(/src="\/files/g, `src="${baseUrl}/files`);
 };
 
-// // 썸네일 URL을 변환하는 함수 (formatArticleContents와 유사하게 처리)
-// const formatThumbnail = (thumbnailUrl: string) => {
-//   const baseUrl = 'https://wizzap.ktwiz.co.kr/';
-  
-//   // /files 경로가 포함된 썸네일 URL을 절대 경로로 변환
-//   return thumbnailUrl.replace(/src="\/files/g, `src="${baseUrl}/files`);
-// };
-
+// 썸네일 URL을 변환하는 함수 (formatArticleContents와 유사하게 처리)
 const formatThumbnail = (thumbnailUrl: string) => {
   const baseUrl = 'https://wizzap.ktwiz.co.kr/';
   
-  // 썸네일 URL이 상대 경로로 시작하는 경우에만 변환
-  return thumbnailUrl.startsWith('/files') ? `${baseUrl}/${thumbnailUrl}` : thumbnailUrl;
+  // /files 경로가 포함된 썸네일 URL을 절대 경로로 변환
+  return thumbnailUrl.replace(/src="\/files/g, `src="${baseUrl}/files`);
 };
-
 
 const News = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -52,38 +45,23 @@ const News = () => {
   const [startPage, setStartPage] = useState(1);
   const maxVisibleButtons = 5;
 
-// const{data:news}=useFetchData<any>("/article/newsdetail");
-// //http://3.35.51.214/api/article/newslist
-// console.log(news);
-// console.log("hi");
-// console.log(formatThumbnail);
+  useEffect(() => {
+    if (data && data.data && data.data.list) {
+      const indexOfLastItem = currentPage * itemsPerPage;
+      const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+      const paginatedItems = data.data.list.slice(indexOfFirstItem, indexOfLastItem);
 
-useEffect(() => {
-  if (data && data.data && data.data.list) {
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const paginatedItems = data.data.list.slice(indexOfFirstItem, indexOfLastItem);
+      const updatedArticles = paginatedItems.map((article: Article) => {
+        const thumbnailUrl = article.thumbnailUrl ? formatThumbnail(article.thumbnailUrl) : '';
+        return {
+          ...article,
+          thumbnailUrl,
+        };
+      });
 
-    const updatedArticles = paginatedItems.map((article: Article) => {
-      console.log(article)
-      console.log(article.imgFilePath);
-      const imgFilePath=article.imgFilePath;
-      const thumbnailUrl = article.thumbnailUrl ? formatThumbnail(article.thumbnailUrl) : '';
-      console.log(`Article ${article.artcSeq}: Thumbnail URL = ${thumbnailUrl}`); // 썸네일 경로 확인
-
-      return {
-        ...article,
-        thumbnailUrl,
-        imgFilePath,
-        
-      };
-    });
-
-    setCurrentItems(updatedArticles);
-  }
-}, [currentPage, data]);
-
-
+      setCurrentItems(updatedArticles);
+    }
+  }, [currentPage, data]);
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
@@ -103,13 +81,21 @@ useEffect(() => {
     setSelectedArticle(article);
   };
 
-  // const handleSearchSubmit = (term: string) => {
-  //   setSearchTerm(term);
-  //   setCurrentPage(1);
-  // };
-
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <SkeletonWrapper>
+        {Array.from({ length: itemsPerPage }).map((_, index) => (
+          <SkeletonNewsItem key={index}>
+            <SkeletonThumbnail />
+            <SkeletonText>
+              <SkeletonTitle />
+              <SkeletonDescription />
+              <SkeletonMeta />
+            </SkeletonText>
+          </SkeletonNewsItem>
+        ))}
+      </SkeletonWrapper>
+    );
   }
 
   if (error) {

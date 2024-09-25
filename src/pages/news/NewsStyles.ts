@@ -130,6 +130,8 @@ export const NewsContainer = styled.div`
   box-sizing : border-box;
   background-color: ${colors.white};
 `;
+export const SkeletonNewsContainer = styled.div`
+`;
 
 export const Thumbnail = styled.img`
   width: 250px;        // 썸네일 크기 조정
@@ -139,12 +141,6 @@ export const Thumbnail = styled.img`
   margin-right: 15px; // 썸네일과 제목 사이 간격
 `;
 
-export const ViewsIcon = styled(FaEye)`
-  margin-right: 5px;
-  font-size: 16px;
-  color: ${props => props.color || 'inherit'};
-`;
-
 export const ArticleIndex = styled.div`
   width: 50px;
   text-align: center;
@@ -152,3 +148,71 @@ export const ArticleIndex = styled.div`
   color: ${colors.darkGray};
   margin-right: 10px;
 `;
+
+export const ViewsIcon = styled(FaEye)`
+  margin-right: 5px;
+  font-size: 16px;
+  color: ${props => props.color || 'inherit'};
+`;
+
+// 전체 스켈레톤 컨테이너
+export const SkeletonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+`;
+
+// 스켈레톤 뉴스 아이템
+export const SkeletonNewsItem = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid ${colors.ashGray};
+  background-color: ${colors.lightGray};
+`;
+
+// 스켈레톤 썸네일
+export const SkeletonThumbnail = styled.div`
+  width: 250px;
+  height: 125px;
+  border-radius: 5px;
+  background-color: ${colors.ashGray};
+`;
+
+// 스켈레톤 텍스트
+export const SkeletonText = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 15px;
+`;
+
+// 스켈레톤 제목
+export const SkeletonTitle = styled.div`
+  width: 70%;
+  height: 20px;
+  background-color: ${colors.ashGray};
+  border-radius: 5px;
+`;
+
+// 스켈레톤 설명
+export const SkeletonDescription = styled.div`
+  width: 90%;
+  height: 15px;
+  background-color: ${colors.ashGray};
+  border-radius: 5px;
+`;
+
+// 스켈레톤 메타 정보 (조회수 등)
+export const SkeletonMeta = styled.div`
+  width: 30%;
+  height: 15px;
+  background-color: ${colors.ashGray};
+  border-radius: 5px;
+`;
+
