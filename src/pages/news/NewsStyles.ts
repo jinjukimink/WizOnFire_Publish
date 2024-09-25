@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import colors from '../../assets/Colors';
 import { FaEye } from 'react-icons/fa';
+import { Shining } from '../../components/common/skeleton/gridskeleton/SkeletonGridContainer';
 
 export const NewsList = styled.div`
   // width: 65%; 
@@ -34,19 +35,6 @@ export const Title = styled.h3`
   font-size: 1.4rem;
   color: #222;
   margin-bottom: 5px;
-`;
-
-export const Description = styled.p`
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 10px;
-`;
-
-export const Meta = styled.div`
-  display: flex;
-  justify-content: space-between;
-  color: #999;
-  font-size: 14px;
 `;
 
 export const MetaInfo = styled.div`
@@ -176,43 +164,22 @@ export const SkeletonNewsItem = styled.div`
 `;
 
 // 스켈레톤 썸네일
-export const SkeletonThumbnail = styled.div`
+export const SkeletonThumbnail = styled(Shining)`
   width: 250px;
   height: 125px;
   border-radius: 5px;
   background-color: ${colors.ashGray};
-`;
-
-// 스켈레톤 텍스트
-export const SkeletonText = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding-left: 15px;
+  margin-left: 60px;
+  margin-right: 25px;
 `;
 
 // 스켈레톤 제목
-export const SkeletonTitle = styled.div`
+export const SkeletonTitle = styled(Shining)`
   width: 70%;
   height: 20px;
-  background-color: ${colors.ashGray};
   border-radius: 5px;
-`;
-
-// 스켈레톤 설명
-export const SkeletonDescription = styled.div`
-  width: 90%;
-  height: 15px;
   background-color: ${colors.ashGray};
-  border-radius: 5px;
-`;
 
-// 스켈레톤 메타 정보 (조회수 등)
-export const SkeletonMeta = styled.div`
-  width: 30%;
-  height: 15px;
-  background-color: ${colors.ashGray};
-  border-radius: 5px;
+  // font-size: 1.4rem;
+  margin-bottom: -5px;
 `;
-
