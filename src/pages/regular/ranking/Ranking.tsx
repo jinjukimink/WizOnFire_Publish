@@ -13,6 +13,7 @@ import TopBattRank from "./batter/TopBattRank";
 import colors from "../../../assets/Colors";
 import TopPitRank from "./pitcher/TopPitRank";
 
+
 const RankingContainer = styled.div`
     width: 65%;
     font-size: 14px;
@@ -30,6 +31,7 @@ const Ranking = () => {
   const [clickSelectedMenu, setClickSelectedMenu] = useState("ktwiz 투수");
   // const {year} = useRankStore();
   // const navigate = useNavigate();
+
 
   const menu = [
       { title: "팀순위", component: <TeamRanking /> },
@@ -60,10 +62,12 @@ const Ranking = () => {
       } else if (title === "타자순위") {
           setClickSelectedMenu("ktwiz 타자");
       }
+      console.log(title);
   };
 
   const handelClickSubMenu = (subTitle: string) => {
       setClickSelectedMenu(subTitle);
+      
   };
 
   return (
@@ -132,3 +136,7 @@ const Ranking = () => {
   );
 }
 export default Ranking 
+
+function useRankCateogoryStore(): { selectedRanking: any; } {
+    throw new Error("Function not implemented.");
+}
