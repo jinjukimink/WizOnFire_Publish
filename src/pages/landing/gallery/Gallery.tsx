@@ -9,6 +9,7 @@ import {
 import { parkView } from "../../../assets/assets";
 import Slider from "../../../components/common/slide/Slider";
 import useFetchData from "../../../hooks/useFetchData";
+import { TGalleryResponse } from "../../../types/landing";
 
 const PhotoWrapper = styled.section`
     display: flex;
@@ -28,7 +29,7 @@ const LargePhoto = styled.img`
 `
 
 const Gallery = () => {
-    const { data } = useFetchData<TGalleryResponse>("/media/photolist?count=10");
+    const { data } = useFetchData<TGalleryResponse>("media/photolist?count=10");
     const galleryData = data?.data.list;
     const imagePaths = galleryData?.map((item)=>item.imgFilePath) || [];
 

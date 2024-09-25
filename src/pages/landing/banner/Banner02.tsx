@@ -2,6 +2,7 @@ import colors from "../../../assets/Colors";
 import { shopItem, ktwizEnLogo, light } from "../../../assets/assets";
 import GradientChip from "../../../components/common/gradientChip/GradientChip";
 import useFetchData from "../../../hooks/useFetchData";
+import { TMonthlyPlayer } from "../../../types/landing";
 import { BannerCenterLine } from "./BannerStyles01";
 import {
   ShopContainer,
@@ -18,7 +19,7 @@ import {
 
 const Banner02 = () => {
 
-  const { data } = useFetchData<TMonthlyPlayer>("/media/monthlyPlayer");
+  const { data } = useFetchData<TMonthlyPlayer>("media/monthlyPlayer");
 
   return (
     <ShopContainer>
