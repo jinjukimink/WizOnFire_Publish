@@ -10,6 +10,8 @@ import {
     SelectAndSearch
 } from "./css/PitcherRankStyles";
 import { useMemo } from "react";
+import useLoading from "../../../../hooks/useLoading";
+import RankTableSkeleton from "../shared/RankTableSkeleton";
 
 type RankingTableProps<T> = {
     apiUrl: string;
@@ -28,6 +30,8 @@ const PitcherRankTable = <T,>({
     onSortingChange,
     setSearchTerm
 }: RankingTableProps<T>) => {
+
+    const isLoading = useLoading();
     const defaultSorting: SortingState = useMemo(() => [{ id: "era", desc: false }], []);
     const defaultColumnDefs: ColumnDef<T>[] = useMemo(() => [
         { header: "팀명", accessorKey: "teamName", enableSorting: false },
@@ -60,6 +64,8 @@ const PitcherRankTable = <T,>({
         sorting: sorting.length === 0 ? defaultSorting : sorting, 
         onSortingChange
     });
+
+    if(isLoading) return <RankTableSkeleton/>
 
     return (
     <>
