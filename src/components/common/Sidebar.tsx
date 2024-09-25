@@ -80,7 +80,7 @@ const SideBar = () => {
       setCategoryIndex(activeCategoryIndex);
       setActiveTab(activeTabData?.title || '');
     }
-  }, [activeTab,categoryIndex]);
+  }, [currentPath,activeTab,categoryIndex]);
 
   console.log("Sidebar");
   const getTitle = () => {
