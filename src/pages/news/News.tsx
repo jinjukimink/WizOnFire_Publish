@@ -1,6 +1,6 @@
 import useFetchData from '../../hooks/useFetchData';
 import { NewsContainer, NewsList, NewsItem, Title, MetaInfo, Views, SearchBarWrapper, Pagination, Thumbnail, ViewsIcon, ArticleIndex } from './NewsStyles';
-import { SkeletonWrapper, SkeletonNewsItem, SkeletonThumbnail, SkeletonText, SkeletonTitle, SkeletonDescription, SkeletonMeta } from './NewsStyles';
+import { SkeletonWrapper, SkeletonNewsItem, SkeletonThumbnail, SkeletonTitle} from './NewsStyles';
 import { useState, useEffect } from 'react';
 import Button from '../../components/common/button/Button';
 import SearchBar from '../../components/common/searchbar/SearchBar';
@@ -87,11 +87,8 @@ const News = () => {
         {Array.from({ length: itemsPerPage }).map((_, index) => (
           <SkeletonNewsItem key={index}>
             <SkeletonThumbnail />
-            <SkeletonText>
               <SkeletonTitle />
-              <SkeletonDescription />
-              <SkeletonMeta />
-            </SkeletonText>
+              {/* <SkeletonMeta /> */}
           </SkeletonNewsItem>
         ))}
       </SkeletonWrapper>
