@@ -1,7 +1,10 @@
+import WatchPointBox from "./watchpoint/WatchPointBox"
+
 const WatchPoint = () => {
   return (
     <>
-      <h1>WatchPoint Component</h1>
+     <WatchPointBox/>
+     {/* <Starter/> */}
     </>
   );
 }
