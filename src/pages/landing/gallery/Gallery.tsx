@@ -10,7 +10,6 @@ import { parkView } from "../../../assets/assets";
 import Slider from "../../../components/common/slide/Slider";
 import useFetchData from "../../../hooks/useFetchData";
 import { TGalleryResponse } from "../../../types/landing";
-
 const PhotoWrapper = styled.section`
     display: flex;
     justify-content: flex-start;
