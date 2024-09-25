@@ -133,7 +133,7 @@ const CalendarComponent = () => {
     return {};
   };
 
-  if( !isLoading){
+  if(isLoading){
     return <GameCalendarSkeleton/>
   }
   
