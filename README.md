@@ -47,7 +47,7 @@
     </tr>
     <tr>
         <th>프로젝트 개요</th>
-        <td colspan="3"> 야구구단 웹사이트 구현</td>
+        <td colspan="3"> 야구구단 웹사이트</td>
     </tr>
     <tr>
         <th>개발인원</th>
