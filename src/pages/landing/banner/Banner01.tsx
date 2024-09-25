@@ -14,10 +14,11 @@ import {
   BannerParkBox,
   BannerParkLink
 } from "./BannerStyles01"
+import { TRanking } from "../../../types/landing";
 
 const Banner01 = () => {
 
-  const { data } = useFetchData<TRanking>("/game/ktwizteamrank"); 
+  const { data } = useFetchData<TRanking>("game/ktwizteamrank"); 
   const ranking = data?.data?.ktWizTeamRank;
 
   return (
