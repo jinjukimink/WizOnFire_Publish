@@ -5,7 +5,7 @@
 
 #### ㅣ한눈에 펼쳐지는 KT Wiz의 모든 정보, 리뉴얼 된 웹사이트!
 
-#### ㅣ 최신 경기와 소식을 더 빠르고 편리하게 만나보세요!
+#### ㅣ최신 경기와 소식을 더 빠르고 편리하게 만나보세요!
 
 ## </br></br> 🥎 1팀_ WizOnFire 프로젝트 
 
@@ -36,7 +36,29 @@
 
 </br></br>
 
-## 💡 프로젝트 개요
+## 🛠️ 프로젝트 설치 방법
+
+> 클론 방법
+
+`git clone https://github.com/WizOnFire/KT_Web`
+
+> 프로젝트 설치
+
+`npm install`
+
+> 프로젝트 실행
+
+`npm run dev`
+
+</br></br>
+
+## 🔗 배포 URL 바로가기
+
+-  추후 연결 예정
+
+</br></br>
+
+## ✏️ 개요 및 기술스택 소개
 
 <table>
     <tr>
@@ -55,7 +77,7 @@
     </tr>
     <tr>
         <th>개발언어</th>
-        <td colspan="3"> JavaScript</td>
+        <td colspan="3">TypeScript (React 기반)</td>
     </tr>
      <tr>
         <th>Frontend</th>
@@ -67,11 +89,11 @@
     </tr>
     <tr>
         <th>Language</th>
-        <td colspan="3">JavaScript, TypeScript, React</td>
+        <td colspan="3">React, TypeScript</td>
     </tr>
      <tr>
         <th>형상관리</th>
-        <td colspan="3">Notion (문서화), Slack (git 연동 및 회의)</td>
+        <td colspan="3">Git (Notion을 통한 문서화 / Slack을 통한 회의)</td>
     </tr>
 </table>
 
@@ -85,16 +107,53 @@
 
 | 이름   |  파트  | 역할                                                                              |
 | ------ | :----: | --------------------------------------------------------------------------------- |
-| 김진주 | FE |  |
-| 박지은 | FE |  |
-| 박준규 | FE |   |
-| 윤수인 | FE |  |
-
+| 김진주 | FE | [공통] Header, pageLocation 컴퍼넌트 / park 찾아오기 페이지 / 코칭스텝(선수(투수,타자)/응원단) api데이터 패치 / 스켈레톤 UI |
+| 박지은 | FE | [공통] 버튼 / 입력창 컴퍼넌트 / 구단B.I 및 소개 / 정규리그(경기일정 / 관전포인트) api데이터 패치 / 스켈레톤 UI |
+| 박준규 | FE | [공통] 사이드바 컴퍼넌트 / 수원 ktwiz park / wiz 뉴스|
+| 윤수인 | FE | [공통] 버튼, Pagination, Footer 컴퍼넌트 / 랜딩페이지 / 정규리그 (박스스코어 / 순위기록(팀,투수,타자,관중) api데이터 패치 / 스켈레톤 UI|
 
 ---
 
 </br></br>
 
-📂 **파일구조**
+## 📂 디렉토리 구조
+
+```
+wizonfire
+├── .github
+├── node_modules
+├── public
+├── src
+│   ├── assets
+│   ├── components
+│   ├── hooks
+│   ├── layouts
+│   ├── lottie
+│   ├── pages
+│   ├── router
+│   ├── server
+│   ├── stores
+│   ├── types
+│   ├── utils
+│   ├── App.tsx
+│   ├── GlobalStyles.tsx
+│   ├── main.tsx
+│   └── vite-env.d.ts
+├── .env
+├── .eslintrc.json
+├── .gitignore
+├── .prettierrc
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+```
+
+
 
 
