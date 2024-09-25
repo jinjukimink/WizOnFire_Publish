@@ -45,15 +45,13 @@ export type TGamePlayerProps = {
 
 const SummaryInfo=styled.dd`
   position: relative;
-  top: -357px;
+  top: -377px;
   left: 200px;
   color: white;
   gap: 20px;
   font-weight: 50;
 
 `
-
-
 const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
   //console.log(detailPath)
   const [params] = useSearchParams();
@@ -139,7 +137,7 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
               <span style={{ color: "#c00000" }}>No. {staffData?.backnum}</span>
               {staffData?.playerName}
               <span style={{ fontSize: "18px" ,right:"50px"}}>{staffData?.engName}</span>
-            </MainInfo>
+            </MainInfo>2
             <InfoList>
               <ul>
                 <li>포지션&nbsp;&nbsp;&nbsp;&ensp;&ensp;&nbsp;{staffData?.position}</li>
