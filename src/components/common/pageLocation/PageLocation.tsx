@@ -83,6 +83,7 @@ const PageLocation = () => {
   } else if (pathItems2[1] === 'intro') {
     pathItems2.splice(1, 0, 'kt wiz park');
   }
+  console.log("pathItems2",pathItems2);
 
   const isShopOrSponsor = ["shop", "스폰서"].includes(location.pathname);
   const truncatedPathItems = (pathItems2.length > 3 && (pathItems2[2] === "schedule" || pathItems2[2] === "boxscore")) ? pathItems2.slice(0, 3) : pathItems2;
