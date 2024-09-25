@@ -118,8 +118,6 @@ export const NewsContainer = styled.div`
   box-sizing : border-box;
   background-color: ${colors.white};
 `;
-export const SkeletonNewsContainer = styled.div`
-`;
 
 export const Thumbnail = styled.img`
   width: 250px;        // 썸네일 크기 조정
@@ -160,7 +158,7 @@ export const SkeletonNewsItem = styled.div`
   align-items: center;
   padding: 20px;
   border-bottom: 1px solid ${colors.ashGray};
-  background-color: ${colors.lightGray};
+  background-color: #f0f0f0;
 `;
 
 // 스켈레톤 썸네일
@@ -176,7 +174,7 @@ export const SkeletonThumbnail = styled(Shining)`
 // 스켈레톤 제목
 export const SkeletonTitle = styled(Shining)`
   width: 70%;
-  height: 20px;
+  height: 27px;
   border-radius: 5px;
   background-color: ${colors.ashGray};
 

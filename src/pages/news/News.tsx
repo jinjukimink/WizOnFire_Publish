@@ -88,7 +88,6 @@ const News = () => {
           <SkeletonNewsItem key={index}>
             <SkeletonThumbnail />
               <SkeletonTitle />
-              {/* <SkeletonMeta /> */}
           </SkeletonNewsItem>
         ))}
       </SkeletonWrapper>
