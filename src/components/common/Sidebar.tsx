@@ -80,23 +80,23 @@ const SideBar = () => {
       setCategoryIndex(activeCategoryIndex);
       setActiveTab(activeTabData?.title || '');
     }
-  }, [,activeTab,categoryIndex]);
+  }, [currentPath,activeTab,categoryIndex]);
 
-  // const getTitle = () => {
-  //   const category = categories[categoryIndex];
-  //   return category.title;
-  //   // if (activeTab) {
-  //   //   console.log("1");
-  //   //   return activeTab;
-  //   // }
-  //   // console.log("2")
-  //   // return category.title;
-  // };
+  const getTitle = () => {
+    const category = categories[categoryIndex];
+    //return category.title;
+    if (activeTab) {
+      console.log("1");
+      return activeTab;
+    }
+    console.log("2")
+    return category.title;
+  };
 
-const getTitle = useMemo(() => {
-  const category = categories[categoryIndex];
-  return category.title;
-}, [categoryIndex]);
+// const getTitle = useMemo(() => {
+//   const category = categories[categoryIndex];
+//   return category.title;
+// }, [categoryIndex]);
 
 console.log("rendering");
 
@@ -104,7 +104,7 @@ console.log("rendering");
     return <>
       <SidebarContainer>
         <SectionContainer>
-          <h1>{getTitle}</h1>
+          <h1>{getTitle()}</h1>
           <ButtonContainer>
             {sidebars[4]?.map((subCategory, index) => (
               <SidebarButtonWrapper key={index}>
@@ -152,7 +152,7 @@ console.log("rendering");
     !(isLandingPage || isShopOrSponsor) && (
       <SidebarContainer>
         <SectionContainer>
-          <h1>{getTitle}</h1>
+          <h1>{getTitle()}</h1>
           <ButtonContainer>
             {sidebars[categoryIndex]?.map((subCategory, index) => (
               <SidebarButtonWrapper key={index}>
