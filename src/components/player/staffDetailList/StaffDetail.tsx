@@ -1,8 +1,8 @@
 import { useSearchParams } from "react-router-dom";
 import useFetchData from "../../../hooks/useFetchData";
 import { Container } from "../../../pages/PagesStyles";
-import { Wrapper, Contents, Img, MainInfo, InfoList,CategoryItem,RecordNav,ButtonContainer,NavWrapper } from "./StaffDetailStyles"; // Import styles
-import styled, { css } from "styled-components";
+import { Wrapper, Contents, Img, MainInfo, InfoList,CategoryItem,RecordNav,ButtonContainer } from "./StaffDetailStyles"; // Import styles
+
 import { useMemo, useState, useEffect, useRef } from "react";
 import RegularSeasonRecord from "./RegularSeasonRecord";
 import Recent5Record from "./Recent5Record";
@@ -10,6 +10,7 @@ import TotalRecord from "./TotalRecord";
 import Button from "../../common/button/Button";
 import FuturesSeasonRecord from "./FuturesSeasonRecord";
 import Recent5FuturesRecord from "./Recent5FuturesRecord";
+import styled from "styled-components";
 
 export type TDetailStaff = {
   playerName: string;
@@ -41,6 +42,16 @@ export type TGamePlayerProps = {
   yearrecordlist: any;
 };
 
+
+const SummaryInfo=styled.dd`
+  position: relative;
+  top: -357px;
+  left: 200px;
+  color: white;
+  gap: 20px;
+  font-weight: 50;
+
+`
 
 
 const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
@@ -77,10 +88,12 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
   const regularLeagueData = useMemo(() => (staff?.data as TGamePlayerProps)?.seasonsummary, [staff]);
   const recent5gameRecords = useMemo(() => (staff?.data as TGamePlayerProps)?.recentgamerecordlist, [staff]);
   const totalRecords = useMemo(() => (staff?.data as TGamePlayerProps)?.yearrecordlist, [staff]);
+  console.log(totalRecords);
   const futureRecord=useMemo(()=>(staff?.data as TGamePlayerProps)?.seasonsummaryfutures,[staff]);//시즌 퓨처스 기록
   //console.log("futureRecord: ",futureRecord);
   const recent5gameFuturesRecords=useMemo(()=>(staff?.data as TGamePlayerProps)?.recentgamerecordlistfutures,[staff]);
   console.log("퓨처스 최근 5경기",recent5gameFuturesRecords)
+  
 
   const formatDate = (dateString: string) => {
     return dateString.replace(/(\d{4})(\d{2})(\d{2})/, "$1.$2.$3");
@@ -114,16 +127,18 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
   if (error) return <p>에러 발생: {error}</p>;
   if (!staff) return <p>정보를 찾을 수 없습니다.</p>;
 
+
   return (
     <>
       <Container>
         <Wrapper>
           <Contents>
-            <Img ref={imgRef} src={staffData?.playerPrvwImg2} alt={staffData?.backnum} onLoad={handleImageLoad} />
+            <Img ref={imgRef} src={staffData?.playerPrvwImg2} alt={staffData?.backnum} onLoad={handleImageLoad}>
+            </Img>
             <MainInfo>
               <span style={{ color: "#c00000" }}>No. {staffData?.backnum}</span>
               {staffData?.playerName}
-              <span style={{ fontSize: "18px" }}> {staffData?.engName}</span>
+              <span style={{ fontSize: "18px" ,right:"50px"}}>{staffData?.engName}</span>
             </MainInfo>
             <InfoList>
               <ul>
@@ -135,10 +150,15 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
                 <li>출신교&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {parseDataToString}</li>
               </ul>
             </InfoList>
+            {
+            (detailPath !== "coachdetail" && isCatcher )? 
+            <SummaryInfo> {totalRecords[0].gyear} 정규리그 성적: 타율 {regularLeagueData.hra} {regularLeagueData.hit}안타 {regularLeagueData.rbi}타점 {regularLeagueData.hr}홈런</SummaryInfo>
+            : detailPath!=="coachdetail" ? <SummaryInfo>{totalRecords[0].gyear} 정규리그 성적: 평균자책점 {regularLeagueData.era} {regularLeagueData.w}승 {regularLeagueData.l}패 {regularLeagueData.sv}세이브</SummaryInfo>:null
+            }
           </Contents>
         </Wrapper>
         {detailPath !== "coachdetail" && (
-          <>
+         <>
             <RecordNav imgWidth={imgWidth}>
               {categoryList.map((category, index) => (
                 <CategoryItem
@@ -149,9 +169,6 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
                   {category}
                 </CategoryItem>
               ))}
-              {/* <ButtonContainer>
-              <Button style={{backgroundColor:"white",color:"black"}} onClick={()=>onClickedFuture()} height="40px"> {isRegular?"퓨처스리그 기록 보기":"정규리그 보기"}</Button>
-              </ButtonContainer> */}
             </RecordNav>
               {/* <Button style={{backgroundColor:"gray",color:"black",display:"flex"}} onClick={()=>onClickedFuture()} height="40px"> {isRegular?"퓨처스리그 기록 보기":"정규리그 보기"}</Button> */}
             {(whichDetail === categoryList[0] && isRegular)&& <RegularSeasonRecord regularLeagueData={regularLeagueData} isCatcher={isCatcher} />}
@@ -161,9 +178,10 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
 
             {whichDetail === categoryList[2] && <TotalRecord totalRecords={totalRecords} isCatcher={isCatcher} />}
             {/* </NavWrapper> */}
-            <ButtonContainer imgWidth={imgWidth}>
-            <Button style={{backgroundColor:"rgb(239, 239, 239)",color:"black"}} onClick={()=>onClickedFuture()} height="40px" border="none" borderRadius="10px"> {isRegular?"퓨처스리그 기록 보기":"정규리그 보기"}</Button>
-          </ButtonContainer>
+               {whichDetail!==categoryList[2] &&
+                <ButtonContainer imgWidth={imgWidth}>
+                  <Button style={{backgroundColor:"rgb(239, 239, 239)",color:"black"}} onClick={()=>onClickedFuture()} height="40px" border="none" borderRadius="10px">{isRegular?"퓨처스리그 기록 보기":"정규리그 보기"}</Button>
+                </ButtonContainer>}
           </>
         )}
       </Container>

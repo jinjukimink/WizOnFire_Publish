@@ -115,9 +115,7 @@ export const ButtonContainer = styled.div<{ imgWidth?: number }>`
   justify-content: flex-end; // 버튼을 오른쪽 끝으로 정렬
   width: ${({ imgWidth }) => (imgWidth ? `${imgWidth}px` : "auto")}; // 네비게이션 바와 동일한 너비로 설정
   margin-top: 20px; // 버튼과 네비게이션 사이에 약간의 여백 추가
-  @media (max-width: 1200px) {
-    max-width: 900px;
-  }
+  
 `;
 
 export const NavWrapper = styled.div`
