@@ -9,6 +9,7 @@ import Recent5Record from "./Recent5Record";
 import TotalRecord from "./TotalRecord";
 import Button from "../../common/button/Button";
 import FuturesSeasonRecord from "./FuturesSeasonRecord";
+import Recent5FuturesRecord from "./Recent5FuturesRecord";
 
 export type TDetailStaff = {
   playerName: string;
@@ -77,7 +78,9 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
   const recent5gameRecords = useMemo(() => (staff?.data as TGamePlayerProps)?.recentgamerecordlist, [staff]);
   const totalRecords = useMemo(() => (staff?.data as TGamePlayerProps)?.yearrecordlist, [staff]);
   const futureRecord=useMemo(()=>(staff?.data as TGamePlayerProps)?.seasonsummaryfutures,[staff]);//시즌 퓨처스 기록
-  console.log("futureRecord: ",futureRecord);
+  //console.log("futureRecord: ",futureRecord);
+  const recent5gameFuturesRecords=useMemo(()=>(staff?.data as TGamePlayerProps)?.recentgamerecordlistfutures,[staff]);
+  console.log("퓨처스 최근 5경기",recent5gameFuturesRecords)
 
   const formatDate = (dateString: string) => {
     return dateString.replace(/(\d{4})(\d{2})(\d{2})/, "$1.$2.$3");
@@ -153,7 +156,9 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
               {/* <Button style={{backgroundColor:"gray",color:"black",display:"flex"}} onClick={()=>onClickedFuture()} height="40px"> {isRegular?"퓨처스리그 기록 보기":"정규리그 보기"}</Button> */}
             {(whichDetail === categoryList[0] && isRegular)&& <RegularSeasonRecord regularLeagueData={regularLeagueData} isCatcher={isCatcher} />}
             {(whichDetail === categoryList[0] && !isRegular)&& <FuturesSeasonRecord futureRecord={futureRecord} isCatcher={isCatcher}/>}
-            {whichDetail === categoryList[1] && <Recent5Record recent5gameRecords={recent5gameRecords} isCatcher={isCatcher} />}
+            {(whichDetail === categoryList[1] && isRegular) && <Recent5Record recent5gameRecords={recent5gameRecords} isCatcher={isCatcher} />}
+            {(whichDetail === categoryList[1] && !isRegular)&& <Recent5FuturesRecord recent5gameFuturesRecords={recent5gameFuturesRecords} isCatcher={isCatcher}/>}
+
             {whichDetail === categoryList[2] && <TotalRecord totalRecords={totalRecords} isCatcher={isCatcher} />}
             {/* </NavWrapper> */}
             <ButtonContainer imgWidth={imgWidth}>
