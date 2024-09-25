@@ -11,7 +11,7 @@
 
 <br/>
 
-**새롭게 리뉴얼된 KT Wiz 정보 페이지, React + Typescript로 만나보세요!** 
+**새롭게 업데이트 된 KT Wiz 정보 페이지, React + Typescript로 만나보세요!** 
 
 <br/>
 
@@ -99,21 +99,24 @@
 
 </br>
 
----
+## 🪛 포함된 라이브러리 
 
-## 🪛 라이브러리 
+해당 프로젝트에서 사용한 라이브러리는 :  
 
-해당 프로젝트에서 사용한 라이브러리는 
-
-recharts: 차트 라이브러리
-react-calendar: 캘린더 라이브러리
-tanstack-table: 테이블 라이브러리
-tanstack-query: 상태 관리 라이브러리
-swiper: 슬라이더/캐러셀 라이브러리
+- tanstack-table: 테이블 라이브러리
+- recharts: 차트 라이브러리
+- framer-motion : 애니메이션 라이브러리
+- lottie-web : 로딩 애니메이션 라이브러리
+- moment : 날짜와 시간 (자바스크립트) 라이브러리
+- react-big-calendar : 캘린더 라이브러리
+- zustand: 상태 관리 라이브러리
+- react-loading-skeleton : 스켈레톤 라이브러리
+- react-icons : 아이콘 라이브러리
+- swiper: 슬라이더/캐러셀 라이브러리
 
 </br></br>
 
-🧗 **참여인원**
+## 🧗 **참여인원**
 
 | 이름   |  파트  | 역할                                                                                          |
 | ------ | :----: | --------------------------------------------------------------------------------------------- |
@@ -121,9 +124,6 @@ swiper: 슬라이더/캐러셀 라이브러리
 | 👧🏻 [박지은](https://github.com/jieunpark626) |   FE   | [공통] 버튼 / 입력창 컴퍼넌트 / 구단B.I 및 소개 / <br> 정규리그(경기일정 / 관전포인트)  api데이터 패치 / 스켈레톤 UI   |
 | 🧔🏻‍♂️ [박준규](https://github.com/1dontknowwhatyouwant) |   FE   | [공통] 사이드바 컴퍼넌트 / 수원 ktwiz park / wiz 뉴스                                |
 | 👧🏻 [윤수인](https://github.com/ddu2ni) |   FE   | [공통] 버튼, Pagination, Footer 컴퍼넌트 / 랜딩페이지 / <br> 정규리그 (박스스코어 / 순위기록  (팀, 투수, 타자, 관중) api데이터 패치 / 스켈레톤 UI   |
-
-
----
 
 </br></br>
 
