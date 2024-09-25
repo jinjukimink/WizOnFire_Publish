@@ -52,11 +52,8 @@ import colors from "../../../assets/Colors";
     align-items: center;
     `;
 
-    export const VS = styled.div`
-    font-size: 48px;
-    color: red;
-    font-weight: bold;
-    margin: 0 40px;
+    export const VS = styled.img`
+  
     `;
 
     export const PlayerInfo = styled.div`
