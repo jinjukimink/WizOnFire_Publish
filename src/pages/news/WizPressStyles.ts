@@ -47,7 +47,7 @@ export const SkeletonNewsItem = styled.div`
   height: 44px;
   padding: 20px;
   border-bottom: 1px solid ${colors.ashGray};
-  background-color: #f0f0f0;
+  background-color: ${colors.white};
   `;
 
 export const Title = styled.h3`
