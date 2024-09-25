@@ -1,4 +1,4 @@
-import { TRecent5RecordProps, TTotalRecordProps } from './player.d';
+import { TRecent5RecordProps, TTotalRecordProps, TRecent5RecordProps_C, TTotalRecords, TRecent5Records } from './player.d';
 export type TRegularLeagueProps={
     era: string;           // 평균 자책점 (ex. "4.62")
     gamenum: number;       // 경기수 (ex. 26)
@@ -30,6 +30,74 @@ export type TRegularLeagueProps={
     qs: number;            
     kbb: string;           
 }
+export type TRegularLeagueProps_C={//타자들의 타입
+  ab: number;              // At-bats
+  babip: string;           // Batting Average on Balls in Play
+  bb: number;              // Walks (Bases on Balls)
+  bbkk: string;            // BB/KK Ratio
+  bra: string;             // Batting Runs Above Average
+  cs: number;              // Caught Stealing
+  finalHit: number;        // Final Hit
+  gamenum: number;         // Number of Games
+  gd: number;              // Grounded into Double Play
+  gyear: string;           // Game Year
+  h2: number;              // Doubles
+  h3: number;              // Triples
+  hit: number;             // Hits
+  hp: number;              // Hit by Pitch
+  hr: number;              // Home Runs
+  hra: string;             // Home Runs Average
+  ib: number;              // Intentional Walks
+  kk: number;              // Strikeouts
+  ops: string;             // On-base Plus Slugging
+  opsPlus: string;         // OPS+
+  pa: number;              // Plate Appearances
+  pcode: string;           // Player Code
+  rbi: number;             // Runs Batted In
+  run: number;             // Runs
+  sb: number;              // Stolen Bases
+  sbTryCn: number;         // Stolen Base Attempts
+  sba: string;             // Stolen Base Average
+  sf: number;              // Sacrifice Fly
+  sh: number;              // Sacrifice Hit (Bunt)
+  slg: string;             // Slugging Percentage
+  spHra: string;           // Specific Home Run Average
+  war: string;             // Wins Above Replacement
+  winShares: string;       // Win Shares
+  woba: string;            // Weighted On-base Average
+  wrHit: string;           // Weighted Runs Created Plus (wRC+)
+  wraa: string;            // Weighted Runs Above Average (wRAA)
+  xbhrun: string;          // Extra-base Hits / Home Runs
+}
+
+export type TFutureLeagueProps={
+    ab: number;        // at-bats
+    bb: number;        // base on balls (walks)
+    bra: string;       // batting average on balls in play (BABIP)
+    cs: number;        // caught stealing
+    gamenum: number;   // number of games
+    gd: number;        // grounded into double plays
+    gyear: string;     // game year
+    h2: number;        // doubles
+    h3: number;        // triples
+    hit: number;       // hits
+    hp: number;        // hit by pitch
+    hr: number;        // home runs
+    hra: string;       // home run average
+    kk: number;        // strikeouts
+    pcode: string;     // player code
+    rbi: number;       // runs batted in
+    run: number;       // runs
+    sb: number;        // stolen bases
+    sf: number;        // sacrifice flies
+    sh: number;        // sacrifice hits
+    slg: string;       // slugging percentage
+    war: string;       // Wins Above Replacement
+    winShares: string; // win shares
+    woba: string;      // weighted on-base average
+    wraa: string;      // weighted runs above average
+    xbhRun: string;    // extra-base hits (e.g. "8/40")
+}
 
 export type TRecent5RecordProps={
     bb: number;               // Base on balls (walks)
@@ -51,6 +119,75 @@ export type TRecent5RecordProps={
     wls: string;              // Win/loss/save status, e.g. "L" for loss
 }
 export type TRecent5Records=TRecent5RecordProps[];
+
+export type TRecent5RecordProps_C={
+    ab: number;              // At-bats (타수)
+    bb: number;              // Walks (볼넷)
+    bra: string;             // Batting Runs Above Average (타점권 타율)
+    cs: number;              // Caught Stealing (도루 실패)
+    displayDate: string;     // Displayed Date (경기 일자)
+    gd: number;              // Grounded into Double Play (병살)
+    h2: number;              // Doubles (2루타)
+    h3: number;              // Triples (3루타)
+    hit: number;             // Hits (안타)
+    hp: number;              // Hit by Pitch (사구)
+    hr: number;              // Home Runs (홈런)
+    hra: string;             // Home Run Average (홈런 비율)
+    kk: number;              // Strikeouts (삼진)
+    matchTeamCode: string;   // Opponent Team Code (상대 팀 코드)
+    matchTeamName: string;   // Opponent Team Name (상대 팀 이름)
+    rbi: number;             // Runs Batted In (타점)
+    run: number;             // Runs Scored (득점)
+    sb: number;              // Stolen Bases (도루)
+}
+export type TRecent5Records_C=TRecent5RecordProps_C[];
+
+export type TRecent5FuturesRecordsProps_C={
+    ab: number;
+    bb: number;
+    cs: number;
+    displayDate: string;
+    gd: number;
+    h2: number;
+    h3: number;
+    hit: number;
+    hp: number;
+    hr: number;
+    hra: string;
+    kk: number;
+    matchTeamCode: string;
+    matchTeamName: string;
+    rbi: number;
+    run: number;
+    sb: number;
+}
+export type TRecent5FuturesRecord_C=TRecent5FuturesRecordsProps[];
+
+export type TRecent5FuturesRecordsProps={
+    bb: number;               // Base on balls (walks)
+    displayDate: string;      // Date of the game, formatted as a string
+    er: number;               // Earned runs
+    hit: number;              // Hits
+    hp: number;               // Hit by pitch
+    hr: number;               // Home runs
+    inn2: number;             // Innings pitched (in two-thirds format)
+    innDisplay: string;       // Innings pitched displayed as a string
+    kk: number;               // Strikeouts
+    matchTeamCode: string;    // Opponent team code
+    matchTeamName: string;    // Opponent team name
+    pa: number;               // Plate appearances
+    r: number;                // Runs scored
+    sv: number;               // Saves
+    wl: string;               // Win-loss record
+    wls: string;              // Additional win/loss data
+}
+export type TRecent5FuturesRecord=TRecent5FuturesRecordsProps[];
+
+
+
+
+
+
 
 export type TTotalRecordProps={
     bb: number;               // Walks (Base on balls)
@@ -78,3 +215,29 @@ export type TTotalRecordProps={
 }
 
 export type TTotalRecords=TTotalRecordProps[];
+
+export type TTotalRecordProps_C={
+    ab: number;          // At-bats (타수)
+    bb: number;          // Walks (볼넷)
+    bra: string;         // Batting Runs Above Average (타점권 타율)
+    cs: number;          // Caught Stealing (도루 실패)
+    gamenum: number;     // Number of Games (경기수)
+    gd: number;          // Grounded into Double Play (병살)
+    gyear: string;       // Game Year (연도)
+    h2: number;          // Doubles (2루타)
+    h3: number;          // Triples (3루타)
+    hit: number;         // Hits (안타)
+    hp: number;          // Hit by Pitch (사구)
+    hr: number;          // Home Runs (홈런)
+    hra: string;         // Home Run Average (홈런 비율)
+    kk: number;          // Strikeouts (삼진)
+    rbi: number;         // Runs Batted In (타점)
+    run: number;         // Runs Scored (득점)
+    sb: number;          // Stolen Bases (도루)
+    slg: string;         // Slugging Percentage (장타율)
+    teamCode: string;    // Team Code (팀 코드)
+    teamName: string;    // Team Name (팀 이름)
+}
+
+export type TTotalRecords_C = TTotalRecordProps_C[];
+
