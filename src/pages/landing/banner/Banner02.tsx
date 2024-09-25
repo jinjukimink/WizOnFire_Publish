@@ -16,6 +16,7 @@ import {
   BannerPlayerImg,
   BannerLight
 } from "./BannerStyles02";
+import { TMonthlyPlayer } from "../../../types/landing";
 
 const Banner02 = () => {
 
