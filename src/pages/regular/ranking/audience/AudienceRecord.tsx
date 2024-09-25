@@ -70,7 +70,7 @@ const AudienceRecord = () => {
         crowd: row.original.crowd,
     }));
 
-    if(!isLoading) return <AudienceSkeleton columnDefs={columnDefs}/>;
+    if(isLoading) return <AudienceSkeleton />;
 
     return (
     <>
