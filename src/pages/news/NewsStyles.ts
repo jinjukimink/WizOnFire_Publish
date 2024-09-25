@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import colors from '../../assets/Colors';
 import { FaEye } from 'react-icons/fa';
 import { Shining } from '../../components/common/skeleton/gridskeleton/SkeletonGridContainer';
