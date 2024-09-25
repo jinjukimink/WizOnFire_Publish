@@ -91,7 +91,7 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
   const futureRecord=useMemo(()=>(staff?.data as TGamePlayerProps)?.seasonsummaryfutures,[staff]);//시즌 퓨처스 기록
   //console.log("futureRecord: ",futureRecord);
   const recent5gameFuturesRecords=useMemo(()=>(staff?.data as TGamePlayerProps)?.recentgamerecordlistfutures,[staff]);
-  console.log("퓨처스 최근 5경기",recent5gameFuturesRecords)
+  //console.log("퓨처스 최근 5경기",recent5gameFuturesRecords)
   
 
   const formatDate = (dateString: string) => {
