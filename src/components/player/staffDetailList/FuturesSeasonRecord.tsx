@@ -5,7 +5,6 @@ import { HitRecordHeaderCell, HitRecordTable, HitRecordRow, HitRecordCell } from
 import { TableWrapper } from "./RegularSeasonRecord";
 import { flexRender } from '@tanstack/react-table';
 
-
 const FuturesSeasonRecord = ({futureRecord,isCatcher}:{futureRecord:TFutureLeagueProps,isCatcher:boolean}) => {
 
     const column =useMemo (() => {
