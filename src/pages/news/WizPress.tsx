@@ -5,7 +5,7 @@ import SearchBar from '../../components/common/searchbar/SearchBar';
 import colors from '../../assets/Colors';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/common/button/Button';
-// import Skeleton from 'react-loading-skeleton';
+import Skeleton from 'react-loading-skeleton';
 
 interface Article {
   artcSeq: number;
@@ -54,9 +54,9 @@ const WizPress = () => {
   if (isLoading) {
     return (
       <SkeletonWrapper>
-        {/* <Skeleton width={169} height={29} style={{ marginBottom: '-2px',top: '-60px' } }/> */}
         {Array.from({ length: itemsPerPage }).map((_, index) => (
           <SkeletonNewsItem key={index}>
+            <Skeleton width={30} height={25} style={{ marginLeft:'10px',marginRight: '-95px',top:'15px' }} /> {/* 인덱스 */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
               <SkeletonTitle />
               <SkeletonViews />
