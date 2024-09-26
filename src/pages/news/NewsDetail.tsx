@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import useFetchData from '../../hooks/useFetchData';
 import { NewsContainer, Title, MetaInfo, Views, ViewsIcon, Thumbnail } from './NewsStyles';
-import { formatArticleContents } from "./News";  // If this function is in a utility file
 import { useEffect } from "react";
 
 interface Article {
@@ -19,7 +18,10 @@ interface ApiResponse {
     article: Article;
   };
 }
-
+export const formatArticleContents = (contents: string) => {
+  const baseUrl = 'https://wizzap.ktwiz.co.kr/';
+  return contents.replace(/src="\/files/g, `src="${baseUrl}/files`);
+};
 const NewsDetail = () => {
   const { newsId } = useParams<{ newsId: string }>();
   const { data, isLoading } = useFetchData<ApiResponse>(`/article/newsdetail?artcSeq=${newsId}`);
@@ -32,7 +34,6 @@ const NewsDetail = () => {
     return <div>Loading...</div>;
   }
 
-  // Access the article object directly
   const article = data?.data?.article;
 
   if (!article) {
@@ -45,7 +46,7 @@ const NewsDetail = () => {
       <MetaInfo>
         <Views>
           <ViewsIcon color="gray" />
-          {article.viewCnt} views
+          {article.viewCnt}
         </Views>
       </MetaInfo>
       {article.thumbnailUrl && (
