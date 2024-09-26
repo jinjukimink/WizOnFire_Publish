@@ -63,8 +63,8 @@ export const SkeletonTitle = styled(Shining)`
   border-radius: 5px;
   background-color: ${colors.ashGray};
   margin-left: 80px;
-  margin-top: 5px;
-  padding: 20px; 
+  margin-top: 15px;
+  padding: 15px; 
 `;
 
 export const MetaInfo = styled.div`

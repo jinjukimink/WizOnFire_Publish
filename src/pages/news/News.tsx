@@ -1,12 +1,12 @@
 import useFetchData from '../../hooks/useFetchData';
-import { NewsContainer, NewsList, NewsItem, Title, MetaInfo, Views, SearchBarWrapper, Pagination, Thumbnail, ViewsIcon, ArticleIndex} from './NewsStyles';
+import { NewsContainer, NewsList, NewsItem, Title, MetaInfo, Views, SearchBarWrapper, Pagination, Thumbnail, ViewsIcon, ArticleIndex } from './NewsStyles';
 import { useState, useEffect } from 'react';
 import SearchBar from '../../components/common/searchbar/SearchBar';
 import colors from '../../assets/Colors';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/common/button/Button';
 import Skeleton from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css'; // skeleton 스타일 적용
+import 'react-loading-skeleton/dist/skeleton.css';
 
 interface Article {
   artcSeq: number;
@@ -39,6 +39,7 @@ const News = () => {
   const maxVisibleButtons = 5;
   const navigate = useNavigate();
 
+  // 검색어 변경 시 새로운 데이터 가져오기
   useEffect(() => {
     if (data && data.data && data.data.list) {
       const indexOfLastItem = currentPage * itemsPerPage;
@@ -57,13 +58,30 @@ const News = () => {
     }
   }, [currentPage, data]);
 
+  // 페이지 변경 처리
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
+  };
 
-    if (pageNumber > startPage + maxVisibleButtons - 1) {
+  // 페이지 그룹 앞으로 이동
+  const handleNextGroup = () => {
+    if (currentPage + maxVisibleButtons <= totalPages) {
+      setCurrentPage(currentPage + maxVisibleButtons);
       setStartPage(startPage + maxVisibleButtons);
-    } else if (pageNumber < startPage) {
-      setStartPage(Math.max(pageNumber - maxVisibleButtons + 1, 1));
+    } else {
+      setCurrentPage(totalPages);
+      setStartPage(totalPages - maxVisibleButtons + 1);
+    }
+  };
+
+  // 페이지 그룹 뒤로 이동
+  const handlePrevGroup = () => {
+    if (currentPage - maxVisibleButtons > 0) {
+      setCurrentPage(currentPage - maxVisibleButtons);
+      setStartPage(startPage - maxVisibleButtons);
+    } else {
+      setCurrentPage(1);
+      setStartPage(1);
     }
   };
 
@@ -77,7 +95,7 @@ const News = () => {
   if (isLoading) {
     return (
       <NewsContainer>
-        <Skeleton width={169} height={29} style={{ marginBottom: '-2px',top: '-40px' } }/>
+        <Skeleton width={169} height={29} style={{ marginBottom: '-2px', top: '-40px' }} />
         <NewsList>
           {Array.from({ length: itemsPerPage }).map((_, index) => (
             <div key={index} style={{ display: 'flex', alignItems: 'center', padding: '20px', borderBottom: `1px solid ${colors.ashGray}` }}>
@@ -134,38 +152,45 @@ const News = () => {
           <div>No data</div>
         )}
       </NewsList>
-      <Pagination>
-        <Button
-          onClick={() => handlePageChange(currentPage - 1)}
-          backgroundColor={currentPage === 1 ? colors.ashGray : colors.darkGray}
-          fontColor={colors.white}
-          padding="10px 15px"
-        >
-          &lt;
-        </Button>
-        {Array.from({ length: endPage - startPage + 1 }, (_, index) => {
-          const page = startPage + index;
-          return (
-            <Button
-              key={page}
-              onClick={() => handlePageChange(page)}
-              backgroundColor={currentPage === page ? colors.redPrimary : colors.silverGray}
-              fontColor={colors.white}
-              padding="10px 15px"
-            >
-              {page}
-            </Button>
-          );
-        })}
-        <Button
-          onClick={() => handlePageChange(currentPage + 1)}
-          backgroundColor={currentPage === totalPages ? colors.ashGray : colors.darkGray}
-          fontColor={colors.white}
-          padding="10px 15px"
-        >
-          &gt;
-        </Button>
-      </Pagination>
+
+<Pagination>
+  {/* 이전 그룹으로 이동 */}
+  <Button
+    onClick={handlePrevGroup}
+    backgroundColor={currentPage === 1 ? colors.ashGray : colors.darkGray}
+    fontColor={colors.white}
+    padding="10px 15px"
+  >
+    &lt;&lt;
+  </Button>
+
+  {/* 개별 페이지 버튼 */}
+  {Array.from({ length: endPage - startPage + 1 }, (_, index) => {
+    const page = startPage + index;
+    return (
+      <Button
+        key={page}
+        onClick={() => handlePageChange(page)}
+        backgroundColor={currentPage === page ? colors.redPrimary : colors.silverGray}
+        fontColor={colors.white}
+        padding="10px 15px"
+      >
+        {page}
+      </Button>
+    );
+  })}
+
+  {/* 다음 그룹으로 이동 */}
+  <Button
+    onClick={handleNextGroup}
+    backgroundColor={currentPage === totalPages ? colors.ashGray : colors.darkGray}
+    fontColor={colors.white}
+    padding="10px 15px"
+  >
+    &gt;&gt;
+  </Button>
+</Pagination>
+
     </NewsContainer>
   );
 };

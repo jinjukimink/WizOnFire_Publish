@@ -205,10 +205,13 @@ const WatchPointBox = () => {
   };
 
     // 로딩 중일 때 스켈레톤 반환
+<<<<<<<<< Temporary merge branch 1
+=========
   if (isLoadingRecent) {
         return <WatchPointSkeleton />;
       }
     // 로딩 중일 때 스켈레톤 반환
+>>>>>>>>> Temporary merge branch 2
   if (isLoading) {
     return <WatchPointSkeleton />;
   }
@@ -295,7 +298,11 @@ const WatchPointBox = () => {
                       color: (index === 0 ? 'red' : 'inherit'), // index가 0일 때 빨간색
                       backgroundColor: (index === 0 ? 'rgba(255, 153, 153, 0.1)' : 'inherit') // index가 0일 때 배경색 적용
                   }}>
+<<<<<<<<< Temporary merge branch 1
+                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
+=========
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
+>>>>>>>>> Temporary merge branch 2
                   </ScoreCell>
                 ))}
               </ScoreRow>
