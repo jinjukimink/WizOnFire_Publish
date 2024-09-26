@@ -124,7 +124,7 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
   const onClickedFuture=()=>{
     setIsRegular(prev=>!prev);
   }
-  const isLoading=useLoading(3000);
+  const isLoading=useLoading();
 
   if (isLoading) {
     return <ListSkeleton columns={1} count={1} margin="7px" width="1100px" height="500px" borderRadius="0" isCheer={true}/>
