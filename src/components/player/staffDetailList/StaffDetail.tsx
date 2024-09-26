@@ -46,12 +46,11 @@ export type TGamePlayerProps = {
 
 const SummaryInfo=styled.dd`
   position: relative;
-  top: -356px;
+  top: -362px;
   left: 200px;
   color: white;
   gap: 20px;
   font-weight: 50;
-
 `
 const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
   //console.log(detailPath)
@@ -88,7 +87,7 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
   const recent5gameRecords = useMemo(() => (staff?.data as TGamePlayerProps)?.recentgamerecordlist, [staff]);
   const totalRecords = useMemo(() => (staff?.data as TGamePlayerProps)?.yearrecordlist, [staff]);
   console.log(totalRecords);
-  const futureRecord=useMemo(()=>(staff?.data as TGamePlayerProps)?.seasonsummaryfutures,[staff]);//시즌 퓨처스 기록
+  const futureRecord = useMemo(()=>(staff?.data as TGamePlayerProps)?.seasonsummaryfutures,[staff]);//시즌 퓨처스 기록
   //console.log("futureRecord: ",futureRecord);
   const recent5gameFuturesRecords=useMemo(()=>(staff?.data as TGamePlayerProps)?.recentgamerecordlistfutures,[staff]);
   //console.log("퓨처스 최근 5경기",recent5gameFuturesRecords)
@@ -126,7 +125,6 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
   if (error) return <p>에러 발생: {error}</p>;
   if (!staff) return <p>정보를 찾을 수 없습니다.</p>;
 
-
   return (
     <>
       <Container>
@@ -151,8 +149,8 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
             </InfoList>
             {
             (detailPath !== "coachdetail" && isCatcher && totalRecords.lengh>0)? 
-            <SummaryInfo> {totalRecords && totalRecords[0].gyear} 정규리그 성적: 타율 {regularLeagueData.hra} {regularLeagueData.hit}안타 {regularLeagueData.rbi}타점 {regularLeagueData.hr}홈런</SummaryInfo>
-            : detailPath!=="coachdetail" && totalRecords.length>0 ? <SummaryInfo>{totalRecords[0].gyear} 정규리그 성적: 평균자책점 {regularLeagueData.era} {regularLeagueData.w}승 {regularLeagueData.l}패 {regularLeagueData.sv}세이브</SummaryInfo>:null
+            <SummaryInfo> {totalRecords && totalRecords[0].gyear} 정규리그 성적: 타율&nbsp;{totalRecords[0].hra}&nbsp;/&nbsp;{regularLeagueData.hit}안타&nbsp;/&nbsp;{regularLeagueData.rbi}&nbsp;타점&nbsp;/&nbsp;{regularLeagueData.hr}&nbsp;홈런&nbsp;</SummaryInfo>
+            : detailPath!=="coachdetail" && totalRecords.length>0 ? <SummaryInfo>{totalRecords[0].gyear} 정규리그 성적: 평균자책점&nbsp;{regularLeagueData.era}&nbsp;/&nbsp;{regularLeagueData.w}&nbsp;승&nbsp;/&nbsp;{regularLeagueData.l}&nbsp;패&nbsp;/&nbsp;{regularLeagueData.sv}&nbsp;세이브&nbsp;</SummaryInfo>:null
             }
             {(totalRecords.length==0 && isCatcher)?<SummaryInfo>2024 정규리그 성적 :타율 - / 안타 - / 타점 - / 홈런 - </SummaryInfo>:(totalRecords.length==0 && !isCatcher)&&<SummaryInfo>
               2024 정규리그 성적 :평균자책점 0.0 / 0 승 / 0 패 / 0 세이브
