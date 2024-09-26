@@ -9,7 +9,7 @@ import { ScoreArrowBox, ScoreCell, ScoreHeaderCell, ScoreRow } from "../boxScore
 import { GrPrevious, GrNext } from "react-icons/gr";
 import { PitchRecordLabel, PitchRecordTable } from "../boxScore/recordButton/pitchRecords/PitchRecordStyles";
 import LineUp from "./LineUp";
-import { VSWrapper, VS } from "./LineUpStyles";
+import { VSWrapper} from "./LineUpStyles";
 import { vs } from "../../../assets/assets";
 
 const WatchPointBox = () => {

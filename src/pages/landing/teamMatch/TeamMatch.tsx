@@ -5,7 +5,7 @@ import { GradientCircle } from "../../../components/common/gradientChip/Gradient
 import { GrNext } from "react-icons/gr";
 import useFetchData from "../../../hooks/useFetchData";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { TGameResponse } from "../../../types/landing";
 import {
     TeamMatchContainer,

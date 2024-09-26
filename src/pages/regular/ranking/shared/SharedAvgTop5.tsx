@@ -4,7 +4,7 @@ import { TAllAvgResponse } from "../../../../types/ranking";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import styled from "styled-components";
 import colors from "../../../../assets/Colors";
-import NotFound from "../../../../components/NotFound";
+
 import PitcherTop5Skeleton from "../pitcher/PitcherTop5Skeleton";
 const Top5Container = styled.div`
   flex: 1;

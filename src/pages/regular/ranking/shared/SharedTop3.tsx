@@ -3,7 +3,6 @@ import styled from "styled-components";
 import useFetchData from "../../../../hooks/useFetchData";
 import colors from "../../../../assets/Colors";
 import { bronze, gold, silver } from "../../../../assets/assets";
-import NotFound from "../../../../components/NotFound";
 import PitcherTop3Skeleton from "../pitcher/PitcherTop3Skeleton";
 
 const AvgPitContainer = styled.div`

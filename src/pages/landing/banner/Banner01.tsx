@@ -15,7 +15,7 @@ import {
   BannerParkBox,
   BannerParkLink
 } from "./BannerStyles01"
-import { TRanking } from "../../../types/landing";
+
 
 const Banner01 = () => {
 
