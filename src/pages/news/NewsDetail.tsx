@@ -37,7 +37,7 @@ const NewsDetail = () => {
   const article = data?.data?.article;
 
   if (!article) {
-    return <div>No data available</div>;
+    return;
   }
 
   return (
