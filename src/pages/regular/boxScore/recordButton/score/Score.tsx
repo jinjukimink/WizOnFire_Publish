@@ -123,7 +123,7 @@ const Score = ({apiUrl,onPrevClick,onNextClick} : TScoreType) => {
                     score={currentGame?.vscore}
                 />
             </ScoreBoxWrapper>
-        </ScoreWrapper>
+        
         <ScoreTable>
             <thead>
                 {getHeaderGroups().map(headerGroup => (
@@ -148,6 +148,7 @@ const Score = ({apiUrl,onPrevClick,onNextClick} : TScoreType) => {
                 ))}
             </tbody>
         </ScoreTable>
+        </ScoreWrapper>
         </>
     );
 }
