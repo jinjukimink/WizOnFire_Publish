@@ -58,6 +58,7 @@ export const LogoBox = styled.img`
     width: 130px; 
     height: 130px;
 `;
+
 export const TableBox = styled.table`
     width: 680px;
     border-collapse: collapse;
@@ -92,6 +93,14 @@ export const LineUpWrapper = styled.div`
     max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 200px;
-    gap:50px;
+    border-top: 2px solid ${colors.redQuaternary};
+    gap:80px;
+`
+export const LineUpContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1100px;
+    margin-left: auto; // 수평 가운데 정렬
+    margin-right: auto;
 `

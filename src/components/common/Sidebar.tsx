@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useLocationStore } from '../../stores/useLocation.store';
 import { ButtonContainer, ContentContainer, SectionContainer, SidebarButton, SidebarContainer,SubCategoryContainer,SidebarButtonWrapper } from './SidebarStyles';
-import { useMemo } from 'react';
-import { Category } from '../header/HeaderStyles';
+
 import React from 'react';
 const categories = [
   { title: "kt wiz는?" },
@@ -82,14 +81,13 @@ const SideBar = () => {
     }
   }, [currentPath,activeTab,categoryIndex]);
 
+  console.log("Sidebar");
   const getTitle = () => {
     const category = categories[categoryIndex];
     //return category.title;
     if (activeTab) {
-      console.log("1");
       return activeTab;
     }
-    console.log("2")
     return category.title;
   };
 
