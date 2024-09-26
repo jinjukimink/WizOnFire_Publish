@@ -10,6 +10,8 @@ import {
     SelectAndSearch
 } from "./css/PitcherRankStyles";
 import { useMemo } from "react";
+import useLoading from "../../../../hooks/useLoading";
+import RankTableSkeleton from "../shared/RankTableSkeleton";
 
 type RankingTableProps<T> = {
     apiUrl: string;
@@ -28,7 +30,10 @@ const PitcherRankTable = <T,>({
     onSortingChange,
     setSearchTerm
 }: RankingTableProps<T>) => {
+
+    const isLoading = useLoading();
     const defaultSorting: SortingState = useMemo(() => [{ id: "era", desc: false }], []);
+    //const defaultSorting: SortingState = [{ id: "era", desc: false }];
     const defaultColumnDefs: ColumnDef<T>[] = useMemo(() => [
         { header: "팀명", accessorKey: "teamName", enableSorting: false },
         { header: "선수명", accessorKey: "playerName", enableSorting: false },
@@ -48,10 +53,31 @@ const PitcherRankTable = <T,>({
         { header: "실점", accessorKey: "r", enableSorting: true },
         { header: "자책점", accessorKey: "er", enableSorting: true },
     ], []);
+    //    const defaultColumnDefs: ColumnDef<T>[] = [
+    //     { header: "팀명", accessorKey: "teamName", enableSorting: false },
+    //     { header: "선수명", accessorKey: "playerName", enableSorting: false },
+    //     { header: "평균자책점", accessorKey: "era", enableSorting: true },
+    //     { header: "경기수", accessorKey: "gamenum", enableSorting: true },
+    //     { header: "승", accessorKey: "w", enableSorting: true },
+    //     { header: "패", accessorKey: "l", enableSorting: true },
+    //     { header: "세이브", accessorKey: "sv", enableSorting: true },
+    //     { header: "홀드", accessorKey: "hold", enableSorting: true },
+    //     { header: "승률", accessorKey: "wra", enableSorting: true },
+    //     { header: "이닝", accessorKey: "inn", enableSorting: true },
+    //     { header: "피안타", accessorKey: "hit", enableSorting: true },
+    //     { header: "피홈런", accessorKey: "hr", enableSorting: true },
+    //     { header: "볼넷", accessorKey: "bb", enableSorting: true },
+    //     { header: "사구", accessorKey: "hp", enableSorting: true },
+    //     { header: "탈삼진", accessorKey: "kk", enableSorting: true },
+    //     { header: "실점", accessorKey: "r", enableSorting: true },
+    //     { header: "자책점", accessorKey: "er", enableSorting: true },
+    // ];
 
     const columnDefs = useMemo(() => {
         return customColumnDefs ? [...customColumnDefs, ...defaultColumnDefs] : defaultColumnDefs;
     }, [customColumnDefs, defaultColumnDefs]);
+    //const columnDefs = customColumnDefs ? [...customColumnDefs, ...defaultColumnDefs] : defaultColumnDefs;
+
     
     const table = useTable<T>({
         apiUrl,
@@ -60,6 +86,8 @@ const PitcherRankTable = <T,>({
         sorting: sorting.length === 0 ? defaultSorting : sorting, 
         onSortingChange
     });
+
+    if(isLoading) return <RankTableSkeleton/>
 
     return (
     <>

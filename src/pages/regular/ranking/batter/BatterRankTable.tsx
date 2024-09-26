@@ -10,6 +10,8 @@ import {
     BattRankingCell,
     SelectAndSearch
 } from "./css/BatterRankStyles";
+import RankTableSkeleton from "../shared/RankTableSkeleton";
+import useLoading from "../../../../hooks/useLoading";
 
 type RankingTableProps<T> = {
     apiUrl: string;
@@ -28,9 +30,9 @@ const BatterRankTable = <T,>({
     onSortingChange,
     setSearchTerm
 }: RankingTableProps<T>) => {
+
+    const isLoading = useLoading();
     const defaultSorting: SortingState = useMemo(() => [{ id: "avg", desc: false }], []);
-    
-    // columnDefs는 useMemo로 메모이제이션
     const defaultColumnDefs: ColumnDef<T>[] = useMemo(() => [
         { header: "선수명", accessorKey: "playerName", enableSorting: false },
         { header: "팀명", accessorKey: "teamName", enableSorting: false },
@@ -51,12 +53,10 @@ const BatterRankTable = <T,>({
         { header: "출루율", accessorKey: "obp", enableSorting: true } // 출루율 계산
     ], []);
 
-    // customColumnDefs가 있으면 결합, 없으면 defaultColumnDefs 사용
     const columnDefs = useMemo(() => {
         return customColumnDefs ? [...customColumnDefs, ...defaultColumnDefs] : defaultColumnDefs;
     }, [customColumnDefs, defaultColumnDefs]);
 
-    // sorting 상태가 변경될 때만 새로운 배열을 만들지 않도록 useMemo 사용
     const table = useTable<T>({
         apiUrl,
         columnDefs,
@@ -64,7 +64,9 @@ const BatterRankTable = <T,>({
         sorting: sorting.length === 0 ? defaultSorting : sorting,
         onSortingChange
     });
-console.log('apiurl 테이블 먼저니?!?!!?');
+          
+    if(isLoading) return <RankTableSkeleton/>
+
     return (
     <>
     <SelectAndSearch>
