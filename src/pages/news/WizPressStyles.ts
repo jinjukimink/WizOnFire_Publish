@@ -44,7 +44,7 @@ export const NewsItem = styled.div`
 export const SkeletonNewsItem = styled.div`
   display: flex;
   max-width: 1100px;
-  height: 44px;
+  height: 83px;
   padding: 20px;
   border-bottom: 1px solid ${colors.ashGray};
   background-color: ${colors.white};
@@ -52,17 +52,20 @@ export const SkeletonNewsItem = styled.div`
 
 export const Title = styled.h3`
   margin: 0;
+  padding: 20px;
   font-size: 18px;
   font-weight: bold;
 `;
 
 export const SkeletonTitle = styled(Shining)`
-  width: 70%;
-  height: 27px;
+  width: 400px;
+  max-height: 5px;
   border-radius: 5px;
   background-color: ${colors.ashGray};
-  margin-left: 100px;
-  `;
+  margin-left: 80px;
+  margin-top: 15px;
+  padding: 15px; 
+`;
 
 export const MetaInfo = styled.div`
   display: flex;
@@ -74,7 +77,15 @@ export const MetaInfo = styled.div`
 export const Views = styled.span`
   margin-left: 20px;
 `;
-
+export const SkeletonViews = styled(Shining)`
+  display:flex;
+  width: 40px;
+  height: 15px;
+  background-color: ${colors.ashGray};
+  border-radius: 5px;
+  margin-left:80px;
+  margin-top:5px;
+`;
 export const Date = styled.span``;
 
 export const SearchBarWrapper = styled.div`
