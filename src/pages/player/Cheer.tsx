@@ -5,6 +5,7 @@ import { Container } from "../PagesStyles";
 import colors from "../../assets/Colors";
 import ListSkeleton from "../../components/common/skeleton/gridskeleton/ListSkeleton";
 import redBack from "../../assets/images/player/redB.jpg"
+import useLoading from "../../hooks/useLoading";
 
 export type TCheerleader = {
   imgPath: string;
@@ -119,9 +120,10 @@ const Title=styled.div`
 `
 
 const Cheer = () => {
-  const { data, isLoading, error } = useFetchData<TCheerData|null>('player/cheerleader');
+  const { data, error } = useFetchData<TCheerData|null>('player/cheerleader');
   const fetchDataList = data?.data.list;
-  console.log(fetchDataList)
+  //console.log(fetchDataList)
+  const isLoading=useLoading();
   if (isLoading) return <ListSkeleton columns={3} count={15} margin="10px" width="240px" height="400px" borderRadius="7%" isCheer={true}/>;
   if (error) return <p>Error loading data...</p>;
 

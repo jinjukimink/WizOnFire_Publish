@@ -12,15 +12,17 @@ import LineUp from "./LineUp";
 import { VSWrapper } from "./LineUpStyles";
 import { vs } from "../../../assets/assets";
 import WatchPointSkeleton from "./WatchPointSkeleton";
+import useLoading from "../../../hooks/useLoading";
 
 const WatchPointBox = () => {
   const { data: game, isLoading: isLoadingRecent } = useFetchData<TGameResponse>("game/recentGames");
   const current: TGameData | undefined = game?.data?.current;
 
   const [apiUrl, setApiUrl] = useState<string>(""); // apiUrl 상태 추가
-  const { data: gameData, isLoading } = useFetchData<TWatchPointResponse>(apiUrl); // apiUrl을 사용하여 데이터 가져오기
+  const { data: gameData } = useFetchData<TWatchPointResponse>(apiUrl); // apiUrl을 사용하여 데이터 가져오기
 
   // 계산된 승률
+  const isLoading=useLoading();
   const calculatedWinRate = gameData
     ? (
         gameData?.data.visitTeamWinLose?.win! /
