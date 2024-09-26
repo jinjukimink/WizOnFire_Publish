@@ -158,9 +158,8 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
             (totalRecords?.length === 0 && isCatcher) 
               ?
                <SummaryInfo>2024 정규리그 성적: 타율 - / 안타 - / 타점 - / 홈런 -</SummaryInfo>
-              : detailPath!=="coachdetail"  &&!isCatcher&& <SummaryInfo>2024 정규리그 성적: 평균자책점 0.0 / 0 승 / 0 패 / 0 세이브</SummaryInfo>
+              : detailPath!=="coachdetail"  && !isCatcher && totalRecords.length===0&& <SummaryInfo>2024 정규리그 성적: 평균자책점 0.0 / 0 승 / 0 패 / 0 세이브</SummaryInfo>
           }
-
           </Contents>
         </Wrapper>
         {detailPath !== "coachdetail" && (
