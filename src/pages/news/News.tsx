@@ -81,7 +81,7 @@ const News = () => {
         <NewsList>
           {Array.from({ length: itemsPerPage }).map((_, index) => (
             <div key={index} style={{ display: 'flex', alignItems: 'center', padding: '20px', borderBottom: `1px solid ${colors.ashGray}` }}>
-              <Skeleton width={50} height={25} style={{ marginRight: '10px' }} /> {/* Index */}
+              <Skeleton width={50} height={25} style={{ marginRight: '10px' }} /> {/* 인덱스 */}
               <Skeleton width={250} height={125} style={{ marginRight: '20px' }} /> {/* 썸네일 */}
               <div style={{ flex: 1 }}>
                 <Skeleton width={`60%`} height={25} style={{ marginBottom: '10px' }} /> {/* 제목 */}
