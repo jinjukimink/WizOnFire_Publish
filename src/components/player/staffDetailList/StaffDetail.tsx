@@ -86,7 +86,7 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
   const regularLeagueData = useMemo(() => (staff?.data as TGamePlayerProps)?.seasonsummary, [staff]);
   const recent5gameRecords = useMemo(() => (staff?.data as TGamePlayerProps)?.recentgamerecordlist, [staff]);
   const totalRecords = useMemo(() => (staff?.data as TGamePlayerProps)?.yearrecordlist, [staff]);
-  console.log(detailPath,isCatcher,totalRecords.length);
+  console.log(detailPath,isCatcher,totalRecords);
   const futureRecord = useMemo(()=>(staff?.data as TGamePlayerProps)?.seasonsummaryfutures,[staff]);//시즌 퓨처스 기록
   //console.log("futureRecord: ",futureRecord);
   const recent5gameFuturesRecords=useMemo(()=>(staff?.data as TGamePlayerProps)?.recentgamerecordlistfutures,[staff]);
@@ -148,8 +148,8 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
               </ul>
             </InfoList>
             {
-            (detailPath !== "coachdetail" && isCatcher && totalRecords.lengh>0)? 
-            <SummaryInfo> {totalRecords && totalRecords[0].gyear} 정규리그 성적: 타율&nbsp;{totalRecords[0].hra}&nbsp;/&nbsp;{totalRecords[0].hit}안타&nbsp;/&nbsp;{totalRecords[0].rbi}&nbsp;타점&nbsp;/&nbsp;{totalRecords[0].hr}&nbsp;홈런&nbsp;</SummaryInfo>
+            (detailPath !== "coachdetail" && isCatcher && totalRecords.length!==0)? 
+            <SummaryInfo> {totalRecords && totalRecords[0].gyear} 정규리그 성적: 타율&nbsp;{totalRecords[0].hra}&nbsp;/&nbsp;{totalRecords[0].hit}&nbsp;안타&nbsp;/&nbsp;{totalRecords[0].rbi}&nbsp;타점&nbsp;/&nbsp;{totalRecords[0].hr}&nbsp;홈런&nbsp;</SummaryInfo>
             : detailPath!=="coachdetail" && totalRecords.length>0 ? <SummaryInfo>{totalRecords[0].gyear} 정규리그 성적: 평균자책점&nbsp;{regularLeagueData.era}&nbsp;/&nbsp;{regularLeagueData.w}&nbsp;승&nbsp;/&nbsp;{regularLeagueData.l}&nbsp;패&nbsp;/&nbsp;{regularLeagueData.sv}&nbsp;세이브&nbsp;</SummaryInfo>:null
             }
             {(totalRecords.length==0 && isCatcher)?<SummaryInfo>2024 정규리그 성적 :타율 - / 안타 - / 타점 - / 홈런 - </SummaryInfo>:(totalRecords.length==0 && !isCatcher)&&<SummaryInfo>
