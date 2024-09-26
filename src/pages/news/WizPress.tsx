@@ -28,7 +28,7 @@ const WizPress = () => {
   const [currentItems, setCurrentItems] = useState<Article[]>([]);
   const itemsPerPage = 5;
   const maxVisibleButtons = 5;
-  const [startPage] = useState(1);
+  const [startPage, setStartPage] = useState(1);
   const navigate = useNavigate();
 
   // 검색어 변경 시 새로운 데이터 가져오기
@@ -44,6 +44,26 @@ const WizPress = () => {
     setCurrentPage(pageNumber);
   };
 
+  const handleNextGroup = () => {
+    if (currentPage + maxVisibleButtons <= totalPages) {
+      setCurrentPage(currentPage + maxVisibleButtons);
+      setStartPage(startPage + maxVisibleButtons);
+    } else {
+      setCurrentPage(totalPages);
+      setStartPage(totalPages - maxVisibleButtons + 1);
+    }
+  };
+
+  const handlePrevGroup = () => {
+    if (currentPage - maxVisibleButtons > 0) {
+      setCurrentPage(currentPage - maxVisibleButtons);
+      setStartPage(startPage - maxVisibleButtons);
+    } else {
+      setCurrentPage(1);
+      setStartPage(1);
+    }
+  };
+
   const totalPages = Math.ceil((data?.data?.list.length || 0) / itemsPerPage);
   const endPage = Math.min(startPage + maxVisibleButtons - 1, totalPages);
 
@@ -56,7 +76,7 @@ const WizPress = () => {
       <SkeletonWrapper>
         {Array.from({ length: itemsPerPage }).map((_, index) => (
           <SkeletonNewsItem key={index}>
-            <Skeleton width={30} height={25} style={{ marginLeft:'10px',marginRight: '-95px',top:'15px' }} /> {/* 인덱스 */}
+            <Skeleton width={30} height={25} style={{ marginLeft:'10px', marginRight: '-95px', top:'15px' }} /> {/* 인덱스 */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
               <SkeletonTitle />
               <SkeletonViews />
@@ -102,14 +122,17 @@ const WizPress = () => {
       </NewsList>
 
       <Pagination>
+        {/* 이전 그룹으로 이동 */}
         <Button
-          onClick={() => handlePageChange(currentPage - 1)}
+          onClick={handlePrevGroup}
           backgroundColor={currentPage === 1 ? colors.ashGray : colors.darkGray}
           fontColor={colors.white}
           padding="10px 15px"
         >
-          &lt;
+          &lt;&lt;
         </Button>
+
+        {/* 개별 페이지 버튼 */}
         {Array.from({ length: endPage - startPage + 1 }, (_, index) => {
           const page = startPage + index;
           return (
@@ -124,13 +147,15 @@ const WizPress = () => {
             </Button>
           );
         })}
+
+        {/* 다음 그룹으로 이동 */}
         <Button
-          onClick={() => handlePageChange(currentPage + 1)}
+          onClick={handleNextGroup}
           backgroundColor={currentPage === totalPages ? colors.ashGray : colors.darkGray}
           fontColor={colors.white}
           padding="10px 15px"
         >
-          &gt;
+          &gt;&gt;
         </Button>
       </Pagination>
     </WizPressContainer>
