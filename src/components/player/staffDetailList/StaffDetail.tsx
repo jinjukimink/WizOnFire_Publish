@@ -47,7 +47,7 @@ export type TGamePlayerProps = {
 const SummaryInfo=styled.dd`
   position: relative;
   top: -362px;
-  left: 200px;
+  left: 220px;
   color: white;
   gap: 20px;
   font-weight: 50;
