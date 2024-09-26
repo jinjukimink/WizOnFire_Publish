@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import useFetchData from "../../hooks/useFetchData";
-import { useEffect } from "react";
 import { MetaInfo, Title, Views, ViewsIcon, WizPressContainer } from "./WizPressStyles";
 
 interface Article {
