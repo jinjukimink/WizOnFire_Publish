@@ -20,6 +20,7 @@ import {
 import ScoreSkeleton from "./ScoreSkeleton";
 import useLoading from "../../../../../hooks/useLoading";
 
+
 type TScoreType = {
     apiUrl: string;
     onPrevClick: (prevGameDate: string, preGmkey: string) => void;
@@ -70,6 +71,8 @@ const Score = ({apiUrl,onPrevClick,onNextClick} : TScoreType) => {
     const memoizedNextClick = useCallback(() => {
     if (nextGame) onNextClick(nextGame.gameDate, nextGame.gmkey);
     }, [nextGame, onNextClick]);
+
+    const isLoading = useLoading();
 
     const isLoading=useLoading();
     if(isLoading) return <ScoreSkeleton/>;

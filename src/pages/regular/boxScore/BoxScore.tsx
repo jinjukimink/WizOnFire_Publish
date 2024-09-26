@@ -34,7 +34,7 @@ const BoxScore = () => {
     const handleNextGameClick = (nextGameDate: string, nextGmkey: string) => {
         navigate(`/game/regular/boxscore/${nextGameDate}/${nextGmkey}`);
     };
-console.log("Box score");
+
     return (
         <BoxScoreContainer>
             <Score
