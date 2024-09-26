@@ -12,6 +12,8 @@ import FuturesSeasonRecord from "./FuturesSeasonRecord";
 import Recent5FuturesRecord from "./Recent5FuturesRecord";
 import styled from "styled-components";
 import ListSkeleton from "../../common/skeleton/gridskeleton/ListSkeleton";
+import useLoading from "../../../hooks/useLoading";
+
 
 export type TDetailStaff = {
   playerName: string;
@@ -46,18 +48,17 @@ export type TGamePlayerProps = {
 
 const SummaryInfo=styled.dd`
   position: relative;
-  top: -356px;
+  top: -362px;
   left: 200px;
   color: white;
   gap: 20px;
   font-weight: 50;
-
 `
 const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
   //console.log(detailPath)
   const [params] = useSearchParams();
   const pcode = params.get("pcode");
-  const { data: staff, isLoading, error } = useFetchData<{ data: TGamePlayerProps } | { data: TCoachData }>(
+  const { data: staff, error } = useFetchData<{ data: TGamePlayerProps } | { data: TCoachData }>(
     `player/${detailPath}?pcode=${pcode}`
   );
   //console.log(staff);
@@ -86,9 +87,11 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
 
   const regularLeagueData = useMemo(() => (staff?.data as TGamePlayerProps)?.seasonsummary, [staff]);
   const recent5gameRecords = useMemo(() => (staff?.data as TGamePlayerProps)?.recentgamerecordlist, [staff]);
-  const totalRecords = useMemo(() => (staff?.data as TGamePlayerProps)?.yearrecordlist, [staff]);
-  console.log(totalRecords);
-  const futureRecord=useMemo(()=>(staff?.data as TGamePlayerProps)?.seasonsummaryfutures,[staff]);//시즌 퓨처스 기록
+  const totalRecords = useMemo(() => (staff?.data as TGamePlayerProps)?.yearrecordlist||[], [staff]);
+  //let totalRecords = (staff?.data as TGamePlayerProps)?.yearrecordlist || [];
+
+  console.log(detailPath,isCatcher,totalRecords);
+  const futureRecord = useMemo(()=>(staff?.data as TGamePlayerProps)?.seasonsummaryfutures,[staff]);//시즌 퓨처스 기록
   //console.log("futureRecord: ",futureRecord);
   const recent5gameFuturesRecords=useMemo(()=>(staff?.data as TGamePlayerProps)?.recentgamerecordlistfutures,[staff]);
   //console.log("퓨처스 최근 5경기",recent5gameFuturesRecords)
@@ -121,11 +124,13 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
   const onClickedFuture=()=>{
     setIsRegular(prev=>!prev);
   }
+  const isLoading=useLoading();
 
-  if (isLoading) return <ListSkeleton columns={1} count={1} margin="7px" width="1100px" height="500px" borderRadius="0" isCheer={true}/>;
+  if (isLoading) {
+    return <ListSkeleton columns={1} count={1} margin="7px" width="1100px" height="500px" borderRadius="0" isCheer={true}/>
+  };
   if (error) return <p>에러 발생: {error}</p>;
   if (!staff) return <p>정보를 찾을 수 없습니다.</p>;
-
 
   return (
     <>
@@ -151,14 +156,12 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
             </InfoList>
             {
             (detailPath !== "coachdetail" && isCatcher && totalRecords?.length > 0) ? 
-            <SummaryInfo> {totalRecords && totalRecords[0].gyear} 정규리그 성적: 타율 {regularLeagueData.hra} {regularLeagueData.hit}안타 {regularLeagueData.rbi}타점 {regularLeagueData.hr}홈런</SummaryInfo>
-            : detailPath!=="coachdetail" && totalRecords?.length > 0 ? <SummaryInfo>{totalRecords[0].gyear} 정규리그 성적: 평균자책점 {regularLeagueData.era} {regularLeagueData.w}승 {regularLeagueData.l}패 {regularLeagueData.sv}세이브</SummaryInfo>:null
+            <SummaryInfo> {totalRecords && totalRecords[0].gyear} 정규리그 성적 : 타율  {regularLeagueData.hra} / 안타 {regularLeagueData.hit} / 타점 {regularLeagueData.rbi}/ 홈런 {regularLeagueData.hr}</SummaryInfo>
+            : detailPath!=="coachdetail" && totalRecords?.length > 0 ? <SummaryInfo>{totalRecords[0].gyear} 정규리그 성적: 평균자책점 {regularLeagueData.era} / {regularLeagueData.w} 승 / {regularLeagueData.l} 패 / {regularLeagueData.sv} 세이브</SummaryInfo>:null
             }
-            {(totalRecords?.length === 0 && isCatcher) ? <SummaryInfo>2024 정규리그 성적 :타율 - / 안타 - / 타점 - / 홈런 - </SummaryInfo> : (totalRecords?.length === 0 && !isCatcher) && <SummaryInfo>
+            {(totalRecords?.length === 0 && isCatcher) ? <SummaryInfo>2024 정규리그 성적 :타율 - / 안타 - / 타점 - / 홈런 - </SummaryInfo> : (totalRecords?.length === 0 && !isCatcher) && detailPath!=="coachdetail" &&<SummaryInfo>
               2024 정규리그 성적 :평균자책점 0.0 / 0 승 / 0 패 / 0 세이브
-            </SummaryInfo>
-            
-            }
+            </SummaryInfo>}
           </Contents>
         </Wrapper>
         {detailPath !== "coachdetail" && (

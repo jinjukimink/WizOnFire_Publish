@@ -14,7 +14,6 @@ const MatchBox = () => {
   const {current, prev, next} = game?.data || {};
   //console.log('Gamedata', game);
 
-
   // 날짜 포맷팅 함수
   const formatDate = (date:string | undefined):string => {
     const year = date?.substring(0, 4) || "";
