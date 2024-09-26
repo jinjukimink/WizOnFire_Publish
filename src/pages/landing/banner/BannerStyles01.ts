@@ -19,7 +19,7 @@ export const BannerImg02 = styled.img`
         height: 18rem;
         position: absolute;
         top: -45px;
-        left: 900px;
+        left: 930px;
         scale: 70%;
     @media screen and (max-width: 1560px) {
         top: -38px;
