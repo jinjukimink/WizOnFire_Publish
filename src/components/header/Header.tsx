@@ -6,7 +6,7 @@ import { useLocationStore } from "../../stores/useLocation.store";
 import { useLocation, useNavigate } from "react-router-dom";
 import React from "react";
 import newLogo from "../../assets/images/common/newLogo.png"
-
+import { Link } from "react-router-dom";
 const Header = () => {
   const categories = [
     "kt wiz",
@@ -158,9 +158,16 @@ const Header = () => {
     setSelectedSidebar(sidebars[categories.indexOf(category)][0][0] || null);
 
     const forNav = categoriesForNav[index];
-    if(forNav=="game"){
+    console.log(forNav);
+    if(forNav==="game"){
        navigate(`/${forNav}/regular/${subCategoriesForNav[index][0]}`);
-    }else{
+    }else if(forNav==="sponsor"){
+      window.open("https://b2b.ktwiz.co.kr/",'_blank');  
+    }
+    else if(forNav==="shop"){
+      window.open("https://www.ktwiz.co.kr/shop/",'_blank'); 
+    }
+    else{
       navigate(`/${forNav}/${subCategoriesForNav[index][0]}`);
     }
 

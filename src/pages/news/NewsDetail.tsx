@@ -1,6 +1,7 @@
 import useFetchData from '../../hooks/useFetchData';
 import { NewsContainer, Title, MetaInfo, Views, ViewsIcon, Thumbnail } from './NewsStyles';
 // import { useEffect } from "react";
+import { useParams } from 'react-router-dom';
 
 interface Article {
   artcSeq: number;
