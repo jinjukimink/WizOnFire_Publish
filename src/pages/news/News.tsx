@@ -1,5 +1,5 @@
 import useFetchData from '../../hooks/useFetchData';
-import { NewsContainer, NewsList, NewsItem, Title, MetaInfo, Views, SearchBarWrapper, Pagination, Thumbnail, ViewsIcon, ArticleIndex, SkeletonSearchBarWrapper } from './NewsStyles';
+import { NewsContainer, NewsList, NewsItem, Title, MetaInfo, Views, SearchBarWrapper, Pagination, Thumbnail, ViewsIcon, ArticleIndex} from './NewsStyles';
 import { useState, useEffect } from 'react';
 import SearchBar from '../../components/common/searchbar/SearchBar';
 import colors from '../../assets/Colors';
