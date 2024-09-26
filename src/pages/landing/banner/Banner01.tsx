@@ -54,7 +54,7 @@ const Banner01 = () => {
             main="수원 케이티 위즈 파크" title=""
           />
           <span>사전 주차 예약제 안내</span>
-          <BannerParkLink to="/wizpark/parking">
+          <BannerParkLink to="https://suwonparkingbaseball.or.kr/suwonwps/EgovPageLink.do?link=main/menu/prs/ParkingReservationPrivacy">
             사전주차 예약하기 →
           </BannerParkLink>
         </BannerParkBox>
