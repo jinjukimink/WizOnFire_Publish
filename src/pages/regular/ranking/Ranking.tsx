@@ -16,6 +16,7 @@ import { useSubCategoryStore } from "../../../stores/useSubCategory.store"
 
 
 const RankingContainer = styled.div`
+    max-width: 1100px;
     width: 65%;
     font-size: 14px;
     box-sizing: border-box;
@@ -58,7 +59,6 @@ const Ranking = () => {
 
   const handleClickMenu = (title: string) => {
       setSelectedMenu(title);
-      window.scrollTo(0, 0);
       if (title === "투수순위") {
           setClickSelectedMenu("ktwiz 투수");
           //setSelectedRankingBar(title)

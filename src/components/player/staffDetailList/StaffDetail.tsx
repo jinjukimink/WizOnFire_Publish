@@ -12,6 +12,7 @@ import FuturesSeasonRecord from "./FuturesSeasonRecord";
 import Recent5FuturesRecord from "./Recent5FuturesRecord";
 import styled from "styled-components";
 import ListSkeleton from "../../common/skeleton/gridskeleton/ListSkeleton";
+import ListSkeleton from "../../common/skeleton/gridskeleton/ListSkeleton";
 
 export type TDetailStaff = {
   playerName: string;
@@ -46,8 +47,8 @@ export type TGamePlayerProps = {
 
 const SummaryInfo=styled.dd`
   position: relative;
-  top: -362px;
-  left: 220px;
+  top: -377px;
+  left: 200px;
   color: white;
   gap: 20px;
   font-weight: 50;
@@ -150,40 +151,34 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
               </ul>
             </InfoList>
             {
-            (detailPath !== "coachdetail" && isCatcher && totalRecords.length>0)? 
-            <SummaryInfo> {totalRecords && totalRecords[0].gyear} 정규리그 성적: 타율&nbsp;{totalRecords[0].hra}&nbsp;/&nbsp;{totalRecords[0].hit}&nbsp;안타&nbsp;/&nbsp;{totalRecords[0].rbi}&nbsp;타점&nbsp;/&nbsp;{totalRecords[0].hr}&nbsp;홈런&nbsp;</SummaryInfo>
-            : (detailPath!=="coachdetail" && totalRecords && totalRecords.length>0 )? <SummaryInfo>{totalRecords[0].gyear} 정규리그 성적: 평균자책점&nbsp;{regularLeagueData.era}&nbsp;/&nbsp;{regularLeagueData.w}&nbsp;승&nbsp;/&nbsp;{regularLeagueData.l}&nbsp;패&nbsp;/&nbsp;{regularLeagueData.sv}&nbsp;세이브&nbsp;</SummaryInfo>:null
+            (detailPath !== "coachdetail" && isCatcher )? 
+            <SummaryInfo> {totalRecords[0].gyear} 정규리그 성적: 타율 {regularLeagueData.hra} {regularLeagueData.hit}안타 {regularLeagueData.rbi}타점 {regularLeagueData.hr}홈런</SummaryInfo>
+            : detailPath!=="coachdetail" ? <SummaryInfo>{totalRecords[0].gyear} 정규리그 성적: 평균자책점 {regularLeagueData.era} {regularLeagueData.w}승 {regularLeagueData.l}패 {regularLeagueData.sv}세이브</SummaryInfo>:null
             }
-          {
-            (totalRecords?.length === 0 && isCatcher) 
-              ?
-               <SummaryInfo>2024 정규리그 성적: 타율 - / 안타 - / 타점 - / 홈런 -</SummaryInfo>
-              : detailPath!=="coachdetail"  && !isCatcher && totalRecords.length===0&& <SummaryInfo>2024 정규리그 성적: 평균자책점 0.0 / 0 승 / 0 패 / 0 세이브</SummaryInfo>
-          }
           </Contents>
         </Wrapper>
         {detailPath !== "coachdetail" && (
-         <>
-            <RecordNav imgWidth={imgWidth}>
-              {categoryList.map((category, index) => (
-                <CategoryItem
-                  key={index}
-                  onClick={() => onClick(category)}
-                  isSelected={whichDetail === category} // isSelected를 이용해 스타일 적용
-                >
-                  {category}
-                </CategoryItem>
-              ))}
-            </RecordNav>
-              {/* <Button style={{backgroundColor:"gray",color:"black",display:"flex"}} onClick={()=>onClickedFuture()} height="40px"> {isRegular?"퓨처스리그 기록 보기":"정규리그 보기"}</Button> */}
-            {(whichDetail === categoryList[0] && isRegular)&& <RegularSeasonRecord regularLeagueData={regularLeagueData} isCatcher={isCatcher} />}
-            {(whichDetail === categoryList[0] && !isRegular)&& <FuturesSeasonRecord futureRecord={futureRecord} isCatcher={isCatcher}/>}
-            {(whichDetail === categoryList[1] && isRegular) && <Recent5Record recent5gameRecords={recent5gameRecords} isCatcher={isCatcher} />}
-            {(whichDetail === categoryList[1] && !isRegular)&& <Recent5FuturesRecord recent5gameFuturesRecords={recent5gameFuturesRecords} isCatcher={isCatcher}/>}
+        <>
+          <RecordNav imgWidth={imgWidth}>
+            {categoryList.map((category, index) => (
+              <CategoryItem
+                key={index}
+                onClick={() => onClick(category)}
+                isSelected={whichDetail === category} // isSelected를 이용해 스타일 적용
+              >
+                {category}
+              </CategoryItem>
+            ))}
+          </RecordNav>
+            {/* <Button style={{backgroundColor:"gray",color:"black",display:"flex"}} onClick={()=>onClickedFuture()} height="40px"> {isRegular?"퓨처스리그 기록 보기":"정규리그 보기"}</Button> */}
+          {(whichDetail === categoryList[0] && isRegular)&& <RegularSeasonRecord regularLeagueData={regularLeagueData} isCatcher={isCatcher} />}
+          {(whichDetail === categoryList[0] && !isRegular)&& <FuturesSeasonRecord futureRecord={futureRecord} isCatcher={isCatcher}/>}
+          {(whichDetail === categoryList[1] && isRegular) && <Recent5Record recent5gameRecords={recent5gameRecords} isCatcher={isCatcher} />}
+          {(whichDetail === categoryList[1] && !isRegular)&& <Recent5FuturesRecord recent5gameFuturesRecords={recent5gameFuturesRecords} isCatcher={isCatcher}/>}
 
-            {whichDetail === categoryList[2] && <TotalRecord totalRecords={totalRecords} isCatcher={isCatcher} />}
-            {/* </NavWrapper> */}
-               {whichDetail!==categoryList[2] &&
+          {whichDetail === categoryList[2] && <TotalRecord totalRecords={totalRecords} isCatcher={isCatcher} />}
+          {/* </NavWrapper> */}
+              {whichDetail!==categoryList[2] &&
                 <ButtonContainer imgWidth={imgWidth}>
                   <Button style={{backgroundColor:"rgb(239, 239, 239)",color:"black"}} onClick={()=>onClickedFuture()} height="40px" border="none" borderRadius="10px">{isRegular?"퓨처스리그 기록 보기":"정규리그 보기"}</Button>
                 </ButtonContainer>}

@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Score from "./recordButton/score/Score";
 
 const BoxScoreContainer = styled.div`
+    max-width: 1100px;
     width: 65%;
     font-size: 14px;
     box-sizing: border-box;
@@ -19,7 +20,7 @@ const BoxScore = () => {
     useEffect(() => {
         if (!gameDate || !gmkey) {
             // 파라미터가 없을 때
-            setApiUrl('/game/boxscore');
+            setApiUrl('//game/boxscore');
         } else {
             // 파라미터가 있을 때
             setApiUrl(`/game/boxscore?gameDate=${gameDate}&gmkey=${gmkey}`);

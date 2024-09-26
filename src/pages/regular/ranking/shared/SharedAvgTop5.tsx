@@ -4,8 +4,8 @@ import { TAllAvgResponse } from "../../../../types/ranking";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import styled from "styled-components";
 import colors from "../../../../assets/Colors";
-
 import PitcherTop5Skeleton from "../pitcher/PitcherTop5Skeleton";
+import useLoading from "../../../../hooks/useLoading";
 const Top5Container = styled.div`
   flex: 1;
   display: flex;
@@ -69,11 +69,10 @@ const SharedAvgTop5 = ({condition, children} :TTopConditionRankType) => {
   }, [condition]);
 
   
-  const { data, isLoading } = useFetchData<TAllAvgResponse>(apiUrl)
+  const { data } = useFetchData<TAllAvgResponse>(apiUrl)
   const transformedData = data?.data?.list || null;
-
-  if (isLoading) return <><PitcherTop5Skeleton/></>;
-
+  const isLoading = useLoading();
+  if (isLoading) return <PitcherTop5Skeleton/>;
 
   return (
     <>

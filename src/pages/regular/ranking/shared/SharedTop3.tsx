@@ -4,6 +4,7 @@ import useFetchData from "../../../../hooks/useFetchData";
 import colors from "../../../../assets/Colors";
 import { bronze, gold, silver } from "../../../../assets/assets";
 import PitcherTop3Skeleton from "../pitcher/PitcherTop3Skeleton";
+import useLoading from "../../../../hooks/useLoading";
 
 const AvgPitContainer = styled.div`
     display: flex;
@@ -145,10 +146,10 @@ const SharedTop3 = ({ condition, children }: TTopConditionRankType) => {
         }
     }, [condition]);
 
-    const { data, isLoading } = useFetchData<FetchDataResponse>(apiUrl);
+    const { data } = useFetchData<FetchDataResponse>(apiUrl);
     const transformedData = data?.data?.list || [];
-
-        if (isLoading) return <PitcherTop3Skeleton/>;
+    const isLoading = useLoading();
+    if (isLoading) return <PitcherTop3Skeleton/>;
 
     return (
         <AvgPitContainer>
