@@ -18,7 +18,6 @@ import {
     ScoreInfo,
 } from "./ScoreStyles"
 import ScoreSkeleton from "./ScoreSkeleton";
-import NotFound from "../../../../../components/NotFound";
 
 type TScoreType = {
     apiUrl: string;

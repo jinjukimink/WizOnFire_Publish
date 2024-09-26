@@ -13,7 +13,7 @@ const Home = () => {
   const { data, isLoading, error } = useFetchData<THotIssue[]>('media/hotissue?count=10'); 
 
   console.log('data',data);
-  if (isLoading) return <HomeSkeleton/>;
+  if (!isLoading) return <HomeSkeleton/>;
   if (error) return <p>{error}</p>;
 
   return (
