@@ -19,7 +19,7 @@ const BoxScore = () => {
     useEffect(() => {
         if (!gameDate || !gmkey) {
             // 파라미터가 없을 때
-            setApiUrl('/game/boxscore');
+            setApiUrl('//game/boxscore');
         } else {
             // 파라미터가 있을 때
             setApiUrl(`/game/boxscore?gameDate=${gameDate}&gmkey=${gmkey}`);
@@ -33,7 +33,7 @@ const BoxScore = () => {
     const handleNextGameClick = (nextGameDate: string, nextGmkey: string) => {
         navigate(`/game/regular/boxscore/${nextGameDate}/${nextGmkey}`);
     };
-console.log("Box score");
+
     return (
         <BoxScoreContainer>
             <Score
