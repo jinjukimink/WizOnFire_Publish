@@ -143,6 +143,4 @@ const Ranking = () => {
 }
 export default Ranking 
 
-function useRankCateogoryStore(): { selectedRanking: any; } {
-    throw new Error("Function not implemented.");
-}
+

@@ -52,6 +52,7 @@ const HitRecords = ({apiUrl} : {apiUrl: string}) => {
   const [visitTeam, setVisitTeam] = useState("원정팀");
   const [sortedHomeData, setSortedHomeData] = useState<ThbattersAndvbatters[]>([]);
   const [sortedVisitData, setSortedVisitData] = useState<ThbattersAndvbatters[]>([]);
+  console.log(sortedHomeData,sortedVisitData);
 
   const isLoading = useLoading();
 
