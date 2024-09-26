@@ -6,7 +6,7 @@ import { useLocationStore } from "../../stores/useLocation.store";
 import { useLocation, useNavigate } from "react-router-dom";
 import React from "react";
 import newLogo from "../../assets/images/common/newLogo.png"
-import { Link } from "react-router-dom";
+
 const Header = () => {
   const categories = [
     "kt wiz",
@@ -162,10 +162,16 @@ const Header = () => {
     if(forNav==="game"){
        navigate(`/${forNav}/regular/${subCategoriesForNav[index][0]}`);
     }else if(forNav==="sponsor"){
-      window.open("https://b2b.ktwiz.co.kr/",'_blank');  
+      //window.open("https://b2b.ktwiz.co.kr/",'_blank'); 
+      window.location.href=("https://b2b.ktwiz.co.kr/");
     }
     else if(forNav==="shop"){
-      window.open("https://www.ktwiz.co.kr/shop/",'_blank'); 
+      //window.open("https://www.ktwizstore.co.kr/",'_blank'); 
+      window.location.href=("https://www.ktwizstore.co.kr/");
+    }
+    else if(forNav==="ticket"){
+
+      window.location.href=("https://www.ktwiz.co.kr/ticket/reservation");
     }
     else{
       navigate(`/${forNav}/${subCategoriesForNav[index][0]}`);
@@ -174,7 +180,7 @@ const Header = () => {
     //setIsHovered(false)
     // console.log(category)
     // console.log(index)
-    console.log("clicked!");
+    //console.log("clicked!");
     
     //
   };
@@ -195,7 +201,7 @@ const Header = () => {
       else{
         navigate(`/${forNav}/regular/${subCategoriesForNav[categoryIndex][subIndex]}`);
       }
-      console.log(forNav)
+      //console.log(forNav)
       return;
     }
     navigate(`/${forNav}/${subCategoriesForNav[categoryIndex][subIndex]}`); // 경로를 제대로 작성
