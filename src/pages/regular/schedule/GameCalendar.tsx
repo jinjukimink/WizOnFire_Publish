@@ -80,8 +80,8 @@ const CalendarComponent = () => {
 
   //const apiUrl = `game/monthschedule?yearMonth=${yearMonth}`;
   const apiUrl = isKt
-    ? `game/monthschedule?yearMonth=${yearMonth}`
-    : `game/allgameschedule?yearMonth=${yearMonth}`;
+    ? `/game/monthschedule?yearMonth=${yearMonth}`
+    : `/game/allgameschedule?yearMonth=${yearMonth}`;
 
 
   const { data:scheduleList, isLoading,error } = useFetchData<TscheduleList>(apiUrl);
@@ -133,7 +133,7 @@ const CalendarComponent = () => {
     return {};
   };
 
-  if( !isLoading){
+  if( isLoading){
     return <GameCalendarSkeleton/>
   }
   

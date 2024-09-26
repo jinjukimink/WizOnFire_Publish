@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useLocationStore } from '../../stores/useLocation.store';
 import { ButtonContainer, ContentContainer, SectionContainer, SidebarButton, SidebarContainer,SubCategoryContainer,SidebarButtonWrapper } from './SidebarStyles';
-import { useMemo } from 'react';
-import { Category } from '../header/HeaderStyles';
+
 import React from 'react';
 const categories = [
   { title: "kt wiz는?" },

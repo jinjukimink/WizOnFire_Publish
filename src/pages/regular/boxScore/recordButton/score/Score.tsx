@@ -18,7 +18,7 @@ import {
     ScoreInfo,
 } from "./ScoreStyles"
 import ScoreSkeleton from "./ScoreSkeleton";
-import NotFound from "../../../../../components/NotFound";
+import useLoading from "../../../../../hooks/useLoading";
 
 type TScoreType = {
     apiUrl: string;
@@ -51,7 +51,7 @@ const Score = ({apiUrl,onPrevClick,onNextClick} : TScoreType) => {
         { header: 'B', accessorKey: 'ballfour' },
     ];
 
-    const { getHeaderGroups, getRowModel, isLoading, error } = useTable({
+    const { getHeaderGroups, getRowModel, error } = useTable({
         apiUrl: apiUrl,
         columnDefs,
         transformData: (data: TBoxScoreResponse) => {
@@ -70,6 +70,8 @@ const Score = ({apiUrl,onPrevClick,onNextClick} : TScoreType) => {
     const memoizedNextClick = useCallback(() => {
     if (nextGame) onNextClick(nextGame.gameDate, nextGame.gmkey);
     }, [nextGame, onNextClick]);
+
+    const isLoading = useLoading();
 
     if(isLoading) return <ScoreSkeleton/>;
     if(error) return <>Error...</>;
@@ -124,7 +126,7 @@ const Score = ({apiUrl,onPrevClick,onNextClick} : TScoreType) => {
                     score={currentGame?.vscore}
                 />
             </ScoreBoxWrapper>
-        </ScoreWrapper>
+        
         <ScoreTable>
             <thead>
                 {getHeaderGroups().map(headerGroup => (
@@ -149,6 +151,7 @@ const Score = ({apiUrl,onPrevClick,onNextClick} : TScoreType) => {
                 ))}
             </tbody>
         </ScoreTable>
+        </ScoreWrapper>
         </>
     );
 }

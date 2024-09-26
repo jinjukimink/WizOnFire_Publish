@@ -43,7 +43,7 @@ const Gallery = () => {
         <PhotoWrapper>
             <LargePhoto />
         </PhotoWrapper>
-        <Slider images={imagePaths}/>
+        <Slider images={imagePaths} />
     </GalleryContainer>
     );
 }
