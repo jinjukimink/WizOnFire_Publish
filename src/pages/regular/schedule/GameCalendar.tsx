@@ -81,8 +81,8 @@ const CalendarComponent = () => {
 
   //const apiUrl = `game/monthschedule?yearMonth=${yearMonth}`;
   const apiUrl = isKt
-    ? `game/monthschedule?yearMonth=${yearMonth}`
-    : `game/allgameschedule?yearMonth=${yearMonth}`;
+    ? `/game/monthschedule?yearMonth=${yearMonth}`
+    : `/game/allgameschedule?yearMonth=${yearMonth}`;
 
 
   const { data:scheduleList, isLoading,error } = useFetchData<TscheduleList>(apiUrl);
@@ -194,7 +194,7 @@ const CalendarComponent = () => {
             <GrNext size={25} />
           </Button>
         </MonthSelector>
-        <div style={{display:'flex'}}>
+        <div style={{display:'flex', zIndex: 0}}>
           <Outcome outcome='승'>승</Outcome>
           <Outcome outcome='패'>패</Outcome>
           <Outcome outcome='무'>무</Outcome>

@@ -12,7 +12,6 @@ export const Wrapper = styled.div`
     margin-left: auto; // 수평 가운데 정렬
     margin-right: auto;
     margin-top: -50px;
-
 `;
 
 export const WatchPointWrapper = styled.div`
@@ -22,6 +21,7 @@ export const WatchPointWrapper = styled.div`
     justify-content: center;
     align-items: center;
     position: relative;
+    
 `
 
 export const WatchPointHeader= styled.div`
@@ -36,7 +36,7 @@ export const TeamInfoBox = styled.div`
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    border: 1px solid ${colors.silverGray};
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
     margin-top: 200px;
     width: 200px;
     height: 200px;
@@ -80,7 +80,7 @@ export const PitchTable = styled.div`
     max-width: 1100px;
     margin-left: auto; // 수평 가운데 정렬
     margin-right: auto;
-    margin-top:100px;
+    margin-top:130px;
 `
 
 export const LineUpWrapper = styled.div`
@@ -92,6 +92,14 @@ export const LineUpWrapper = styled.div`
     max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 200px;
-    gap:50px;
+    gap:100px;
+    border-top: 2px solid ${colors.redQuaternary};
 `
+
+export const LineUpContainer = styled.table`
+    width: 100%;
+    max-width: 1100px;
+    margin-left: auto; // 수평 가운데 정렬
+    margin-right: auto;
+    margin-top: 30px;
+`;

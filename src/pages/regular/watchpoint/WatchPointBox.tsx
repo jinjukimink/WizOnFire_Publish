@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { LogoBox, TableBox, TeamInfoBox, TeamInfoWrapper, WatchPointWrapper, Wrapper, WatchPointHeader, PitchTable, LineUpWrapper } from "./WatchPointBoxStyles";
+import { LogoBox, TableBox, TeamInfoBox, TeamInfoWrapper, WatchPointWrapper, Wrapper, WatchPointHeader, PitchTable, LineUpWrapper, LineUpContainer } from "./WatchPointBoxStyles";
 import useFetchData from "../../../hooks/useFetchData";
 import { TGameData, TGameResponse } from "../../../types/landing";
 import { TWatchPointResponse } from "../../../types/game";
@@ -9,8 +9,9 @@ import { ScoreArrowBox, ScoreCell, ScoreHeaderCell, ScoreRow } from "../boxScore
 import { GrPrevious, GrNext } from "react-icons/gr";
 import { PitchRecordLabel, PitchRecordTable } from "../boxScore/recordButton/pitchRecords/PitchRecordStyles";
 import LineUp from "./LineUp";
-import { VSWrapper, VS } from "./LineUpStyles";
+import { VSWrapper } from "./LineUpStyles";
 import { vs } from "../../../assets/assets";
+import WatchPointSkeleton from "./WatchPointSkeleton";
 
 const WatchPointBox = () => {
   // 가장 최신 게임 가져오기
@@ -19,6 +20,7 @@ const WatchPointBox = () => {
 
   const [apiUrl, setApiUrl] = useState<string>("");
   const [gameData, setGameData] = useState<TWatchPointResponse | null>(null);
+  const [loading, setLoading] = useState<boolean>(true); // 로딩 상태 추가
 
   // 계산된 승률
   const calculatedWinRate = gameData
@@ -165,58 +167,42 @@ const WatchPointBox = () => {
   // 투수 비교 테이블
   const { getHeaderGroups: getPitcherHeaderGroups, getRowModel: getPitcherRowModel } = useTable({
     apiUrl: apiUrl,
-    columnDefs: pitcherColumnDefs, // 투수 비교 테이블 컬럼 정의
+    columnDefs: pitcherColumnDefs,
     transformData: transformPitcherData,
-  });
+});
 
   const homeLineupData = gameData?.data.homeLineup?.map(player => ({
     playerName: player.playerName!,
     pos: player.pos || '', // pos가 undefined일 경우 빈 문자열로 대체
   })) ?? [];
 
-
-
   const visitLineupData = gameData?.data.visitLineup?.map(player => ({
     playerName: player.playerName!,
     pos: player.pos || '', // pos가 undefined일 경우 빈 문자열로 대체
   })) ?? [];
 
-
-
-
-  // //////api 
-  // const homeLineupData: { playerName: string; pos: string }[] = [
-  //   { playerName: "박지은", pos: "1" },
-  //   { playerName: "김진주", pos: "2" },
-  //   { playerName: "상대선수3", pos: "3" },
-  //   { playerName: "상대선수4", pos: "4" },
-  //   { playerName: "상대선수5", pos: "5" },
-  //   { playerName: "상대선수6", pos: "6" },
-  //   { playerName: "상대선수7", pos: "7" },
-  //   { playerName: "상대선수8", pos: "8" },
-  //   { playerName: "상대선수9", pos: "9" },
-  //   { playerName: "상대선수10", pos: "D" },
-  // ];
-
-  // const visitLineupData: { playerName: string; pos: string }[] = [
-  //   { playerName: "상대선수1", pos: "1" },
-  //   { playerName: "상대선수2", pos: "2" },
-  //   { playerName: "상대선수3", pos: "3" },
-  //   { playerName: "상대선수4", pos: "4" },
-  //   { playerName: "상대선수5", pos: "5" },
-  //   { playerName: "상대선수6", pos: "6" },
-  //   { playerName: "상대선수7", pos: "7" },
-  //   { playerName: "상대선수8", pos: "8" },
-  //   { playerName: "상대선수9", pos: "9" },
-  //   { playerName: "상대선수10", pos: "D" },
-  // ];
-
-
   useEffect(() => {
     if (current) {
       setApiUrl(`/game/watchpoint?gameDate=${current.gameDate}&gmkey=${current.gmkey}`);
+      setLoading(true); // API 호출 전 로딩 시작
     }
   }, [current]);
+
+  useEffect(() => {
+    if (apiUrl) {
+      const fetchData = async () => {
+        setLoading(true); // 데이터 로딩 시작
+        // 데이터 fetching 로직
+        // ...
+        setLoading(false); // 데이터 로딩 완료
+      };
+      fetchData();
+    }
+  }, [apiUrl]);
+
+  if (!loading) {
+    return <WatchPointSkeleton />; // 로딩 중일 때 스켈레톤 반환
+  }
 
   // Next 버튼 클릭 시 호출되는 함수
   const handleNextGame = () => {
@@ -243,7 +229,7 @@ const WatchPointBox = () => {
         <WatchPointHeader>
           <ScoreArrowBox>
             <GrPrevious onClick={handlePrevGame} style={{ scale: "150%" }} />
-            <div>{gameData?.data?.gameScore?.displayDate}</div>
+              <div>{gameData?.data?.gameScore?.displayDate}</div>
             <GrNext onClick={handleNextGame} style={{ scale: "150%" }} />
           </ScoreArrowBox>
         </WatchPointHeader>
@@ -312,9 +298,13 @@ const WatchPointBox = () => {
         <tbody>
           {getPitcherRowModel().rows.map((row, index) => (
             <ScoreRow key={row.id} style={index === 0 ? { color: 'red' } : {}}>
-              {row.getVisibleCells().map((cell, cellIndex) => (
-                <ScoreCell key={cell.id} style={{ color: cellIndex === 1 ? 'black' : (index === 0 ? 'red' : 'inherit') }}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+              {row.getVisibleCells().map((cell) => (
+                <ScoreCell key={cell.id} 
+                  style={{ 
+                  color: (index === 0 ? 'red' : 'inherit'), // index가 0일 때 빨간색
+                  backgroundColor: (index === 0 ? 'rgba(255, 153, 153, 0.1)' : 'inherit') // index가 0일 때 배경색 적용
+                }}>
+                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </ScoreCell>
               ))}
             </ScoreRow>
@@ -322,6 +312,9 @@ const WatchPointBox = () => {
         </tbody>
       </PitchRecordTable>
     </PitchTable>
+
+  <LineUpContainer>
+    <PitchRecordLabel>라인업</PitchRecordLabel>
     <LineUpWrapper>
       <LineUp lineup={homeLineupData} logo={gameData?.data.gameScore?.homeLogo || ''} />
       <VSWrapper>
@@ -329,6 +322,7 @@ const WatchPointBox = () => {
         </VSWrapper>
       <LineUp lineup={visitLineupData} logo={gameData?.data.gameScore?.visitLogo || ''} />
     </LineUpWrapper>
+    </LineUpContainer>
     </>
   );
 }
