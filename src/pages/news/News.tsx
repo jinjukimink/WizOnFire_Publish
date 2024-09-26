@@ -1,11 +1,12 @@
 import useFetchData from '../../hooks/useFetchData';
-import { NewsContainer, NewsList, NewsItem, Title, MetaInfo, Views, SearchBarWrapper, Pagination, Thumbnail, ViewsIcon, ArticleIndex, SkeletonViews, SkeletonSearchBarWrapper, SkeletonSearchIcon } from './NewsStyles';
-import { SkeletonWrapper, SkeletonNewsItem, SkeletonThumbnail, SkeletonTitle } from './NewsStyles';
+import { NewsContainer, NewsList, NewsItem, Title, MetaInfo, Views, SearchBarWrapper, Pagination, Thumbnail, ViewsIcon, ArticleIndex, SkeletonSearchBarWrapper } from './NewsStyles';
 import { useState, useEffect } from 'react';
 import SearchBar from '../../components/common/searchbar/SearchBar';
 import colors from '../../assets/Colors';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/common/button/Button';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css'; // skeleton 스타일 적용
 
 interface Article {
   artcSeq: number;
@@ -75,19 +76,21 @@ const News = () => {
 
   if (isLoading) {
     return (
-      <SkeletonWrapper>
-        <SkeletonSearchBarWrapper />
-        <SkeletonSearchIcon />
-        {Array.from({ length: itemsPerPage }).map((_, index) => (
-          <SkeletonNewsItem key={index}>
-            <SkeletonThumbnail />
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-              <SkeletonTitle />
-              <SkeletonViews />
+      <NewsContainer>
+        <Skeleton width={169} height={29} style={{ marginBottom: '-2px',top: '-40px' } }/>
+        <NewsList>
+          {Array.from({ length: itemsPerPage }).map((_, index) => (
+            <div key={index} style={{ display: 'flex', alignItems: 'center', padding: '20px', borderBottom: `1px solid ${colors.ashGray}` }}>
+              <Skeleton width={50} height={25} style={{ marginRight: '10px' }} /> {/* Index */}
+              <Skeleton width={250} height={125} style={{ marginRight: '20px' }} /> {/* 썸네일 */}
+              <div style={{ flex: 1 }}>
+                <Skeleton width={`60%`} height={25} style={{ marginBottom: '10px' }} /> {/* 제목 */}
+                <Skeleton width={80} height={15} /> {/* 조회수 */}
+              </div>
             </div>
-          </SkeletonNewsItem>
-        ))}
-      </SkeletonWrapper>
+          ))}
+        </NewsList>
+      </NewsContainer>
     );
   }
 

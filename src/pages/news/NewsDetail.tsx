@@ -26,18 +26,18 @@ const NewsDetail = () => {
   const { newsId } = useParams<{ newsId: string }>();
   const { data, isLoading } = useFetchData<ApiResponse>(`/article/newsdetail?artcSeq=${newsId}`);
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
+  // useEffect(() => {
+  //   console.log(data);
+  // }, [data]);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  // if (isLoading) {
+  //   return <div>Loading...</div>;
+  // }
 
   const article = data?.data?.article;
 
   if (!article) {
-    return <div>No data available</div>;
+    return;
   }
 
   return (
