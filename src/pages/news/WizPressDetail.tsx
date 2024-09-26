@@ -29,9 +29,9 @@ export const WizPressDetail = () => {
     //     console.log(data);
     // }, [data]);
 
-    // if (isLoading) {
-    //     return <div>Loading...</div>;   
-    // }
+    if (isLoading) {
+        return;   
+    }
 
     if (error) {
         return <div>Error loading data</div>;
@@ -40,7 +40,7 @@ export const WizPressDetail = () => {
     const article = data?.data?.article;
 
     if (!article) {
-        return;
+        return <div>No data available</div>;
     }
 
     return (

@@ -30,14 +30,14 @@ const NewsDetail = () => {
   //   console.log(data);
   // }, [data]);
 
-  // if (isLoading) {
-  //   return <div>Loading...</div>;
-  // }
+  if (isLoading) {
+    return;
+  }
 
   const article = data?.data?.article;
 
   if (!article) {
-    return;
+    return <div>No data available</div>;
   }
 
   return (
