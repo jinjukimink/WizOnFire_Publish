@@ -11,7 +11,7 @@ export const UpNav = styled(motion.nav)<{isHovered:boolean,scrollY:number}>`
     left:0px;
     top: 0;
     height: 110px;
-    z-index: 101;
+    z-index: 103;
     gap: 40px;
     transition: color 0.3s ease-in-out;
     background-color:${({ isHovered  }) => (isHovered ? `${colors.white}` :`${colors.black}`)} ;//이 로직에서 문제가 생기는 건 확실함

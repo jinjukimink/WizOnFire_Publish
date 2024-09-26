@@ -17,6 +17,7 @@ import {
   BannerLight
 } from "./BannerStyles02";
 
+
 const Banner02 = () => {
 
   const { data } = useFetchData<TMonthlyPlayer>("media/monthlyPlayer");
