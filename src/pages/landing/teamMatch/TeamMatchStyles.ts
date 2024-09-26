@@ -7,7 +7,6 @@ export const TeamMatchContainer = styled.section`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center ;
-    max-width: 1690px;
     width: 100vw;
     height: 100vh;
     display: flex;
