@@ -41,10 +41,10 @@ import colors from "../../../assets/Colors";
 
 
     export const TeamLogo = styled.img`
-    width: 90px;
-    height: 90px;
-    margin-top:50px;
-    margin-bottom: -60px;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-bottom: -30px;
     `;
 
     export const VSWrapper = styled.div`
@@ -54,6 +54,7 @@ import colors from "../../../assets/Colors";
     `;
 
     export const VS = styled.img`
+  
     `;
 
     export const PlayerInfo = styled.div`

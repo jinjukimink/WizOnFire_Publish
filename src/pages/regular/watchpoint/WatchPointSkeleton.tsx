@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-import { Wrapper, WatchPointWrapper, TableBox, PitchTable, LineUpContainer, LineUpWrapper, TeamInfoWrapper } from './WatchPointBoxStyles';
+import { Wrapper, WatchPointWrapper, TableBox, PitchTable,LineUpWrapper, TeamInfoWrapper, LineUpContainer } from './WatchPointBoxStyles';
 import { PitchRecordLabel } from '../boxScore/recordButton/pitchRecords/PitchRecordStyles';
 import { LineUpBox, TeamWrapper, VSWrapper } from './LineUpStyles';
 import { vs } from '../../../assets/assets';
@@ -61,7 +61,7 @@ const TeamLogo = styled(SkeletonBox)`
   width: 90px;
   height: 90px;
   margin-top: 50px;
-  margin-bottom: -60px;
+  margin-bottom: -20px;
   border-radius: 5px;
 `;
 

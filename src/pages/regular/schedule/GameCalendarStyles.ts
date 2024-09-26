@@ -43,7 +43,7 @@ export const StyledCalendarContainer = styled.div`
     }
 
     .rbc-day-bg {
-        min-height: 110px; /* 각 date cell의 최소 높이 설정 */
+        min-height: 100px; /* 각 date cell의 최소 높이 설정 */
         max-height: 200px; /* 최대 높이 설정 */
         overflow: hidden;
         position:relative;

@@ -5,6 +5,7 @@ import Banner01 from "./banner/Banner01";
 import Banner02 from "./banner/Banner02";
 import Gallery from "./gallery/Gallery";
 import HighLight from "./highLight/HighLight";
+import HomeSkeleton from "./HomeSkeleton";
 import { StartImage, StartWizNews } from "./HomeStyles"
 import TeamMatch from "./teamMatch/TeamMatch";
 
@@ -12,7 +13,7 @@ const Home = () => {
   const { data, isLoading, error } = useFetchData<THotIssue[]>('media/hotissue?count=10'); 
 
   console.log('data',data);
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <HomeSkeleton/>;
   if (error) return <p>{error}</p>;
 
   return (

@@ -14,13 +14,11 @@ import { vs } from "../../../assets/assets";
 import WatchPointSkeleton from "./WatchPointSkeleton";
 
 const WatchPointBox = () => {
-  // 가장 최신 게임 가져오기
-  const { data: game } = useFetchData<TGameResponse>("//game/recentGames");
+  const { data: game } = useFetchData<TGameResponse>("game/recentGames");
   const current: TGameData | undefined = game?.data?.current;
 
-  const [apiUrl, setApiUrl] = useState<string>("");
-  const [gameData, setGameData] = useState<TWatchPointResponse | null>(null);
-  const [loading, setLoading] = useState<boolean>(true); // 로딩 상태 추가
+  const [apiUrl, setApiUrl] = useState<string>(""); // apiUrl 상태 추가
+  const { data: gameData, isLoading } = useFetchData<TWatchPointResponse>(apiUrl); // apiUrl을 사용하여 데이터 가져오기
 
   // 계산된 승률
   const calculatedWinRate = gameData
@@ -74,7 +72,6 @@ const WatchPointBox = () => {
 
   // 팀 순위 테이블 데이터 변환
   const transformTeamRankData = (data: TWatchPointResponse) => {
-    setGameData(data); // 원본 데이터 저장
     return [
       {
         win: data.data.homeTeamRank?.win,
@@ -156,7 +153,7 @@ const WatchPointBox = () => {
       }
     ];
   };
-  
+
   // 팀 순위 테이블
   const { getHeaderGroups, getRowModel } = useTable({
     apiUrl: apiUrl,
@@ -169,7 +166,7 @@ const WatchPointBox = () => {
     apiUrl: apiUrl,
     columnDefs: pitcherColumnDefs,
     transformData: transformPitcherData,
-});
+  });
 
   const homeLineupData = gameData?.data.homeLineup?.map(player => ({
     playerName: player.playerName!,
@@ -184,25 +181,8 @@ const WatchPointBox = () => {
   useEffect(() => {
     if (current) {
       setApiUrl(`/game/watchpoint?gameDate=${current.gameDate}&gmkey=${current.gmkey}`);
-      setLoading(true); // API 호출 전 로딩 시작
     }
   }, [current]);
-
-  useEffect(() => {
-    if (apiUrl) {
-      const fetchData = async () => {
-        setLoading(true); // 데이터 로딩 시작
-        // 데이터 fetching 로직
-        // ...
-        setLoading(false); // 데이터 로딩 완료
-      };
-      fetchData();
-    }
-  }, [apiUrl]);
-
-  if (!loading) {
-    return <WatchPointSkeleton />; // 로딩 중일 때 스켈레톤 반환
-  }
 
   // Next 버튼 클릭 시 호출되는 함수
   const handleNextGame = () => {
@@ -222,107 +202,112 @@ const WatchPointBox = () => {
     }
   };
 
+    // 로딩 중일 때 스켈레톤 반환
+  if (isLoading) {
+    return <WatchPointSkeleton />;
+  }
+
   return (
     <>
-    <Wrapper>
-      <WatchPointWrapper>
-        <WatchPointHeader>
-          <ScoreArrowBox>
-            <GrPrevious onClick={handlePrevGame} style={{ scale: "150%" }} />
+      <Wrapper>
+        <WatchPointWrapper>
+          <WatchPointHeader>
+            <ScoreArrowBox>
+              <GrPrevious onClick={handlePrevGame} style={{ scale: "150%" }} />
               <div>{gameData?.data?.gameScore?.displayDate}</div>
-            <GrNext onClick={handleNextGame} style={{ scale: "150%" }} />
-          </ScoreArrowBox>
-        </WatchPointHeader>
-        <TeamInfoWrapper>
-          <TeamInfoBox>
-            <LogoBox src={gameData?.data?.gameScore?.homeLogo} alt="Home Team" />
-            <span>{gameData?.data?.gameScore?.home}(홈)</span>
-          </TeamInfoBox>
-          <TeamInfoBox>
-            <LogoBox src={gameData?.data?.gameScore?.visitLogo} alt="Visit Team" />
-            <span>{gameData?.data?.gameScore?.visit}(원정)</span>
-          </TeamInfoBox>
-        </TeamInfoWrapper>
-      </WatchPointWrapper>
-  
-      {/* 팀 순위 테이블 */}
-      <TableBox>
-        <thead>
-          {getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id}>
-              {headerGroup.headers.map((header) => (
-                <ScoreHeaderCell key={header.id}>
-                  {flexRender(header.column.columnDef.header, header.getContext())}
-                </ScoreHeaderCell>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody>
-          {getRowModel().rows.map((row) => (
-            <ScoreRow key={row.id}>
-              {row.original.isRankRow ? (
-                <>
-                  <ScoreCell colSpan={4}>{row.original.win}</ScoreCell>
-                  <ScoreCell>{row.original.vs}</ScoreCell>
-                  <ScoreCell colSpan={4}>{row.original.win2}</ScoreCell>
-                </>
-              ) : (
-                row.getVisibleCells().map((cell) => (
-                  <ScoreCell key={cell.id}>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </ScoreCell>
-                ))
-              )}
-            </ScoreRow>
-          ))}
-        </tbody>
-      </TableBox>
-    </Wrapper>
-    
-    {/* 투수 비교 테이블 */}
-    <PitchTable>
-      <PitchRecordLabel>선발투수 비교</PitchRecordLabel>
-      <PitchRecordTable>
-        <thead>
-          {getPitcherHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id}>
-              {headerGroup.headers.map((header) => (
-                <ScoreHeaderCell key={header.id}>
-                  {flexRender(header.column.columnDef.header, header.getContext())}
-                </ScoreHeaderCell>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody>
-          {getPitcherRowModel().rows.map((row, index) => (
-            <ScoreRow key={row.id} style={index === 0 ? { color: 'red' } : {}}>
-              {row.getVisibleCells().map((cell) => (
-                <ScoreCell key={cell.id} 
-                  style={{ 
-                  color: (index === 0 ? 'red' : 'inherit'), // index가 0일 때 빨간색
-                  backgroundColor: (index === 0 ? 'rgba(255, 153, 153, 0.1)' : 'inherit') // index가 0일 때 배경색 적용
-                }}>
-                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </ScoreCell>
-              ))}
-            </ScoreRow>
-          ))}
-        </tbody>
-      </PitchRecordTable>
-    </PitchTable>
+              <GrNext onClick={handleNextGame} style={{ scale: "150%" }} />
+            </ScoreArrowBox>
+          </WatchPointHeader>
+          <TeamInfoWrapper>
+            <TeamInfoBox>
+              <LogoBox src={gameData?.data?.gameScore?.homeLogo} alt="Home Team" />
+              <span>{gameData?.data?.gameScore?.home}(홈)</span>
+            </TeamInfoBox>
+            <TeamInfoBox>
+              <LogoBox src={gameData?.data?.gameScore?.visitLogo} alt="Visit Team" />
+              <span>{gameData?.data?.gameScore?.visit}(원정)</span>
+            </TeamInfoBox>
+          </TeamInfoWrapper>
+        </WatchPointWrapper>
 
-  <LineUpContainer>
-    <PitchRecordLabel>라인업</PitchRecordLabel>
-    <LineUpWrapper>
-      <LineUp lineup={homeLineupData} logo={gameData?.data.gameScore?.homeLogo || ''} />
-      <VSWrapper>
-          <img src={vs}/>
-        </VSWrapper>
-      <LineUp lineup={visitLineupData} logo={gameData?.data.gameScore?.visitLogo || ''} />
-    </LineUpWrapper>
-    </LineUpContainer>
+        {/* 팀 순위 테이블 */}
+        <TableBox>
+          <thead>
+            {getHeaderGroups().map((headerGroup) => (
+              <tr key={headerGroup.id}>
+                {headerGroup.headers.map((header) => (
+                  <ScoreHeaderCell key={header.id}>
+                    {flexRender(header.column.columnDef.header, header.getContext())}
+                  </ScoreHeaderCell>
+                ))}
+              </tr>
+            ))}
+          </thead>
+          <tbody>
+            {getRowModel().rows.map((row) => (
+              <ScoreRow key={row.id}>
+                {row.original.isRankRow ? (
+                  <>
+                    <ScoreCell colSpan={4}>{row.original.win}</ScoreCell>
+                    <ScoreCell>{row.original.vs}</ScoreCell>
+                    <ScoreCell colSpan={4}>{row.original.win2}</ScoreCell>
+                  </>
+                ) : (
+                  row.getVisibleCells().map((cell) => (
+                    <ScoreCell key={cell.id}>
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    </ScoreCell>
+                  ))
+                )}
+              </ScoreRow>
+            ))}
+          </tbody>
+        </TableBox>
+      </Wrapper>
+      
+      {/* 투수 비교 테이블 */}
+      <PitchTable>
+        <PitchRecordLabel>선발투수 비교</PitchRecordLabel>
+        <PitchRecordTable>
+          <thead>
+            {getPitcherHeaderGroups().map((headerGroup) => (
+              <tr key={headerGroup.id}>
+                {headerGroup.headers.map((header) => (
+                  <ScoreHeaderCell key={header.id}>
+                    {flexRender(header.column.columnDef.header, header.getContext())}
+                  </ScoreHeaderCell>
+                ))}
+              </tr>
+            ))}
+          </thead>
+          <tbody>
+            {getPitcherRowModel().rows.map((row, index) => (
+              <ScoreRow key={row.id} style={index === 0 ? { color: 'red' } : {}}>
+                {row.getVisibleCells().map((cell) => (
+                  <ScoreCell key={cell.id} 
+                    style={{ 
+                      color: (index === 0 ? 'red' : 'inherit'), // index가 0일 때 빨간색
+                      backgroundColor: (index === 0 ? 'rgba(255, 153, 153, 0.1)' : 'inherit') // index가 0일 때 배경색 적용
+                  }}>
+                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </ScoreCell>
+                ))}
+              </ScoreRow>
+            ))}
+          </tbody>
+        </PitchRecordTable>
+      </PitchTable>
+
+      <LineUpContainer>
+        <PitchRecordLabel>라인업</PitchRecordLabel>
+        <LineUpWrapper>
+          <LineUp lineup={homeLineupData} logo={gameData?.data.gameScore?.homeLogo || ''} />
+          <VSWrapper>
+              <img src={vs}/>
+          </VSWrapper>
+          <LineUp lineup={visitLineupData} logo={gameData?.data.gameScore?.visitLogo || ''} />
+        </LineUpWrapper>
+      </LineUpContainer>
     </>
   );
 }

@@ -16,11 +16,6 @@ export const StartImage = styled.div`
     position: relative;
 `;
 
-export const ArrowWapper=styled.img`
-    width:90px;
-    height:80px;
-
-`
 export const StartWizNews = styled.section`
     z-index: 23;
     position: absolute;
