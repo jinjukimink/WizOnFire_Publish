@@ -284,7 +284,7 @@ const Header = () => {
                   </SubCategory>
                 ))
               ) : (
-                <div style={{ width: "50px" }} /> 
+                <div style={{ width: "59px" }} /> 
               )}
             </SubCategoryColumn>
           ))}
