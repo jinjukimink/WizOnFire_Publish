@@ -42,7 +42,6 @@ export type TscheduleList = {
   };
 };
 
-
 export type TEvent ={
   start: Date;
   end: Date;
@@ -121,8 +120,6 @@ const CalendarComponent = () => {
     setCurrentDate(newDate);
   };
 
-
-
   // 홈이 kt 일때 배경색 변경
   const dayPropGetter = (date: { toDateString: () => string; }) => {
     const isHomeKt = events.some(event => 
@@ -194,7 +191,7 @@ const CalendarComponent = () => {
             <GrNext size={25} />
           </Button>
         </MonthSelector>
-        <div style={{display:'flex', zIndex: 0}}>
+        <div style={{display:'flex'}}>
           <Outcome outcome='승'>승</Outcome>
           <Outcome outcome='패'>패</Outcome>
           <Outcome outcome='무'>무</Outcome>

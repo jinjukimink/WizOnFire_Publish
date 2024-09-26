@@ -1,4 +1,4 @@
-import { TeamWrapper, TeamLogo, FieldWrapper, PlayerPosition, PlayerInfo, LineUpBox, VSWrapper, VS } from "./LineUpStyles";
+import { TeamWrapper, TeamLogo, FieldWrapper, PlayerPosition, PlayerInfo, LineUpBox } from "./LineUpStyles";
 
 const positions: { [key: string]: { top: string; left: string } } = {
     "1": { top: '55%', left: '50%' }, 
