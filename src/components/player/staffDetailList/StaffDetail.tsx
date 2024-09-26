@@ -156,7 +156,7 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
             </InfoList>
             {
             (detailPath !== "coachdetail" && isCatcher && totalRecords?.length > 0) ? 
-            <SummaryInfo> {totalRecords && totalRecords[0].gyear} 정규리그 성적 : 타율  {regularLeagueData.hra} / 안타 {regularLeagueData.hit} / 타점 {regularLeagueData.rbi}/ 홈런 {regularLeagueData.hr}</SummaryInfo>
+            <SummaryInfo> {totalRecords && totalRecords[0].gyear} 정규리그 성적 : 타율  {regularLeagueData.hra} / 안타 {regularLeagueData.hit} / 타점 {regularLeagueData.rbi} / 홈런 {regularLeagueData.hr}</SummaryInfo>
             : detailPath!=="coachdetail" && totalRecords?.length > 0 ? <SummaryInfo>{totalRecords[0].gyear} 정규리그 성적: 평균자책점 {regularLeagueData.era} / {regularLeagueData.w} 승 / {regularLeagueData.l} 패 / {regularLeagueData.sv} 세이브</SummaryInfo>:null
             }
             {(totalRecords?.length === 0 && isCatcher) ? <SummaryInfo>2024 정규리그 성적 :타율 - / 안타 - / 타점 - / 홈런 - </SummaryInfo> : (totalRecords?.length === 0 && !isCatcher) && detailPath!=="coachdetail" &&<SummaryInfo>
