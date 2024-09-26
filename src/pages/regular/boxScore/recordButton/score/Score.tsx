@@ -18,7 +18,6 @@ import {
     ScoreInfo,
 } from "./ScoreStyles"
 import ScoreSkeleton from "./ScoreSkeleton";
-import NotFound from "../../../../../components/NotFound";
 
 type TScoreType = {
     apiUrl: string;
@@ -124,7 +123,7 @@ const Score = ({apiUrl,onPrevClick,onNextClick} : TScoreType) => {
                     score={currentGame?.vscore}
                 />
             </ScoreBoxWrapper>
-        </ScoreWrapper>
+        
         <ScoreTable>
             <thead>
                 {getHeaderGroups().map(headerGroup => (
@@ -149,6 +148,7 @@ const Score = ({apiUrl,onPrevClick,onNextClick} : TScoreType) => {
                 ))}
             </tbody>
         </ScoreTable>
+        </ScoreWrapper>
         </>
     );
 }
