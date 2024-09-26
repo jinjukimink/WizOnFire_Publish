@@ -2,9 +2,10 @@ import useFetchData from '../../hooks/useFetchData';
 import { WizPressContainer, NewsList, NewsItem, Title, MetaInfo, Views, SearchBarWrapper, Pagination, ArticleIndex, SkeletonWrapper, SkeletonNewsItem, SkeletonViews,ViewsIcon,SkeletonTitle } from './WizPressStyles';
 import { useState, useEffect } from 'react';
 import SearchBar from '../../components/common/searchbar/SearchBar';
-import colors from '../../assets/Colors'; // Import your colors
+import colors from '../../assets/Colors';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/common/button/Button';
+// import Skeleton from 'react-loading-skeleton';
 
 interface Article {
   artcSeq: number;
@@ -30,7 +31,7 @@ const WizPress = () => {
   const [startPage] = useState(1);
   const navigate = useNavigate();
 
-  // 검색어 변경 시 useEffect로 새로운 데이터 가져오기
+  // 검색어 변경 시 새로운 데이터 가져오기
   useEffect(() => {
     if (data && data.data && data.data.list) {
       const indexOfLastItem = currentPage * itemsPerPage;
@@ -53,6 +54,7 @@ const WizPress = () => {
   if (isLoading) {
     return (
       <SkeletonWrapper>
+        {/* <Skeleton width={169} height={29} style={{ marginBottom: '-2px',top: '-60px' } }/> */}
         {Array.from({ length: itemsPerPage }).map((_, index) => (
           <SkeletonNewsItem key={index}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
@@ -76,7 +78,6 @@ const WizPress = () => {
           onSearch={(term) => setSearchTerm(term)}
         />
       </SearchBarWrapper>
-
       <NewsList>
         {currentItems.length > 0 ? (
           currentItems.map((article: Article, index: number) => (

@@ -6,7 +6,7 @@ import colors from '../../assets/Colors';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/common/button/Button';
 import Skeleton from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css'; // skeleton 스타일 적용
+import 'react-loading-skeleton/dist/skeleton.css';
 
 interface Article {
   artcSeq: number;
@@ -39,6 +39,7 @@ const News = () => {
   const maxVisibleButtons = 5;
   const navigate = useNavigate();
 
+  // 검색어 변경 시 새로운 데이터 가져오기
   useEffect(() => {
     if (data && data.data && data.data.list) {
       const indexOfLastItem = currentPage * itemsPerPage;
