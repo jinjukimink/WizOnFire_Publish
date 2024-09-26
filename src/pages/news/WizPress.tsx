@@ -1,9 +1,8 @@
 import useFetchData from '../../hooks/useFetchData';
-import { WizPressContainer, NewsList, NewsItem, Title, MetaInfo, Views, SearchBarWrapper, Pagination, ArticleIndex, SkeletonWrapper, SkeletonNewsItem } from './WizPressStyles';
+import { WizPressContainer, NewsList, NewsItem, Title, MetaInfo, Views, SearchBarWrapper, Pagination, ArticleIndex, SkeletonWrapper, SkeletonNewsItem, SkeletonViews,ViewsIcon,SkeletonTitle } from './WizPressStyles';
 import { useState, useEffect } from 'react';
 import SearchBar from '../../components/common/searchbar/SearchBar';
 import colors from '../../assets/Colors'; // Import your colors
-import { SkeletonTitle, ViewsIcon } from './NewsStyles';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/common/button/Button';
 
@@ -56,7 +55,10 @@ const WizPress = () => {
       <SkeletonWrapper>
         {Array.from({ length: itemsPerPage }).map((_, index) => (
           <SkeletonNewsItem key={index}>
-            <SkeletonTitle />
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+              <SkeletonTitle />
+              <SkeletonViews />
+            </div>
           </SkeletonNewsItem>
         ))}
       </SkeletonWrapper>
