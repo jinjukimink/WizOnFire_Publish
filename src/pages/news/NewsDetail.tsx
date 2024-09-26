@@ -1,3 +1,4 @@
+import { useParams } from 'react-router-dom';
 import useFetchData from '../../hooks/useFetchData';
 import { NewsContainer, Title, MetaInfo, Views, ViewsIcon, Thumbnail } from './NewsStyles';
 // import { useEffect } from "react";
