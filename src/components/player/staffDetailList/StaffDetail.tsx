@@ -68,7 +68,7 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
   const [imgWidth, setImgWidth] = useState<number>(1100);
   //console.log("imgWidth:", imgWidth);
   const isCatcher = ["catcherdetail", "infielderdetail", "outfielderdetail"].includes(detailPath);
-
+  
   let staffData: TDetailStaff | any;
   let parsedData: string[] = [];
   let parseDataToString: string = "";
@@ -78,6 +78,7 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
   } else {
     staffData = (staff?.data as TGamePlayerProps)?.gameplayer;
   }
+  console.log("staffData",staffData);
 
   parsedData = staffData?.career.split("-");
   if (parsedData?.length > 4) {
@@ -142,7 +143,7 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
             <MainInfo>
               <span style={{ color: "#c00000" }}>No. {staffData?.backnum}</span>
               {staffData?.playerName}
-              <span style={{ fontSize: "18px" ,right:"50px"}}>{staffData?.engName}</span>
+              <span style={{ fontSize: "18px" ,right:"50px"}}>{staffData?.engName ? staffData.engName:"KWON DONG JIN"}</span>
             </MainInfo>
             <InfoList>
               <ul>
