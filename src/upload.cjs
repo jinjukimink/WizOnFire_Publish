@@ -18,15 +18,29 @@ const firebaseApp = initializeApp(firebaseConfig);
 const database = getDatabase(firebaseApp);
 
 async function uploadJSONData() {
-    const jsonFiles = ['src/json/coachlist.json','src/json/catcherlist.json','src/json/infielderlist.json','src/json/outfielderlist.json',
-    'src/json/pitcherlist.json','src/json/cheerleader.json']; // 경로 확인
+    const jsonFiles = [
+      'src/json/player/coachlist.json',
+      'src/json/player/catcherlist.json',
+      'src/json/player/infielderlist.json',
+      'src/json/player/outfielderlist.json',
+      'src/json/player/pitcherlist.json',
+      'src/json/player/cheerleader.json',
+      'src/json/landing/recentGame.json',
+      'src/json/landing/teamranking.json'
+    ]; // 경로 확인
 
     for (const file of jsonFiles) {
         try {
             const data = JSON.parse(fs.readFileSync(file, 'utf-8'));
             // Firebase 노드 이름 생성: 파일명에서 경로를 제거하고 .json 확장자도 제거
             const fileName = file.split('/').pop().replace('.json', ''); // coachlist
-            const newRef = ref(database,`player/${fileName}`); // 적절한 노드 이름으로 설정
+              // 경로에 따른 처리 
+            let newRef;
+            if (file.includes('recentGame') || file.includes('teamranking')) {
+              newRef = ref(database,`game/${fileName}`); 
+            } else {
+              newRef = ref(database,`player/${fileName}`); 
+            }
             await set(newRef, data);
             console.log(`Uploaded ${file} successfully.`);
         } catch (error) {
