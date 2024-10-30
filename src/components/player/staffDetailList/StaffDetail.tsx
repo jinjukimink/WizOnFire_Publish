@@ -65,7 +65,7 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
 
   const categoryList = ["정규리그 기록", "최근 5경기", "통산기록"];
   const imgRef = useRef<HTMLImageElement>(null);
-  const [imgWidth, setImgWidth] = useState<numbr>(1100);
+  const [imgWidth, setImgWidth] = useState<number>(1100);
   //console.log("imgWidth:", imgWidth);
   const isCatcher = ["catcherdetail", "infielderdetail", "outfielderdetail"].includes(detailPath);
   

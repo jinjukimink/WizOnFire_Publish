@@ -19,31 +19,21 @@ const database = getDatabase(firebaseApp);
 
 async function uploadJSONData() {
     const jsonFiles = [
-      'src/json/player/coachdetail/60100.json',
-      'src/json/player/coachdetail/70408.json',
-      'src/json/player/coachdetail/70553.json',
-      'src/json/player/coachdetail/71835.json',
-      'src/json/player/coachdetail/72801.json',
-
-      'src/json/player/coachdetail/73136.json',
-      'src/json/player/coachdetail/73228.json',
-      'src/json/player/coachdetail/74339.json',
-      'src/json/player/coachdetail/75668.json',
-      'src/json/player/coachdetail/77609.json',
-
-      'src/json/player/coachdetail/77654.json',
-      'src/json/player/coachdetail/77733.json',
-      'src/json/player/coachdetail/79191.json',
-      'src/json/player/coachdetail/89620.json',
-      'src/json/player/coachdetail/90025.json',
-
-      'src/json/player/coachdetail/92401.json',
-      'src/json/player/coachdetail/94415.json',
-      'src/json/player/coachdetail/94843.json',
-      'src/json/player/coachdetail/97351.json',
-      'src/json/player/coachdetail/75149.json'
-
-
+      'src/json/player/infielderdetail/50054.json',
+      'src/json/player/infielderdetail/50092.json',
+      'src/json/player/infielderdetail/51003.json',
+      'src/json/player/infielderdetail/62556.json',
+      'src/json/player/infielderdetail/64006.json',
+      'src/json/player/infielderdetail/64115.json',
+      'src/json/player/infielderdetail/64504.json',
+      'src/json/player/infielderdetail/68050.json',
+      'src/json/player/infielderdetail/68504.json',
+      'src/json/player/infielderdetail/69056.json',
+      'src/json/player/infielderdetail/69064.json',
+      'src/json/player/infielderdetail/73113.json',
+      'src/json/player/infielderdetail/75334.json',
+      'src/json/player/infielderdetail/76313.json',
+      'src/json/player/infielderdetail/79402.json',
     ]; // 경로 확인
 
     for (const file of jsonFiles) {
@@ -56,7 +46,7 @@ async function uploadJSONData() {
             if (file.includes('recentGame') || file.includes('teamranking')) {
               newRef = ref(database,`game/${fileName}`); 
             } else {
-              newRef = ref(database,`player/coachdetail/${fileName}`); 
+              newRef = ref(database,`player/infielderdetail/${fileName}`); 
             }
             await set(newRef, data);
             console.log(`Uploaded ${file} successfully.`);
