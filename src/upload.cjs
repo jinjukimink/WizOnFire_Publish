@@ -25,8 +25,12 @@ async function uploadJSONData() {
       'src/json/player/outfielderlist.json',
       'src/json/player/pitcherlist.json',
       'src/json/player/cheerleader.json',
-      'src/json/landing/recentGame.json',
-      'src/json/landing/teamranking.json'
+      'src/json/game/recentGames.json',
+      'src/json/game/teamranking.json',
+      'src/json/game/monthschedule-yearMonth-202410.json',
+      'src/json/game/monthschedule-yearMonth-202409.json',
+      'src.json/game/boxscore-gameDate-20241011-gmkey-33331011KTLG0.json',
+
     ]; // 경로 확인
 
     for (const file of jsonFiles) {
@@ -36,9 +40,10 @@ async function uploadJSONData() {
             const fileName = file.split('/').pop().replace('.json', ''); // coachlist
               // 경로에 따른 처리 
             let newRef;
-            if (file.includes('recentGame') || file.includes('teamranking')) {
+            if (file.includes('recentGame') || file.includes('teamranking')||file.includes('monthschedule')) {
               newRef = ref(database,`game/${fileName}`); 
-            } else {
+            } 
+            else {
               newRef = ref(database,`player/${fileName}`); 
             }
             await set(newRef, data);

@@ -11,7 +11,7 @@ import useLoading from "../../../hooks/useLoading";
 
 const MatchBox = () => {
   const navigate = useNavigate();
-  const { data : game } = useFetchData<TGameResponse>("game/recentGames");
+  const { data : game } = useFetchData<TGameResponse>("game/recentGames.json");
   const {current, prev, next} = game?.data || {};
   //console.log('Gamedata', game);
 

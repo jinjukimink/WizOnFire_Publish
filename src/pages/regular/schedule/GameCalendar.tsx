@@ -80,10 +80,10 @@ const CalendarComponent = () => {
 
   //const apiUrl = `game/monthschedule?yearMonth=${yearMonth}`;
   const apiUrl = isKt
-    ? `/game/monthschedule?yearMonth=${yearMonth}`
-    : `/game/allgameschedule?yearMonth=${yearMonth}`;
+    ? `game/monthschedule-yearMonth-${yearMonth}.json`
+    : `game/allgameschedule-yearMonth-${yearMonth}.json`;
 
-
+  console.log("호출한 ",apiUrl);
   const { data:scheduleList, isLoading,error } = useFetchData<TscheduleList>(apiUrl);
 
   useEffect(() => {
