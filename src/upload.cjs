@@ -139,7 +139,7 @@ async function uploadJSONData() {
               }
               await set(newRef, data);
               console.log(`Uploaded ${file} successfully.`);
-              
+
         } catch (error) {
             console.error(`Error uploading data from ${file}:`, error);
         }

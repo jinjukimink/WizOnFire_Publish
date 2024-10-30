@@ -59,7 +59,7 @@ const StaffDetail = ({ detailPath }: TStaffDetailProps) => {
   const [params] = useSearchParams();
   const pcode = params.get("pcode");
   const { data: staff, error } = useFetchData<{ data: TGamePlayerProps } | { data: TCoachData }>(
-    `player/${detailPath}?pcode=${pcode}`
+    `player/${detailPath}/${pcode}.json`
   );
   //console.log(staff);
 
