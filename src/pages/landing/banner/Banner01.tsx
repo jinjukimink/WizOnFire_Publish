@@ -19,7 +19,7 @@ import { TRanking } from "../../../types/landing";
 
 const Banner01 = () => {
 
-  const { data } = useFetchData<TRanking>("game/teamranking.json"); 
+  const { data } = useFetchData<TRanking>("game/ktwizteamrank.json"); 
   const ranking = data?.data?.ktWizTeamRank;
 
   return (
