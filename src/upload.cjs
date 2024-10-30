@@ -42,6 +42,8 @@ async function uploadJSONData() {
       'src/json/player/coachdetail/94843.json',
       'src/json/player/coachdetail/97351.json',
       'src/json/player/coachdetail/75149.json'
+
+
     ]; // 경로 확인
 
     for (const file of jsonFiles) {
