@@ -22,7 +22,7 @@ import { THighLightResponse } from "../../../types/landing";
 import { Link } from "react-router-dom";
 
 const HighLight = () => {
-    const { data } = useFetchData<THighLightResponse>("media/highlightlist?count=10");
+    const { data } = useFetchData<THighLightResponse>('media/highlightlist-count-10.json');
 
     return (
         <HighLightContainer>

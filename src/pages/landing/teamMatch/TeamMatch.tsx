@@ -20,7 +20,7 @@ import {
 
 const TeamMatch = () => {
     const navigate = useNavigate();
-    const { data : game } = useFetchData<TGameResponse>("game/recentGame.json");
+    const { data : game } = useFetchData<TGameResponse>("game/recentGames.json");
     const { current, prev, next } = game?.data || {};
     const [ index, setIndex ] = useState(1);
 
@@ -54,9 +54,9 @@ const TeamMatch = () => {
     return (
     <TeamMatchContainer>
         <TeamMathNews>
-            <GradientChip
-                margin="0 0 1% 21%"
-                main="KTWIZ" title="위즈게임" />
+            {/* <GradientChip
+                margin="0 0 0.5% 11%"
+                main="KTWIZ" title="위즈게임" /> */}
             <TeamMathTitle>TEAM&nbsp;&nbsp;MATCHES</TeamMathTitle>
             <TeamMatchLine />
         </TeamMathNews>
