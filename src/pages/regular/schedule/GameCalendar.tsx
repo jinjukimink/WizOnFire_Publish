@@ -64,7 +64,7 @@ export type TEvent ={
 }
 
 const CalendarComponent = () => {
-  const [currentDate, setCurrentDate] = useState(new Date()); // 현재 날짜 
+  const [currentDate, setCurrentDate] = useState(new Date(2024, 9, 11)); // 현재 날짜 
   const [events, setEvents] = useState<TEvent[]>([]);
   const [isKt,setIsKt] = useState(true);
   const navigate = useNavigate();

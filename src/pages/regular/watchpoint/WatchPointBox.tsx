@@ -15,7 +15,7 @@ import WatchPointSkeleton from "./WatchPointSkeleton";
 //import useLoading from "../../../hooks/useLoading";
 
 const WatchPointBox = () => {
-  const { data: game, isLoading: isLoadingRecent } = useFetchData<TGameResponse>("game/recentGames");
+  const { data: game, isLoading: isLoadingRecent } = useFetchData<TGameResponse>("//game/recentGames.json");
   const current: TGameData | undefined = game?.data?.current;
 
   const [apiUrl, setApiUrl] = useState<string>(""); // apiUrl 상태 추가
@@ -181,7 +181,7 @@ const WatchPointBox = () => {
 
   useEffect(() => {
     if (current) {
-      setApiUrl(`/game/watchpoint?gameDate=${current.gameDate}&gmkey=${current.gmkey}`);
+      setApiUrl(`/game/watchpoint-gameDate-${current.gameDate}-gmkey-${current.gmkey}.json`);
     }
   }, [current]);
 
@@ -190,7 +190,7 @@ const WatchPointBox = () => {
     if (gameData?.data?.schedule?.next) {
       const nextGameDate = gameData.data.schedule.next.gameDate;
       const nextGmkey = gameData.data.schedule.next.gmkey;
-      setApiUrl(`/game/watchpoint?gameDate=${nextGameDate}&gmkey=${nextGmkey}`);
+      setApiUrl(`/game/watchpoint-gameDate-${nextGameDate}-gmkey-${nextGmkey}.json`);
     }
   };
 
@@ -199,7 +199,7 @@ const WatchPointBox = () => {
     if (gameData?.data?.schedule?.prev) {
       const prevGameDate = gameData.data.schedule.prev.gameDate;
       const prevGmkey = gameData.data.schedule.prev.gmkey;
-      setApiUrl(`/game/watchpoint?gameDate=${prevGameDate}&gmkey=${prevGmkey}`);
+      setApiUrl(`/game/watchpoint-gameDate-${prevGameDate}-gmkey-${prevGmkey}.json`);
     }
   };
 

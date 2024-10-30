@@ -91,6 +91,35 @@ async function uploadJSONData() {
       // 'src/json/game/rank-pitcher-total-top5.json',
       // 'src/json/game/rank-pitcher-win-top3.json',
       // 'src/json/game/rank-crowd-gyear-2019.json',
+      //'src/json/game/watchpoint-gameDate-20241011-gmkey-33331011KTLG0.json'
+      // 'src/json/game/watchpoint-gameDate-20241009-gmkey-33331009LGKT0.json',
+      // 'src/json/game/watchpoint-gameDate-20241008-gmkey-33331008LGKT0.json',
+      // 'src/json/game/watchpoint-gameDate-20241006-gmkey-33331006KTLG0.json',
+      // 'src/json/game/watchpoint-gameDate-20241005-gmkey-33331005KTLG0.json',
+      // 'src/json/game/watchpoint-gameDate-20240928-gmkey-20240928WOKT0.json',
+      // 'src/json/game/watchpoint-gameDate-20240927-gmkey-20240927WOKT0.json',
+      // 'src/json/game/watchpoint-gameDate-20240924-gmkey-20240924LTKT0.json',
+      // 'src/json/game/watchpoint-gameDate-20240922-gmkey-20240922SKKT0.json',
+      // 'src/json/game/watchpoint-gameDate-20240921-gmkey-20240921SKKT0.json',
+      // 'src/json/game/watchpoint-gameDate-20240919-gmkey-20240919SSKT0.json',
+      // 'src/json/game/watchpoint-gameDate-20240918-gmkey-20240918SSKT0.json',
+      // 'src/json/game/watchpoint-gameDate-20240917-gmkey-20240917KTWO0.json',
+      // 'src/json/game/watchpoint-gameDate-20240916-gmkey-20240916HTKT0.json',
+      // 'src/json/game/watchpoint-gameDate-20240914-gmkey-20240914KTOB0.json',
+      // 'src/json/game/watchpoint-gameDate-20240912-gmkey-20240912NCKT0.json',
+      // 'src/json/game/watchpoint-gameDate-20240911-gmkey-20240911NCKT0.json',
+      // 'src/json/game/watchpoint-gameDate-20240910-gmkey-20240910NCKT0.json',
+      // 'src/json/game/watchpoint-gameDate-20240907-gmkey-20240907OBKT0.json',
+      // 'src/json/game/watchpoint-gameDate-20240906-gmkey-20240906KTNC0.json',
+      // 'src/json/game/watchpoint-gameDate-20240905-gmkey-20240905KTLT0.json',
+      // 'src/json/game/watchpoint-gameDate-20240904-gmkey-20240904KTLT0.json',
+      // 'src/json/game/watchpoint-gameDate-20240831-gmkey-20240831KTHH0.json',
+      // 'src/json/game/allgameschedule-yearMonth-202409.json',
+      // 'src/json/game/allgameschedule-yearMonth-202410.json'
+      // 'src/json/game/boxscore-gameDate-20241001-gmkey-66661001SKKT0.json',
+      // 'src/json/game/boxscore-gameDate-20241002-gmkey-44441002KTOB0.json',
+      // 'src/json/game/boxscore-gameDate-20241003-gmkey-44441003KTOB0.json'
+      
     ]; // 경로 확인
 
     for (const file of jsonFiles) {
@@ -100,7 +129,11 @@ async function uploadJSONData() {
             const fileName = file.split('/').pop().replace('.json', ''); // coachlist
               // 경로에 따른 처리 
               let newRef;
-              if (file.includes('recentGames') || file.includes('ktwizteamrank')) {
+              if (file.includes('recentGames') || 
+                  file.includes('ktwizteamrank') || 
+                  file.includes('watchpoint') ||
+                  file.includes('allgameschedule')
+                ) {
                 newRef = ref(database, `game/${fileName}`);
               } else if (
                 file.includes('highlightlist') || 
