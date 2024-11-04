@@ -20,7 +20,7 @@ import {
 
 const Banner02 = () => {
 
-  const { data } = useFetchData<TMonthlyPlayer>("media/monthlyPlayer");
+  const { data } = useFetchData<TMonthlyPlayer>("media/monthlyPlayer.json");
 
   return (
     <ShopContainer>
