@@ -51,53 +51,85 @@ async function uploadJSONData() {
       // 'src/json/article/newsdetail-artcSeq-190175.json',
       // 'src/json/article/newsdetail-artcSeq-190173.json',
       // 'src/json/article/wizpresslist-searchWord-.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-190975.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-190968.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-190967.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-190964.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-190961.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-190959.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-190872.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-190623.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-190444.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-190443.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-190372.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-189937.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-189558.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-189251.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-189033.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-188881.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-188615.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-188207.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-187938.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-187845.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-187765.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-187628.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-187594.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-187455.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-187410.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-187193.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-187073.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-186994.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-186852.json',
-      'src/json/article/wizpress/wizpressdetail-artcSeq-186231.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-190975.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-190968.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-190967.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-190964.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-190961.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-190959.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-190872.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-190623.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-190444.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-190443.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-190372.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-189937.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-189558.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-189251.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-189033.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-188881.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-188615.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-188207.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-187938.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-187845.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-187765.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-187628.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-187594.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-187455.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-187410.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-187193.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-187073.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-186994.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-186852.json',
+      // 'src/json/article/wizpress/wizpressdetail-artcSeq-186231.json',
     ]; // 경로 확인
 
-    for (const file of jsonFiles) {
+for (const file of jsonFiles) {
         try {
             const data = JSON.parse(fs.readFileSync(file, 'utf-8'));
             // Firebase 노드 이름 생성: 파일명에서 경로를 제거하고 .json 확장자도 제거
             const fileName = file.split('/').pop().replace('.json', ''); // coachlist
-              // 경로에 따른 처리
-            // let newRef;
-            // if (file.includes('recentGame') || file.includes('teamranking')) {
-            //   newRef = ref(database,`game/${fileName}`);
-            // } else {
-            //   newRef = ref(database,`player/${fileName}`);
-          // }
-          const newRef = ref(database,`/article/${fileName}`)
-          await set(newRef, data);
-          console.log(`Uploaded ${file} successfully.`);
+              // 경로에 따른 처리 
+              let newRef;
+              if (file.includes('recentGames') || file.includes('ktwizteamrank')) {
+                newRef = ref(database, `game/${fileName}`);
+              } else if (
+                file.includes('highlightlist') || 
+                file.includes('photolist') || 
+                file.includes('hotissue') || 
+                file.includes('monthlyPlayer')
+              ) {
+                newRef = ref(database, `media/${fileName}`);
+              } else if (
+                file.includes('boxscore-gameDate') || 
+                file.includes('boxscore') ||
+                file.includes('teamrankbyyear') ||
+                file.includes('rank-pitching') ||
+                file.includes('rank-batting') ||
+                file.includes('rank-teamvs') ||
+                file.includes('rank-periodteamrank') ||
+                file.includes('rank-batter-hr-top3') ||
+                file.includes('rank-batter-hra-top3') ||
+                file.includes('rank-batter-hr-top3') ||
+                file.includes('rank-batter-hra-top3') ||
+                file.includes('rank-crowd-gyear-2019') ||
+                file.includes('rank-crowd-gyear-2020') ||
+                file.includes('rank-crowd-gyear-2021') ||
+                file.includes('rank-crowd-gyear-2022') ||
+                file.includes('rank-crowd-gyear-2023') ||
+                file.includes('rank-crowd-gyear-2024') ||
+                file.includes('rank-kt-pitcher') ||
+                file.includes('rank-kt-batter') ||
+                file.includes('rank-total') ||
+                file.includes('rank-pitcher') ||
+                file.includes('rank-batter')
+              ) {
+                newRef = ref(database, `game/${fileName}`);
+              } else {
+                newRef = ref(database, `player/${fileName}`);
+              }
+              await set(newRef, data);
+              console.log(`Uploaded ${file} successfully.`);
+
         } catch (error) {
             console.error(`Error uploading data from ${file}:`, error);
         }
