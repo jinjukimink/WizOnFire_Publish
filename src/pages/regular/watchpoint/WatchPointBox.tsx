@@ -207,7 +207,7 @@ const WatchPointBox = () => {
   if (isLoadingRecent) {
         return <WatchPointSkeleton />;
       }
-  //   // 로딩 중일 때 스켈레톤 반환
+    // 로딩 중일 때 스켈레톤 반환
   // if (isLoading) {
   //   return <WatchPointSkeleton />;
   // }

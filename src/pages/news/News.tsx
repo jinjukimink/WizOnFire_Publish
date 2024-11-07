@@ -23,7 +23,6 @@ interface ApiResponse {
   };
 }
 
-// 썸네일 URL을 변환하는 함수
 const formatThumbnail = (thumbnailUrl: string) => {
   const baseUrl = 'https://wizzap.ktwiz.co.kr/';
   return thumbnailUrl.replace(/src="\/files/g, `src="${baseUrl}/files`);
@@ -35,11 +34,9 @@ const News = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
   const [currentItems, setCurrentItems] = useState<Article[]>([]);
-  const [startPage, setStartPage] = useState(1);
-  const maxVisibleButtons = 5;
+  const [isShowingFirstGroup, setIsShowingFirstGroup] = useState(true);
   const navigate = useNavigate();
 
-  // 검색어 변경 시 새로운 데이터 가져오기
   useEffect(() => {
     if (data && data.data && data.data.list) {
       const indexOfLastItem = currentPage * itemsPerPage;
@@ -58,35 +55,19 @@ const News = () => {
     }
   }, [currentPage, data]);
 
-  // 페이지 변경 처리
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
 
-  // 페이지 그룹 앞으로 이동
   const handleNextGroup = () => {
-    if (currentPage + maxVisibleButtons <= totalPages) {
-      setCurrentPage(currentPage + maxVisibleButtons);
-      setStartPage(startPage + maxVisibleButtons);
-    } else {
-      setCurrentPage(totalPages);
-      setStartPage(totalPages - maxVisibleButtons + 1);
-    }
+    setIsShowingFirstGroup(false);
+    setCurrentPage(6);
   };
 
-  // 페이지 그룹 뒤로 이동
   const handlePrevGroup = () => {
-    if (currentPage - maxVisibleButtons > 0) {
-      setCurrentPage(currentPage - maxVisibleButtons);
-      setStartPage(startPage - maxVisibleButtons);
-    } else {
-      setCurrentPage(1);
-      setStartPage(1);
-    }
+    setIsShowingFirstGroup(true);
+    setCurrentPage(1);
   };
-
-  const totalPages = Math.ceil((data?.data?.list.length || 0) / itemsPerPage);
-  const endPage = Math.min(startPage + maxVisibleButtons - 1, totalPages);
 
   const handleClick = (article: Article) => {
     navigate(`/media/wiznews/${article.artcSeq}`);
@@ -94,23 +75,21 @@ const News = () => {
 
   if (isLoading) {
     return (
-      <>
       <NewsContainer>
         <Skeleton width={169} height={29} style={{ marginBottom: '-2px', top: '-40px' }} />
         <NewsList>
           {Array.from({ length: itemsPerPage }).map((_, index) => (
             <div key={index} style={{ display: 'flex', alignItems: 'center', padding: '20px', borderBottom: `1px solid ${colors.ashGray}` }}>
-              <Skeleton width={50} height={25} style={{ marginRight: '10px' }} /> {/* 인덱스 */}
-              <Skeleton width={250} height={125} style={{ marginRight: '20px' }} /> {/* 썸네일 */}
+              <Skeleton width={50} height={25} style={{ marginRight: '10px' }} />
+              <Skeleton width={250} height={125} style={{ marginRight: '20px' }} />
               <div style={{ flex: 1 }}>
-                <Skeleton width={`60%`} height={25} style={{ marginBottom: '10px' }} /> {/* 제목 */}
-                <Skeleton width={80} height={15} /> {/* 조회수 */}
+                <Skeleton width={`60%`} height={25} style={{ marginBottom: '10px' }} />
+                <Skeleton width={80} height={15} />
               </div>
             </div>
           ))}
         </NewsList>
       </NewsContainer>
-      </>
     );
   }
 
@@ -119,7 +98,6 @@ const News = () => {
   }
 
   return (
-    <>
     <NewsContainer>
       <SearchBarWrapper>
         <SearchBar 
@@ -156,45 +134,51 @@ const News = () => {
         )}
       </NewsList>
 
-<Pagination>
-  {/* 이전 그룹으로 이동 */}
-  <Button
-    onClick={handlePrevGroup}
-    backgroundColor={currentPage === 1 ? colors.ashGray : colors.darkGray}
-    fontColor={colors.white}
-    padding="10px 15px"
-  >
-    &lt;&lt;
-  </Button>
-
-  {/* 개별 페이지 버튼 */}
-  {Array.from({ length: endPage - startPage + 1 }, (_, index) => {
-    const page = startPage + index;
-    return (
-      <Button
-        key={page}
-        onClick={() => handlePageChange(page)}
-        backgroundColor={currentPage === page ? colors.redPrimary : colors.silverGray}
-        fontColor={colors.white}
-        padding="10px 15px"
-      >
-        {page}
-      </Button>
-    );
-  })}
-
-  {/* 다음 그룹으로 이동 */}
-  <Button
-    onClick={handleNextGroup}
-    backgroundColor={currentPage === totalPages ? colors.ashGray : colors.darkGray}
-    fontColor={colors.white}
-    padding="10px 15px"
-  >
-    &gt;&gt;
-  </Button>
-</Pagination>
+      <Pagination>
+        {isShowingFirstGroup ? (
+          <>
+            {Array.from({ length: 5 }, (_, index) => index + 1).map((page) => (
+              <Button
+                key={page}
+                onClick={() => handlePageChange(page)}
+                backgroundColor={currentPage === page ? colors.redPrimary : colors.silverGray}
+                fontColor={colors.white}
+                padding="10px 15px"
+              >
+                {page}
+              </Button>
+            ))}
+            <Button
+              onClick={handleNextGroup}
+              backgroundColor={colors.darkGray}
+              fontColor={colors.white}
+              padding="10px 15px"
+            >
+              &gt;&gt;
+            </Button>
+          </>
+        ) : (
+          <>
+            <Button
+              onClick={handlePrevGroup}
+              backgroundColor={colors.darkGray}
+              fontColor={colors.white}
+              padding="10px 15px"
+            >
+              &lt;&lt;
+            </Button>
+            <Button
+              onClick={() => handlePageChange(6)}
+              backgroundColor={colors.redPrimary}
+              fontColor={colors.white}
+              padding="10px 15px"
+            >
+              6
+            </Button>
+          </>
+        )}
+      </Pagination>
     </NewsContainer>
-    </>
   );
 };
 

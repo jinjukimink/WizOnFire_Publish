@@ -65,7 +65,7 @@ const Score = ({apiUrl,onPrevClick,onNextClick} : TScoreType) => {
     });
 
     const memoizedPrevClick = useCallback(() => {
-        if (prevGame) onPrevClick(prevGame.gameDate, prevGame.gmkey);
+      if (prevGame) onPrevClick(prevGame.gameDate, prevGame.gmkey);
     }, [prevGame, onPrevClick]);
 
     const memoizedNextClick = useCallback(() => {
