@@ -44,8 +44,9 @@ const ButtonModal = styled.button`
 const Modal = ({setModalOpen} : { setModalOpen: React.Dispatch<React.SetStateAction<boolean>>}) => {
   return (
       <ModalWrapper>
-        <p>해당 일자 이전부터 <strong>데이터 파일 (~ 8 / 31) </strong>은</p>
-        <p>ktwiz의 저작권에 의해 열람이  <strong>불가능합</strong>니다</p>
+        {/* <p>해당 일자 이전부터 <strong>데이터 파일 (~ 8 / 31) </strong>은</p>
+        <p>ktwiz의 저작권에 의해 열람이  <strong>불가능합</strong>니다</p> */}
+        <p>ktwiz의 저작권에 의해 9월 4일부터 10월 11일까지의 데이터만 열람 가능합니다.</p>
         <ButtonModal onClick={()=>setModalOpen(false)}>닫기</ButtonModal>
       </ModalWrapper>
   );
