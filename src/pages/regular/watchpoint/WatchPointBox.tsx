@@ -19,7 +19,7 @@ const WatchPointBox = () => {
   const current: TGameData | undefined = game?.data?.current;
 
   const [apiUrl, setApiUrl] = useState<string>(""); // apiUrl 상태 추가
-  const { data: gameData,isLoading } = useFetchData<TWatchPointResponse>(apiUrl); // apiUrl을 사용하여 데이터 가져오기
+  const { data: gameData} = useFetchData<TWatchPointResponse>(apiUrl); // apiUrl을 사용하여 데이터 가져오기
   //const isLoading=useLoading();
   // 계산된 승률
   const calculatedWinRate = gameData
@@ -207,10 +207,10 @@ const WatchPointBox = () => {
   if (isLoadingRecent) {
         return <WatchPointSkeleton />;
       }
-    // 로딩 중일 때 스켈레톤 반환
-  if (isLoading) {
-    return <WatchPointSkeleton />;
-  }
+  //   // 로딩 중일 때 스켈레톤 반환
+  // if (isLoading) {
+  //   return <WatchPointSkeleton />;
+  // }
 
   return (
     <>
