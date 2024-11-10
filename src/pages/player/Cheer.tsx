@@ -120,7 +120,7 @@ const Title=styled.div`
 `
 
 const Cheer = () => {
-  const { data, error } = useFetchData<TCheerData|null>('player/cheerleader');
+  const { data, error } = useFetchData<TCheerData|null>('player/cheerleader.json');
   const fetchDataList = data?.data.list;
   //console.log(fetchDataList)
   const isLoading=useLoading();
