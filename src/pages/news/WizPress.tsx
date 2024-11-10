@@ -107,17 +107,19 @@ const WizPress = () => {
       </NewsList>
 
       <Pagination>
-        {/* << Button to go back to pages 1-5 */}
-        <Button
-          onClick={handlePrevGroup}
-          backgroundColor={showPageGroup === 'firstGroup' ? colors.ashGray : colors.darkGray}
-          fontColor={colors.white}
-          padding="10px 15px"
-        >
-          &lt;&lt;
-        </Button>
+        {/* << 버튼은 페이지 그룹이 첫 번째 그룹이 아닐 때만 표시 */}
+        {showPageGroup === 'lastPage' && (
+          <Button
+            onClick={handlePrevGroup}
+            backgroundColor={colors.darkGray}
+            fontColor={colors.white}
+            padding="10px 15px"
+          >
+            &lt;&lt;
+          </Button>
+        )}
 
-        {/* Page number buttons */}
+        {/* 페이지 번호 버튼 */}
         {showPageGroup === 'firstGroup'
           ? Array.from({ length: 5 }, (_, index) => {
               const page = index + 1;
@@ -145,15 +147,17 @@ const WizPress = () => {
             </Button>
           )}
 
-        {/* >> Button to go to page 6 */}
-        <Button
-          onClick={handleNextGroup}
-          backgroundColor={showPageGroup === 'lastPage' ? colors.ashGray : colors.darkGray}
-          fontColor={colors.white}
-          padding="10px 15px"
-        >
-          &gt;&gt;
-        </Button>
+        {/* >> 버튼은 페이지 그룹이 첫 번째 그룹일 때만 표시 */}
+        {showPageGroup === 'firstGroup' && (
+          <Button
+            onClick={handleNextGroup}
+            backgroundColor={colors.darkGray}
+            fontColor={colors.white}
+            padding="10px 15px"
+          >
+            &gt;&gt;
+          </Button>
+        )}
       </Pagination>
     </WizPressContainer>
   );
