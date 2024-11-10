@@ -1,4 +1,3 @@
-import GradientChip from "../../../components/common/gradientChip/GradientChip";
 import { rightArrow, leftArrow } from "../../../assets/assets";
 import ScoreBox from "./ScoreBox";
 import { GradientCircle } from "../../../components/common/gradientChip/GradientChipStyles";
