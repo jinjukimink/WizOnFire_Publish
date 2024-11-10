@@ -12,6 +12,7 @@ import LineUp from "./LineUp";
 import { VSWrapper } from "./LineUpStyles";
 import { vs } from "../../../assets/assets";
 import WatchPointSkeleton from "./WatchPointSkeleton";
+import Modal from "../../../components/common/modal/Modal";
 //import useLoading from "../../../hooks/useLoading";
 
 const WatchPointBox = () => {
@@ -19,8 +20,11 @@ const WatchPointBox = () => {
   const current: TGameData | undefined = game?.data?.current;
 
   const [apiUrl, setApiUrl] = useState<string>(""); // apiUrl 상태 추가
-  const { data: gameData,isLoading } = useFetchData<TWatchPointResponse>(apiUrl); // apiUrl을 사용하여 데이터 가져오기
+  const { data: gameData} = useFetchData<TWatchPointResponse>(apiUrl); // apiUrl을 사용하여 데이터 가져오기
   //const isLoading=useLoading();
+
+  const [modalOpen, setModalOpen] = useState(false);
+
   // 계산된 승률
   const calculatedWinRate = gameData
     ? (
@@ -187,9 +191,15 @@ const WatchPointBox = () => {
 
   // Next 버튼 클릭 시 호출되는 함수
   const handleNextGame = () => {
+    if(gameData?.data?.schedule?.current?.gameDate == '20241011'){
+      setModalOpen(true);
+      return;
+    }
+
     if (gameData?.data?.schedule?.next) {
       const nextGameDate = gameData.data.schedule.next.gameDate;
       const nextGmkey = gameData.data.schedule.next.gmkey;
+
       setApiUrl(`/game/watchpoint-gameDate-${nextGameDate}-gmkey-${nextGmkey}.json`);
     }
   };
@@ -199,6 +209,12 @@ const WatchPointBox = () => {
     if (gameData?.data?.schedule?.prev) {
       const prevGameDate = gameData.data.schedule.prev.gameDate;
       const prevGmkey = gameData.data.schedule.prev.gmkey;
+
+      if (prevGameDate < '20240904') {
+        setModalOpen(true);
+        return;
+      }
+
       setApiUrl(`/game/watchpoint-gameDate-${prevGameDate}-gmkey-${prevGmkey}.json`);
     }
   };
@@ -214,6 +230,7 @@ const WatchPointBox = () => {
 
   return (
     <>
+    {modalOpen && <Modal setModalOpen={setModalOpen}/>}
       <Wrapper>
         <WatchPointWrapper>
           <WatchPointHeader>

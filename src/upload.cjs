@@ -181,6 +181,7 @@ async function uploadJSONData() {
       // 'src/json/game/boxscore-gameDate-20241001-gmkey-66661001SKKT0.json',
       // 'src/json/game/boxscore-gameDate-20241002-gmkey-44441002KTOB0.json',
       // 'src/json/game/boxscore-gameDate-20241003-gmkey-44441003KTOB0.json'
+      'src/json/game/boxscore-gameDate-20241001-gmkey-20241001SKKT0.json'
       
     ]; // 경로 확인
 
