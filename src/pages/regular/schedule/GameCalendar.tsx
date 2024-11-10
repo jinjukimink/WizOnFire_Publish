@@ -14,6 +14,8 @@ import AllEvent from './AllEvent';
 import { GradientCircle } from '../../../components/common/gradientChip/GradientChipStyles';
 import GameCalendarSkeleton from '../../../components/common/skeleton/scheduleskeleton/GameCalendarSkeleton';
 
+import Modal from '../../../components/common/modal/Modal';
+
 moment.locale('ko');
 
 const localizer = momentLocalizer(moment);
@@ -69,6 +71,8 @@ const CalendarComponent = () => {
   const [isKt,setIsKt] = useState(true);
   const navigate = useNavigate();
 
+  const [modalOpen, setModalOpen] = useState(false);
+
   const formatYearMonth = (date: Date): string => {
     const year = date.getFullYear(); 
     const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -117,6 +121,14 @@ const CalendarComponent = () => {
   // 월 변경 (offset: -1,1)
   const handleMonthChange = (offset: number) => {
     const newDate = moment(currentDate).add(offset, 'months').toDate();
+    
+    // 9, 10월을 제외한 달로 넘어갈 경우 모달창 띄우기
+    const month = newDate.getMonth(); // 0: 1월, 1: 2월, ..., 8: 9월, 9: 10월
+    if (month < 8 || month > 9) { // 8: 9월, 9: 10월
+      setModalOpen(true);
+      return;
+    }
+    
     setCurrentDate(newDate);
   };
 
@@ -140,6 +152,7 @@ const CalendarComponent = () => {
   
   return (
     <>
+     {modalOpen && <Modal setModalOpen={setModalOpen}/>}
     <CalendarBox>
       <CalendarHeader>
         <div>
