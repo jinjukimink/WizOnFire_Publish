@@ -1,0 +1,4500 @@
+[33mcommit ef79bf2c28f68d19209f1297855ab2408b9ccbb6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeat#2[m[33m, [m[1;31morigin/feat#2[m[33m)[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Nov 11 22:52:16 2024 +0900
+
+    Fix : 안쓰는 기능 삭제
+
+[33mcommit 3de34314d3adfdf5069eb5d972b27c628548aa00[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Nov 11 22:46:03 2024 +0900
+
+    Fix : 안쓰는거 삭제
+
+[33mcommit 7124cdff4296ef591bc7f250221c7b15ae88a03d[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Nov 11 22:36:18 2024 +0900
+
+    Merge branch 'main' of https://github.com/jinjukimink/WizOnFire_Publish into feat#2
+
+[33mcommit ac388f1bc2349898c844bcc40f0b2c16fbea989e[m
+Merge: ef43cac 009148e
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Nov 11 22:35:18 2024 +0900
+
+    merge
+
+[33mcommit ef43cac6dcfb12329d9e97dd15bac38349b05b09[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Nov 11 22:33:06 2024 +0900
+
+    Fix : 삭제
+
+[33mcommit 7533e583a65fe5e386a6608ba2448689a756b12f[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Nov 11 22:32:33 2024 +0900
+
+    Fix : 상단 메뉴바 수정
+
+[33mcommit b75424daa8cae9e444586deccb1b85b2be86b158[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Nov 11 22:32:29 2024 +0900
+
+    Fix : 상단 메뉴바 수정
+
+[33mcommit 009148e5b0fb000b40ac74b1450ca94918bde54b[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 490a59d 7c519b6
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Mon Nov 11 22:27:26 2024 +0900
+
+    Merge pull request #11 from jinjukimink/jinju
+    
+    외야수 내용을 포수 내용으로
+
+[33mcommit 7c519b67aa6d44a89d4da2ec78df46dbe1ddfc13[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Mon Nov 11 18:22:10 2024 +0900
+
+    외야수 내용을 포수 내용으로
+
+[33mcommit 490a59db032abadd845570cfe07aafb6a2f43e21[m
+Merge: 3d4a690 b2e8e11
+Author: Jungyu <milestone0917@gmail.com>
+Date:   Sun Nov 10 22:53:51 2024 +0900
+
+    Merge pull request #10 from jinjukimink/develop
+    
+    Develop
+
+[33mcommit 34578d7713d5331c84491557e867a8907a81e41d[m
+Merge: 86fca33 b2e8e11
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Sun Nov 10 22:53:35 2024 +0900
+
+    Merge branch 'develop' of https://github.com/jinjukimink/WizOnFire_Publish into feat#2
+
+[33mcommit b2e8e11a6ff692fd49b28fde6bee207fa7a978ba[m[33m ([m[1;31morigin/develop[m[33m)[m
+Merge: 3a6cd2f a71d9be
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Nov 10 22:48:14 2024 +0900
+
+    Merge branch 'develop' of https://github.com/jinjukimink/WizOnFire_Publish into develop
+
+[33mcommit 3a6cd2f18a67062157a3691efab954e9efcca917[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Nov 10 22:47:25 2024 +0900
+
+    보도자료 페이지네이션 수정
+
+[33mcommit 3d4a69063769176d2b87eda1f5f7a08a5722e0f0[m
+Merge: 75cd500 86fca33
+Author: Jieun Park <140596167+jieunpark626@users.noreply.github.com>
+Date:   Sun Nov 10 22:44:47 2024 +0900
+
+    Merge pull request #9 from jinjukimink/feat#2
+    
+    Fix : 안쓰는거 삭제
+
+[33mcommit 86fca3340cfaa42e4e4d072e4eef918815fbbf32[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Sun Nov 10 22:43:54 2024 +0900
+
+    Fix : 안쓰는거 삭제
+
+[33mcommit 75cd5006b660ae07508764b01e6ded9f0a99b822[m
+Merge: 9075a24 a71d9be
+Author: Jieun Park <140596167+jieunpark626@users.noreply.github.com>
+Date:   Sun Nov 10 22:37:14 2024 +0900
+
+    Merge pull request #8 from jinjukimink/develop
+    
+    Develop
+
+[33mcommit a71d9be8919b6440059dafd5a66d7fdd0f71276f[m
+Merge: bfc757a 186f7b1
+Author: Suein Yoon <adsf9608@naver.com>
+Date:   Sun Nov 10 22:23:48 2024 +0900
+
+    Merge pull request #7 from jinjukimink/jieun
+    
+    Jieun
+
+[33mcommit bfc757aa6c943d040184cc2e0bd8073efaa0b0f6[m
+Merge: 06f4d4c 4143c0d
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Nov 10 19:28:04 2024 +0900
+
+    Merge branch 'develop' of https://github.com/jinjukimink/WizOnFire_Publish into develop
+
+[33mcommit 06f4d4c2f27ac1390c11464f86d85d23b63d9ee9[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Nov 10 19:24:21 2024 +0900
+
+    보도자료 페이지네이션 수정
+
+[33mcommit 186f7b11c853cf417686d6d69f5dc303b8cac425[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Thu Nov 7 15:41:25 2024 +0900
+
+    모달창 수정
+
+[33mcommit aede5d7bea972eaf04b658b97b884895d4c52a46[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Thu Nov 7 15:35:19 2024 +0900
+
+    관전포인트 수정, 모달창 멘트 수정
+
+[33mcommit 68ad344b9ad02c2eef5b262805c0427bd1c34727[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Thu Nov 7 15:14:41 2024 +0900
+
+    경기일정 페이지 모달창 추가
+
+[33mcommit 1fbf239919f3c5cf4e416ab125e353072af895aa[m
+Merge: ab1153b 4143c0d
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Thu Nov 7 15:03:20 2024 +0900
+
+    merge
+
+[33mcommit ab1153b48b07504233cafc870438e8135feb5345[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Thu Nov 7 15:01:43 2024 +0900
+
+    before merge
+
+[33mcommit 4143c0d3a2bdef48e0fd0bee1c878c574b524673[m
+Merge: 1aa4961 084e89f
+Author: Jieun Park <140596167+jieunpark626@users.noreply.github.com>
+Date:   Thu Nov 7 14:59:11 2024 +0900
+
+    Merge pull request #6 from jinjukimink/feat#2
+    
+    Feat : data가 없을 때 모달 추가 ver
+
+[33mcommit 084e89f4fc95209d4ce7147a2aa22fc357f22c3f[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Nov 6 03:20:28 2024 +0900
+
+    Feat : data가 없을 때 모달 추가
+
+[33mcommit 1aa4961d0e810e7260c774a3b431cd1eb3f6681c[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Nov 5 11:59:32 2024 +0900
+
+    뉴스 페이지네이션 오류 수정
+
+[33mcommit 53f56aa474919ce09f0586804e66ce3199587f8e[m
+Merge: 28b4157 8247b5e
+Author: Jieun Park <140596167+jieunpark626@users.noreply.github.com>
+Date:   Mon Nov 4 18:59:59 2024 +0900
+
+    Merge pull request #5 from jinjukimink/jieun
+    
+    Jieun
+
+[33mcommit 8247b5ebde41a008617e3ab855515a1fd2caf093[m
+Merge: 71dc48d 28b4157
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Mon Nov 4 18:55:40 2024 +0900
+
+    solve merge conflict
+
+[33mcommit 28b4157b3ae05b2c5cad3c11919dc72a6817e199[m[33m ([m[1;32mdevelop[m[33m)[m
+Merge: 9bef250 1e54abf
+Author: Suein Yoon <adsf9608@naver.com>
+Date:   Mon Nov 4 18:45:22 2024 +0900
+
+    Merge pull request #4 from jinjukimink/feat#3
+    
+    Feat#3
+
+[33mcommit 1e54abfcf2c3d93f15cb3251310e460ee9aa4c74[m
+Merge: a7e6717 9bef250
+Author: Jungyu <milestone0917@gmail.com>
+Date:   Mon Nov 4 18:42:01 2024 +0900
+
+    Merge branch 'develop' into feat#3
+
+[33mcommit a7e67171a86165c0c90c43b0b07a46a581e2ad4b[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Mon Nov 4 18:39:05 2024 +0900
+
+    충돌 해결중
+
+[33mcommit c7372723482ebac29147fe4a038a5c71942739a9[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Oct 31 14:11:57 2024 +0900
+
+    보도자료 데이터 추가
+
+[33mcommit f5f00a03b2bf76c988dfc901052e53e5209d45b5[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Oct 31 13:29:38 2024 +0900
+
+    뉴스 데이터 추가
+
+[33mcommit e57b65caceb431aecebcdf9bde891c426e44e919[m
+Merge: 3bf6851 8ca2b93
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Oct 31 13:28:36 2024 +0900
+
+    Merge remote-tracking branch 'origin/feat#2' into feat#3
+
+[33mcommit 71dc48d1c6f98bb192fcd4af0ba1d0e54d6e4e36[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Thu Oct 31 01:46:45 2024 +0900
+
+    경기일정, 관전포인트 데이터 추가 완료
+
+[33mcommit da41103c9a2a3d8f60a3f5e7d6667da0e6f69287[m
+Merge: 840d5e2 9bef250
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Wed Oct 30 23:10:20 2024 +0900
+
+    merge
+
+[33mcommit 840d5e2a4e7440435c18eec8f4517f81993ae249[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Wed Oct 30 22:52:44 2024 +0900
+
+    add calendar data
+
+[33mcommit 9bef250517ac8e4fe51f346dc17b299c372242ed[m
+Merge: e31e8c4 ebcc73c
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Wed Oct 30 22:32:34 2024 +0900
+
+    Merge pull request #3 from jinjukimink/feat#4
+    
+    Feat#4
+
+[33mcommit ebcc73c9307089078a5936e82dee191c6a540cae[m
+Merge: 60ea7e1 e31e8c4
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Wed Oct 30 22:26:23 2024 +0900
+
+    Merge branch 'develop' into feat#4
+
+[33mcommit 60ea7e193160e745c691218bd69f4f23c861d44e[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Oct 30 22:21:32 2024 +0900
+
+    outfieder,infielder 상세보기추가
+
+[33mcommit 49504c375adf34d15f3eb1123d55889babaa6327[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Oct 30 21:54:23 2024 +0900
+
+    feat: pitcherdetail추가
+
+[33mcommit e31e8c4f905c1f42a9cefc968af2d99e01869fab[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Oct 30 21:28:30 2024 +0900
+
+    Feat: json파일 생성
+
+[33mcommit 929966d4f605a56d2ffb92503832dae0a133a6f6[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Oct 20 23:10:17 2024 +0900
+
+    feat: 코치디테일 json 추가
+
+[33mcommit 3bf6851c8df77bdf36b2771dabeb314a35540af1[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Oct 20 21:45:20 2024 +0900
+
+    feat: json파일 추가
+
+[33mcommit 8ca2b93eaaf626456e66376c7512ccae754e7c1b[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Sun Oct 20 21:22:55 2024 +0900
+
+    Feat: json파일 생성
+
+[33mcommit 5bf0f3b240fae332310c32333ac53b4ae2122c8b[m[33m ([m[1;31morigin/feat#1[m[33m, [m[1;32mfeat#1[m[33m)[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Mon Oct 14 00:41:16 2024 +0900
+
+    firebase추가
+
+[33mcommit 9075a240d8c4e568146ab3c72075c2dcf6f234bd[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 27 16:22:27 2024 +0900
+
+    권동진 영어 이름 추가
+
+[33mcommit d88f874b7e8a934cafa67d92c8cda059b8c1df9b[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 27 11:35:50 2024 +0900
+
+    -377
+
+[33mcommit 29ab568265449435051b74331da542429fed87b9[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 27 11:33:25 2024 +0900
+
+    디테일 위치 수정
+
+[33mcommit 547622cfa62664762c58af289916d5142cd03ae2[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 27 03:21:13 2024 +0900
+
+    페치, 버튼 수정
+
+[33mcommit 2f6f602dd9614312af4632792a25a2d9e1c923cb[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 27 01:38:13 2024 +0900
+
+    관전포인트 setTime해제
+
+[33mcommit cca8fab00188e0ce72d259b0744f22e1e6ca852a[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 27 01:21:43 2024 +0900
+
+    .env 깃 추가
+
+[33mcommit ebd8ec12698c96d69794d1c673476e79d82850e3[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 27 01:18:05 2024 +0900
+
+    버셀 빌드 전 수정
+
+[33mcommit 51fd64cb0b3f6f0d48cda666f4db52637e0f25bc[m
+Merge: 9b15def a407646
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Fri Sep 27 01:03:38 2024 +0900
+
+    Merge pull request #71 from WizOnFire/feat#15
+    
+    최종 커밋
+
+[33mcommit a407646cae976c08a524841622df452a0ecabe91[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 27 01:02:25 2024 +0900
+
+    배포 전 최종
+
+[33mcommit 49107d957d3ab1a99441f2bcbd177a97cedd3892[m
+Merge: 09f2ea1 9b15def
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 27 00:26:00 2024 +0900
+
+    12:25
+
+[33mcommit 09f2ea1c92ac734ca243350395344bc8c3386db5[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 27 00:25:19 2024 +0900
+
+    12:25
+
+[33mcommit 9b15defca90b624f5a44986de5d3eb176a3febe2[m
+Merge: bab2348 f41c345
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Fri Sep 27 00:24:51 2024 +0900
+
+    Merge pull request #70 from WizOnFire/feat#20
+    
+    Fix: 최종 커밋 전 컴퍼넌트 수정
+
+[33mcommit f41c34576e56115c5e03e5c8a6aae0967758d38c[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Fri Sep 27 00:23:24 2024 +0900
+
+    Fix: 최종 커밋 전 컴퍼넌트 수정
+
+[33mcommit 90a0e14596fde6ff96ec03631976c5ab246fc316[m
+Merge: bb8c86a bf7a47e
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Fri Sep 27 00:23:21 2024 +0900
+
+    Fix: 최종 커밋 전 컴퍼넌트 수정
+
+[33mcommit 30898de3090370f22bc861be31b9d9f8dfeccb34[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 27 00:23:16 2024 +0900
+
+    12:23
+
+[33mcommit bab23484d86dcf11c29b76d44d7a2f9f416312cd[m
+Merge: bf7a47e 9ba2ecc
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Thu Sep 26 23:42:34 2024 +0900
+
+    Merge pull request #69 from WizOnFire/feat#15
+    
+    네비바수정
+
+[33mcommit 9ba2ecc5c7f8ecf8fa67099a2b7abd05fa445e52[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 23:41:40 2024 +0900
+
+    네비바수정
+
+[33mcommit bb8c86abd2ac1ac4f46c1d9b76921475ce3d792e[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 26 23:08:14 2024 +0900
+
+    Fix: 관전포인트 수정
+
+[33mcommit bf7a47e9f6d6ab8c5ae1ffde2dbc55ad876c605f[m
+Merge: e890110 b9e9f99
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Thu Sep 26 23:07:17 2024 +0900
+
+    Merge pull request #68 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit b9e9f99f0762077ab8a04a5cc9678bec83e44d91[m
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Thu Sep 26 23:06:59 2024 +0900
+
+    Delete .env
+
+[33mcommit c822281e7432474b5aef3bd1c07f55f1ccd3dc44[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 23:05:12 2024 +0900
+
+    11:05
+
+[33mcommit 669f3bbf353a768a0b78affdba332d3fae74a0c1[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 22:57:45 2024 +0900
+
+    main이랑 머지
+
+[33mcommit 602662e3499f0a5796fc758aac0932135c0ecfa5[m
+Merge: 476aefd e890110
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 22:49:21 2024 +0900
+
+    Merge remote-tracking branch 'origin/main' into feat#15
+
+[33mcommit 476aefd3878e684fe7b983f170cf5aabc5c20ac9[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 22:47:39 2024 +0900
+
+    10:47
+
+[33mcommit e89011070a1f68b396eb935622d32c10d60ab521[m
+Merge: 9f7921f b21dbdc
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 22:47:12 2024 +0900
+
+    Merge pull request #67 from WizOnFire/feat#20
+    
+    Rename: banner02 해상도 조절
+
+[33mcommit b21dbdc507d733a3f58dda7472c3859e1614d302[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 26 22:46:06 2024 +0900
+
+    Rename: 머지
+
+[33mcommit fd0d1053863ad6ef48e708a60a3b981ff2ea2ef4[m
+Merge: fcc75e8 2c0b389
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 26 22:46:02 2024 +0900
+
+    Rename: 머지
+
+[33mcommit 2c0b389de59792dc1a21592a8d8021da8e30e83c[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 22:43:16 2024 +0900
+
+    Delete .env
+
+[33mcommit 1cbfa055532e9a50d324e4ea6453ce982130f2b1[m
+Merge: 5993e91 48941ea
+Author: Park Jungyu <milestone0917@gmail.com>
+Date:   Thu Sep 26 22:42:00 2024 +0900
+
+    Merge pull request #66 from WizOnFire/feat#11
+    
+    페이지네이션 수정
+
+[33mcommit 2b0e2f67ced92db90f6607260c79706b82962237[m
+Merge: c90a950 9f7921f
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 22:19:28 2024 +0900
+
+    Merge remote-tracking branch 'origin/main' into feat#15
+
+[33mcommit 9f7921f1b85d9d61728d528745bcc4f2e2e7d41b[m
+Merge: 38a3aa6 fcc75e8
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 22:14:28 2024 +0900
+
+    Merge pull request #65 from WizOnFire/feat#20
+    
+    Feat: 해상도 조절
+
+[33mcommit 48941ea53007f9a013cbd9200d625a616a7d3274[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 26 22:10:11 2024 +0900
+
+    페이지네이션 수정
+
+[33mcommit fcc75e83dd34673bd010c1d79b92e4bbf79b6964[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 26 22:08:52 2024 +0900
+
+    Design: 해상도 조정
+
+[33mcommit 5993e91b73cb62e681716d38003170452986e8eb[m
+Merge: 38a3aa6 be2dc4c
+Author: Park Jungyu <milestone0917@gmail.com>
+Date:   Thu Sep 26 21:34:38 2024 +0900
+
+    Merge pull request #64 from WizOnFire/feat#11
+    
+    Feat#11
+
+[33mcommit be2dc4c9299aca4b3e76393957280fcf40842000[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 26 21:34:06 2024 +0900
+
+    스켈레톤 이미지 수정
+
+[33mcommit c90a95022edea98a68f9fc063be3964e100b6ad9[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 21:29:21 2024 +0900
+
+    9:29
+
+[33mcommit 1bd6aaff84e7ee550889315e5808b6cb9d36cae2[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 26 21:22:57 2024 +0900
+
+    스켈레톤 이미지 수정
+
+[33mcommit c680aa7376c5affe0acffc65e3311f22696f7930[m
+Merge: 9ec63d2 c3ef80a
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 21:05:41 2024 +0900
+
+    Merge remote-tracking branch 'origin/develop' into feat#15
+
+[33mcommit 9ec63d20cd81d3b7a0b4bddd2823c6a84e526099[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 20:59:53 2024 +0900
+
+    8:59
+
+[33mcommit c3ef80a1ee4cd15ec4731e53d4c985fcc40edc03[m
+Merge: e50fae9 edc12cf
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 20:56:46 2024 +0900
+
+    Merge pull request #63 from WizOnFire/feat#17
+    
+    Fix: 랭킹 스켈레톤 추가
+
+[33mcommit 723d3c34e3bd78188d4604b4041502ff37dcc12f[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 26 20:55:53 2024 +0900
+
+    Fix: 랭킹 스켈레톤 추가
+
+[33mcommit edc12cfe8cff8b2e6e43f86b889fbff79a7b4aad[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 26 20:55:53 2024 +0900
+
+    Fix: 랭킹 스켈레톤 추가
+
+[33mcommit aa4d366a8d1aebe6ceadafed4a0798cdce58956f[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 20:55:49 2024 +0900
+
+    8:55
+
+[33mcommit da4ba6c8db3c2712edbe04417cb332f05b27efa4[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 26 20:39:57 2024 +0900
+
+    Fix: 박스스코어 해상도 조절
+
+[33mcommit fd2a8e828b40f702285d95e0376d153658c3418c[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 26 20:39:57 2024 +0900
+
+    Fix: 박스스코어 해상도 조절
+
+[33mcommit 3bad4c5c7cdf0186c08d7e86abe5e585a4d2559f[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 26 20:21:29 2024 +0900
+
+    Fix: 렌더링 변경 및 와치포인트 스타일 수정
+
+[33mcommit b912da2843ff0c88e342debd0ab2689c9939fa8f[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 26 20:21:29 2024 +0900
+
+    Fix: 렌더링 변경 및 와치포인트 스타일 수정
+
+[33mcommit 53e2aae8d8a1716c585e12bcf183b9c066256d36[m
+Merge: 8dd7857 f56b25d
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 26 18:24:04 2024 +0900
+
+    Merge remote-tracking branch 'origin' into feat#17
+
+[33mcommit 1e45f1f0c83fa9147886a59c17e47669181c15d4[m
+Merge: e0b89a2 2324698
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 26 18:24:04 2024 +0900
+
+    Merge remote-tracking branch 'origin' into feat#17
+
+[33mcommit e50fae91ef6ade2fec4df366a652d4ea9537ced3[m
+Merge: 56060ce 9aec631
+Author: Park Jungyu <milestone0917@gmail.com>
+Date:   Thu Sep 26 18:22:46 2024 +0900
+
+    Merge pull request #61 from WizOnFire/feat#11
+    
+    Feat#11
+
+[33mcommit 8dd7857386b39dbb5475e65b418a31434c7bf67d[m
+Merge: 4599dcd c8fbfaf
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 26 18:15:43 2024 +0900
+
+    Merge branch 'feat#17' of https://github.com/WizOnFire/KT_Web into feat#17
+
+[33mcommit e0b89a24e0a0ce4af266c6e17616294a83bd86b2[m
+Merge: 4599dcd 20cac5c
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 26 18:15:43 2024 +0900
+
+    Merge branch 'feat#17' of https://github.com/WizOnFire/KT_Web into feat#17
+
+[33mcommit 4599dcd64ddbb12916ac5f231ce3ebcb4388432e[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 26 18:15:39 2024 +0900
+
+    Fix: 컴퍼넌트 수정
+
+[33mcommit 9aec6310a16494943b0e01b8c0c049864a4e0d13[m
+Merge: e3f7113 56060ce
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 26 18:13:16 2024 +0900
+
+    Merge remote-tracking branch 'origin/develop' into feat#11
+
+[33mcommit 56060cef62d7ef29974cb99e436a7545460faed5[m
+Merge: 2f8b19a 20cac5c
+Author: Park Jungyu <milestone0917@gmail.com>
+Date:   Thu Sep 26 18:08:37 2024 +0900
+
+    Merge pull request #60 from WizOnFire/feat#17
+    
+    Feat#17
+
+[33mcommit e3f71133cd0b3d9b731d20dc97edc114ca92513d[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 26 18:07:10 2024 +0900
+
+    스켈레톤 이미지 수정
+
+[33mcommit 74567a20c75874b581828883cbc04640002f7f21[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 26 18:06:24 2024 +0900
+
+    스켈레톤 이미지 수정
+
+[33mcommit 7b709d05751ca6f554ea9917552658852ca874de[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 26 18:05:23 2024 +0900
+
+    스켈레톤 이미지 수정
+
+[33mcommit 3bd03f4b65ad286f22cb119d440615a429d2975e[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 26 18:04:38 2024 +0900
+
+    스켈레톤 디자인 수정
+
+[33mcommit 72382acf1bb5c15823e9b500c203577eae7e2611[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 26 18:02:06 2024 +0900
+
+    스켈레톤 이미지 수정
+
+[33mcommit c8fbfaf5fb8036d790c9324f61ce8e6596968a09[m
+Merge: 28e2f61 0d42ad8
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Thu Sep 26 18:00:06 2024 +0900
+
+    boxscore
+
+[33mcommit 20cac5ceee55223349fcb7f3cff37af4b5758fce[m
+Merge: b6d6089 2f8b19a
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Thu Sep 26 18:00:06 2024 +0900
+
+    boxscore
+
+[33mcommit 8b89ed3f3cde876efb6a4c6de32e67292aae26af[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 26 17:48:56 2024 +0900
+
+    스켈레톤 이미지 수정완료
+
+[33mcommit 2414f27faabff6cd6cd6f3f30c0aacb9badf0fbf[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 26 17:21:50 2024 +0900
+
+    보도자료
+
+[33mcommit 2948c890eb0eb44cfb0bfb135ea706d8a9d239a6[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 16:21:23 2024 +0900
+
+    안쓰는 import 정리
+
+[33mcommit 28e2f61ccb9fca9897b82b83adab37b61afe97e6[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Thu Sep 26 15:56:25 2024 +0900
+
+    boxscore
+
+[33mcommit b6d60899d1731e736db099d116ed234b0e2a8936[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Thu Sep 26 15:56:25 2024 +0900
+
+    boxscore
+
+[33mcommit 8b2b57b78198b380414adea0cc631242f606c036[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 14:03:14 2024 +0900
+
+    디벨롭 머지
+
+[33mcommit de525011df2a6e9109585b2544d1a7ca501449ab[m
+Merge: 85e2c09 e01e9cf
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 13:49:22 2024 +0900
+
+    1:49
+
+[33mcommit 85e2c099904b567c9c24086188cf57050443d2ad[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 13:45:08 2024 +0900
+
+    length고침
+
+[33mcommit 0b45659230987acc2ee47423defaff9cbc0f2567[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 26 11:41:19 2024 +0900
+
+    스켈레톤 디자인 수정
+
+[33mcommit 93e9d2ff12d5389a36db080392dc42f09baed0e4[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 26 11:24:56 2024 +0900
+
+    보도자료 페이지 라우팅 완료
+
+[33mcommit 6c56d7ca342873650969a0f3604985ea5b819547[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 11:15:59 2024 +0900
+
+    length
+
+[33mcommit 0c4bf3c26dab44ade9a386d54e5b421c9e903e92[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 26 10:55:52 2024 +0900
+
+    뉴스페이지 라우팅 완료
+
+[33mcommit 7bfcd4a780650c4a47c40a9684b9b97a856a73e5[m
+Merge: 8071dd9 2f8b19a
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 26 10:51:36 2024 +0900
+
+    Merge remote-tracking branch 'origin/develop' into feat#11
+
+[33mcommit 2f8b19af2eeaa47603edbf683cd948679605a8b6[m
+Merge: 38a3aa6 0d86ccc
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 10:41:40 2024 +0900
+
+    Merge pull request #59 from WizOnFire/feat#17
+    
+    Fix: 갤러리 슬라이드 기능 변경
+
+[33mcommit 0d42ad892bede028e4776e50b5fc15f9e0c1f737[m
+Merge: 38a3aa6 0d86ccc
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 10:41:40 2024 +0900
+
+    Merge pull request #59 from WizOnFire/feat#17
+    
+    Fix: 갤러리 슬라이드 기능 변경
+
+[33mcommit 0d86cccbaa71238262c42fc926e1fff09d836501[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 26 10:40:05 2024 +0900
+
+    Fix: 갤러리 슬라이드 변경
+
+[33mcommit f6811726285ff9929c4c26af124a153a9ea0fe42[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 10:39:32 2024 +0900
+
+    10:39
+
+[33mcommit ac7b5e018753a38fe12020c74e99b1fd7e456a75[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 26 08:03:38 2024 +0900
+
+    Feat: 홈 스켈레톤 추가
+
+[33mcommit f56b25dcb075932f79c89e47e1180194f03d25a2[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 07:37:34 2024 +0900
+
+    Update README.md
+
+[33mcommit 2324698f431c1394d6577006da971950ad4419e4[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 07:37:34 2024 +0900
+
+    Update README.md
+
+[33mcommit dd59517f106f3d9a1dfc844a39de8f8950483f5f[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 07:29:38 2024 +0900
+
+    Update README.md
+
+[33mcommit 68558382f68601153f8fbab7ed3189e56e260ded[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 07:29:38 2024 +0900
+
+    Update README.md
+
+[33mcommit 7c03f178766a9b919e79fdfaf663c3b76380783a[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 07:17:31 2024 +0900
+
+    Update README.md
+
+[33mcommit 0ad91611e23339dcf05edd9735e6882c91f37ad0[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 07:17:31 2024 +0900
+
+    Update README.md
+
+[33mcommit bc078aadcbf39368801353760e8a24b790617a02[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 07:12:52 2024 +0900
+
+    Update README.md
+
+[33mcommit 91d0d3914042f4432f689a6788a3945d9e7c6224[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 07:12:52 2024 +0900
+
+    Update README.md
+
+[33mcommit 865c4ca6eea7d84951f25e49ec20bd855f58c60a[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 02:59:08 2024 +0900
+
+    Update README.md
+
+[33mcommit d1aef28aa8a4bee9a553b3e21bbbb227c2e4e25d[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 02:59:08 2024 +0900
+
+    Update README.md
+
+[33mcommit 724bfa9e59a8ec019b7aaf1f1a253c220fe9059a[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 02:58:47 2024 +0900
+
+    Update README.md
+
+[33mcommit 84c82f08d59b2f998926254234b28bf83be9c9b2[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 02:58:47 2024 +0900
+
+    Update README.md
+
+[33mcommit b6b35066c36afc6de62eb463a6041fd8e684fb74[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 02:19:37 2024 +0900
+
+    2:19
+
+[33mcommit 38a3aa6f1bbfb8a80f9260f6cda84134908ea7d0[m
+Merge: 251d9b7 cb9c475
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 02:17:40 2024 +0900
+
+    Merge pull request #57 from WizOnFire/feat#17
+    
+    Fix: 컴퍼넌트 수정
+
+[33mcommit cb9c475da24ddb4f4ff09013e7d17f17ad5e00a2[m
+Merge: 55542f1 251d9b7
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 02:17:34 2024 +0900
+
+    Merge branch 'develop' into feat#17
+
+[33mcommit 251d9b7a6500bbab0b9f0ae4896610596711261a[m
+Merge: b7d9ee0 2af3d49
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 02:17:04 2024 +0900
+
+    Merge pull request #55 from WizOnFire/feat#15
+    
+    newsDetail
+
+[33mcommit e01e9cf9d4fe4cca7b5e98a15119ad24f1957521[m
+Merge: 7a39800 78215d6
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 02:16:56 2024 +0900
+
+    Merge branch 'develop' into feat#15
+
+[33mcommit 2af3d493c5b5007e47a9e13aa1b8ad553f3bebf2[m
+Merge: 1e20ce8 b7d9ee0
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 26 02:16:56 2024 +0900
+
+    Merge branch 'develop' into feat#15
+
+[33mcommit 7a398006f8c6ec82765c0c2ba59d13f75219409c[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 00:59:05 2024 +0900
+
+    데이터 없음 처리
+
+[33mcommit 1e20ce8aeacbb46bb478224e7aeddfae1bc16a60[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 00:59:05 2024 +0900
+
+    데이터 없음 처리
+
+[33mcommit e3fdbd1253ff00e8240a2e61d294ae5df7546724[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 00:45:48 2024 +0900
+
+    12:45
+
+[33mcommit 6ae10c20c21ed3a3acd1208983ede1adf5a18369[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 00:45:48 2024 +0900
+
+    12:45
+
+[33mcommit a83f3116c01a764c8a0a6e6f51f065bf21d3b9ef[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 00:18:07 2024 +0900
+
+    로케이션수정
+
+[33mcommit 3b5f2ed3847537d6549eaab4f63cf0530a30035f[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 26 00:18:07 2024 +0900
+
+    로케이션수정
+
+[33mcommit 55542f153e3b2e93c8089b99400215b1ae48ce3d[m
+Merge: 07ce41f b7d9ee0
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 26 00:03:12 2024 +0900
+
+    Merge remote-tracking branch 'origin/develop' into feat#17
+
+[33mcommit b7d9ee0f5e4e1c4ebe9fe3e00623b5ce40289651[m
+Merge: 1284944 471a09e
+Author: Park Jungyu <milestone0917@gmail.com>
+Date:   Thu Sep 26 00:02:41 2024 +0900
+
+    Merge pull request #56 from WizOnFire/feat#11
+    
+    Feat#11
+
+[33mcommit 78215d66caf7a56a4f2a9574b9c6bdb39039df17[m
+Merge: 896f7eb 8071dd9
+Author: Park Jungyu <milestone0917@gmail.com>
+Date:   Thu Sep 26 00:02:41 2024 +0900
+
+    Merge pull request #56 from WizOnFire/feat#11
+    
+    Feat#11
+
+[33mcommit 07ce41ffccde5e8becf56a3ad0135201685dc6b1[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 26 00:02:09 2024 +0900
+
+    Fix: 컴퍼넌트 수정
+
+[33mcommit 8071dd949be870b353c9cd7cdec8bd9584aa50d0[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 26 00:00:50 2024 +0900
+
+    뉴스페이지 라우팅 완료
+
+[33mcommit 471a09ed86b9de36861dfaf2c53684ff87b3e3d9[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 26 00:00:50 2024 +0900
+
+    뉴스페이지 라우팅 완료
+
+[33mcommit cba47e7ec32f343d3a80646a182b9804ff36e8fe[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 25 23:55:40 2024 +0900
+
+    팀순위 데이터 전역화
+
+[33mcommit c4d4bac58a15c2e67c8e72acc1e2d25cdd0ffb09[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 25 23:55:40 2024 +0900
+
+    팀순위 데이터 전역화
+
+[33mcommit 8713fe8804a7241f42ce723937c974857a3f407b[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 25 22:52:33 2024 +0900
+
+    newsDetail
+
+[33mcommit caa0e9b79a81deaf6aef057544b489553dcb6d64[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 25 22:52:33 2024 +0900
+
+    newsDetail
+
+[33mcommit 12849445dc5509bf2217c4b098860470f3fb2c2b[m
+Merge: dc0efe7 aaa40ac
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Wed Sep 25 22:05:46 2024 +0900
+
+    Merge pull request #54 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit 896f7eb0acb760c23334eb005963064e012fc917[m
+Merge: fa0615a caf7eab
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Wed Sep 25 22:05:46 2024 +0900
+
+    Merge pull request #54 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit caf7eabedb5d882e2fb910fe8a1bf81dd0ee62c8[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 25 22:04:02 2024 +0900
+
+    네비바 진짜 복구
+
+[33mcommit aaa40acb89ce1df2b1c5a9586971274636f5f69e[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 25 22:04:02 2024 +0900
+
+    네비바 진짜 복구
+
+[33mcommit 52c7238a92d49637dba75740795097dc989cd5d0[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 25 22:02:32 2024 +0900
+
+    네비바 복구
+
+[33mcommit b54e0897c41a4a7f6dd6ad0653ceb2889df4be0f[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 25 22:02:32 2024 +0900
+
+    네비바 복구
+
+[33mcommit 802b9c02f386c908bf8ea0f6777d72f1024c0116[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Sep 25 21:31:33 2024 +0900
+
+    Fix: 컴퍼넌트에 useLoading 추가
+
+[33mcommit e1e8b5a8640e5181973f2837e55af5dc07709698[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Sep 25 21:31:33 2024 +0900
+
+    Fix: 컴퍼넌트에 useLoading 추가
+
+[33mcommit dc0efe77164bfc75347e37ec494274b649a30add[m
+Merge: ff1a302 d680fbc
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Wed Sep 25 21:29:55 2024 +0900
+
+    Merge pull request #53 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit fa0615ad819ebbc20d7ac173bb7a85bfe9eb5cf8[m
+Merge: 494b8ed dbcca40
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Wed Sep 25 21:29:55 2024 +0900
+
+    Merge pull request #53 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit dbcca406309a6f06bf731b2b89c792aa6be15436[m
+Merge: f2e6047 494b8ed
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 25 21:28:35 2024 +0900
+
+    9:28
+
+[33mcommit d680fbc0b18cdabcdcc66998cf43ed1b867542c1[m
+Merge: ecd4780 ff1a302
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 25 21:28:35 2024 +0900
+
+    9:28
+
+[33mcommit f2e60478ef840545fdcbe203c7bc3268ae5144ff[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 25 21:27:42 2024 +0900
+
+    9:27
+
+[33mcommit ecd47807488d9b1a99745885593efb2022c5f956[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 25 21:27:42 2024 +0900
+
+    9:27
+
+[33mcommit 93e0ef1ec3abb9b60263ddea0f8a3cd5eeb6531d[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Wed Sep 25 21:19:56 2024 +0900
+
+    뉴스,보도자료 스켈레톤 수정중
+
+[33mcommit bb2b8f779fd9fee991eae7c45b0f0570302ba71b[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Wed Sep 25 21:19:56 2024 +0900
+
+    뉴스,보도자료 스켈레톤 수정중
+
+[33mcommit 91cbfd5f02210523311493db625d2413d655b623[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Wed Sep 25 21:19:35 2024 +0900
+
+    뉴스, 보도자료 스켈레톤 수정중
+
+[33mcommit 55a21658fd2bcef890e4de014f5e06a79b454ad5[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Wed Sep 25 21:19:35 2024 +0900
+
+    뉴스, 보도자료 스켈레톤 수정중
+
+[33mcommit ff1a302519250bb2d1d3d9c85030d363272986d1[m
+Merge: 1daeeb1 f196ff0
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Wed Sep 25 20:49:00 2024 +0900
+
+    Merge pull request #52 from WizOnFire/feat#17
+    
+    Feat#17
+
+[33mcommit 494b8edd18b1aa6b9578552be23843aac37f8984[m
+Merge: 9ba411e 6f10361
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Wed Sep 25 20:49:00 2024 +0900
+
+    Merge pull request #52 from WizOnFire/feat#17
+    
+    Feat#17
+
+[33mcommit f196ff03be51bd393a812d46528a6af576412c4e[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Sep 25 20:48:13 2024 +0900
+
+    Fix: 관중현황 컴퍼넌트에 useLoading 추가
+
+[33mcommit 6f103610be8a9de93578dca09de1765fe3d31699[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Sep 25 20:48:13 2024 +0900
+
+    Fix: 관중현황 컴퍼넌트에 useLoading 추가
+
+[33mcommit 731b3d1dc582a70a7262c66be81c06d21c726c53[m
+Merge: e444fa7 1daeeb1
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Sep 25 20:48:10 2024 +0900
+
+    Fix: 관중현황 컴퍼넌트에 useLoading 추가
+
+[33mcommit ffe5e856d5d1bbeebea4c6bbf6bdbe8987d1db7f[m
+Merge: 8ba1a7b 9ba411e
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Sep 25 20:48:10 2024 +0900
+
+    Fix: 관중현황 컴퍼넌트에 useLoading 추가
+
+[33mcommit e444fa7c2fdb97494004ee8bd662f270c702ec90[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Sep 25 20:45:45 2024 +0900
+
+    Fix: 관전포인트 vs 이미지로 변경
+
+[33mcommit 8ba1a7b0245786ebd128d58df6cc468a65b8ff2a[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Sep 25 20:45:45 2024 +0900
+
+    Fix: 관전포인트 vs 이미지로 변경
+
+[33mcommit 4539e77550cc788764b8bc3a5d0afd17c9e7ca47[m
+Merge: b029cc6 4768f78
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Sep 25 20:45:41 2024 +0900
+
+    Fix: 관전포인트 vs 이미지로 변경
+
+[33mcommit 5fe7773d5a878dc65fc34c072e6ec2ff2d6e14e4[m
+Merge: e56353d 53acef9
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Sep 25 20:45:41 2024 +0900
+
+    Fix: 관전포인트 vs 이미지로 변경
+
+[33mcommit 1daeeb13720ab7b00a940e9563a1fe8f7b351f31[m
+Merge: 4768f78 4203f7b
+Author: Park Jungyu <milestone0917@gmail.com>
+Date:   Wed Sep 25 20:45:04 2024 +0900
+
+    Merge pull request #51 from WizOnFire/feat#11
+    
+    Feat#11
+
+[33mcommit 9ba411ee13e1426cf7531c2e42e86e2f0ca9ae16[m
+Merge: 53acef9 66ad824
+Author: Park Jungyu <milestone0917@gmail.com>
+Date:   Wed Sep 25 20:45:04 2024 +0900
+
+    Merge pull request #51 from WizOnFire/feat#11
+    
+    Feat#11
+
+[33mcommit 4203f7bd6bec09714395c8875fbbd060eb4b8119[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Wed Sep 25 20:43:09 2024 +0900
+
+    주소 수정
+
+[33mcommit 66ad8245dbd6b150c26ab9c4480a88896aede1dc[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Wed Sep 25 20:43:09 2024 +0900
+
+    주소 수정
+
+[33mcommit b029cc697d83dde0e6fb0cddf0ad71abcee85880[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Sep 25 20:38:31 2024 +0900
+
+    Fix: 스켈레톤 ui 수정
+
+[33mcommit e56353d288841668c25ab5ef3fce0f44b7ca63e3[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Sep 25 20:38:31 2024 +0900
+
+    Fix: 스켈레톤 ui 수정
+
+[33mcommit e7386d0f0d5898c52c485f7aaecd077d52f3bffa[m
+Merge: afbd53b 4768f78
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Wed Sep 25 20:32:42 2024 +0900
+
+    Merge remote-tracking branch 'origin/develop' into feat#11
+
+[33mcommit 01aca31a0c98e31e48ae5bc24b8ecaf458cbe8de[m
+Merge: a2d3036 53acef9
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Wed Sep 25 20:32:42 2024 +0900
+
+    Merge remote-tracking branch 'origin/develop' into feat#11
+
+[33mcommit 4768f78836b6a692c6c653ede6bf47bb72c0277e[m
+Merge: d8dccbe 125b2f8
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Wed Sep 25 20:31:47 2024 +0900
+
+    Merge pull request #49 from WizOnFire/feat#12
+    
+    WatchPoint
+
+[33mcommit 53acef964235ac218c3d35d9db0e11a56dd1e5fe[m
+Merge: db1f6ce 05725f3
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Wed Sep 25 20:31:47 2024 +0900
+
+    Merge pull request #49 from WizOnFire/feat#12
+    
+    WatchPoint
+
+[33mcommit 125b2f88e398b4cf5c20939ffccd70de96425fa0[m
+Merge: 297608a d8dccbe
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Wed Sep 25 20:31:38 2024 +0900
+
+    Merge branch 'develop' into feat#12
+
+[33mcommit 05725f367a24b87ac5a8fb2d9365fcb031df5b3a[m
+Merge: 555bafd db1f6ce
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Wed Sep 25 20:31:38 2024 +0900
+
+    Merge branch 'develop' into feat#12
+
+[33mcommit afbd53bd50a8bef4311661f6460968968176bf4a[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Wed Sep 25 20:28:53 2024 +0900
+
+    스켈레톤 이미지 수정
+
+[33mcommit a2d30362f48589bc17ad5f20243993effe893b0b[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Wed Sep 25 20:28:53 2024 +0900
+
+    스켈레톤 이미지 수정
+
+[33mcommit 22ed4623a76a1c4d63a02af92be01875aa0a1ca4[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Wed Sep 25 20:28:30 2024 +0900
+
+    스켈레톤 이미지 수정
+
+[33mcommit 44a44eebc96bb2d338542a62b80dfb06f1ef193e[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Wed Sep 25 20:28:30 2024 +0900
+
+    스켈레톤 이미지 수정
+
+[33mcommit d6eaa51b42daab8ff6f4b50047de298f253f6617[m
+Merge: eff3d59 d8dccbe
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Wed Sep 25 20:05:52 2024 +0900
+
+    Merge remote-tracking branch 'origin/develop' into feat#11
+
+[33mcommit adf3072bde20511fda992c54979f4e39a20c1198[m
+Merge: 25d82b0 db1f6ce
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Wed Sep 25 20:05:52 2024 +0900
+
+    Merge remote-tracking branch 'origin/develop' into feat#11
+
+[33mcommit eff3d5913070fdbed9fd185d8f0b636a3e8f38f7[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Wed Sep 25 20:02:41 2024 +0900
+
+    스켈레톤 디자인
+
+[33mcommit 25d82b07c82d1c693f98a92dcb313063b8feb79c[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Wed Sep 25 20:02:41 2024 +0900
+
+    스켈레톤 디자인
+
+[33mcommit d8dccbe69ab2432a66e2766f8b6bd903a2fd4f7a[m
+Merge: 643cf2a b905e15
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Wed Sep 25 20:01:27 2024 +0900
+
+    Merge pull request #48 from WizOnFire/feat#17
+    
+    Feat#17
+
+[33mcommit db1f6ceded5112c813969685862674e6673db118[m
+Merge: 866138a b9afc34
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Wed Sep 25 20:01:27 2024 +0900
+
+    Merge pull request #48 from WizOnFire/feat#17
+    
+    Feat#17
+
+[33mcommit b905e159cc2eb31f06ef7959704460a73a3b4912[m
+Merge: 88392df 643cf2a
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Sep 25 20:00:42 2024 +0900
+
+    Rename: merge
+
+[33mcommit b9afc34f8232e3018712c1cb77ff1c7fe3c3c0f2[m
+Merge: 9db0ee9 866138a
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Sep 25 20:00:42 2024 +0900
+
+    Rename: merge
+
+[33mcommit 88392df11b7a3829f61937038609e39f512c007f[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Sep 25 19:58:48 2024 +0900
+
+    Design: 스켈레톤 ui 추가
+
+[33mcommit 9db0ee9170d2c4f47ea0c27eb66f893e0e3bba14[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Sep 25 19:58:48 2024 +0900
+
+    Design: 스켈레톤 ui 추가
+
+[33mcommit 643cf2aa0db01a32fc2312139b106dff022f0ff7[m
+Merge: c8b6a11 4886103
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Wed Sep 25 19:47:31 2024 +0900
+
+    Merge pull request #47 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit 866138ad9c11b190f3e34d7f5455a18dd6407a48[m
+Merge: 5716210 08eb183
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Wed Sep 25 19:47:31 2024 +0900
+
+    Merge pull request #47 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit 08eb183f6d8a413fd646dedc5cf31d393bceb31f[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 25 19:46:31 2024 +0900
+
+    7:46
+
+[33mcommit 48861034d01413ec6d18967688e434ca8939633b[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 25 19:46:31 2024 +0900
+
+    7:46
+
+[33mcommit b846e42bd653cc82c83cb6102441e9bd4f3a7024[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 25 16:02:54 2024 +0900
+
+    4:02
+
+[33mcommit 019bc3dfed051915cc9a49cb1ce228cba33fc7e2[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 25 16:02:54 2024 +0900
+
+    4:02
+
+[33mcommit 99276e665e65e3c46901658596935d0c9a8158b8[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 25 12:38:08 2024 +0900
+
+    퓨처스 추가 12:38
+
+[33mcommit 998a33a9af4ac965392579bef0bf578c9c440397[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 25 12:38:08 2024 +0900
+
+    퓨처스 추가 12:38
+
+[33mcommit ef1236b99d2d64723ae751baebd829c9f15c08d5[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Wed Sep 25 02:18:14 2024 +0900
+
+    뉴스,보도자료 페이지 디자인 수정
+
+[33mcommit 1933f8d515fc336fc8c57f70fac62c06d4c30435[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Wed Sep 25 02:18:14 2024 +0900
+
+    뉴스,보도자료 페이지 디자인 수정
+
+[33mcommit f606b81f4165c492c3cde598920644fda03bb4a8[m
+Merge: 211e4f9 5716210
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 25 02:15:32 2024 +0900
+
+    퓨처스 버튼 추가
+
+[33mcommit f600c8c48d6dd8a134b50b97d27f72c77a7f6efa[m
+Merge: a0d7f5f c8b6a11
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 25 02:15:32 2024 +0900
+
+    퓨처스 버튼 추가
+
+[33mcommit 891dddecf4e8e5f3ce9a154e1eaa08357d8a57c4[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Wed Sep 25 01:58:20 2024 +0900
+
+    뉴스페이지 디자인 수정
+
+[33mcommit ab5e118ed48b61ad7c3cc1d83856804af8a474fc[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Wed Sep 25 01:58:20 2024 +0900
+
+    뉴스페이지 디자인 수정
+
+[33mcommit 297608a739665e4650d80161ac66a2f7b97c3fd3[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Wed Sep 25 01:15:49 2024 +0900
+
+    WatchPoint
+
+[33mcommit 555bafda2a5834fb003833161b031514a8436668[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Wed Sep 25 01:15:49 2024 +0900
+
+    WatchPoint
+
+[33mcommit 211e4f9ee13c383ec2653006d622b5cdf617c880[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 24 20:25:45 2024 +0900
+
+    머지 전 커밋
+
+[33mcommit a0d7f5fec8e295ea6aa2157bc76a5d51f482f4b3[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 24 20:25:45 2024 +0900
+
+    머지 전 커밋
+
+[33mcommit d02dc7ce94d2954766bb1f5bf0b43a93029c1862[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 24 10:08:30 2024 +0900
+
+    10:08
+
+[33mcommit 45d1cac9269153d1aca926ac54ac19fd849e3738[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 24 10:08:30 2024 +0900
+
+    10:08
+
+[33mcommit c919e294a1fbfc3e4cbf325963226499861e86d0[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 24 09:40:10 2024 +0900
+
+    9/24
+
+[33mcommit 74b8ff27e56492381900d4f6ad8dc399515de6a0[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 24 09:40:10 2024 +0900
+
+    9/24
+
+[33mcommit f8eb75ee70849178051a49ac6c4490929246a87c[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 24 02:43:52 2024 +0900
+
+    네비 수정했다,,
+
+[33mcommit ca7884546616189357f39aec702485cdda0dc71a[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 24 02:43:52 2024 +0900
+
+    네비 수정했다,,
+
+[33mcommit 2ef77fd304490441a00ed7df669c86dabb9dbe24[m
+Merge: d6d8260 c8b6a11
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 24 02:09:05 2024 +0900
+
+    뉴스페이지 수정중
+
+[33mcommit 804eee2ad6224a6598831aa380e842f5af9b4ae7[m
+Merge: 0d46bad 5716210
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 24 02:09:05 2024 +0900
+
+    뉴스페이지 수정중
+
+[33mcommit d6d826039b0bfeb4c50da461df6e9c9ee62b2348[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 24 02:05:13 2024 +0900
+
+    뉴스페이지 수정중
+
+[33mcommit 0d46badeb428f8bf2e2231a21182935d185a32f0[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 24 02:05:13 2024 +0900
+
+    뉴스페이지 수정중
+
+[33mcommit c8b6a112ac4325fc9deb843ac5b59519c1b3d2f2[m
+Merge: cbcfd4b c72346e
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Tue Sep 24 02:04:29 2024 +0900
+
+    Merge pull request #46 from WizOnFire/feat#17
+    
+    Fix: 404페이지, 박스스코어 score 수정
+
+[33mcommit 57162102f49238d9953e3f2357cfcbf223f82fa4[m
+Merge: 69f1e6d dde322e
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Tue Sep 24 02:04:29 2024 +0900
+
+    Merge pull request #46 from WizOnFire/feat#17
+    
+    Fix: 404페이지, 박스스코어 score 수정
+
+[33mcommit c72346ec02c033a5d33afa8ed79f8af4a4f616e4[m
+Merge: d73ad43 cbcfd4b
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Tue Sep 24 02:02:47 2024 +0900
+
+    Rename: develop merge
+
+[33mcommit dde322ecf0ebfcffb283014ad8f6d6f45b93dc4e[m
+Merge: 1bf226e 69f1e6d
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Tue Sep 24 02:02:47 2024 +0900
+
+    Rename: develop merge
+
+[33mcommit d73ad4358a83cb02dd26d6183839f6a8c78c8e2e[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Tue Sep 24 02:00:07 2024 +0900
+
+    Fix: 404페이지, 박스스코어 기능 수정
+
+[33mcommit 1bf226e9d08d404cff57a27d5dcd28afac79ecf9[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Tue Sep 24 02:00:07 2024 +0900
+
+    Fix: 404페이지, 박스스코어 기능 수정
+
+[33mcommit 4efa3cd35e73b1b01e5b2783a51dd39ac9bf8477[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 24 01:05:35 2024 +0900
+
+    lottie 에니메이션
+
+[33mcommit ed0d00164a73d4b4386caf20e0791bfb969b3e79[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 24 01:05:35 2024 +0900
+
+    lottie 에니메이션
+
+[33mcommit 78ca7192c3908e36b4082102b5f1b4b415547a42[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 24 00:19:48 2024 +0900
+
+    경기일정 스켈 추가
+
+[33mcommit b2460c1e98b537d8d2e409711fe3e7d4d6b580df[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 24 00:19:48 2024 +0900
+
+    경기일정 스켈 추가
+
+[33mcommit 9fab3bbcf5dfebde03526a06161840e8d3385548[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Mon Sep 23 23:08:31 2024 +0900
+
+    썸네일 이미지 추가
+
+[33mcommit 117493f88185df978b747caf8a9038b2a580cd61[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Mon Sep 23 23:08:31 2024 +0900
+
+    썸네일 이미지 추가
+
+[33mcommit c6f5f03da7b7f3c833a0a16eadb31afb07d11220[m
+Merge: b1e6a35 cbcfd4b
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Mon Sep 23 23:06:21 2024 +0900
+
+    썸네일 이미지 추가
+
+[33mcommit 445234b1a11b409d916cd82038a1bb8eaca753c5[m
+Merge: e6c5040 69f1e6d
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Mon Sep 23 23:06:21 2024 +0900
+
+    썸네일 이미지 추가
+
+[33mcommit cbcfd4bc17f238d0c06898fec18d70b56c6d89e0[m
+Merge: f84d8b4 5bc5734
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Sun Sep 22 17:32:58 2024 +0900
+
+    Merge pull request #44 from WizOnFire/feat#15
+    
+    썸네일 해결
+
+[33mcommit 69f1e6d865e770c086f5a12a208918e39cc0addb[m
+Merge: 4fbb85c ca00008
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Sun Sep 22 17:32:58 2024 +0900
+
+    Merge pull request #44 from WizOnFire/feat#15
+    
+    썸네일 해결
+
+[33mcommit ca000089f597cd8083da9feaf7599432a1f19d6e[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 22 17:31:22 2024 +0900
+
+    썸네일 해결
+
+[33mcommit 5bc5734898572b333a8c5439101468314f2600e4[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 22 17:31:22 2024 +0900
+
+    썸네일 해결
+
+[33mcommit b1e6a35e1d6158812ddc5f47279f9274cec26142[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 22 17:28:54 2024 +0900
+
+    썸네일 수정중
+
+[33mcommit e6c50402934cd1ba1fd0c4aad299b41e3d701b1a[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 22 17:28:54 2024 +0900
+
+    썸네일 수정중
+
+[33mcommit da5414e65624b846e73872bde268628dda7451e3[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 22 16:50:37 2024 +0900
+
+    썸네일 이미지 수정중...
+
+[33mcommit 95237d3c94fc07f6fa7708102cd90d0fead75465[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 22 16:50:37 2024 +0900
+
+    썸네일 이미지 수정중...
+
+[33mcommit f7a810f3e58e7505d21bf4186c5f947ddd188a5f[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 22 16:43:53 2024 +0900
+
+    썸네일 이미지 수정중..
+
+[33mcommit ecadd0190ecf26ef7ba02a1bc0f3a000dd9ac005[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 22 16:43:53 2024 +0900
+
+    썸네일 이미지 수정중..
+
+[33mcommit a03ff0f886af3b0f70ac1012074c6a24a7fc059a[m
+Merge: 97ad926 f84d8b4
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Sun Sep 22 16:42:49 2024 +0900
+
+    merge
+
+[33mcommit 213ee84521df13ea4fbfcb974d0ccc1c4101bf64[m
+Merge: 6ce0047 4fbb85c
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Sun Sep 22 16:42:49 2024 +0900
+
+    merge
+
+[33mcommit 97ad926b52ee189496e06b2404a6e1cc1c3adb54[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Sun Sep 22 16:40:49 2024 +0900
+
+    Fix :  콘솔에러 수정
+
+[33mcommit 6ce00470cc53fe1a294e3c075d01cfa881a6a6b3[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Sun Sep 22 16:40:49 2024 +0900
+
+    Fix :  콘솔에러 수정
+
+[33mcommit f84d8b463a5df689de9ed3c6a415bb830d3f550b[m
+Merge: 05b506d 5a65f29
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Sun Sep 22 16:39:44 2024 +0900
+
+    Merge pull request #43 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit 4fbb85c8f8bc534b931c1e3e0dac845dab7cb70b[m
+Merge: d463dba d900917
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Sun Sep 22 16:39:44 2024 +0900
+
+    Merge pull request #43 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit d9009173c982e57e89d32278cc9a79053c5084f5[m
+Merge: 1c804c0 d463dba
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 22 16:37:58 2024 +0900
+
+    4:37
+
+[33mcommit 5a65f299630c380863f72dc51c7746ebefcc1bec[m
+Merge: 3a99248 05b506d
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 22 16:37:58 2024 +0900
+
+    4:37
+
+[33mcommit 1c804c0b8a4858da6e7101464c22afeafd25a1a9[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 22 16:35:08 2024 +0900
+
+    무한 렌더링 수정
+
+[33mcommit 3a9924878088908389b432d83d1cba9240ae9740[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 22 16:35:08 2024 +0900
+
+    무한 렌더링 수정
+
+[33mcommit 05b506dbd4fe9aae69e9f356680897b1b418ad91[m
+Merge: 6c73db9 e690091
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Sun Sep 22 15:08:39 2024 +0900
+
+    Merge pull request #42 from WizOnFire/feat#11
+    
+    썸네일 이미지 수정중..
+
+[33mcommit d463dba689b2ca7af09c86b00ea399a5cba51790[m
+Merge: 4d23939 4ee081f
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Sun Sep 22 15:08:39 2024 +0900
+
+    Merge pull request #42 from WizOnFire/feat#11
+    
+    썸네일 이미지 수정중..
+
+[33mcommit e6900913ffed65613d38127712f99f5cfd190f8b[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 22 15:06:23 2024 +0900
+
+    썸네일 이미지 수정중..
+
+[33mcommit 4ee081fd2ba7e15125bdc9297acd880178b78c0e[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 22 15:06:23 2024 +0900
+
+    썸네일 이미지 수정중..
+
+[33mcommit 6c73db96f508b3b04f951802525076ac1939e665[m
+Merge: 14f0135 8d73a59
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Sun Sep 22 15:06:10 2024 +0900
+
+    Merge pull request #40 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit 4d23939412f6fe474d067ef9fdc08b77723612ce[m
+Merge: 003927d c48bc8f
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Sun Sep 22 15:06:10 2024 +0900
+
+    Merge pull request #40 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit c48bc8f3fe13defe6f7347a193f8032985c5e950[m
+Merge: 2279099 003927d
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 22 15:05:38 2024 +0900
+
+    백업
+
+[33mcommit 8d73a597956deb24de61803de1fc47925458f63f[m
+Merge: 8114f1d 14f0135
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 22 15:05:38 2024 +0900
+
+    백업
+
+[33mcommit 14f013583898c984aa5fa761a85f5b5d78ac9d4a[m
+Merge: 6f1ea33 7c3eb4e
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Sun Sep 22 15:02:52 2024 +0900
+
+    Merge pull request #39 from WizOnFire/feat#17
+    
+    Feat#17
+
+[33mcommit 003927d0d4c709c09df2bb9d5071273780a57f73[m
+Merge: 39e1b7b 52ab29b
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Sun Sep 22 15:02:52 2024 +0900
+
+    Merge pull request #39 from WizOnFire/feat#17
+    
+    Feat#17
+
+[33mcommit 2279099e4db66ff38d8a81643bcdfd479f59fd9d[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 22 15:02:13 2024 +0900
+
+    머지전 백업
+
+[33mcommit 8114f1d927c25edcf0b2d16eea51966c6ec9a093[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 22 15:02:13 2024 +0900
+
+    머지전 백업
+
+[33mcommit 7c3eb4edb2d46d38913a2b29fb4ffbdb1edf8314[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Sun Sep 22 15:01:49 2024 +0900
+
+    Feat: 검색기능구현중
+
+[33mcommit 52ab29ba855eb07f1c46507c8a78290a75603de5[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Sun Sep 22 15:01:49 2024 +0900
+
+    Feat: 검색기능구현중
+
+[33mcommit be7f1bb3623e80da3e9cf2c4790b16dff1f3d8f3[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 22 14:56:09 2024 +0900
+
+    14:55
+
+[33mcommit c4f4447f13810cc4e011a8b0f26786f7e8ccd2b1[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 22 14:56:09 2024 +0900
+
+    14:55
+
+[33mcommit 6f1ea3372a6b32ff9b5bac5c3998c74c352af196[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 22 02:27:35 2024 +0900
+
+    d
+
+[33mcommit 39e1b7bcd61c7758aa28e2d9895427f029e0a610[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 22 02:27:35 2024 +0900
+
+    d
+
+[33mcommit 572302b8ce22dfc48bb6e9c7adcdef39308cad06[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 22 00:34:50 2024 +0900
+
+    12:34
+
+[33mcommit 1972f882ed246cfb26028bfefd941bcb8268a807[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 22 00:34:50 2024 +0900
+
+    12:34
+
+[33mcommit dd8bc84659925d618a729e6df663c992f9c76051[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 21 22:31:21 2024 +0900
+
+    10:31
+
+[33mcommit 1010d1e3e036b702515d932af9181ab6a3de7526[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 21 22:31:21 2024 +0900
+
+    10:31
+
+[33mcommit 422a3d6d15d404d2d6e693c50c685c47780d7de9[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 21 20:59:09 2024 +0900
+
+    네비 수정
+
+[33mcommit 039fef62ae508f0a48c939fd6a896875d5dcff60[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 21 20:59:09 2024 +0900
+
+    네비 수정
+
+[33mcommit aedface6357fb59b1966ffbf133493344f9f52a8[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 21 17:43:40 2024 +0900
+
+    백업
+
+[33mcommit 43db6588610974d55d7ea846aebaa2395e3d68cf[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 21 17:43:40 2024 +0900
+
+    백업
+
+[33mcommit eb191f2350bfef1b1bb1ade4d22a4702a8ab1604[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 21 16:49:50 2024 +0900
+
+    4:49
+
+[33mcommit 11dbf05f4de57e63b0c6ad59c7536d24119f76c9[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 21 16:49:50 2024 +0900
+
+    4:49
+
+[33mcommit d957c513865a0f8255c56f5a02d66fc97f53ba5b[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 21 14:45:01 2024 +0900
+
+    타자서브바 구현
+
+[33mcommit 03c7617e05b91da0c93e7eeb2c66b4f26c9c222a[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 21 14:45:01 2024 +0900
+
+    타자서브바 구현
+
+[33mcommit 7f98179bb1b2804e211bca5f0024dfe8948fec12[m
+Merge: a525ff3 5c749f2
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Fri Sep 20 14:47:19 2024 +0900
+
+    Merge pull request #38 from WizOnFire/feat#17
+    
+    Feat#17
+
+[33mcommit 7f8c44e3981c76f8196238f3766e746f9a6c636f[m
+Merge: 561a7be f0fd633
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Fri Sep 20 14:47:19 2024 +0900
+
+    Merge pull request #38 from WizOnFire/feat#17
+    
+    Feat#17
+
+[33mcommit a525ff3f48a24073027f74a12a480c9eadbdca5c[m
+Merge: 752a49f f82263f
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Fri Sep 20 14:46:54 2024 +0900
+
+    Merge pull request #37 from WizOnFire/feat#12
+    
+    Feat#12
+
+[33mcommit 561a7be963cac812b874307c23dc188c781f9ea1[m
+Merge: 2d12713 af841e0
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Fri Sep 20 14:46:54 2024 +0900
+
+    Merge pull request #37 from WizOnFire/feat#12
+    
+    Feat#12
+
+[33mcommit 5c749f231c9dd4463cac3a5de792bedee4663d18[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Fri Sep 20 14:44:47 2024 +0900
+
+    Feat: 팀순위
+
+[33mcommit f0fd6333faa21da8ff3d5c3b5efcb492498fca86[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Fri Sep 20 14:44:47 2024 +0900
+
+    Feat: 팀순위
+
+[33mcommit f82263f1b26f3e738bd0639ccee39c85630a0b4f[m
+Merge: 51ad0a5 752a49f
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Fri Sep 20 14:39:55 2024 +0900
+
+    schedfooter
+
+[33mcommit af841e007442c77f26896536403ec510592ce724[m
+Merge: 580f077 2d12713
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Fri Sep 20 14:39:55 2024 +0900
+
+    schedfooter
+
+[33mcommit 752a49fe240f932e21887dd811db9af1b2e2db6b[m
+Merge: 114fb50 4c9aa87
+Author: Jieun Park <140596167+jieunpark626@users.noreply.github.com>
+Date:   Fri Sep 20 14:39:20 2024 +0900
+
+    Merge pull request #36 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit 2d12713f6c91aadaffcd4d84d71532e934e1bc8d[m
+Merge: 0e045ff b3f715b
+Author: Jieun Park <140596167+jieunpark626@users.noreply.github.com>
+Date:   Fri Sep 20 14:39:20 2024 +0900
+
+    Merge pull request #36 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit 51ad0a51c4d41cc7094d3feb6d964844a2094f3d[m
+Merge: 7d4c48d 169b40e
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Fri Sep 20 14:37:28 2024 +0900
+
+    schedfooter
+
+[33mcommit 580f0773a9e01115bdedf809eb37badb5230b331[m
+Merge: dc659a9 20a48e5
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Fri Sep 20 14:37:28 2024 +0900
+
+    schedfooter
+
+[33mcommit 4c9aa877dcdb0e5145e637c7a51f8ba10b6490f7[m
+Merge: 4fc9824 114fb50
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 20 14:35:55 2024 +0900
+
+    2:35
+
+[33mcommit b3f715b2c06804cc7a43c38a7f97fe92bd3cc2fb[m
+Merge: 9c881e5 0e045ff
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 20 14:35:55 2024 +0900
+
+    2:35
+
+[33mcommit 114fb50b7b5979ee101068eaaa77c88688597d2b[m
+Merge: 169b40e ff2b1c5
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Fri Sep 20 14:35:18 2024 +0900
+
+    Merge pull request #35 from WizOnFire/feat#11
+    
+    Feat#11
+
+[33mcommit 0e045ff7825001ae142cea84abb70bad9a871856[m
+Merge: 20a48e5 813dcfa
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Fri Sep 20 14:35:18 2024 +0900
+
+    Merge pull request #35 from WizOnFire/feat#11
+    
+    Feat#11
+
+[33mcommit 4fc9824dddf4afd0fe8bd918c2ae2b10bd3fe206[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 20 14:34:05 2024 +0900
+
+    9:20
+
+[33mcommit 9c881e54aab40c96234b12da298adc83e1f05c8b[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 20 14:34:05 2024 +0900
+
+    9:20
+
+[33mcommit 95c8faf733a31180b4a42053eed3cfe0dae6a733[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 20 14:32:01 2024 +0900
+
+    9:20
+
+[33mcommit 6eaa6bc148f108c8d3acee3100ea3f835a25a19c[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 20 14:32:01 2024 +0900
+
+    9:20
+
+[33mcommit ff2b1c582506f7c5e32d5f8e7d21fa3bba0efd93[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Fri Sep 20 14:23:26 2024 +0900
+
+    보도자료 페이지 구현
+
+[33mcommit 813dcfa0e23cfcebd35536360916101cdcc863a3[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Fri Sep 20 14:23:26 2024 +0900
+
+    보도자료 페이지 구현
+
+[33mcommit 138615f0d03e13c17ca9f1bcb78a609561e1374e[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Fri Sep 20 14:18:43 2024 +0900
+
+    뉴스페이지 수정
+
+[33mcommit d3801d667c21782baba695ed9985fcdd09b60969[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Fri Sep 20 14:18:43 2024 +0900
+
+    뉴스페이지 수정
+
+[33mcommit f39122c1924f292e54f5903078a117fe73a7d1b9[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 20 14:03:29 2024 +0900
+
+    2:03
+
+[33mcommit 80c4eadabc54743b8699791edbd16b6fef5d0560[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 20 14:03:29 2024 +0900
+
+    2:03
+
+[33mcommit f825920f653727ade8c5718f3a448548eaebf758[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 20 13:35:33 2024 +0900
+
+    13:45
+
+[33mcommit 1e08bd19b9cefa4ecfad407e5cb8774965f72203[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 20 13:35:33 2024 +0900
+
+    13:45
+
+[33mcommit 06e4a2d0d1197e470b6f51b9f50326fa51ccfc7a[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Fri Sep 20 13:27:09 2024 +0900
+
+    뉴스페이지 수정
+
+[33mcommit 03fab426ddb588b67c283dad2033670121b2214c[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Fri Sep 20 13:27:09 2024 +0900
+
+    뉴스페이지 수정
+
+[33mcommit 7d4c48da8f4d3690c53fc92bbcb38d9c1968e79b[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Fri Sep 20 13:23:56 2024 +0900
+
+    sched
+
+[33mcommit dc659a97d7ddf60d51dce384b9939b92dab110ee[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Fri Sep 20 13:23:56 2024 +0900
+
+    sched
+
+[33mcommit 72a61324aaf6f0e0e80a94cd25f3fbcf4c6540f8[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 20 12:36:47 2024 +0900
+
+    player네비 수정 및 테이블 데이터 없을 때
+
+[33mcommit 368daec089650b9482d2620de64527c6881aa592[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 20 12:36:47 2024 +0900
+
+    player네비 수정 및 테이블 데이터 없을 때
+
+[33mcommit 6c449a808621203cd5f544b0a4f850134fe23269[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 20 10:02:01 2024 +0900
+
+    9/20 10:01
+
+[33mcommit 392d459723cbbc24fa9514166e30ceb74b95b742[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 20 10:02:01 2024 +0900
+
+    9/20 10:01
+
+[33mcommit 169b40e8598a74ae7eaa09bb260206fe3bbeb2ef[m
+Merge: 24ff0a2 2875f17
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Fri Sep 20 09:19:53 2024 +0900
+
+    Merge pull request #33 from WizOnFire/feat#17
+    
+    Feat: 차트,  bar막대그래프 기능 구현
+
+[33mcommit 20a48e524859f4e89f4c4463f863a1fcc727629b[m
+Merge: 1df99ff 1a63b82
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Fri Sep 20 09:19:53 2024 +0900
+
+    Merge pull request #33 from WizOnFire/feat#17
+    
+    Feat: 차트,  bar막대그래프 기능 구현
+
+[33mcommit 2875f176625312e5c0f3bfdc4ed22ecbd6667f8d[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Fri Sep 20 08:48:57 2024 +0900
+
+    Feat: 차트,bar막대그래프 기능 구현
+
+[33mcommit 1a63b82887c53189f3c6624e9d0756535ad3cb66[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Fri Sep 20 08:48:57 2024 +0900
+
+    Feat: 차트,bar막대그래프 기능 구현
+
+[33mcommit d9f81f7f1cbe9355a0cb2bb0cad1b8bfe2ecfd30[m
+Merge: f858765 24ff0a2
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Fri Sep 20 03:08:40 2024 +0900
+
+    Merge branch 'develop' of https://github.com/WizOnFire/KT_Web into feat#17
+
+[33mcommit 4893f52d2b691ca1549b60073d0c0d57bf48200e[m
+Merge: 9a2cf12 1df99ff
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Fri Sep 20 03:08:40 2024 +0900
+
+    Merge branch 'develop' of https://github.com/WizOnFire/KT_Web into feat#17
+
+[33mcommit 24ff0a2ad8caa1d3b882f32cfd0d02641ddf8656[m
+Merge: 32c0bdf 6f51b2c
+Author: Jieun Park <140596167+jieunpark626@users.noreply.github.com>
+Date:   Fri Sep 20 03:04:05 2024 +0900
+
+    Merge pull request #29 from WizOnFire/feat#12
+    
+    Feat#12
+
+[33mcommit 1df99ff117d119d77303e5743301e2e1308d3b34[m
+Merge: 9ac2dc3 0c593e2
+Author: Jieun Park <140596167+jieunpark626@users.noreply.github.com>
+Date:   Fri Sep 20 03:04:05 2024 +0900
+
+    Merge pull request #29 from WizOnFire/feat#12
+    
+    Feat#12
+
+[33mcommit f8587653c0a60a4e8af70ef85604542d7553e69a[m
+Merge: ebb033b 32c0bdf
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Fri Sep 20 02:58:37 2024 +0900
+
+    Merge branch 'develop' of https://github.com/WizOnFire/KT_Web into feat#17
+
+[33mcommit 9a2cf123dce9ed430b3002a4182918f53d411d5e[m
+Merge: bc6cc37 9ac2dc3
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Fri Sep 20 02:58:37 2024 +0900
+
+    Merge branch 'develop' of https://github.com/WizOnFire/KT_Web into feat#17
+
+[33mcommit ebb033b7643191cea18d67f760f96942ec7d4561[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Fri Sep 20 02:58:03 2024 +0900
+
+    Feat: Chart 라이브러리 npm 설치
+
+[33mcommit bc6cc373f63df0468c6be1339ae9d36100980101[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Fri Sep 20 02:58:03 2024 +0900
+
+    Feat: Chart 라이브러리 npm 설치
+
+[33mcommit 6f51b2c3b505f2264fdaaa12bcee5dbc54ce84ed[m
+Merge: a9c17b6 32c0bdf
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Fri Sep 20 02:53:56 2024 +0900
+
+    schedButton
+
+[33mcommit 0c593e20a7f430aa1810df3ce86827d1f2a858a4[m
+Merge: afa9107 9ac2dc3
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Fri Sep 20 02:53:56 2024 +0900
+
+    schedButton
+
+[33mcommit 32c0bdfbe8c54b5af618022d5f34d4d28ba291e2[m
+Merge: 26ecde6 9eff37c
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Fri Sep 20 02:52:50 2024 +0900
+
+    Merge pull request #27 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit 9ac2dc30101cf98128d0b6b880c16b8e4f0519a5[m
+Merge: cbaefc3 b490f0b
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Fri Sep 20 02:52:50 2024 +0900
+
+    Merge pull request #27 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit a9c17b649b48cee5a5ef9fdac94c0fcf702d5c96[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Fri Sep 20 02:46:09 2024 +0900
+
+    schedButton
+
+[33mcommit afa9107b9af0ceaa5eab528b6f20b986f58f2e51[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Fri Sep 20 02:46:09 2024 +0900
+
+    schedButton
+
+[33mcommit 9eff37cb744b0086b5427496ecab4c9a5653ea95[m
+Merge: 773c7c7 71845b6
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 20 01:24:21 2024 +0900
+
+    1:24
+
+[33mcommit b490f0bab16d35d769bc0c8d282ab60f6e6de8a9[m
+Merge: 8401f86 9074472
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 20 01:24:21 2024 +0900
+
+    1:24
+
+[33mcommit 773c7c76bb5e8055a95500c84995df51f6c32332[m
+Merge: ad7f40b 26ecde6
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 20 01:22:39 2024 +0900
+
+    머지전 커밋
+
+[33mcommit 8401f866a2aed6ea55f5b9fbc2354cc7bc4f054a[m
+Merge: 448035c cbaefc3
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 20 01:22:39 2024 +0900
+
+    머지전 커밋
+
+[33mcommit ad7f40b45897f3b12057d02f3895278b31723083[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 20 01:18:55 2024 +0900
+
+    9.20 1:18
+
+[33mcommit 448035c94d8877dc8772185a893e16eab603fe7a[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Fri Sep 20 01:18:55 2024 +0900
+
+    9.20 1:18
+
+[33mcommit 26ecde68387a5d3bd203d18a06dc2ae3ec057b6b[m
+Merge: ed11b7f 816eb8a
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Fri Sep 20 00:41:56 2024 +0900
+
+    Merge pull request #26 from WizOnFire/feat#17
+    
+    Feat#17
+
+[33mcommit cbaefc318720d61eaad10457a962522e80267d6a[m
+Merge: 947e75a 2fc4eaf
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Fri Sep 20 00:41:56 2024 +0900
+
+    Merge pull request #26 from WizOnFire/feat#17
+    
+    Feat#17
+
+[33mcommit 816eb8ab86975ba58dfe645bcd7df4caf558da49[m
+Merge: bfc9c27 ed11b7f
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Fri Sep 20 00:38:53 2024 +0900
+
+    merge complete
+
+[33mcommit 2fc4eaf32ce8c8d4aa15f2ed56c45c23e4cffa7b[m
+Merge: 97a4c2a 947e75a
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Fri Sep 20 00:38:53 2024 +0900
+
+    merge complete
+
+[33mcommit bfc9c27a283108f0025906bba7eccfc664c53572[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Fri Sep 20 00:36:56 2024 +0900
+
+    Fix: 컬러 수정
+
+[33mcommit 97a4c2ace34eff985e8e808c2b0934771930a1a9[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Fri Sep 20 00:36:56 2024 +0900
+
+    Fix: 컬러 수정
+
+[33mcommit ed11b7f020c77401f7a57412fca262b4f6030adb[m
+Merge: 4ac4e97 24c2e24
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Fri Sep 20 00:34:22 2024 +0900
+
+    Merge pull request #25 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit 947e75a2a32182380cfc19d148f69a414951d69f[m
+Merge: f0e5b8d efb310a
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Fri Sep 20 00:34:22 2024 +0900
+
+    Merge pull request #25 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit 24c2e24a38cc1453e057109eac8eb225b872a765[m
+Merge: c933b17 4ac4e97
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 19 19:51:17 2024 +0900
+
+    9:19 7:51
+
+[33mcommit efb310a6350e4e8e9873f4efcc4498524943eaa2[m
+Merge: e085bf7 f0e5b8d
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 19 19:51:17 2024 +0900
+
+    9:19 7:51
+
+[33mcommit 4ac4e97f7b543161c28d20a82dc5b8f8324d224b[m
+Merge: 5843ac0 e2f2d5a
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Thu Sep 19 19:48:02 2024 +0900
+
+    Merge pull request #24 from WizOnFire/feat#12
+    
+    Feat#12
+
+[33mcommit f0e5b8d92427f798dd6dcede0b837b42222aa90f[m
+Merge: cd72e5f 6878703
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Thu Sep 19 19:48:02 2024 +0900
+
+    Merge pull request #24 from WizOnFire/feat#12
+    
+    Feat#12
+
+[33mcommit c933b17f972a2e217a17d7b74f789d73a49c8891[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 19 19:47:34 2024 +0900
+
+    9:19 7:47
+
+[33mcommit e085bf7e198351651b999d592cfc2bff7a96e384[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 19 19:47:34 2024 +0900
+
+    9:19 7:47
+
+[33mcommit e2f2d5af6c07747fe61a91707b671653ab40c7cb[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Thu Sep 19 19:45:09 2024 +0900
+
+    sched
+
+[33mcommit 6878703302582b28d53164c9be4bf98adf1923a8[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Thu Sep 19 19:45:09 2024 +0900
+
+    sched
+
+[33mcommit fdf0113fce700d1b35ece01cf0961e71d9dd49b8[m
+Merge: e4b4df1 5843ac0
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 19 18:10:03 2024 +0900
+
+    Merge branch 'develop' of https://github.com/WizOnFire/KT_Web into feat#15
+
+[33mcommit 7c38485065ba59bb14c472943be3daabcc1f4783[m
+Merge: 9327c4b cd72e5f
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 19 18:10:03 2024 +0900
+
+    Merge branch 'develop' of https://github.com/WizOnFire/KT_Web into feat#15
+
+[33mcommit e4b4df12faf0711247af29d8c47b873adf65da2b[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 19 18:09:01 2024 +0900
+
+    develop땡기기 전에 커밋
+
+[33mcommit 9327c4b4848168d6ba803bfe0b8a5991c8250485[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 19 18:09:01 2024 +0900
+
+    develop땡기기 전에 커밋
+
+[33mcommit 5843ac0c805657a0fbfa20748d197e8683064949[m
+Merge: 652a91f 9fda999
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 19 18:08:15 2024 +0900
+
+    Merge pull request #23 from WizOnFire/feat#11
+    
+    Feat#11
+
+[33mcommit cd72e5fce701628f59feda5188646b168c29ffbe[m
+Merge: 932cd64 33407ac
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 19 18:08:15 2024 +0900
+
+    Merge pull request #23 from WizOnFire/feat#11
+    
+    Feat#11
+
+[33mcommit 9fda999506b824d49694ca41b3640e41c0674b51[m
+Merge: d2f9c63 652a91f
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 19 18:00:34 2024 +0900
+
+    Merge remote-tracking branch 'origin/develop' into feat#11
+
+[33mcommit 33407aca94dde7e9f9776e1c2a39846d9b85caf5[m
+Merge: 2f96d6d 932cd64
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 19 18:00:34 2024 +0900
+
+    Merge remote-tracking branch 'origin/develop' into feat#11
+
+[33mcommit c38e1adc915cdeb8d5db0f6dd4c51bea735bf15a[m
+Merge: 613450e 652a91f
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Thu Sep 19 17:56:22 2024 +0900
+
+    Merge remote-tracking branch 'origin/develop' into feat#12
+
+[33mcommit 2cc48e517658c8c63e73360d7b760024dfdbbc2e[m
+Merge: 616555d 932cd64
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Thu Sep 19 17:56:22 2024 +0900
+
+    Merge remote-tracking branch 'origin/develop' into feat#12
+
+[33mcommit d2f9c639ff82b1a28bba7fe9091978d944f7a79e[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 19 17:49:59 2024 +0900
+
+            renamed:    src/pages/wizpark/PagesStyles.ts -> src/pages/PagesStyles.ts
+
+[33mcommit 2f96d6d59484e84ebf8682c73e27b7dfab40ce7a[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 19 17:49:59 2024 +0900
+
+            renamed:    src/pages/wizpark/PagesStyles.ts -> src/pages/PagesStyles.ts
+
+[33mcommit 613450e009836bd63113fa2a1da11bff6cd7c9e6[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Thu Sep 19 17:48:49 2024 +0900
+
+    sched
+
+[33mcommit 616555d296fd448c2728888b831e01e3f5046501[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Thu Sep 19 17:48:49 2024 +0900
+
+    sched
+
+[33mcommit 652a91f7899ebbbd80b29146bd2e91f5c6894b6f[m
+Merge: 654f6b9 dc37d3d
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 19 17:47:18 2024 +0900
+
+    Merge pull request #21 from WizOnFire/feat#17
+    
+    Feat#17
+
+[33mcommit 932cd648fd4c61c363a84b786af52d98ac83da55[m
+Merge: d75b88b 4ed1f0e
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 19 17:47:18 2024 +0900
+
+    Merge pull request #21 from WizOnFire/feat#17
+    
+    Feat#17
+
+[33mcommit dc37d3d035601e4b3588b62fb8cedeeccdb6d415[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 19 17:46:02 2024 +0900
+
+    Fix: 오류 수정
+
+[33mcommit 4ed1f0e0db3d63b83fa1053a9c83f347b1041498[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 19 17:46:02 2024 +0900
+
+    Fix: 오류 수정
+
+[33mcommit 4286adba2f5993760b144c047c8abb4242a5f02a[m
+Merge: eec15e7 654f6b9
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 19 16:34:27 2024 +0900
+
+    Merge branch 'develop' of https://github.com/WizOnFire/KT_Web into feat#16
+
+[33mcommit 8b1802d6e5b7b2a46773df27ffdd5642b4732a5e[m
+Merge: 64f1708 d75b88b
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 19 16:34:27 2024 +0900
+
+    Merge branch 'develop' of https://github.com/WizOnFire/KT_Web into feat#16
+
+[33mcommit eec15e75656da2acb904609473a68556268e5aa1[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 19 16:32:41 2024 +0900
+
+    Rename: 안쓰는 파일
+
+[33mcommit 64f170895283da81b999256fda01e7d2a7dceae6[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 19 16:32:41 2024 +0900
+
+    Rename: 안쓰는 파일
+
+[33mcommit 654f6b99b22eda151adee80290a0cd849dbe3a93[m
+Merge: 923001c 3d7ff69
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 19 16:31:45 2024 +0900
+
+    Merge pull request #18 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit d75b88b2093d80a5395720f980f28429100e22f4[m
+Merge: ed363d2 4365bf4
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 19 16:31:45 2024 +0900
+
+    Merge pull request #18 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit 3d7ff6931c797e8ff2bae3743dda9c4e431613b3[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 19 16:29:30 2024 +0900
+
+    9/19 4:29
+
+[33mcommit 4365bf4ae758929eb6eed1535aca991a1e360d39[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 19 16:29:30 2024 +0900
+
+    9/19 4:29
+
+[33mcommit 45d3a0df6371099da0cd1bca207a94042e60325c[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 19 16:29:24 2024 +0900
+
+    Wiz뉴스 추가
+
+[33mcommit 855ac191d4db19435dd1cfe8bf3e8534e8527c7a[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 19 16:29:24 2024 +0900
+
+    Wiz뉴스 추가
+
+[33mcommit fb1e39fc08ea04c25c9da899bf26d1975a121ad9[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 19 16:25:14 2024 +0900
+
+    머지 전
+
+[33mcommit 98af7b9a9edc0bbd5b687fcee079f1d3d6ae8323[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 19 16:25:14 2024 +0900
+
+    머지 전
+
+[33mcommit 7a3d742e56eb6d0b535084b38cd2de4b141dbbf3[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 19 13:06:55 2024 +0900
+
+    WizPress 추가
+
+[33mcommit e53774399b1311d95f15f0371d6c23b84e357dfe[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 19 13:06:55 2024 +0900
+
+    WizPress 추가
+
+[33mcommit 892b33fd20af1158fc58ca6093e97ab96b282439[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 19 07:37:54 2024 +0900
+
+    Feat: 랭킹 테이블 표 구현
+
+[33mcommit d6f97683dba4ef4a763cfbf02d671f3abda78f5c[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 19 07:37:54 2024 +0900
+
+    Feat: 랭킹 테이블 표 구현
+
+[33mcommit c0f6cb17895f931b7d2f75cd20f336a46faba3bd[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Sep 18 01:30:35 2024 +0900
+
+    Feat: 박스스코어, 순위기록 폴더 생성
+
+[33mcommit 698a39f693fe4477c92461bce368c61ca3e1ec89[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Sep 18 01:30:35 2024 +0900
+
+    Feat: 박스스코어, 순위기록 폴더 생성
+
+[33mcommit 3b361177d7f93644563b4a1dd7146ff0685a73a6[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 17 16:11:12 2024 +0900
+
+    응원단 수정
+
+[33mcommit 86d16f643d68a7926e51b94779b4c166ae226e78[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 17 16:11:12 2024 +0900
+
+    응원단 수정
+
+[33mcommit f0dd5eaa52da56b1863e1f116443d18552d25d1a[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 17 15:54:33 2024 +0900
+
+    9/17 3:54
+
+[33mcommit cc49a8f16badcdead8e97184f90c371c3c59993b[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 17 15:54:33 2024 +0900
+
+    9/17 3:54
+
+[33mcommit d62368bc0ba87ad67417fc53cb7cae3711220808[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 17 14:43:26 2024 +0900
+
+    backup
+
+[33mcommit 0c2390d72dd6c338e48d02b3711474563396fe7f[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 17 14:43:26 2024 +0900
+
+    backup
+
+[33mcommit 7afa2e62245519241bff99461b1d868a15e2a0a2[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 17 14:19:02 2024 +0900
+
+    backup 9/17 2:18
+
+[33mcommit e6a3eb438452aa9bc5e33dcd3ffdca9587116a83[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 17 14:19:02 2024 +0900
+
+    backup 9/17 2:18
+
+[33mcommit b1291243944ada412e92827cba7d5e6420509d3f[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 17 13:43:17 2024 +0900
+
+    back up
+
+[33mcommit fbd955bf19b5978793b0e66ec73e7dd655522b6d[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 17 13:43:17 2024 +0900
+
+    back up
+
+[33mcommit 9cd4f2e806863b415ea75b4ae859520b2f16f722[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 17 13:04:31 2024 +0900
+
+    9/17 1:04
+
+[33mcommit fa2b485064f9d351e413878f16f41d9121836ecb[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 17 13:04:31 2024 +0900
+
+    9/17 1:04
+
+[33mcommit 88a0516fc5418198859b658e0a3048d790b1ee4a[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Tue Sep 17 06:27:48 2024 +0900
+
+    Feat: 타자투수기록 테이블 구현
+
+[33mcommit 16be8bd345160a01968d28050c1307cad78aae18[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Tue Sep 17 06:27:48 2024 +0900
+
+    Feat: 타자투수기록 테이블 구현
+
+[33mcommit 37a1efa1a09a4d007f4763f407ffd2183c01df47[m
+Merge: 0544e18 923001c
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Mon Sep 16 22:39:33 2024 +0900
+
+    Merge remote-tracking branch 'origin/develop' into feat#12
+
+[33mcommit 35468a287ed3cb06a60d560042771a9617da965e[m
+Merge: 7683432 ed363d2
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Mon Sep 16 22:39:33 2024 +0900
+
+    Merge remote-tracking branch 'origin/develop' into feat#12
+
+[33mcommit 0544e180bd33c81ed98c9ce7b31f8a3bd7ea906a[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Mon Sep 16 22:33:16 2024 +0900
+
+    cal
+
+[33mcommit 7683432b83bbe16ab34b2bd1f1a113ed914a81bb[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Mon Sep 16 22:33:16 2024 +0900
+
+    cal
+
+[33mcommit 923001c91a1d58a072812ce359b79dafef29489b[m
+Merge: a749a25 cb0ed48
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Mon Sep 16 16:23:02 2024 +0900
+
+    Merge pull request #17 from WizOnFire/feat#16
+    
+    Feat#16
+
+[33mcommit ed363d2c68ad7c4c1c49d91ce57fddaa471be852[m
+Merge: 87cd0b1 63320d0
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Mon Sep 16 16:23:02 2024 +0900
+
+    Merge pull request #17 from WizOnFire/feat#16
+    
+    Feat#16
+
+[33mcommit cb0ed485fe811328d7a60d227009ec141834f100[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 16 16:03:39 2024 +0900
+
+    Rename: 안쓰는 파일 삭제 및 수정
+
+[33mcommit 63320d03399aa69b1d6fcb5a711bcb2c3161e550[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 16 16:03:39 2024 +0900
+
+    Rename: 안쓰는 파일 삭제 및 수정
+
+[33mcommit 3e06e695f18306699acc1f1abf43f0de291775cd[m
+Merge: dc60ae1 a749a25
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 16 15:45:01 2024 +0900
+
+    원격브랜치 생성 feat#16
+
+[33mcommit f399da6aebf2950d8ca3f69fdea7fa56959351a4[m
+Merge: 910e4fa 87cd0b1
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 16 15:45:01 2024 +0900
+
+    원격브랜치 생성 feat#16
+
+[33mcommit dc60ae155aadc618f2f77af3ca145fbc8ec05846[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 16 15:40:57 2024 +0900
+
+    Feat: 랜딩페이지 갤러리, 정규리그 테이블 기능 구현
+
+[33mcommit 910e4fa5c93ca163c5c1c2500b90bc0d8768239f[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 16 15:40:57 2024 +0900
+
+    Feat: 랜딩페이지 갤러리, 정규리그 테이블 기능 구현
+
+[33mcommit a749a258087c3548d166f7167d34c5744b8c49b7[m
+Merge: 4ee7e0e bd61974
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Mon Sep 16 15:39:24 2024 +0900
+
+    Merge pull request #14 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit 87cd0b1ea392643c792458f9a35169131e965664[m
+Merge: a7ffbb8 bf5ee95
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Mon Sep 16 15:39:24 2024 +0900
+
+    Merge pull request #14 from WizOnFire/feat#15
+    
+    Feat#15
+
+[33mcommit bd619743685732da399904c76d7d0c335ebd0449[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Mon Sep 16 15:22:16 2024 +0900
+
+    9/16 3:22
+
+[33mcommit bf5ee95d6ad301471f2922425c8814ca47e9b4f2[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Mon Sep 16 15:22:16 2024 +0900
+
+    9/16 3:22
+
+[33mcommit 435bd588614a929e6daf9c95fba52b7a8826eac4[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Mon Sep 16 13:11:23 2024 +0900
+
+    응원페이지
+
+[33mcommit 4f77add38657675a870f30bf0b485d9e2b77f27a[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Mon Sep 16 13:11:23 2024 +0900
+
+    응원페이지
+
+[33mcommit 3988887f69e0300866619377f50f77524b7e8415[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 15 22:42:53 2024 +0900
+
+    노트북이상
+
+[33mcommit 08132ae9e4a42c5ab0ee778bb57cb96a88091932[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 15 22:42:53 2024 +0900
+
+    노트북이상
+
+[33mcommit 4f510c7c61b49f2ab4906f7d1e6814b0a81e5bbc[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Sun Sep 15 21:37:06 2024 +0900
+
+    sched
+
+[33mcommit 19dc9167658b81fec205811f12a613791b317a6c[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Sun Sep 15 21:37:06 2024 +0900
+
+    sched
+
+[33mcommit 8b2b393b6fe2ac4d35e174e02086927bb7806b82[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 15 14:11:28 2024 +0900
+
+    코치 디테일 수정
+
+[33mcommit 7074fd14c59491d0b20405b38332a290906f9a9b[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 15 14:11:28 2024 +0900
+
+    코치 디테일 수정
+
+[33mcommit 57bac38fceb43e5d87e77e0fa92f4f255f65e929[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 15 01:18:50 2024 +0900
+
+    .env 추가
+
+[33mcommit ab01f42f157cd28bf73e25df8b3303672a717e8f[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 15 01:18:50 2024 +0900
+
+    .env 추가
+
+[33mcommit e2b17a2ab43dea194712118e3b02dd16ae01c6c9[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 15 01:06:57 2024 +0900
+
+    env. ignore 품
+
+[33mcommit 3420079da76c02a765dde3530c16e52247f83484[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 15 01:06:57 2024 +0900
+
+    env. ignore 품
+
+[33mcommit e8bb9dfdeab9fd9bba8274ede28098231b599a70[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 15 00:53:12 2024 +0900
+
+    백업용
+
+[33mcommit 1d6edbfdf9b80dfc5efcee62093c174949c2aac5[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 15 00:53:12 2024 +0900
+
+    백업용
+
+[33mcommit 6884ec6d134bc0e7a0ba57a84b296ccb6c059007[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 15 00:06:17 2024 +0900
+
+    서치바 반응형
+
+[33mcommit 962d4be5ff7e481e738a754d79a1bc1aa4dd7663[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 15 00:06:17 2024 +0900
+
+    서치바 반응형
+
+[33mcommit bd2ff87b8d5f2c340872a5e2585ac795163c90b6[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 14 23:35:42 2024 +0900
+
+    skeleton 추가
+
+[33mcommit 30d63be41eee51c5fc5078954ea2889cc331c316[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 14 23:35:42 2024 +0900
+
+    skeleton 추가
+
+[33mcommit 06121d8915ac211b96fdca91e542861d432a6f7b[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 14 23:16:42 2024 +0900
+
+    stash적용
+
+[33mcommit 4d367e790e1938bcce6213c21ec212d4b41062f2[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 14 23:16:42 2024 +0900
+
+    stash적용
+
+[33mcommit 5ea70afb83ff14b4c2a9c9d48973de4ee161bb5a[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 14 23:14:46 2024 +0900
+
+    apply to stash to jinju
+
+[33mcommit c9d1340c5d6daeb8a642d84cc421c71665e2be55[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 14 23:14:46 2024 +0900
+
+    apply to stash to jinju
+
+[33mcommit 579ad9f52e1eef28dc1ad2f68f200c03211e772b[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 14 21:51:55 2024 +0900
+
+    선수 목록 모듈화
+
+[33mcommit 2bf8aa71de2afc290de2b56d0f81ce59481b749b[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 14 21:51:55 2024 +0900
+
+    선수 목록 모듈화
+
+[33mcommit 0e89495dcec061a1fa9eb53f3461a26fa166881c[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Fri Sep 13 18:01:52 2024 +0900
+
+    Feat: 랜딩페이지 - 갤러리 구현
+
+[33mcommit 73610f63665660747e847a1426dc07b550bb31c0[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Fri Sep 13 18:01:52 2024 +0900
+
+    Feat: 랜딩페이지 - 갤러리 구현
+
+[33mcommit 4ee7e0e3add29be1ad55e05c5ffe5875562b1468[m
+Merge: e126f75 ae3cdd5
+Author: Jieun Park <140596167+jieunpark626@users.noreply.github.com>
+Date:   Thu Sep 12 19:29:01 2024 +0900
+
+    Merge pull request #12 from WizOnFire/feat#12
+    
+    Feat#12
+
+[33mcommit a7ffbb8279e495f061aed204a7bf816727c4eb0d[m
+Merge: ac70c39 c3319c7
+Author: Jieun Park <140596167+jieunpark626@users.noreply.github.com>
+Date:   Thu Sep 12 19:29:01 2024 +0900
+
+    Merge pull request #12 from WizOnFire/feat#12
+    
+    Feat#12
+
+[33mcommit ae3cdd5d753ec4487ea7b4441ff3489f2d58175e[m
+Merge: 29a2d50 e126f75
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Thu Sep 12 17:39:37 2024 +0900
+
+    ktwizInfo
+
+[33mcommit c3319c75db4fa289d80d6dc5fe738ef184a84d49[m
+Merge: 13db4fc ac70c39
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Thu Sep 12 17:39:37 2024 +0900
+
+    ktwizInfo
+
+[33mcommit 35ab88830fbb76ce1f64fd168d1fc6f10ac7c91a[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 12 17:33:59 2024 +0900
+
+    경로 수정
+
+[33mcommit b87e6c07f7a9fee1a549ca9bfd132e36b8935593[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Thu Sep 12 17:33:59 2024 +0900
+
+    경로 수정
+
+[33mcommit 71845b6b60da1ba102ff8da9be23b167feb0c56a[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 12 17:31:25 2024 +0900
+
+    d
+
+[33mcommit 907447248733f18a32895ce5852bff27ed505df9[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 12 17:31:25 2024 +0900
+
+    d
+
+[33mcommit 29a2d5053f880b789b44f4f38e20494b03e122ff[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Thu Sep 12 17:30:05 2024 +0900
+
+    selectbox
+
+[33mcommit 13db4fc1421e05454cd173e7c9d314492289e1d4[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Thu Sep 12 17:30:05 2024 +0900
+
+    selectbox
+
+[33mcommit e126f751eb81db74ddba0edf2bd2117ba399c18e[m
+Merge: 48b9a40 e2b56ec
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 12 17:25:08 2024 +0900
+
+    Merge pull request #10 from WizOnFire/feat#9
+    
+    Feat#9
+
+[33mcommit ac70c3937d557e3edc88057e52704b4840dd9eac[m
+Merge: 55474e4 a1c06c1
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Thu Sep 12 17:25:08 2024 +0900
+
+    Merge pull request #10 from WizOnFire/feat#9
+    
+    Feat#9
+
+[33mcommit e2b56ec6edd9043084d252d06fb68f8a1e09d3e0[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 12 17:13:31 2024 +0900
+
+    Feat: Gallery 컴퍼넌트 수정
+
+[33mcommit a1c06c104de13a2ce126406ca8cddeb33993d5ab[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 12 17:13:31 2024 +0900
+
+    Feat: Gallery 컴퍼넌트 수정
+
+[33mcommit 0c266eb9ce45a6c8d8177a0ed12d135ba019a468[m
+Merge: faf07cc d54afc9
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 12 17:12:53 2024 +0900
+
+    Merge branch 'jinju' of https://github.com/WizOnFire/KT_Web into feat#3
+
+[33mcommit 295c8e618795a3a0ab534d858b88063aad4f524f[m
+Merge: d3af2fd 9e1d550
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 12 17:12:53 2024 +0900
+
+    Merge branch 'jinju' of https://github.com/WizOnFire/KT_Web into feat#3
+
+[33mcommit faf07cc265a233da64b2667216d778ef279ca4a5[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 12 16:52:17 2024 +0900
+
+    Feat: 랜딩페이지 구현
+
+[33mcommit d3af2fd5e8a5e7da19b9f2b6cc572249003ec0a8[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 12 16:52:17 2024 +0900
+
+    Feat: 랜딩페이지 구현
+
+[33mcommit 26e200042cf07f4742864d41c6250c7e2b276f0d[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 12 16:52:07 2024 +0900
+
+    Feat: 랜딩페이지 구현
+
+[33mcommit 4e1061feab038e1808df00ea0ef1c29787f8dd5a[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Thu Sep 12 16:52:07 2024 +0900
+
+    Feat: 랜딩페이지 구현
+
+[33mcommit 48b9a40708497b2b113b90b32794088a027a411b[m
+Merge: d0118ca d54afc9
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Thu Sep 12 16:38:51 2024 +0900
+
+    Merge pull request #8 from WizOnFire/jinju
+    
+    Jinju
+
+[33mcommit 55474e4fa3af209c327da67641434fadbc8cfb2e[m
+Merge: bbe05f0 9e1d550
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Thu Sep 12 16:38:51 2024 +0900
+
+    Merge pull request #8 from WizOnFire/jinju
+    
+    Jinju
+
+[33mcommit d54afc9affe9a54ba3184473b98da3e0514acc56[m
+Merge: 44427fc d0118ca
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Thu Sep 12 16:38:39 2024 +0900
+
+    Merge branch 'develop' into jinju
+
+[33mcommit 9e1d5509753035fe3ea65ddde4d5b6c2d565969a[m
+Merge: 20be4cc bbe05f0
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Thu Sep 12 16:38:39 2024 +0900
+
+    Merge branch 'develop' into jinju
+
+[33mcommit d0118ca5ff3c892fc336761dc4062e9e8e5df5ed[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 12 16:27:23 2024 +0900
+
+    9/12
+
+[33mcommit bbe05f0437b9e80c95a06d4fb4c469cfc31559e5[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 12 16:27:23 2024 +0900
+
+    9/12
+
+[33mcommit 44427fc4b7d05cb50cc5d30a7ba98d1844653dfc[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 12 16:16:42 2024 +0900
+
+    develop커밋전
+
+[33mcommit 20be4cc34173472268eb06bd12531b2cb38e010c[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 12 16:16:42 2024 +0900
+
+    develop커밋전
+
+[33mcommit 8d20f23731dca938cf131197f66d0c133bbc14c6[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 12 10:36:28 2024 +0900
+
+    코치페이지 추가
+
+[33mcommit 8be7a30bec327e5d022175aa4692df9a92d52d01[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Thu Sep 12 10:36:28 2024 +0900
+
+    코치페이지 추가
+
+[33mcommit fa29acb4794ffe340b9ea2d4743bab5fcd4939bb[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Sep 11 06:40:03 2024 +0900
+
+    Feat: match game 기능 구현
+
+[33mcommit 8eff3afb9df1761a3d663c1d6dec413808b1c86c[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Wed Sep 11 06:40:03 2024 +0900
+
+    Feat: match game 기능 구현
+
+[33mcommit a55f4477727ff5a709a45bdf65ced8b452792d14[m
+Merge: 5d6e11a 57e0e19
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 11 00:26:40 2024 +0900
+
+    Map컴포넌트 추가
+
+[33mcommit 6369f83fd0e6f0245ad3eeb09f6f236707363ff2[m
+Merge: 51a7a98 0d379e4
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 11 00:26:40 2024 +0900
+
+    Map컴포넌트 추가
+
+[33mcommit 5d6e11aa0337d3db65cd8da3070d2efa5d993205[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 10 16:14:26 2024 +0900
+
+    feat#4풀 전에 커밋
+
+[33mcommit 51a7a980f039dc3efc4881f9c7fc07c2807514ca[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Tue Sep 10 16:14:26 2024 +0900
+
+    feat#4풀 전에 커밋
+
+[33mcommit 57e0e19bf0c3d8cd922d5a32cae85fa1e0a18e0d[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 15:54:04 2024 +0900
+
+    feat: 구장 안내도 페이지
+
+[33mcommit 0d379e4a3eed2200ad93c11f9bf03e26124e9c1c[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 15:54:04 2024 +0900
+
+    feat: 구장 안내도 페이지
+
+[33mcommit 6c317a864d600bfd4fde3cfd24f03fd8e9480245[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 15:49:38 2024 +0900
+
+    구장 안내도 사진 모듈화
+
+[33mcommit 1cc5995a5152a605e9709e8e45b4aec1991c94dd[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 15:49:38 2024 +0900
+
+    구장 안내도 사진 모듈화
+
+[33mcommit 9536bb20abd86ca4ff39c7287539e171104f8e46[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 15:47:38 2024 +0900
+
+    구장 안내도 사진
+
+[33mcommit 9baa347c34de8929bb1235d0001a86286689bbab[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 15:47:38 2024 +0900
+
+    구장 안내도 사진
+
+[33mcommit 03a19acd8b022f79b809fc2119c7c071fe1fe5e2[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 14:32:29 2024 +0900
+
+    feat:구장 소개 페이지
+
+[33mcommit 8f6afed9d64e94c9b6459ba9e04c18c641c438d6[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 14:32:29 2024 +0900
+
+    feat:구장 소개 페이지
+
+[33mcommit c2542a022f8f55c43524e99917c45305b970959c[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 14:31:42 2024 +0900
+
+    feat: pages 스타일 모듈화
+
+[33mcommit ea324f4c7b7a464f43c786317d694f732f34e745[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 14:31:42 2024 +0900
+
+    feat: pages 스타일 모듈화
+
+[33mcommit f6f2e84c8541e6ffccb2465e89af2834df7c1756[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 14:29:54 2024 +0900
+
+    feat:구장 소개 페이지
+
+[33mcommit ff913cd5a6340148aa51da7fa6805af9e59fb492[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 14:29:54 2024 +0900
+
+    feat:구장 소개 페이지
+
+[33mcommit 4d4bfb19605dee099ebaf279b88c5d9197514a47[m
+Merge: f315bef 5f148cf
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 13:44:52 2024 +0900
+
+    Merge branch 'feat#3' of https://github.com/WizOnFire/KT_Web into feat#4
+
+[33mcommit cde2566c29732ee0c64be6cafb17338eaa4d8d6e[m
+Merge: aa80bc7 e4cdf46
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 13:44:52 2024 +0900
+
+    Merge branch 'feat#3' of https://github.com/WizOnFire/KT_Web into feat#4
+
+[33mcommit f315bef7d52cd68680afc5c37bb6a0305b5fabe0[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 13:41:01 2024 +0900
+
+    feat:구장 소개 사진 모듈화 추가
+
+[33mcommit aa80bc7eb220312cd8f974ab5b50c2f04fb12f9c[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 13:41:01 2024 +0900
+
+    feat:구장 소개 사진 모듈화 추가
+
+[33mcommit 9da2deb3c7d009cc9ff69d008f1b0d64d31603df[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 11:21:58 2024 +0900
+
+        feat: 구장 소개 사진 모듈화
+
+[33mcommit e411d4e49aacea8d2d1064bbae1bca1812b54f0f[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 11:21:58 2024 +0900
+
+        feat: 구장 소개 사진 모듈화
+
+[33mcommit 28ebcfcef0edeb481892907def794efebc3b98e7[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 11:21:13 2024 +0900
+
+    구장 소개 사진 추가
+
+[33mcommit c6627dab01b2657bb54418706594afc7c9b93686[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 11:21:13 2024 +0900
+
+    구장 소개 사진 추가
+
+[33mcommit 813dff7179024218b70587078041eb87c40fb137[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 11:19:00 2024 +0900
+
+        feat: 구장 소개 사진 모듈화
+            구장 소개 사진 추가
+
+[33mcommit 292f4c45768304b1f985a28999fb7ed6fefdcde9[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 11:19:00 2024 +0900
+
+        feat: 구장 소개 사진 모듈화
+            구장 소개 사진 추가
+
+[33mcommit 1468207bb716551a4ad534d0e791ae5e4094c4d4[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 11:17:29 2024 +0900
+
+    feat: 구장 소개 사진 모듈화
+
+[33mcommit ea81b26a924ea923bd6dfa7273a249488f0c2b6e[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 11:17:29 2024 +0900
+
+    feat: 구장 소개 사진 모듈화
+
+[33mcommit e31c8cae12a23f46b7e7c2f6be094ec23638254d[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 11:14:18 2024 +0900
+
+            구장 소개 사진:   src/assets/images/common/wizpark.jpg
+
+[33mcommit 4e8714b02dc4976131550babb9003d1cffdce923[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 11:14:18 2024 +0900
+
+            구장 소개 사진:   src/assets/images/common/wizpark.jpg
+
+[33mcommit 9e7b06437aaea10870b85023256f24c08fbda478[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 11:14:05 2024 +0900
+
+    구장 소개
+
+[33mcommit 6fa7a8ed6ba2d97409c26c1b59db9ac394e5b490[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 11:14:05 2024 +0900
+
+    구장 소개
+
+[33mcommit 7047e8d62423fbe136e8bfca08c55b901a28ebf2[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 11:08:15 2024 +0900
+
+    feat: CSS 추가
+
+[33mcommit a4735e4b98685f0776878780c3c17c3721fb10be[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 11:08:15 2024 +0900
+
+    feat: CSS 추가
+
+[33mcommit 5f148cfc156a1c7a8e32559c98335a973c5092c2[m
+Merge: 23afa33 a2538d1
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Tue Sep 10 05:35:12 2024 +0900
+
+    Merge branch 'feat#4' of https://github.com/WizOnFire/KT_Web into feat#3
+
+[33mcommit e4cdf46a21a8ac6b58ded97b133fe8836fd86d2d[m
+Merge: c9abef7 ec5ad53
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Tue Sep 10 05:35:12 2024 +0900
+
+    Merge branch 'feat#4' of https://github.com/WizOnFire/KT_Web into feat#3
+
+[33mcommit c9abef7907252402a7878c69af9abe0a693b8809[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Tue Sep 10 05:33:05 2024 +0900
+
+    :wqMerge branch 'feat#6' of https://github.com/WizOnFire/KT_Web into feat#3
+
+[33mcommit 23afa33ee55eaaf7eef9910f437a55ebbc6a6165[m
+Merge: 38c22b4 5896ec3
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Tue Sep 10 05:30:05 2024 +0900
+
+    Merge branch 'feat#6' of https://github.com/WizOnFire/KT_Web into feat#3
+
+[33mcommit be638b6ec9241bd7fd8b498c3d9f40b28295fac5[m
+Merge: 6d4e04e 21e91c8
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Tue Sep 10 05:30:05 2024 +0900
+
+    Merge branch 'feat#6' of https://github.com/WizOnFire/KT_Web into feat#3
+
+[33mcommit 38c22b44f0bd43ca07c9f2bcff521629fccc1c24[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Tue Sep 10 05:23:44 2024 +0900
+
+    Fix: 푸터 수정, 폰트 추가
+
+[33mcommit 6d4e04ecf972ee0ce2128737ed666881e18669b3[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Tue Sep 10 05:23:44 2024 +0900
+
+    Fix: 푸터 수정, 폰트 추가
+
+[33mcommit a2538d190a2bc6aa2379c9c2ce717fedc084df68[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 00:37:37 2024 +0900
+
+    feat: 모듈화 진행
+
+[33mcommit ec5ad53abafe9f76937c44c52b0079df11e1106f[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 00:37:37 2024 +0900
+
+    feat: 모듈화 진행
+
+[33mcommit edd675d2d9b01d62bb2c8d1515e67fd3fe69eef4[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 00:34:51 2024 +0900
+
+    remove: ktsports 버튼 삭제
+
+[33mcommit ce0123b60ec983ccd42d2fc5d28687cd3d71896f[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 00:34:51 2024 +0900
+
+    remove: ktsports 버튼 삭제
+
+[33mcommit a7398462b0695aedfc98720487e8ae3cd5876e5a[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 00:32:11 2024 +0900
+
+    docs: 라우팅 수정
+
+[33mcommit ee9dd31de5801bfd07681e2c6703d81a76daa87f[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 00:32:11 2024 +0900
+
+    docs: 라우팅 수정
+
+[33mcommit 13f11b606165969a9dbc54ab4355e6c05176ebd9[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 00:29:20 2024 +0900
+
+    test: 사이드바 테스트 위해 파일 생성
+
+[33mcommit fce42fb9bbd4530fbeb51d2b47d32056e2e83438[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 00:29:20 2024 +0900
+
+    test: 사이드바 테스트 위해 파일 생성
+
+[33mcommit c7a9dabffba0db86f7c90c1b32812a2a2d9b5a3c[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 00:27:25 2024 +0900
+
+    test: 사이드바 테스트 위해 파일 생성
+
+[33mcommit c2e0206467f2f55898eaee07321c6bb594498e16[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 00:27:25 2024 +0900
+
+    test: 사이드바 테스트 위해 파일 생성
+
+[33mcommit 105f770b7104f712b1252776dc98ec8e57aecdaf[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 00:20:56 2024 +0900
+
+    docs: description 삭제
+
+[33mcommit a3c6c9a97b260df05c07f5a3d2823035a16e8433[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 00:20:56 2024 +0900
+
+    docs: description 삭제
+
+[33mcommit bb9ff5a320a5043201766f56599e9e72cd77c80e[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 00:10:28 2024 +0900
+
+            modified:   src/components/common/SidebarStyles.ts
+
+[33mcommit 37eac769bed9a8e557695826911422eea1bad657[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 00:10:28 2024 +0900
+
+            modified:   src/components/common/SidebarStyles.ts
+
+[33mcommit c3c3abe40cc3d54a2085bf0892c4229ab9a608a3[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 00:09:23 2024 +0900
+
+    docs: description 필요없을것같아 삭제
+
+[33mcommit 26c2c957e86478df4615b6aa1a3b6f095e8ec4ae[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 00:09:23 2024 +0900
+
+    docs: description 필요없을것같아 삭제
+
+[33mcommit 20291b21289c0aa146bc185f43f2cfa797e946f0[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 00:05:42 2024 +0900
+
+    docs: CSS 모듈화 진행
+
+[33mcommit 389ef82c5479fd756e56ebf5f6f6b5bbd857b7d4[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Tue Sep 10 00:05:42 2024 +0900
+
+    docs: CSS 모듈화 진행
+
+[33mcommit 5896ec3ad3891de8751b918a0de318c41b6680c6[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Mon Sep 9 20:14:20 2024 +0900
+
+    selectbox
+
+[33mcommit 21e91c8fcb7e6ee56e7085e2626308614545add8[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Mon Sep 9 20:14:20 2024 +0900
+
+    selectbox
+
+[33mcommit 16c95be9d8fd2f7ad14e8265104fbc3a676851bd[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 9 06:12:02 2024 +0900
+
+    Fix: 사이드바 수정
+
+[33mcommit 595fbec83ce30ba47889cf7f364695e909a64ab7[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 9 06:12:02 2024 +0900
+
+    Fix: 사이드바 수정
+
+[33mcommit e0e848da51bc1e13c93bd7c6fc6bc77cb63a8944[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 9 06:11:58 2024 +0900
+
+    Fix: 사이드바 수정
+
+[33mcommit 0bb217433e05154eab8cde5e7855147225a33352[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 9 06:11:58 2024 +0900
+
+    Fix: 사이드바 수정
+
+[33mcommit ab5107d174b84033e21bcb65a4d2172e8cf8ac55[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 9 06:07:00 2024 +0900
+
+    Design: 전체적인 css 수정
+
+[33mcommit e095b1c44c3b5641549eb9a2966a3903abc5da96[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 9 06:07:00 2024 +0900
+
+    Design: 전체적인 css 수정
+
+[33mcommit 132de105535c65dc4ec3df85198dce835f1a70e0[m
+Merge: 2471074 2c29866
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 9 03:50:59 2024 +0900
+
+    Feat: merge with 진주님
+
+[33mcommit 1c6d7d23d421f9965033b252b35b036ddccc09a8[m
+Merge: e2b6ca4 540834f
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 9 03:50:59 2024 +0900
+
+    Feat: merge with 진주님
+
+[33mcommit 2471074441c0fae350046f14e379687090579a7e[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 9 03:45:58 2024 +0900
+
+    Design: 버튼css 수정
+
+[33mcommit e2b6ca49ea80494ca7c0fb51321213fc67c6b8a4[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 9 03:45:58 2024 +0900
+
+    Design: 버튼css 수정
+
+[33mcommit 2c29866591833015ffd29e51ad0b34b34eb56c94[m
+Merge: b8bc046 93709d7
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 8 23:52:18 2024 +0900
+
+    준규님과 머지
+
+[33mcommit 540834f8807faf3ee4e0baf86f1eacf4c1474e6f[m
+Merge: 390db01 72aca9a
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 8 23:52:18 2024 +0900
+
+    준규님과 머지
+
+[33mcommit b8bc046c34c549621b9c7f7b64843fc55a7a3a48[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 8 23:27:53 2024 +0900
+
+    로고 수정
+
+[33mcommit 390db01a99fa7d26272269d8f469a09279732652[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 8 23:27:53 2024 +0900
+
+    로고 수정
+
+[33mcommit 93709d7de83829ecd6a1f8dcc3a9b6f2a5aaa153[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 17:10:40 2024 +0900
+
+            modified:   src/components/common/SideBar.tsx
+
+[33mcommit 72aca9a7af10f5eb86408aaa29c693b52fab4ac8[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 17:10:40 2024 +0900
+
+            modified:   src/components/common/SideBar.tsx
+
+[33mcommit a15910ada7412cfba979501595032e3e78c63cec[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 16:50:27 2024 +0900
+
+            modified:   src/layouts/Layout.tsx
+            modified:   src/router/index.tsx
+
+[33mcommit 4a1e89ac558315d50fb4bca1665ca0fc83fa983c[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 16:50:27 2024 +0900
+
+            modified:   src/layouts/Layout.tsx
+            modified:   src/router/index.tsx
+
+[33mcommit a73b97f4612283f24dc0af81a18a00ccabd961da[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Sun Sep 8 15:59:54 2024 +0900
+
+    Feat: 공통 컴퍼넌트 취합(지은,수인)
+
+[33mcommit cc4afc9b946d3823edd3bf096102271e60118e48[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Sun Sep 8 15:59:54 2024 +0900
+
+    Feat: 공통 컴퍼넌트 취합(지은,수인)
+
+[33mcommit 1936fe8a85814f2a5d2a09112a251e259b5564b0[m
+Merge: 70f5815 73d35ab
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Sun Sep 8 15:59:32 2024 +0900
+
+    Feat: 지은님과 머지
+
+[33mcommit b69f6441aa5fdef15446cb48591ad0ff4c43d363[m
+Merge: 622bbfe 32854c8
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Sun Sep 8 15:59:32 2024 +0900
+
+    Feat: 지은님과 머지
+
+[33mcommit bfa9a774fe008f5f678d6be8dcf55665d02d5a9c[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 8 15:57:48 2024 +0900
+
+    네비 바꾸기 전 커밋
+
+[33mcommit a762e4024f49178d394dfa94bd497d6fa3c7da74[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 8 15:57:48 2024 +0900
+
+    네비 바꾸기 전 커밋
+
+[33mcommit 71a5d24854ac58bf2957a36dc367c9005d057627[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 15:39:47 2024 +0900
+
+            modified:   src/router/index.tsx
+
+[33mcommit 4f8e0ae8f00f9d62e65a9cd16f6173f77c89625b[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 15:39:47 2024 +0900
+
+            modified:   src/router/index.tsx
+
+[33mcommit fad7db83e49d0c70cff238c5955747e6d7af319c[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 15:38:54 2024 +0900
+
+            modified:   src/layouts/Layout.tsx
+            modified:   src/router/index.tsx
+
+[33mcommit d7bac363b07f5be891c8fcdba7a284d72a67d917[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 15:38:54 2024 +0900
+
+            modified:   src/layouts/Layout.tsx
+            modified:   src/router/index.tsx
+
+[33mcommit 73d35ab33c6f6e5bb3254be105aa94d4e64df91c[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Sun Sep 8 15:36:15 2024 +0900
+
+    지은 첫 커밋
+
+[33mcommit 32854c8cbcb2aa15dce4f548ac1eee0907ad8a5e[m
+Author: jieunpark <jieun20626@gmail.com>
+Date:   Sun Sep 8 15:36:15 2024 +0900
+
+    지은 첫 커밋
+
+[33mcommit 70f5815a0d6c546d6a571e36c9dcd92189c08137[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Sun Sep 8 15:25:24 2024 +0900
+
+    Feat: 페이지네이션 기능 구현
+
+[33mcommit 622bbfe822b4e83c6fce45cbe00c27f444b24fd1[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Sun Sep 8 15:25:24 2024 +0900
+
+    Feat: 페이지네이션 기능 구현
+
+[33mcommit 1b8e6a76efbb726c9a78f4a1b261ae30adfef292[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 14:15:01 2024 +0900
+
+            modified:   src/components/common/SideBar.tsx
+
+[33mcommit 572c62df2e0b2eeedcf44ebf03d3492033cc8277[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 14:15:01 2024 +0900
+
+            modified:   src/components/common/SideBar.tsx
+
+[33mcommit 3ec5c48b4402fa61e25e9b51e08604f85765e0c5[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 14:14:11 2024 +0900
+
+            modified:   src/components/common/SideBar.tsx
+
+[33mcommit b28282dc6ae82d35f50d5ab8c5183002cc455ab9[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 14:14:11 2024 +0900
+
+            modified:   src/components/common/SideBar.tsx
+
+[33mcommit 639067505424b7591bfe570797fb418db81e9c5a[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 14:09:39 2024 +0900
+
+            modified:   src/components/common/SideBar.tsx
+            modified:   src/components/header/Header.tsx
+            modified:   src/router/index.tsx
+
+[33mcommit cba041ea35024f59c555e2690c433811d1390cfb[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 14:09:39 2024 +0900
+
+            modified:   src/components/common/SideBar.tsx
+            modified:   src/components/header/Header.tsx
+            modified:   src/router/index.tsx
+
+[33mcommit 5aaf39093d0bb781db3583c736e3ffa5496583df[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 13:53:37 2024 +0900
+
+            modified:   src/components/common/SideBar.tsx
+            modified:   src/pages/Home.tsx
+            modified:   src/router/index.tsx
+
+[33mcommit 99ee7f16417798d3dc6fc8abe178bc0a2e3f93cb[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 13:53:37 2024 +0900
+
+            modified:   src/components/common/SideBar.tsx
+            modified:   src/pages/Home.tsx
+            modified:   src/router/index.tsx
+
+[33mcommit 8390e6804780cad0b5fdee8d8c721d27d376880e[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 13:14:00 2024 +0900
+
+            modified:   src/components/header/Header.tsx
+
+[33mcommit 84f67cdd9ae5a62a3488c84dc3b23e51cad61823[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 13:14:00 2024 +0900
+
+            modified:   src/components/header/Header.tsx
+
+[33mcommit bfd582d341db26115ee231c2ea1427cc0cfec03a[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 13:12:43 2024 +0900
+
+            modified:   src/components/common/SideBar.tsx
+
+[33mcommit a9a3280fce7bfb58e7722c69c83ff66ebe4f8ec6[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 13:12:43 2024 +0900
+
+            modified:   src/components/common/SideBar.tsx
+
+[33mcommit 5ca8ee1e3a1dd355796c6fe027e4f72917116e8a[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 13:06:32 2024 +0900
+
+            modified:   src/components/common/SideBar.tsx
+
+[33mcommit e67ae0e8ecada133de90da76500e41965dfdee5c[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 13:06:32 2024 +0900
+
+            modified:   src/components/common/SideBar.tsx
+
+[33mcommit c2b497a42b373c3a1f8521392f1cd9abfdae72b3[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 12:40:57 2024 +0900
+
+            modified:   src/layouts/Layout.tsx
+
+[33mcommit d97ab8831a1f0ee939506723688ec689a6a7eaf6[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 12:40:57 2024 +0900
+
+            modified:   src/layouts/Layout.tsx
+
+[33mcommit a49676c2817cd2e53eeb29d93e090691a6a08fe7[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 12:30:25 2024 +0900
+
+            modified:   src/components/common/SideBar.tsx
+
+[33mcommit e6c60e6cf02e4afe31d50b2bf502a1ab3cd5dd6f[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 12:30:25 2024 +0900
+
+            modified:   src/components/common/SideBar.tsx
+
+[33mcommit 5cb4740272530097829d47dc62b76812b172d3b0[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 12:26:50 2024 +0900
+
+            new file:   src/assets/Colors.ts
+            modified:   src/assets/assets.ts
+            renamed:    src/assets/images/background.png -> src/assets/images/common/subBackground.png
+            new file:   src/assets/images/footer/facebook.png
+            new file:   src/assets/images/footer/instagram.png
+            new file:   src/assets/images/footer/ktwiz_ko.svg
+            new file:   src/assets/images/footer/naver.png
+            new file:   src/assets/images/footer/youtube.png
+            renamed:    src/assets/images/ktwiz.png -> src/assets/images/landing/ktwiz.png
+            new file:   src/assets/images/landing/ktwizBtn.png
+            new file:   src/assets/images/landing/ktwizBtnWhite.png
+            new file:   src/assets/images/landing/landingBackground.png
+            new file:   src/assets/images/landing/leftArrow.png
+            new file:   src/assets/images/landing/rightArrow.png
+            new file:   src/components/common/Button.tsx
+            deleted:    src/components/common/Game.tsx
+            deleted:    src/components/common/Ktwiz.tsx
+            deleted:    src/components/common/Media.tsx
+            deleted:    src/components/common/Player.tsx
+            new file:   src/components/common/SelectBar.tsx
+            modified:   src/components/common/SideBar.tsx
+            deleted:    src/components/common/SideBarStyles.tsx
+            deleted:    src/components/common/Wizpark.tsx
+            new file:   src/components/common/pageLocation/PageLocation.tsx
+            new file:   src/components/common/pageLocation/PageLocationStyles.ts
+            new file:   src/components/common/pagination/Pagination.tsx
+            new file:   src/components/common/pagination/PaginationStyles.ts
+            new file:   src/components/footer/Footer.tsx
+            new file:   src/components/footer/FooterStyles.ts
+            new file:   src/components/header/Header.tsx
+            new file:   src/components/header/HeaderStyles.ts
+            modified:   src/layouts/Layout.tsx
+            modified:   src/main.tsx
+            modified:   src/router/index.tsx
+            new file:   src/stores/useLocation.store.ts
+
+[33mcommit 61165fa4519028db12a0b33d5556cdbf3462dec6[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 12:26:50 2024 +0900
+
+            new file:   src/assets/Colors.ts
+            modified:   src/assets/assets.ts
+            renamed:    src/assets/images/background.png -> src/assets/images/common/subBackground.png
+            new file:   src/assets/images/footer/facebook.png
+            new file:   src/assets/images/footer/instagram.png
+            new file:   src/assets/images/footer/ktwiz_ko.svg
+            new file:   src/assets/images/footer/naver.png
+            new file:   src/assets/images/footer/youtube.png
+            renamed:    src/assets/images/ktwiz.png -> src/assets/images/landing/ktwiz.png
+            new file:   src/assets/images/landing/ktwizBtn.png
+            new file:   src/assets/images/landing/ktwizBtnWhite.png
+            new file:   src/assets/images/landing/landingBackground.png
+            new file:   src/assets/images/landing/leftArrow.png
+            new file:   src/assets/images/landing/rightArrow.png
+            new file:   src/components/common/Button.tsx
+            deleted:    src/components/common/Game.tsx
+            deleted:    src/components/common/Ktwiz.tsx
+            deleted:    src/components/common/Media.tsx
+            deleted:    src/components/common/Player.tsx
+            new file:   src/components/common/SelectBar.tsx
+            modified:   src/components/common/SideBar.tsx
+            deleted:    src/components/common/SideBarStyles.tsx
+            deleted:    src/components/common/Wizpark.tsx
+            new file:   src/components/common/pageLocation/PageLocation.tsx
+            new file:   src/components/common/pageLocation/PageLocationStyles.ts
+            new file:   src/components/common/pagination/Pagination.tsx
+            new file:   src/components/common/pagination/PaginationStyles.ts
+            new file:   src/components/footer/Footer.tsx
+            new file:   src/components/footer/FooterStyles.ts
+            new file:   src/components/header/Header.tsx
+            new file:   src/components/header/HeaderStyles.ts
+            modified:   src/layouts/Layout.tsx
+            modified:   src/main.tsx
+            modified:   src/router/index.tsx
+            new file:   src/stores/useLocation.store.ts
+
+[33mcommit ee43e497c5ceabee33d0eb8a2b1cfef266da96b7[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 00:12:16 2024 +0900
+
+            new file:   src/components/common/SideBar.tsx
+
+[33mcommit c9babd04163be0712a10894aa92bbb43475b1292[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sun Sep 8 00:12:16 2024 +0900
+
+            new file:   src/components/common/SideBar.tsx
+
+[33mcommit 3a4eb4bc0500af877fff33431a5f0d05fe3908f5[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 8 00:08:02 2024 +0900
+
+    12:07
+
+[33mcommit fa761fbff11940458c8b2be63eba2b3bad4a6041[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 8 00:08:02 2024 +0900
+
+    12:07
+
+[33mcommit e0688c4b07e98e0546272f9881f4baa038cb891c[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 8 00:04:07 2024 +0900
+
+    setSubCategory, style에러 수정
+
+[33mcommit cbe4e3ca13c784d4b9e1ff03565a9ba3230fe6a6[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sun Sep 8 00:04:07 2024 +0900
+
+    setSubCategory, style에러 수정
+
+[33mcommit d6966b41c522c2f81d5d9aa2524f8c6115f49fb9[m
+Merge: 8269480 5506c4a
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 7 23:49:29 2024 +0900
+
+    수인님과 머지
+
+[33mcommit e3677e788c97b05ba8103e3c89652008034b57e1[m
+Merge: 9901406 0d4f74b
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 7 23:49:29 2024 +0900
+
+    수인님과 머지
+
+[33mcommit 0be533cbaa799aa5aa09ce0feb4666f0cb6ed152[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sat Sep 7 23:30:41 2024 +0900
+
+    modified:   src/router/index.tsx
+
+[33mcommit 5b8873a53819d4407979c064f32f0571ae9cf6cd[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sat Sep 7 23:30:41 2024 +0900
+
+    modified:   src/router/index.tsx
+
+[33mcommit 1f730d77c090ffdcc54fc2d90a3e2e44ea19e2d3[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sat Sep 7 23:28:54 2024 +0900
+
+    modified:   src/components/common/SideBarStyles.tsx
+
+[33mcommit 44c6b4f3362a6a3c93694f2f9290f7b5bab7d221[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sat Sep 7 23:28:54 2024 +0900
+
+    modified:   src/components/common/SideBarStyles.tsx
+
+[33mcommit 332e7e2dae534df8c67fed889c523530c9d43824[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sat Sep 7 23:22:10 2024 +0900
+
+            new file:   src/GlobalStyle.tsx
+            new file:   src/assets/assets.ts
+            new file:   src/assets/images/background.png
+            new file:   src/components/common/Game.tsx
+            new file:   src/components/common/Ktwiz.tsx
+            new file:   src/components/common/Media.tsx
+            new file:   src/components/common/Player.tsx
+            new file:   src/components/common/SideBarStyles.tsx
+            new file:   src/components/common/Wizpark.tsx
+
+[33mcommit f413bbaa6f2c2c96c8ec135500fd33aadb53d338[m
+Author: 1dontknowwhatyouwant <milestone0917@gmail.com>
+Date:   Sat Sep 7 23:22:10 2024 +0900
+
+            new file:   src/GlobalStyle.tsx
+            new file:   src/assets/assets.ts
+            new file:   src/assets/images/background.png
+            new file:   src/components/common/Game.tsx
+            new file:   src/components/common/Ktwiz.tsx
+            new file:   src/components/common/Media.tsx
+            new file:   src/components/common/Player.tsx
+            new file:   src/components/common/SideBarStyles.tsx
+            new file:   src/components/common/Wizpark.tsx
+
+[33mcommit 5506c4aa631636e65ce9098706f528760f14be88[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Sat Sep 7 22:56:35 2024 +0900
+
+    Feat: layout 경로 수정, pagination 작업중
+
+[33mcommit 0d4f74b829e58d26a497c8a0c73de2732f2055cd[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Sat Sep 7 22:56:35 2024 +0900
+
+    Feat: layout 경로 수정, pagination 작업중
+
+[33mcommit 8269480eecd810ec2ff794ad5ed9f2ced2ee295a[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 7 22:52:37 2024 +0900
+
+    머지 전 커밋
+
+[33mcommit 9901406835f9918abd6ab367111f199805c513ca[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 7 22:52:37 2024 +0900
+
+    머지 전 커밋
+
+[33mcommit b5b73b5b5ab15b5c49a28f3868a0f88fb6d4c2f1[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 7 16:50:51 2024 +0900
+
+    수정전 올리기
+
+[33mcommit addd79c7b6e63631e59b8a6441b06391ec20f8f3[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Sat Sep 7 16:50:51 2024 +0900
+
+    수정전 올리기
+
+[33mcommit 9cd0316a334d44466b24b4c0daf3029e8eee2c3a[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Fri Sep 6 08:35:30 2024 +0900
+
+    Feat: Footer, PageLocation 기능 구현
+
+[33mcommit e20641fd47e4e1e789b0860ba67d30947b7fc85e[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Fri Sep 6 08:35:30 2024 +0900
+
+    Feat: Footer, PageLocation 기능 구현
+
+[33mcommit 0a1f8d709d0644fd6d5a3de6787abebb70847e03[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 4 22:25:46 2024 +0900
+
+    prettier settings format on save 수정
+
+[33mcommit 7ffe0bab3eee25d0414ed0a812df0a5f5a2c5a7d[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 4 22:25:46 2024 +0900
+
+    prettier settings format on save 수정
+
+[33mcommit 32df168a74f1c791d08e1bd6337109c5f122f79c[m
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Wed Sep 4 22:01:46 2024 +0900
+
+    Update PULL_REQUEST_TEMPLATE.md
+
+[33mcommit b4f2818ae059c248864c41f78896e93a73de6c33[m
+Author: jinjukim_web <63224644+jinjukimink@users.noreply.github.com>
+Date:   Wed Sep 4 22:01:46 2024 +0900
+
+    Update PULL_REQUEST_TEMPLATE.md
+
+[33mcommit 247807af78f6335f7fbb5184fcc8022c27530681[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 4 21:54:39 2024 +0900
+
+    폴더 구조 정리
+
+[33mcommit 9afd575caf67aff77ea843fd5eebeb6e1ae86aaf[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 4 21:54:39 2024 +0900
+
+    폴더 구조 정리
+
+[33mcommit 15e971ad2eb358f64c4fdae6bdb7555356c47da9[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 4 21:40:50 2024 +0900
+
+    네비게이션바 에니메이션 완료
+
+[33mcommit 4a4e2ac90b3f5945c3ee5d820868d32cd2add005[m
+Author: jinjukim <kimjinjuind1@hanyang.ac.kr>
+Date:   Wed Sep 4 21:40:50 2024 +0900
+
+    네비게이션바 에니메이션 완료
+
+[33mcommit 1e8cb1376a275cdefc5db8b09a1a4ecbcce99b3a[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Wed Sep 4 00:58:19 2024 +0900
+
+    Delete .github/ISSUE_TEMPLATE directory
+
+[33mcommit c1be9ffda9590528a7350506b27187a0c12ae22e[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Wed Sep 4 00:58:19 2024 +0900
+
+    Delete .github/ISSUE_TEMPLATE directory
+
+[33mcommit 70fbbed90a69ca9b67b9adace0b5c428bf48a5d0[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Wed Sep 4 00:58:10 2024 +0900
+
+    Delete .github/PULL_REQUEST_TEMPLATE.md
+
+[33mcommit 98b9867e69fdfcd52eb6ca76d1043549cd8135f7[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Wed Sep 4 00:58:10 2024 +0900
+
+    Delete .github/PULL_REQUEST_TEMPLATE.md
+
+[33mcommit f46801510fed049f9c131e78215e745df8513bf8[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Tue Sep 3 19:04:43 2024 +0900
+
+    feat: 프로젝트 세팅
+
+[33mcommit dc672186c7f040d0244a675160f2cf9675446a23[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Tue Sep 3 19:04:43 2024 +0900
+
+    feat: 프로젝트 세팅
+
+[33mcommit c5aa87701ed467b952f2a84e4145458392c83870[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Mon Sep 2 23:35:55 2024 +0900
+
+    Create PULL_REQUEST_TEMPLATE.md
+
+[33mcommit 72ab6eaa4f2db1ebd8c28f6b1807b95d20b7ca6f[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Mon Sep 2 23:35:55 2024 +0900
+
+    Create PULL_REQUEST_TEMPLATE.md
+
+[33mcommit fa552d663bd215751e00b4d1430729c412337ea8[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 2 23:34:42 2024 +0900
+
+    docs: pr 템플릿 삭제
+
+[33mcommit ddc147cfd3f85a861f0510c3c2c30bb9ff0f686e[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 2 23:34:42 2024 +0900
+
+    docs: pr 템플릿 삭제
+
+[33mcommit 171ab681b0f44cbed57b4fc4b90c2c64002d574a[m
+Merge: 9dd9672 bed6560
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 2 23:06:24 2024 +0900
+
+    feat: 프로젝트 셋팅
+
+[33mcommit ba8aeb0f3f73e981ed58eb080cd3233fb2bcecf9[m
+Merge: 9dd9672 fc65792
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 2 23:06:24 2024 +0900
+
+    feat: 프로젝트 셋팅
+
+[33mcommit 9dd967222ca71da80db8bf2a557ab1cf64a61fbb[m
+Author: ddu2ni <adsf9608@naver.com>
+Date:   Mon Sep 2 22:58:37 2024 +0900
+
+    feat: 프로젝트 세팅
+
+[33mcommit bed65604b0125ab01a9b40c82c4e07d2b42ec3ab[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Fri Aug 30 22:52:23 2024 +0900
+
+    Create pull_request_template.md
+
+[33mcommit fc65792d3b06aacbd52d34137c5954d76b3e0a52[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Fri Aug 30 22:52:23 2024 +0900
+
+    Create pull_request_template.md
+
+[33mcommit 5d6b3d7b4cf582cb99de72270ae57d2613ddb82f[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Fri Aug 30 14:11:42 2024 +0900
+
+    Update issue.md
+
+[33mcommit 19f4611e0b4c37daa220f3b34c9f334e009c3cba[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Fri Aug 30 14:11:42 2024 +0900
+
+    Update issue.md
+
+[33mcommit d01009400ecc7a1d0c12825679385bc261dedf81[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Fri Aug 30 14:10:35 2024 +0900
+
+    Update issue templates
+
+[33mcommit 8ec5e39ada4609b248cb6918dde9c50b751458f8[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Fri Aug 30 14:10:35 2024 +0900
+
+    Update issue templates
+
+[33mcommit 54aea3aeaaf95649150fa8ab69da2591b754432d[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Fri Aug 30 13:56:14 2024 +0900
+
+    Initial commit
+
+[33mcommit e125626c8b5f225ae59a70b6b5da79bd0c001f98[m
+Author: Suein Yoon <150881952+ddu2ni@users.noreply.github.com>
+Date:   Fri Aug 30 13:56:14 2024 +0900
+
+    Initial commit
