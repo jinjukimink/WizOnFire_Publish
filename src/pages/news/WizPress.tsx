@@ -5,7 +5,7 @@ import colors from '../../assets/Colors';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/common/button/Button';
 import Skeleton from 'react-loading-skeleton';
-
+ 
 interface Article {
   artcSeq: number;
   artcTitle: string;

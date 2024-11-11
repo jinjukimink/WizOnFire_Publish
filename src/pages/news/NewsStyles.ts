@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import colors from '../../assets/Colors';
 import { FaEye } from 'react-icons/fa';
-
+ 
 export const NewsList = styled.div`
   // width: 65%; 
   // display: flex;

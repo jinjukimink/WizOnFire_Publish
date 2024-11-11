@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../../components/common/button/Button';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-
+ 
 interface Article {
   artcSeq: number;
   artcTitle: string;
