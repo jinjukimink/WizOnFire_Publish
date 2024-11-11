@@ -7,10 +7,9 @@ import { TPitcherResponse } from "../../../../types/ranking";
 const PitcherRank = () => {
   const [sorting, setSorting] = useState<SortingState>([]);
   const { year } = useRankStore();
-  const [searchTerm, setSearchTerm] = useState<string>("");  // 실시간 검색어 상태
   // const apiUrl = `/game/rank/kt/pitcher?gyear=${year}&pname=${searchTerm}&sortKey=`;
   // const apiUrl = `/game/rank-kt-pitcher-gyear-${year}-pname-${searchTerm}-sortKey-.json`;
-  const apiUrl = `/game/rank-kt-pitcher-gyear-${year}-pname-${searchTerm}-sortKey-.json`;
+  const apiUrl = `/game/rank-kt-pitcher-gyear-${year}-pname--sortKey-.json`;
   const transformData = (data: TPitcherResponse) => {
     return data?.data?.list || [];
   };
@@ -22,7 +21,6 @@ const PitcherRank = () => {
         sorting={sorting}
         onSortingChange={setSorting}
         transformData={transformData}
-        setSearchTerm={setSearchTerm}
       />
     </>
   );

@@ -5,11 +5,10 @@ import RankingRankTable from "./BatterRankTable";
 import { transformBatterData } from "../../../../utils/batterUtils";
 
 const BatterRanking = () => {
-  const [searchTerm, setSearchTerm] = useState<string>(""); 
   const [sorting, setSorting] = useState<SortingState>([]);
   const { year } = useRankStore();
   // const apiUrl = `/game/rank/kt/batter?gyear=${year}&pname=${searchTerm}&sortKey=`;
-  const apiUrl = `/game/rank-kt-batter-gyear-${year}-pname-${searchTerm}-sortKey-.json`;
+  const apiUrl = `/game/rank-kt-batter-gyear-${year}-pname---sortKey-.json`;
   
   return (
     <>
@@ -18,7 +17,6 @@ const BatterRanking = () => {
         sorting={sorting}
         onSortingChange={setSorting}
         transformData={transformBatterData}
-        setSearchTerm={setSearchTerm}
       />
     </>
   );
