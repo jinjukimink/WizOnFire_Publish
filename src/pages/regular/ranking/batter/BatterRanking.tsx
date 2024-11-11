@@ -8,7 +8,7 @@ const BatterRanking = () => {
   const [sorting, setSorting] = useState<SortingState>([]);
   const { year } = useRankStore();
   // const apiUrl = `/game/rank/kt/batter?gyear=${year}&pname=${searchTerm}&sortKey=`;
-  const apiUrl = `/game/rank-kt-batter-gyear-${year}-pname---sortKey-.json`;
+  const apiUrl = `/game/rank-kt-batter-gyear-${year}-pname--sortKey-.json`;
   
   return (
     <>
