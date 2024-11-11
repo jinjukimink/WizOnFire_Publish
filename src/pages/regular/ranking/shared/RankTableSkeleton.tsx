@@ -43,8 +43,6 @@ const RankTableSkeleton = () => {
             <SkeletonTableDisplay>
                 <div>
                     <SkeletonTableLeft />
-                    <SkeletonTableLeft />
-                    <SkeletonTableLeft />
                 </div>
                 <SkeletonTableRight />
             </SkeletonTableDisplay>

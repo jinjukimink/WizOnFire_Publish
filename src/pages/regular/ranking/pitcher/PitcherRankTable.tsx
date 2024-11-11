@@ -19,7 +19,6 @@ type RankingTableProps<T> = {
     transformData?: (data: any) => T[];
     sorting: SortingState;
     onSortingChange: (updaterOrValue: Updater<SortingState>) => void;
-    setSearchTerm: React.Dispatch<React.SetStateAction<string>>
 };
 
 const PitcherRankTable = <T,>({
@@ -28,7 +27,6 @@ const PitcherRankTable = <T,>({
     transformData,
     sorting,
     onSortingChange,
-    setSearchTerm
 }: RankingTableProps<T>) => {
 
     const isLoading = useLoading();
@@ -53,25 +51,6 @@ const PitcherRankTable = <T,>({
         { header: "실점", accessorKey: "r", enableSorting: true },
         { header: "자책점", accessorKey: "er", enableSorting: true },
     ], []);
-    //    const defaultColumnDefs: ColumnDef<T>[] = [
-    //     { header: "팀명", accessorKey: "teamName", enableSorting: false },
-    //     { header: "선수명", accessorKey: "playerName", enableSorting: false },
-    //     { header: "평균자책점", accessorKey: "era", enableSorting: true },
-    //     { header: "경기수", accessorKey: "gamenum", enableSorting: true },
-    //     { header: "승", accessorKey: "w", enableSorting: true },
-    //     { header: "패", accessorKey: "l", enableSorting: true },
-    //     { header: "세이브", accessorKey: "sv", enableSorting: true },
-    //     { header: "홀드", accessorKey: "hold", enableSorting: true },
-    //     { header: "승률", accessorKey: "wra", enableSorting: true },
-    //     { header: "이닝", accessorKey: "inn", enableSorting: true },
-    //     { header: "피안타", accessorKey: "hit", enableSorting: true },
-    //     { header: "피홈런", accessorKey: "hr", enableSorting: true },
-    //     { header: "볼넷", accessorKey: "bb", enableSorting: true },
-    //     { header: "사구", accessorKey: "hp", enableSorting: true },
-    //     { header: "탈삼진", accessorKey: "kk", enableSorting: true },
-    //     { header: "실점", accessorKey: "r", enableSorting: true },
-    //     { header: "자책점", accessorKey: "er", enableSorting: true },
-    // ];
 
     const columnDefs = useMemo(() => {
         return customColumnDefs ? [...customColumnDefs, ...defaultColumnDefs] : defaultColumnDefs;
@@ -93,13 +72,6 @@ const PitcherRankTable = <T,>({
     <>
     <SelectAndSearch>
             <SeasonSelect />
-            <SearchBar 
-            placeholder="선수의 전체 이름을 입력해주세요 (예: 엄상백 또는 소형준)" 
-            containerWidth="350px" 
-            height="25px" 
-            buttonWidth="45px"
-            onSearch={(term)=>setSearchTerm(term)} 
-            />
         <span>*각 항목을 클릭하시면 순위를 보실 수 있습니다.</span>
     </SelectAndSearch>
         <PitRankingTable>
