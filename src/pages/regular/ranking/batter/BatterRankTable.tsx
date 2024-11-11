@@ -2,6 +2,7 @@ import { useTable } from "../../../../hooks/useTable";
 import { useMemo } from "react";
 import { ColumnDef, SortingState, Updater, flexRender } from "@tanstack/react-table";
 import SeasonSelect from "../../../../components/ranking/seasonSelect/SeasonSelect";
+import SearchBar from "../../../../components/common/searchbar/SearchBar";
 import {
     BattRankingTable,
     BattRankingHeaderCell,
@@ -18,6 +19,7 @@ type RankingTableProps<T> = {
     transformData?: (data: any) => T[];
     sorting: SortingState;
     onSortingChange: (updaterOrValue: Updater<SortingState>) => void;
+    setSearchTerm: React.Dispatch<React.SetStateAction<string>>
 };
 
 const BatterRankTable = <T,>({
@@ -26,6 +28,7 @@ const BatterRankTable = <T,>({
     transformData,
     sorting,
     onSortingChange,
+    setSearchTerm
 }: RankingTableProps<T>) => {
 
     const isLoading = useLoading();
@@ -68,6 +71,13 @@ const BatterRankTable = <T,>({
     <>
     <SelectAndSearch>
         <SeasonSelect />
+        <SearchBar 
+        placeholder="선수의 전체 이름을 입력해주세요 (예: 로하스 또는 전상현)" 
+        containerWidth="350px" 
+        height="25px" 
+        buttonWidth="45px"
+        onSearch={(term)=>setSearchTerm(term)} 
+        />
         <span>*각 항목을 클릭하시면 순위를 보실 수 있습니다.</span>
     </SelectAndSearch>
         <BattRankingTable>

@@ -7,7 +7,8 @@ import { TPitcherRankType, TPitcherResponse } from "../../../../types/ranking";
 const AllPitcherRank = () => {
   const { year } = useRankStore();
   const [sorting, setSorting] = useState<SortingState>([]);
-  const apiUrl = `/game/rank-total-pitcher-gyear-${year}-pname--sortKey-.json`;
+  const [searchTerm, setSearchTerm] = useState<string>("");  // 실시간 검색어 상태
+  const apiUrl = `/game/rank-total-pitcher-gyear-${year}-pname-${searchTerm}-sortKey-.json`;
   
   const transformData = (data: TPitcherResponse) => {
     return (
@@ -30,6 +31,7 @@ const AllPitcherRank = () => {
         onSortingChange={setSorting}
         columnDefs={addColumnDefs}
         transformData={transformData}
+        setSearchTerm={setSearchTerm}
       />
     </>
   );
