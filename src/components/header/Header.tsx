@@ -24,24 +24,47 @@ const Header = () => {
   ]
 
   const subCategories: string[][] = [
-    ["kt wiz는?", "구단 BI", "회원 정책", "스폰서", "월페이퍼"],
-    ["수원 kt wiz park", "주차 예약", "찾아오기", "익산야구장"],
+    ["kt wiz는?"],
+    ["수원 kt wiz park", "찾아오기"],
     ["경기일정","박스스코어","순위기록","관전포인트"],
     ["코칭스텝", "투수", "타자", "응원단", "응원가", "응원가 저작권"],
-    ["wiz 뉴스", "wiz 스토리", "시구자 정보", "wiz 포토", "Live 영상모음"],
+    ["wiz 뉴스"],
     [],
     [],
-    ["티켓예매", "단체관람", "입장 및 좌석 정보"],
+    [],
   ];
   const subCategoriesForNav:string[][]=[
-    ["about","bi","policy","sponsor","wallpaper"],
-    [ "intro","parking","location","iksan"],
+    ["about"],
+    [ "intro","location"],
     ["schedule","boxscore","ranking","watchPoint"],
     ["coach","pitcher","catcher","cheer","song","song-copyright"],
-    ["wiznews","wizstory","firstpitch","photos","highlight","live"],
-   [],
-   [],
-    ["reservation","group","seatmap"]]
+    ["wiznews"],
+    [],
+    [],
+    []
+  ]
+
+    /*
+    const subCategories: string[][] = [
+      ["kt wiz는?", "구단 BI", "회원 정책", "스폰서", "월페이퍼"],
+      ["수원 kt wiz park", "주차 예약", "찾아오기", "익산야구장"],
+      ["경기일정","박스스코어","순위기록","관전포인트"],
+      ["코칭스텝", "투수", "타자", "응원단", "응원가", "응원가 저작권"],
+      ["wiz 뉴스", "wiz 스토리", "시구자 정보", "wiz 포토", "Live 영상모음"],
+      [],
+      [],
+      ["티켓예매", "단체관람", "입장 및 좌석 정보"],
+    ];
+    const subCategoriesForNav:string[][]=[
+      ["about","bi","policy","sponsor","wallpaper"],
+      [ "intro","parking","location","iksan"],
+      ["schedule","boxscore","ranking","watchPoint"],
+      ["coach","pitcher","catcher","cheer","song","song-copyright"],
+      ["wiznews","wizstory","firstpitch","photos","highlight","live"],
+     [],
+     [],
+      ["reservation","group","seatmap"]]
+      */
 
     const sidebars = [
       [
@@ -297,7 +320,7 @@ const Header = () => {
                   </SubCategory>
                 ))
               ) : (
-                <div style={{ width: "59px" }} /> 
+                <div style={{ width: "80px" }} /> 
               )}
             </SubCategoryColumn>
           ))}

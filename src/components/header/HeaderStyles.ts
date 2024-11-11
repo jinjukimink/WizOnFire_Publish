@@ -14,14 +14,11 @@ export const UpNav = styled(motion.nav)<{isHovered:boolean,scrollY:number}>`
     z-index: 103;
     gap: 42px;
     transition: color 0.3s ease-in-out;
-    background-color:${({ isHovered  }) => (isHovered ? `${colors.white}` :`${colors.black}`)} ;//이 로직에서 문제가 생기는 건 확실함
-    //will-change:none;
-    
+    background-color:${({ isHovered  }) => (isHovered ? `${colors.white}` :`${colors.black}`)} ;
     a{
-        color: ${({ isHovered  }) => (isHovered ? `${colors.black}` :`${colors.white}`)};//이ㅅ새끼 문제임아아
+        color: ${({ isHovered  }) => (isHovered ? `${colors.black}` :`${colors.white}`)};
         transition: color 0.3s ease-in-out;
         left:-10px;//로고 정렬할 때 중요
-        //margin-right: 10px;
     }
     a:hover{
     font-weight: 700;
@@ -31,7 +28,6 @@ export const UpNav = styled(motion.nav)<{isHovered:boolean,scrollY:number}>`
     } 
 
     a:nth-last-child(6){
-        //margin-right: 123px;//로고 양옆 조절
         margin-right: 40px;
     }   
     &::after {
@@ -41,40 +37,34 @@ export const UpNav = styled(motion.nav)<{isHovered:boolean,scrollY:number}>`
         left: 50%;
         transform: translateX(-50%);
         width: 1100px;
-        //border-bottom: 2px solid white;
         border-bottom: ${({ isHovered, scrollY }) => isHovered || scrollY > 620 ? "none" : "2px solid white"};
         transition: width 0.3s ease;
         clip-path: polygon(
             0 0, 
-            45.5% 0, 
-            45.5% 100%, 
+            42.5% 0, 
+            42.5% 100%, 
 
-            54.3% 100%, 
-            54.3% 0, 
+            57.5% 100%, 
+            57.5% 0, 
 
             100% 0, 
             100% 100%,
-             0 100%
+            0 100%
             );
     }
     @media screen and (max-width: 808px) {
         gap:1.5%;
-        //margin-top:10px;;
-        //height:100px
     }
 `;
 
 export const Logo = styled.div<{isHovered:boolean}>`
     justify-content: center;
     align-items: center;
-   // position: absolute;
     display: flex;
     left: 50%;
     transform: translateX(-18%);//로고 위치 중간 조정
-    //top:20px;
     margin-top: 24px;
     z-index: 103;
-    //pointer-events: none;//호버 이벤트 막으려고
     img {
         width: 130px;
         transition: width 0.3s ease-in-out;
@@ -145,21 +135,15 @@ export const SubCategoryColumn=styled.div`
     &:hover{
         cursor: pointer;
     }
-    
-    &:nth-child(1){
-        margin-right: 5px;
-    }
     &:nth-child(2){
-        margin-right: 5px;
+      margin-right: 5px;
     } 
     &:nth-child(4){
-        margin-right: 10px;
+        margin-right: 45px;
     } 
     &:nth-child(5){
-        margin-left:195px;
-    } 
-    &:nth-child(7){
-        margin-left:10px;
+        margin-left:180px;
+        margin-right:10px;
     } 
 `;
 

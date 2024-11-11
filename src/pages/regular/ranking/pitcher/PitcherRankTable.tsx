@@ -94,7 +94,7 @@ const PitcherRankTable = <T,>({
     <SelectAndSearch>
             <SeasonSelect />
             <SearchBar 
-            placeholder="선수의 전체 이름을 입력해주세요 (예: 엄상백 소형준)" 
+            placeholder="선수의 전체 이름을 입력해주세요 (예: 엄상백 또는 소형준)" 
             containerWidth="350px" 
             height="25px" 
             buttonWidth="45px"
