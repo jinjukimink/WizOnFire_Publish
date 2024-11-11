@@ -72,7 +72,7 @@ const BatterRankTable = <T,>({
     <SelectAndSearch>
         <SeasonSelect />
         <SearchBar 
-        placeholder="선수의 전체 이름을 입력해주세요 (예: 로하스 전상현)" 
+        placeholder="선수의 전체 이름을 입력해주세요 (예: 로하스 또는 전상현)" 
         containerWidth="350px" 
         height="25px" 
         buttonWidth="45px"
