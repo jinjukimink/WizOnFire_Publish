@@ -1,7 +1,6 @@
 import useFetchData from '../../hooks/useFetchData';
-import { NewsContainer, NewsList, NewsItem, Title, MetaInfo, Views, SearchBarWrapper, Pagination, Thumbnail, ViewsIcon, ArticleIndex } from './NewsStyles';
+import { NewsContainer, NewsList, NewsItem, Title, MetaInfo, Views, Pagination, Thumbnail, ViewsIcon, ArticleIndex } from './NewsStyles';
 import { useState, useEffect } from 'react';
-import SearchBar from '../../components/common/searchbar/SearchBar';
 import colors from '../../assets/Colors';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/common/button/Button';
@@ -29,7 +28,7 @@ const formatThumbnail = (thumbnailUrl: string) => {
 };
 
 const News = () => {
-  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [searchTerm] = useState<string>('');
   const { data, isLoading, error } = useFetchData<ApiResponse>(`/article/newslist-searchWord-${searchTerm}.json`);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
@@ -76,7 +75,6 @@ const News = () => {
   if (isLoading) {
     return (
       <NewsContainer>
-        <Skeleton width={169} height={29} style={{ marginBottom: '-2px', top: '-40px' }} />
         <NewsList>
           {Array.from({ length: itemsPerPage }).map((_, index) => (
             <div key={index} style={{ display: 'flex', alignItems: 'center', padding: '20px', borderBottom: `1px solid ${colors.ashGray}` }}>
@@ -99,15 +97,6 @@ const News = () => {
 
   return (
     <NewsContainer>
-      <SearchBarWrapper>
-        <SearchBar 
-          placeholder="검색어를 입력해주세요." 
-          containerWidth="140px" 
-          height="29px" 
-          buttonWidth="45px"
-          onSearch={(term) => setSearchTerm(term)} 
-        />
-      </SearchBarWrapper>
       <NewsList>
         {currentItems.length > 0 ? (
           currentItems.map((article: Article, index: number) => (
