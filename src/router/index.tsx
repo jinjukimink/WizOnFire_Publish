@@ -139,7 +139,7 @@ const router = createBrowserRouter([
           },
           {
             path:"outfielder/detail",
-            element:<StaffDetail detailPath="outfielderdetail"/>
+            element:<StaffDetail detailPath="pitcherdetail"/>
           },
           {
             path: "cheer",
