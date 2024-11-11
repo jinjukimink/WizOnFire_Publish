@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import colors from '../../assets/Colors';
 import { FaEye } from 'react-icons/fa';
-import { Shining } from '../../components/common/skeleton/gridskeleton/SkeletonGridContainer';
 
 export const NewsList = styled.div`
   // width: 65%; 
@@ -100,46 +99,6 @@ export const Pagination = styled.div`
   }
 `;
 
-export const SearchBarWrapper = styled.div`
-  // margin-bottom: 10px; // 빨간 줄과 간격을 주기 위함
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  position: relative;
-  top: -37px;  /* 현재 위치에서 20px 위로 이동 */
-`;
-
-export const SkeletonSearchBarWrapper = styled(Shining)`
-  width: 140px;  /* 서치바의 실제 크기에 맞춤 */
-  height: 29px;  /* 서치바의 실제 높이에 맞춤 */
-  margin: 0 auto;  /* 수평 중앙 정렬 */
-  margin-left:1px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: ${colors.ashGray};
-  border-radius: 5px;
-  position: relative;
-  top: -57px;
-`;
-
-export const SkeletonSearchIcon = styled(Shining)`
-  width: 29px;
-  height:29px;
-  margin: 0 auto;
-  margin-left: 145px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: ${colors.ashGray}; 
-  border-radius: 5px; 
-  position: relative;
-  top: -101px;
-`;
-
 export const NewsContainer = styled.div`
   max-width: 1100px; 
   margin: 0 auto; 
@@ -168,52 +127,4 @@ export const ViewsIcon = styled(FaEye)`
   margin-right: 5px;
   font-size: 16px;
   color: ${props => props.color || 'inherit'};
-`;
-
-export const SkeletonViews = styled(Shining)`
-  display:flex;
-  width: 40px;
-  height: 15px;
-  background-color: ${colors.ashGray};
-  border-radius: 5px;
-`;
-// 전체 스켈레톤 컨테이너
-export const SkeletonWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  padding: 20px;
-  max-width: 1100px;
-  margin: 0 auto;
-`;
-
-// 스켈레톤 뉴스 아이템
-export const SkeletonNewsItem = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  border-bottom: 1px solid ${colors.ashGray};
-  background-color: ${colors.white};
-`;
-
-// 스켈레톤 썸네일
-export const SkeletonThumbnail = styled(Shining)`
-  width: 250px;
-  height: 125px;
-  border-radius: 5px;
-  background-color: ${colors.ashGray};
-  margin-left: 60px;
-  margin-right: 25px;
-`;
-
-// 스켈레톤 제목
-export const SkeletonTitle = styled(Shining)`
-  width: 500px;
-  height: 27px;
-  border-radius: 5px;
-  background-color: ${colors.ashGray};
-  margin-right: 225px;
-  // font-size: 1.4rem;
-  margin-bottom: -5px;
 `;

@@ -86,18 +86,6 @@ export const SkeletonViews = styled(Shining)`
   margin-left:80px;
   margin-top:5px;
 `;
-export const Date = styled.span``;
-
-export const SearchBarWrapper = styled.div`
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  position: relative;
-  top: -37px;  /* 현재 위치에서 20px 위로 이동 */
-`;
 
 export const Pagination = styled.div`
   display: flex;

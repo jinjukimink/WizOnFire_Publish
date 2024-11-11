@@ -1,7 +1,6 @@
 import useFetchData from '../../hooks/useFetchData';
-import { WizPressContainer, NewsList, NewsItem, Title, MetaInfo, Views, SearchBarWrapper, Pagination, ArticleIndex, SkeletonWrapper, SkeletonNewsItem, SkeletonViews, ViewsIcon, SkeletonTitle } from './WizPressStyles';
+import { WizPressContainer, NewsList, NewsItem, Title, MetaInfo, Views, Pagination, ArticleIndex, SkeletonWrapper, SkeletonNewsItem, SkeletonViews, ViewsIcon, SkeletonTitle } from './WizPressStyles';
 import { useState, useEffect } from 'react';
-import SearchBar from '../../components/common/searchbar/SearchBar';
 import colors from '../../assets/Colors';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/common/button/Button';
@@ -22,7 +21,7 @@ interface ApiResponse {
 }
 
 const WizPress = () => {
-  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [searchTerm] = useState<string>('');
   const { data, isLoading } = useFetchData<ApiResponse>(`article/wizpresslist-searchWord-${searchTerm}.json`);
   const [currentPage, setCurrentPage] = useState(1);
   const [currentItems, setCurrentItems] = useState<Article[]>([]);
@@ -74,15 +73,6 @@ const WizPress = () => {
 
   return (
     <WizPressContainer>
-      <SearchBarWrapper>
-        <SearchBar
-          placeholder="검색어를 입력해주세요."
-          containerWidth="140px"
-          height="29px"
-          buttonWidth="45px"
-          onSearch={(term) => setSearchTerm(term)}
-        />
-      </SearchBarWrapper>
       <NewsList>
         {currentItems.length > 0 ? (
           currentItems.map((article: Article, index: number) => (
