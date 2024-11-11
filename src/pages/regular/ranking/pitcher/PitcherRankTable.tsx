@@ -1,7 +1,6 @@
 import { useTable } from "../../../../hooks/useTable";
 import { ColumnDef, SortingState, Updater, flexRender } from "@tanstack/react-table";
 import SeasonSelect from "../../../../components/ranking/seasonSelect/SeasonSelect";
-import SearchBar from "../../../../components/common/searchbar/SearchBar";
 import {
     PitRankingTable,
     PitRankingHeaderCell,
